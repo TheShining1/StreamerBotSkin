@@ -4,9 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 		xmlns:styles="clr-namespace:Material.Styles;assembly=Material.Styles"
-        xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+        xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
         xmlns:showMeTheXaml="clr-namespace:ShowMeTheXaml;assembly=ShowMeTheXaml.Avalonia"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="900"
+		Width="800"
+		Height="900"
         x:Class="StreamerBotSkin.Views.MainWindow"
         Icon="/Assets/avalonia-logo.ico"
         Title="StreamerBotSkin"
@@ -18,115 +20,129 @@
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
 		<vm:MainWindowViewModel/>
 	</Design.DataContext>
-
-	<styles:SnackbarHost HostName="Root">
-		<styles:NavigationDrawer Name="LeftDrawer"
-                                 LeftDrawerOpened="{Binding ElementName=NavDrawerSwitch, Path=IsChecked, Mode=TwoWay}">
-			<styles:NavigationDrawer.LeftDrawerContent>
-				<ScrollViewer>
-					<StackPanel>
-						<styles:ColorZone Mode="Accent" Height="180">
-							<StackPanel>
-								<Image Width="120" Height="120" HorizontalAlignment="Center" VerticalAlignment="Top"
-                                       Source="avares://StreamerBotSkin/Assets/FavIcon_200x.png" Margin="0,0,0,-8" />
-								<TextBlock Classes="Headline6" Text="Material Design" HorizontalAlignment="Center" />
-								<TextBlock Classes="Subtitle1" Text="with AvaloniaUI" HorizontalAlignment="Center" />
-							</StackPanel>
-						</styles:ColorZone>
-						<ListBox Classes="Drawer" Name="DrawerList"
+	<styles:NavigationDrawer
+		Name="LeftDrawer"
+		LeftDrawerOpened="True">
+		<styles:NavigationDrawer.LeftDrawerContent>
+			<ScrollViewer>
+				<StackPanel>
+					<styles:ColorZone Mode="Accent" Padding="12">
+						<StackPanel>
+							<Button Classes="Headline6" HorizontalAlignment="Center">Save</Button>
+							<styles:Card
+								Background="Transparent"
+								BorderBrush="Transparent"
+								Padding="12">
+								<Grid
+									ColumnDefinitions="*,*">
+									<Button
+										Grid.Column="0"
+										Classes="Subtitle1">Import</Button>
+									<Button
+										Grid.Column="1"
+										Classes="Subtitle1">Export</Button>
+								</Grid>
+							</styles:Card>
+						</StackPanel>
+					</styles:ColorZone>
+					<ListBox Classes="Drawer" Name="DrawerList"
                                  Focusable="{Binding ElementName=LeftDrawer, Path=LeftDrawerOpened}">
-							<ListBox.Styles>
-								<Style Selector="ListBoxItem">
-									<Setter Property="Height" Value="48" />
-									<Setter Property="Padding" Value="16,0" />
-									<Setter Property="VerticalContentAlignment" Value="Center" />
-									<Setter Property="IsEnabled" Value="{Binding $self.Content.IsEnabled}" />
-								</Style>
-							</ListBox.Styles>
-							<TextBlock Classes="Body2" Text="Home" />
-							<TextBlock Classes="Body2" Text="Buttons" />
-							<TextBlock Classes="Body2" Text="Toggles" />
-							<TextBlock Classes="Body2" Text="Fields" />
-							<TextBlock Classes="Body2" Text="ComboBoxes" />
-							<TextBlock Classes="Body2" Text="Material Icons" />
-							<TextBlock Classes="Body2" Text="Sliders" />
-							<TextBlock Classes="Body2" Text="Progress indicators" />
-							<TextBlock Classes="Body2" Text="Lists" />
-							<TextBlock Classes="Body2" Text="Expanders" />
-							<TextBlock Classes="Body2" Text="ColorZones" />
-							<TextBlock Classes="Body2" Text="Dialogs" />
-							<TextBlock Classes="Body2" Text="ScrollViewer" />
-							<TextBlock Classes="Body2" Text="TabControls" />
-							<TextBlock Classes="Body2" Text="TreeViews" />
-							<TextBlock Classes="Body2" Text="Card" />
-							<TextBlock Classes="Body2" Text="Typography" />
-							<TextBlock Classes="Body2" Text="Pickers" />
-							<TextBlock Classes="Body2" Text="Shadows" IsEnabled="False" />
-						</ListBox>
-					</StackPanel>
-				</ScrollViewer>
-			</styles:NavigationDrawer.LeftDrawerContent>
-			<DockPanel LastChildFill="true">
-				<styles:ColorZone Name="PART_AppBarContainer" VerticalAlignment="Top" HorizontalAlignment="Stretch"
-                                  DockPanel.Dock="Top"
-                                  Height="56" Mode="PrimaryMid" ZIndex="1">
-					<Grid Margin="16">
-						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="24" />
-							<ColumnDefinition Width="32" />
-							<ColumnDefinition Width="*" />
-							<ColumnDefinition Width="32" />
-							<ColumnDefinition Width="Auto" />
-						</Grid.ColumnDefinitions>
-						<ToggleButton Name="NavDrawerSwitch"
-                                      Classes="Flat TransparentBack ConstantForeground ImplicitForeground"
-                                      Width="32" Height="32" Padding="4">
-							<avalonia:MaterialIcon Kind="Menu" Width="24" Height="24" />
-						</ToggleButton>
-						<TextBlock Grid.Column="2" Classes="Headline6" Text="Material.Avalonia Demo"
-                                   VerticalAlignment="Center" />
-						<Menu Grid.Column="4" Height="32" Padding="0" Margin="0">
-							<MenuItem Height="32" Width="32" Header="{avalonia:MaterialIconExt DotsVertical, Size=24}">
-								<MenuItem Header="Hello!">
-									<MenuItem.Icon>
-										<avalonia:MaterialIcon Kind="Hand" Width="24" Height="24" />
-									</MenuItem.Icon>
-								</MenuItem>
-								<Separator />
-								<MenuItem Header="Action 1" />
-								<MenuItem Header="Action 2" />
-								<MenuItem Header="Action 3" />
-								<Separator />
-								<MenuItem Header="Goodbye">
-									<MenuItem.Icon>
-										<avalonia:MaterialIcon Kind="ExitRun" Width="24" Height="24" />
-									</MenuItem.Icon>
-								</MenuItem>
+						<ListBox.Styles>
+							<Style Selector="ListBoxItem">
+								<Setter Property="Height" Value="48" />
+								<Setter Property="Padding" Value="16,0" />
+								<Setter Property="VerticalContentAlignment" Value="Center" />
+								<Setter Property="IsEnabled" Value="{Binding $self.Content.IsEnabled}" />
+							</Style>
+						</ListBox.Styles>
+						<TextBlock Classes="Body2" Text="Main"/>
+						<TextBlock Classes="Body2" Text="Actions"/>
+					</ListBox>
+				</StackPanel>
+			</ScrollViewer>
+		</styles:NavigationDrawer.LeftDrawerContent>			
+		<Grid
+			RowDefinitions="Auto, *, Auto"
+			ColumnDefinitions="*">
+			<styles:ColorZone
+				Grid.Row="0"
+				Height="48"
+				Padding="12">
+				<Grid
+					ColumnDefinitions="Auto, *, Auto, Auto"
+					VerticalAlignment="Center">
+					<ToggleButton
+						Grid.Column="0"
+						Classes="Flat TransparentBack"
+						Padding="4"
+						Content="{icons:MaterialIconExt Menu}" />
+					<ToggleButton
+						Grid.Column="2"
+						Classes="Icon">
+						<icons:MaterialIcon Kind="ThemeLightDark"></icons:MaterialIcon>
+					</ToggleButton>
+					<Menu
+						Grid.Column="3">
+						<MenuItem
+							Width="24"
+							Height="24"
+							Header="{icons:MaterialIconExt DotsVertical}">
+							<MenuItem Header="Settings">
+								<MenuItem.Icon>
+									<icons:MaterialIcon Kind="Cog" Width="16" Height="16" />
+								</MenuItem.Icon>
 							</MenuItem>
-						</Menu>
-					</Grid>
-				</styles:ColorZone>
-				<ScrollViewer Name="mainScroller"
-                              DockPanel.Dock="Top"
-                              HorizontalContentAlignment="Stretch"
-                              HorizontalAlignment="Stretch"
-                              HorizontalScrollBarVisibility="Disabled">
-					<Border HorizontalAlignment="Stretch"
-                            VerticalAlignment="Stretch">
-						<Carousel Name="PageCarousel"
-                                  HorizontalAlignment="Stretch">
-							<Carousel.Styles>
-								<Style Selector="Carousel#PageCarousel:not(.notransitions)">
-									<Setter Property="PageTransition">
-										<PageSlide Duration="0.25" SlideOutEasing="CircularEaseOut"
-                                                   SlideInEasing="CircularEaseOut" />
-									</Setter>
-								</Style>
-							</Carousel.Styles>
-						</Carousel>
-					</Border>
-				</ScrollViewer>
-			</DockPanel>
-		</styles:NavigationDrawer>
-	</styles:SnackbarHost>
+							<MenuItem Header="About">
+								<MenuItem.Icon>
+									<icons:MaterialIcon Kind="AlertCircle" Width="16" Height="16" />
+								</MenuItem.Icon>
+							</MenuItem>
+						</MenuItem>
+					</Menu>
+				</Grid>
+			</styles:ColorZone>
+			<Grid Grid.Row="1">
+				<Label>
+					Main area
+				</Label>
+			</Grid>
+			<styles:ColorZone
+				Grid.Row="2"
+				Height="42"
+				Padding="12,0,12,0">
+				<Grid
+					HorizontalAlignment="Right"
+					ColumnDefinitions="Auto,Auto">
+					<Menu
+						Grid.Column="0">
+						<MenuItem
+							Width="16"
+							Height="16"
+							Header="{icons:MaterialIconExt AlertCircle}">
+							<MenuItem Header="OBS">
+								<MenuItem.Icon>
+									<icons:MaterialIcon Kind="AlertCircle" Width="16" Height="16" />
+								</MenuItem.Icon>
+							</MenuItem>
+							<MenuItem Header="Twitch" 								  >
+								<MenuItem.Icon>
+									<icons:MaterialIcon Kind="AlertCircle" Width="16" Height="16" />
+								</MenuItem.Icon>
+							</MenuItem>
+							<MenuItem Header="YouTube" 								  >
+								<MenuItem.Icon>
+									<icons:MaterialIcon Kind="AlertCircle" Width="16" Height="16" />
+								</MenuItem.Icon>
+							</MenuItem>
+							<MenuItem Header="Streamer.Bot" 								  >
+								<MenuItem.Icon>
+									<icons:MaterialIcon Kind="AlertCircle" Width="16" Height="16" />
+								</MenuItem.Icon>
+							</MenuItem>
+						</MenuItem>
+					</Menu>
+				</Grid>
+			</styles:ColorZone>
+		</Grid>
+	</styles:NavigationDrawer>
 </Window>
