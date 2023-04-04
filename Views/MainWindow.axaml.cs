@@ -4,6 +4,8 @@ using Avalonia.Controls.Primitives;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using StreamerBotSkin.Controls;
+using static StreamerBotSkin.Pages.ActionsView;
+using System.Collections.ObjectModel;
 
 namespace StreamerBotSkin.Views
 {
