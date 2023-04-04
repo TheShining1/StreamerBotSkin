@@ -1,0 +1,44 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="StreamerBotSkin.Controls.MainDrawer"
+			 xmlns:styles="clr-namespace:Material.Styles;assembly=Material.Styles">
+	<ScrollViewer>
+		<StackPanel>
+			<styles:ColorZone Mode="Accent" Padding="12">
+				<StackPanel>
+					<Button Classes="Headline6" HorizontalAlignment="Center">Save</Button>
+					<styles:Card
+						Background="Transparent"
+						BorderBrush="Transparent"
+						Padding="12">
+						<Grid
+							ColumnDefinitions="*,*">
+							<Button
+								Grid.Column="0"
+								Classes="Subtitle1">Import</Button>
+							<Button
+								Grid.Column="1"
+								Classes="Subtitle1">Export</Button>
+						</Grid>
+					</styles:Card>
+				</StackPanel>
+			</styles:ColorZone>
+			<ListBox Classes="Drawer" Name="DrawerList"
+						 Focusable="{Binding ElementName=LeftDrawer, Path=LeftDrawerOpened}">
+				<ListBox.Styles>
+					<Style Selector="ListBoxItem">
+						<Setter Property="Height" Value="48" />
+						<Setter Property="Padding" Value="16,0" />
+						<Setter Property="VerticalContentAlignment" Value="Center" />
+						<Setter Property="IsEnabled" Value="{Binding $self.Content.IsEnabled}" />
+					</Style>
+				</ListBox.Styles>
+				<TextBlock Classes="Body2" Text="Main"/>
+				<TextBlock Classes="Body2" Text="Actions"/>
+			</ListBox>
+		</StackPanel>
+	</ScrollViewer>
+</UserControl>

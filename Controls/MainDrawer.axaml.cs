@@ -1,22 +1,21 @@
-using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Controls.Primitives;
 using Avalonia.Input;
 using Avalonia.Interactivity;
-using StreamerBotSkin.Controls;
+using StreamerBotSkin.Views;
 
-namespace StreamerBotSkin.Views
+namespace StreamerBotSkin.Controls
 {
-    public partial class MainWindow : Window
+    public partial class MainDrawer : UserControl
     {
-        public MainWindow()
-        {            
+        public MainDrawer()
+        {
             InitializeComponent();
 
-            DrawerList.PointerReleased += DrawerSelectionChanged;
+            DrawerList = this.Get<ListBox>(nameof(DrawerList));
+            PointerReleased += DrawerSelectionChanged;
             DrawerList.KeyUp += DrawerList_KeyUp;
 
-            PageCarousel = this.Get<Carousel>(nameof(PageCarousel));
+            //PageCarousel = this.Get<Carousel>(nameof(PageCarousel));
         }
         private void DrawerList_KeyUp(object sender, KeyEventArgs e)
         {
@@ -30,9 +29,7 @@ namespace StreamerBotSkin.Views
             if (!listBox.IsFocused && !listBox.IsKeyboardFocusWithin)
                 return;
 
-            PageCarousel.SelectedIndex = listBox.SelectedIndex;
-
-            NavDrawerSwitch.IsChecked = false;
+            //PageCarousel.SelectedIndex = listBox.SelectedIndex;
         }
     }
 }
