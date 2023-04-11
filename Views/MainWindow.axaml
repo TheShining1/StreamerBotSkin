@@ -96,7 +96,7 @@
 				  Margin="10">
 				<Carousel Name="PageCarousel"
 						  HorizontalAlignment="Stretch"
-						  Grid.Row="1">
+						  Grid.Row="0">
 					<Carousel.Styles>
 						<Style Selector="Carousel#PageCarousel:not(.notransitions)">
 							<Setter Property="PageTransition">

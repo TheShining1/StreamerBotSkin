@@ -5,19 +5,22 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
     x:Class="StreamerBotSkin.Pages.ActionsView">
-	<Grid RowDefinitions="50, Auto">
-        <TextBlock Grid.Row="0">ActionsView</TextBlock>
-		<DataGrid Grid.Row="1"
-				  Name="ActionsGrid"
-				  Items="{Binding SBActions}"
-				  AutoGenerateColumns="True">
-<!--		
-			<DataGrid.Columns>
-				<DataGridTextColumn Header="ID"
-									Binding="{Binding ID}"/>
-				<DataGridTextColumn Header="Name"
-									Binding="{Binding Name}"/>
-				<DataGridTemplateColumn Header="ID">
+	<Grid ColumnDefinitions="*, 5, *">
+		<Grid Grid.Column="0"
+			  RowDefinitions="Auto, *">
+			<TextBlock Grid.Row="0"
+					   Margin="5">Actions</TextBlock>
+			<DataGrid Name="ActionsGrid"
+					  Grid.Row="1"
+					  AutoGenerateColumns="False">
+				<DataGrid.Columns>
+					<DataGridTextColumn Header="ID"
+										Binding="{Binding ID}"/>
+					<DataGridTextColumn Header="Name"
+										Binding="{Binding Name}"/>
+					<DataGridTextColumn Header="Options"
+										Binding="{Binding Options}"/>
+					<!--<DataGridTemplateColumn Header="ID">
 					<DataGridTemplateColumn.CellTemplate>
 						<DataTemplate DataType="SBAction">
 						<TextBlock Text="{Binding ID}"
@@ -32,9 +35,23 @@
 									   HorizontalAlignment="Center"/>
 						</DataTemplate>
 					</DataGridTemplateColumn.CellEditingTemplate>
-				</DataGridTemplateColumn>
-			</DataGrid.Columns>
--->
-		</DataGrid>
+				</DataGridTemplateColumn>-->
+				</DataGrid.Columns>
+			</DataGrid>
+		</Grid>
+		<GridSplitter Grid.Column="1"/>
+		<Grid Grid.Column="2"
+			  RowDefinitions="Auto, *">
+			<TextBlock Grid.Row="0"
+					   Margin="5">Sub-Actions</TextBlock>
+			<TreeView Grid.Row="1"
+					  Name="SubActionsTree">
+				<TreeView.ItemTemplate>
+					<TreeDataTemplate>
+						<TextBlock Text="{Binding Name}"/>
+					</TreeDataTemplate>
+				</TreeView.ItemTemplate>
+			</TreeView>
+		</Grid>
 	</Grid>
 </UserControl>

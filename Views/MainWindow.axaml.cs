@@ -6,6 +6,7 @@ using Avalonia.Interactivity;
 using StreamerBotSkin.Controls;
 using static StreamerBotSkin.Pages.ActionsView;
 using System.Collections.ObjectModel;
+using static StreamerBotSkin.Views.MainWindow;
 
 namespace StreamerBotSkin.Views
 {
