@@ -8,6 +8,7 @@ using System.Collections.ObjectModel;
 using System.Reactive.Linq;
 using System.Xml.Linq;
 using StreamerBotSkin.Classes;
+using Avalonia.Collections;
 
 namespace StreamerBotSkin.Pages
 {
@@ -20,7 +21,10 @@ namespace StreamerBotSkin.Pages
             ActionsGrid = this.Get<DataGrid>(nameof(ActionsGrid));
             SubActionsTree = this.Get<TreeView>(nameof(SubActionsTree));
 
-            if (ActionsGrid != null) ActionsGrid.Items = SBAction.GetAll();
+            var actionsCollectionView = new DataGridCollectionView(SBAction.GetAll());
+            actionsCollectionView.GroupDescriptions.Add(new DataGridPathGroupDescription("Group"));
+
+            if (ActionsGrid != null) ActionsGrid.Items = actionsCollectionView;
             if (SubActionsTree != null) SubActionsTree.Items = SBSubAction.GetAll();
         }
 

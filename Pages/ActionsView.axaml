@@ -4,6 +4,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 	mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+	xmlns:classes="clr-namespace:StreamerBotSkin.Classes"
     x:Class="StreamerBotSkin.Pages.ActionsView">
 	<Grid ColumnDefinitions="*, 5, *">
 		<Grid Grid.Column="0"
@@ -13,30 +14,49 @@
 			<DataGrid Name="ActionsGrid"
 					  Grid.Row="1"
 					  AutoGenerateColumns="False">
+				<!--<DataGrid.RowDetailsTemplate>
+					<DataTemplate>
+						<Expander Header="SomeText">
+							<TextBlock TextWrapping="Wrap" Text="SomeText" />
+						</Expander>
+					</DataTemplate>
+				</DataGrid.RowDetailsTemplate>-->
+				<!--<DataGrid.Columns>
+					<DataGridTemplateColumn>
+						<DataGridTemplateColumn.CellTemplate>
+							<DataTemplate>
+								<Expander Header="SomeText">
+									<TextBlock TextWrapping="Wrap" Text="SomeText" />
+								</Expander>
+							</DataTemplate>
+						</DataGridTemplateColumn.CellTemplate>
+					</DataGridTemplateColumn>
+				</DataGrid.Columns>-->
 				<DataGrid.Columns>
-					<DataGridTextColumn Header="Name"
-										Binding="{Binding Name}"/>
-					<DataGridTextColumn Header="Options"
-										Binding="{Binding Options}"/>
-					<DataGridTextColumn Header="Queue"
-										Binding="{Binding Queue}"/>
-					<!--<DataGridTemplateColumn Header="ID">
+				<DataGridTextColumn Header="Name"
+									Binding="{Binding Name}">
+				</DataGridTextColumn>
+				<DataGridTextColumn Header="Options"
+									Binding="{Binding Options}"/>
+				<DataGridTextColumn Header="Queue"
+									Binding="{Binding Queue}"/>
+				<DataGridTemplateColumn Header="ID">
 					<DataGridTemplateColumn.CellTemplate>
-						<DataTemplate DataType="SBAction">
-						<TextBlock Text="{Binding ID}"
-								   VerticalAlignment="Center"
-								   HorizontalAlignment="Center"/>
+						<DataTemplate DataType="classes:SBAction">
+							<TextBlock Text="{Binding ID}"
+										VerticalAlignment="Center"
+										HorizontalAlignment="Center"/>
 						</DataTemplate>
 					</DataGridTemplateColumn.CellTemplate>
 					<DataGridTemplateColumn.CellEditingTemplate>
-						<DataTemplate DataType="SBAction">
+						<DataTemplate DataType="classes:SBAction">
 							<TextBlock Text="{Binding Name}"
-									   VerticalAlignment="Center"
-									   HorizontalAlignment="Center"/>
+										VerticalAlignment="Center"
+										HorizontalAlignment="Center"/>
 						</DataTemplate>
 					</DataGridTemplateColumn.CellEditingTemplate>
-				</DataGridTemplateColumn>-->
-				</DataGrid.Columns>
+				</DataGridTemplateColumn>
+			</DataGrid.Columns>
 			</DataGrid>
 		</Grid>
 		<GridSplitter Grid.Column="1"/>
