@@ -72,6 +72,7 @@
 								  Classes="Flat TransparentBack"
 								  Content="{icons:MaterialIconExt Menu}"/>
 					<ToggleButton Grid.Column="2"
+								  Name="ThemeToggle"
 								  Classes="Icon">
 						<icons:MaterialIcon Kind="ThemeLightDark"></icons:MaterialIcon>
 					</ToggleButton>
@@ -91,25 +92,21 @@
 					</Menu>
 				</Grid>
 			</styles:ColorZone>
-			<Grid RowDefinitions="Auto, Auto"
-				  Grid.Row="1"
-				  Margin="10">
-				<Carousel Name="PageCarousel"
-						  HorizontalAlignment="Stretch"
-						  Grid.Row="0">
-					<Carousel.Styles>
-						<Style Selector="Carousel#PageCarousel:not(.notransitions)">
-							<Setter Property="PageTransition">
-								<PageSlide Duration="0.25"
-										   SlideOutEasing="CircularEaseOut"
-										   SlideInEasing="CircularEaseOut" />
-							</Setter>
-						</Style>
-					</Carousel.Styles>
+			<Carousel Name="PageCarousel"
+					  Grid.Row="1"
+					  Padding="5">
+				<Carousel.Styles>
+					<Style Selector="Carousel#PageCarousel:not(.notransitions)">
+						<Setter Property="PageTransition">
+							<PageSlide Duration="0.25"
+										SlideOutEasing="CircularEaseOut"
+										SlideInEasing="CircularEaseOut" />
+						</Setter>
+					</Style>
+				</Carousel.Styles>					
 					<pages:MainView/>
-					<pages:ActionsView/>
-				</Carousel>
-			</Grid>
+					<pages:ActionsView/>						
+			</Carousel>
 			<styles:ColorZone Grid.Row="2"
 							  Height="42"
 							  Padding="12,0,12,0">

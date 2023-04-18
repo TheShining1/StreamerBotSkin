@@ -40,10 +40,10 @@ namespace StreamerBotSkin.Classes
         {
             return new ObservableCollection<SBAction>(){
                 new SBAction() { ID = 0, Name = "action0", Enabled = true, Queue=null, ExcludedFromHistory = true, Group = null, AlwaysRun = false, RandomAction = false, Concurrent = false, SBSubActions = new List<SBSubAction>() },
-                new SBAction() { ID = 1, Name = "action1", Enabled = true, Queue="soundalerts", ExcludedFromHistory = false, Group = null, AlwaysRun = true, RandomAction = false, Concurrent = false, SBSubActions = new List<SBSubAction>() },
-                new SBAction() { ID = 2, Name = "action2", Enabled = true, Queue="game", ExcludedFromHistory = false, Group = "games", AlwaysRun = false, RandomAction = true, Concurrent = false, SBSubActions = new List<SBSubAction>() },
-                new SBAction() { ID = 3, Name = "action3", Enabled = true, Queue="chat", ExcludedFromHistory = false, Group = "games", AlwaysRun = false, RandomAction = false, Concurrent = true, SBSubActions = new List<SBSubAction>() },
-                new SBAction() { ID = 3, Name = "action4", Enabled = true, Queue="brb", ExcludedFromHistory = false, Group = "brb", AlwaysRun = false, RandomAction = false, Concurrent = false, SBSubActions = new List<SBSubAction>() }
+                new SBAction() { ID = 1, Name = "action2", Enabled = true, Queue="0", ExcludedFromHistory = false, Group = null, AlwaysRun = true, RandomAction = false, Concurrent = false, SBSubActions = new List<SBSubAction>() },
+                new SBAction() { ID = 2, Name = "action4", Enabled = true, Queue="1", ExcludedFromHistory = false, Group = "games", AlwaysRun = false, RandomAction = true, Concurrent = false, SBSubActions = new List<SBSubAction>() },
+                new SBAction() { ID = 3, Name = "action1", Enabled = true, Queue="2", ExcludedFromHistory = false, Group = "games", AlwaysRun = false, RandomAction = false, Concurrent = true, SBSubActions = new List<SBSubAction>() },
+                new SBAction() { ID = 3, Name = "action3", Enabled = true, Queue="3", ExcludedFromHistory = false, Group = "brb", AlwaysRun = false, RandomAction = false, Concurrent = false, SBSubActions = new List<SBSubAction>() }
             };
         }
     }

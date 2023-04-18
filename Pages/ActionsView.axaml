@@ -3,17 +3,19 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
 	mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
 	xmlns:classes="clr-namespace:StreamerBotSkin.Classes"
     x:Class="StreamerBotSkin.Pages.ActionsView">
-	<Grid ColumnDefinitions="*, 5, *">
+	<Grid ColumnDefinitions="2*, 5, *">
 		<Grid Grid.Column="0"
 			  RowDefinitions="Auto, *">
 			<TextBlock Grid.Row="0"
 					   Margin="5">Actions</TextBlock>
 			<DataGrid Name="ActionsGrid"
 					  Grid.Row="1"
-					  AutoGenerateColumns="False">
+					  AutoGenerateColumns="False"
+					  ColumnWidth="*">
 				<!--<DataGrid.RowDetailsTemplate>
 					<DataTemplate>
 						<Expander Header="SomeText">
@@ -32,46 +34,78 @@
 						</DataGridTemplateColumn.CellTemplate>
 					</DataGridTemplateColumn>
 				</DataGrid.Columns>-->
+				
 				<DataGrid.Columns>
-				<DataGridTextColumn Header="Name"
-									Binding="{Binding Name}">
-				</DataGridTextColumn>
-				<DataGridTextColumn Header="Options"
-									Binding="{Binding Options}"/>
-				<DataGridTextColumn Header="Queue"
-									Binding="{Binding Queue}"/>
-				<DataGridTemplateColumn Header="ID">
-					<DataGridTemplateColumn.CellTemplate>
-						<DataTemplate DataType="classes:SBAction">
-							<TextBlock Text="{Binding ID}"
-										VerticalAlignment="Center"
-										HorizontalAlignment="Center"/>
-						</DataTemplate>
-					</DataGridTemplateColumn.CellTemplate>
-					<DataGridTemplateColumn.CellEditingTemplate>
-						<DataTemplate DataType="classes:SBAction">
-							<TextBlock Text="{Binding Name}"
-										VerticalAlignment="Center"
-										HorizontalAlignment="Center"/>
-						</DataTemplate>
-					</DataGridTemplateColumn.CellEditingTemplate>
-				</DataGridTemplateColumn>
-			</DataGrid.Columns>
-			</DataGrid>
+					<DataGridTextColumn Header="Name"
+										Binding="{Binding Name}">
+					</DataGridTextColumn>
+					<DataGridTextColumn Header="Options"
+										Binding="{Binding Options}"/>
+					<DataGridTextColumn Header="Queue"
+										Binding="{Binding Queue}"/>
+					<DataGridTextColumn Header="ID"
+										Binding="{Binding ID}"/>
+					<DataGridTemplateColumn>
+						<DataGridTemplateColumn.CellTemplate>
+							<DataTemplate>
+								<StackPanel Orientation="Horizontal">
+									<Button Classes="Flat">
+										<icons:MaterialIcon
+											Kind="PencilOutline"
+											Width="24"
+											Height="24" />
+									</Button>
+									<Button Classes="Flat">
+										<icons:MaterialIcon
+											Kind="DeleteForeverOutline"
+											Width="24"
+											Height="24" />
+									</Button>
+								</StackPanel>
+							</DataTemplate>
+						</DataGridTemplateColumn.CellTemplate>
+					</DataGridTemplateColumn>
+				</DataGrid.Columns>
+			
+		</DataGrid>
 		</Grid>
 		<GridSplitter Grid.Column="1"/>
 		<Grid Grid.Column="2"
-			  RowDefinitions="Auto, *">
+			  RowDefinitions="Auto, 2*, *">
 			<TextBlock Grid.Row="0"
 					   Margin="5">Sub-Actions</TextBlock>
 			<TreeView Grid.Row="1"
 					  Name="SubActionsTree">
 				<TreeView.ItemTemplate>
 					<TreeDataTemplate>
-						<TextBlock Text="{Binding Name}"/>
+						<Grid ColumnDefinitions="Auto, *, Auto, Auto">
+							<icons:MaterialIcon Grid.Column="0"
+												HorizontalAlignment="Left"
+												Kind="DotsVertical"/>
+							<TextBlock Grid.Column="1"
+									   VerticalAlignment="Center"
+									   Text="{Binding Name}"/>
+							<Button Grid.Column="2"
+									Classes="Flat">
+								<icons:MaterialIcon
+									Kind="PencilOutline"/>
+							</Button>
+							<Button Grid.Column="3"
+									Classes="Flat">
+								<icons:MaterialIcon
+									Kind="DeleteForeverOutline"/>
+							</Button>
+						</Grid>
 					</TreeDataTemplate>
 				</TreeView.ItemTemplate>
 			</TreeView>
+			<Panel Grid.Row="2"
+				   Margin="5">
+				<Border BorderBrush="Gray"
+						BorderThickness="0.5">
+					<TextBlock>Info</TextBlock>
+				</Border>
+			</Panel>
 		</Grid>
 	</Grid>
 </UserControl>

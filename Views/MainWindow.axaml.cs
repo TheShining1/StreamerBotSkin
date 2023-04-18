@@ -3,10 +3,9 @@ using Avalonia.Controls;
 using Avalonia.Controls.Primitives;
 using Avalonia.Input;
 using Avalonia.Interactivity;
-using StreamerBotSkin.Controls;
-using static StreamerBotSkin.Pages.ActionsView;
-using System.Collections.ObjectModel;
-using static StreamerBotSkin.Views.MainWindow;
+using Material.Styles.Themes;
+using Material.Styles.Themes.Base;
+using Material.Colors;
 
 namespace StreamerBotSkin.Views
 {
@@ -20,6 +19,10 @@ namespace StreamerBotSkin.Views
             DrawerList.KeyUp += DrawerList_KeyUp;
 
             PageCarousel = this.Get<Carousel>(nameof(PageCarousel));
+            ThemeToggle = this.Get<ToggleButton>(nameof(ThemeToggle));
+
+            ThemeToggle.Checked += HandleCheck;
+            ThemeToggle.Unchecked += HandleUnchecked;
         }
         private void DrawerList_KeyUp(object sender, KeyEventArgs e)
         {
@@ -36,6 +39,28 @@ namespace StreamerBotSkin.Views
             PageCarousel.SelectedIndex = listBox.SelectedIndex;
 
             NavDrawerSwitch.IsChecked = false;
+        }
+
+        public bool IsDarkTheme { get; set; }
+
+        public void HandleCheck(object sender, RoutedEventArgs e)
+        {
+            var ph = new PaletteHelper();
+            var theme = ph.GetTheme();
+            theme.SetPrimaryColor(SwatchHelper.Lookup[MaterialColor.Blue200]);
+            theme.SetSecondaryColor(SwatchHelper.Lookup[MaterialColor.Pink200]);
+            theme.SetBaseTheme(BaseThemeMode.Dark.GetBaseTheme());
+            ph.SetTheme(theme);
+        }
+
+        public void HandleUnchecked(object sender, RoutedEventArgs e)
+        {
+            var ph = new PaletteHelper();
+            var theme = ph.GetTheme();
+            theme.SetPrimaryColor(SwatchHelper.Lookup[MaterialColor.Blue]);
+            theme.SetSecondaryColor(SwatchHelper.Lookup[MaterialColor.Pink400]);
+            theme.SetBaseTheme(BaseThemeMode.Light.GetBaseTheme());
+            ph.SetTheme(theme);
         }
     }
 }
