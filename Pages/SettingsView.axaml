@@ -1,0 +1,129 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="StreamerBotSkin.Pages.SettingsView">
+	<Grid RowDefinitions="Auto, *">
+		<TextBlock Grid.Row="0"
+				   Margin="5"
+				   FontSize="18"
+				   FontWeight="Bold">Settings</TextBlock>
+		<TabControl Grid.Row="1"
+					SelectedIndex="3">
+			<TabItem Header="General">
+				<ScrollViewer>
+					<Grid Margin="10"
+						  RowDefinitions="Auto,*,Auto">
+						<TextBlock Grid.Row="0">Instance information</TextBlock>
+						<StackPanel Grid.Row="1"
+									Margin="10">
+							<Grid ColumnDefinitions="Auto,*,Auto"
+								  RowDefinitions="Auto, Auto">
+								<TextBlock Grid.Column="0"
+										   Grid.Row="0"
+										   VerticalAlignment="Center"
+										   Margin="5">ID</TextBlock>
+								<TextBlock Grid.Column="1"
+										   Grid.Row="0"
+										   VerticalAlignment="Center"
+										   Margin="5">345w3g45g5gw-4tw43t-e4tbe4vt-e4te4vct</TextBlock>
+								<Button Grid.Column="2"
+										Grid.Row="0"
+										VerticalAlignment="Center"
+										Margin="5">Reset</Button>
+								<TextBlock Grid.Column="0"
+										   Grid.Row="1"
+										   VerticalAlignment="Center"
+										   Margin="5">Name</TextBlock>
+								<TextBox Grid.Column="1"
+										 Grid.Row="1"
+										 VerticalAlignment="Center"
+										 Margin="5">345w3g45g5gw-4tw43t-e4tbe4vt-e4te4vct</TextBox>
+								<Button Grid.Column="2"
+										Grid.Row="1"
+										VerticalAlignment="Center"
+										Margin="5">Save</Button>
+							</Grid>
+						</StackPanel>
+						<Grid Grid.Row="2"
+							  ColumnDefinitions="*, Auto">
+							<ComboBox x:Name="debugLevels"
+									  Grid.Column="1"></ComboBox>
+						</Grid>
+					</Grid>
+				</ScrollViewer>
+			</TabItem>
+			<TabItem Header="Interface">
+				<ScrollViewer>
+					<Grid Margin="10"
+						  RowDefinitions="Auto,Auto,Auto,Auto">
+						<TextBlock Grid.Row="0">Action Colors</TextBlock>
+						<StackPanel Grid.Row="1">
+							<Grid ColumnDefinitions="*,Auto">
+								<TextBox x:Name="CommentColor"
+										 Grid.Column="0"></TextBox>
+								<Button Grid.Column="1"
+										Margin="20 0 0 0">...</Button>
+							</Grid>
+							<Grid ColumnDefinitions="*,Auto">
+								<TextBox x:Name="DisabledColor"
+										  Grid.Column="0"></TextBox>
+								<Button Grid.Column="1"
+										VerticalAlignment="Center"
+										Margin="20 0 0 0">...</Button>
+							</Grid>
+						</StackPanel>
+						<StackPanel Grid.Row="2">
+							<CheckBox>Minimize to tray</CheckBox>
+							<CheckBox>Confirmation on close</CheckBox>
+						</StackPanel>
+						<Button Grid.Row="3">Reset Delete Confirations</Button>
+					</Grid>
+				</ScrollViewer>
+			</TabItem>
+			<TabItem Header="Audio">
+				<ScrollViewer>
+					<Grid Margin="10"
+						  RowDefinitions="Auto,Auto,Auto">
+						<TextBlock Grid.Row="0">Audio output device</TextBlock>
+						<ComboBox Grid.Row="1"
+								  Padding="10"
+								  x:Name="audioDevices"></ComboBox>
+						<Grid  Grid.Row="2"
+							   ColumnDefinitions="Auto, *, Auto">
+							<CheckBox Grid.Column="0">Use system default when selected device not found</CheckBox>
+							<Button Grid.Column="2">Refresh</Button>
+						</Grid>
+					</Grid>
+				</ScrollViewer>
+			</TabItem>
+			<TabItem Header="C# Compiler">
+				<ScrollViewer>
+					<Grid Margin="10"
+						  RowDefinitions="Auto, *, Auto">
+						<TextBlock Grid.Row="0">Common references</TextBlock>
+						<TextBox Grid.Row="1"
+								 x:Name="refBox">
+						</TextBox>
+						<CheckBox Grid.Row="2">Auto complete braces and quotes</CheckBox>
+					</Grid>
+				</ScrollViewer>
+			</TabItem>
+			<TabItem Header="Labs">
+				<ScrollViewer>
+					<Grid RowDefinitions="Auto,Auto,Auto"
+						  Margin="10">
+						<TextBlock Grid.Row="0">Alternative queue</TextBlock>
+						<CheckBox Grid.Row="1">Enabled</CheckBox>
+						<StackPanel Grid.Row="2">
+							<TextBlock>This experimental feature introduces a new Action queue system</TextBlock>
+							<TextBlock>This setting requires a restart after enabling or disabling</TextBlock>
+						</StackPanel>
+					</Grid>
+				</ScrollViewer>
+			</TabItem>
+		</TabControl>
+	</Grid>
+</UserControl>
