@@ -5,12 +5,14 @@
     <Nullable>enable</Nullable>
     <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
     <ApplicationManifest>app.manifest</ApplicationManifest>
+	<XamlDebuggingInformation>True</XamlDebuggingInformation>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
     <AvaloniaResource Include="Assets\**" />
+    <AvaloniaXaml Remove="Pages\UserControl1.axaml" />
     <AvaloniaXaml Remove="Views\Actions.axaml" />
+    <Compile Remove="Pages\UserControl1.axaml.cs" />
     <None Remove=".gitignore" />
   </ItemGroup>
 

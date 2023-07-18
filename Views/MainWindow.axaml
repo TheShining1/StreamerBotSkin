@@ -15,7 +15,6 @@
         Title="StreamerBotSkin"
 		ExtendClientAreaToDecorationsHint="False"
 		HasSystemDecorations="True">
-
 	<Design.DataContext>
 		<!-- This only sets the DataContext for the previewer in an IDE,
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
@@ -65,37 +64,61 @@
 		<Grid RowDefinitions="Auto, *, Auto"
 			  ColumnDefinitions="*">
 			<styles:ColorZone Grid.Row="0">
-				<Grid ColumnDefinitions="Auto, *, Auto, Auto"
-					  VerticalAlignment="Center">
-					<ToggleButton Grid.Column="0"
+				<Grid ColumnDefinitions="Auto, *, Auto">
+					<StackPanel Grid.Column="0"
+								Orientation="Horizontal"
+								VerticalAlignment="Stretch">
+						<ToggleButton
+								  Classes="Flat"
 								  Name="NavDrawerSwitch"
-								  Classes="Flat TransparentBack"
-								  Content="{icons:MaterialIconExt Menu}"/>
-					<ToggleButton Grid.Column="2"
-								  Name="ThemeToggle"
-								  Classes="Icon">
-						<icons:MaterialIcon Kind="ThemeLightDark"></icons:MaterialIcon>
-					</ToggleButton>
-					<Menu Grid.Column="3">
-						<MenuItem Header="{icons:MaterialIconExt DotsVertical}">
-							<MenuItem Header="Settings">
-								<MenuItem.Icon>
-									<icons:MaterialIcon Kind="Cog" />
-								</MenuItem.Icon>
+								  VerticalAlignment="Stretch">
+							<icons:MaterialIcon Kind="Menu"/>							
+						</ToggleButton>
+						<Button Classes="Flat"
+								Foreground="Black"
+								VerticalAlignment="Stretch">
+							<icons:MaterialIcon Kind="ContentSave"/>
+						</Button>
+					</StackPanel>
+					<StackPanel Grid.Column="1"
+								Orientation="Horizontal">						
+					</StackPanel>
+					<StackPanel Grid.Column="2"
+								Orientation="Horizontal"
+								VerticalAlignment="Stretch">
+						<ToggleButton Name="ThemeToggle"
+									  Classes="Flat"
+									  VerticalAlignment="Stretch">
+							<icons:MaterialIcon Kind="ThemeLightDark"/>
+						</ToggleButton>
+						<Menu Width="48"
+							  Height="48">
+							<MenuItem VerticalAlignment="Stretch"
+									  Padding="16">
+								<MenuItem.Header>
+									<icons:MaterialIcon Kind="DotsVertical"/>
+								</MenuItem.Header>								
+								<MenuItem Header="Settings"
+										  Click="OpenSettings">
+									<MenuItem.Icon>
+										<icons:MaterialIcon Kind="Cog" />
+									</MenuItem.Icon>
+								</MenuItem>
+								<MenuItem Header="About"
+										  Command="{Binding AboutDialog_Open}">
+									<MenuItem.Icon>
+										<icons:MaterialIcon Kind="AlertCircle" />
+									</MenuItem.Icon>
+								</MenuItem>
 							</MenuItem>
-							<MenuItem Header="About">
-								<MenuItem.Icon>
-									<icons:MaterialIcon Kind="AlertCircle" />
-								</MenuItem.Icon>
-							</MenuItem>
-						</MenuItem>
-					</Menu>
+						</Menu>
+					</StackPanel>
 				</Grid>
 			</styles:ColorZone>
 			<Carousel Name="PageCarousel"
 					  Grid.Row="1"
 					  Padding="5">
-				<Carousel.Styles>
+				<!--<Carousel.Styles>
 					<Style Selector="Carousel#PageCarousel:not(.notransitions)">
 						<Setter Property="PageTransition">
 							<PageSlide Duration="0.25"
@@ -103,9 +126,10 @@
 										SlideInEasing="CircularEaseOut" />
 						</Setter>
 					</Style>
-				</Carousel.Styles>					
-					<pages:MainView/>
-					<pages:ActionsView/>						
+				</Carousel.Styles>-->
+				<pages:MainView/>
+				<pages:ActionsView/>
+				<pages:SettingsView/>
 			</Carousel>
 			<styles:ColorZone Grid.Row="2"
 							  Height="42"

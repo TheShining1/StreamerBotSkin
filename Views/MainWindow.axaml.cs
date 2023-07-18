@@ -6,6 +6,8 @@ using Avalonia.Interactivity;
 using Material.Styles.Themes;
 using Material.Styles.Themes.Base;
 using Material.Colors;
+using Material.Dialog;
+using StreamerBotSkin.Dialogs;
 
 namespace StreamerBotSkin.Views
 {
@@ -14,6 +16,7 @@ namespace StreamerBotSkin.Views
         public MainWindow()
         {            
             InitializeComponent();
+            //DataContext = new ViewModels.MainWindowViewModel();
 
             DrawerList.PointerReleased += DrawerSelectionChanged;
             DrawerList.KeyUp += DrawerList_KeyUp;
@@ -23,7 +26,15 @@ namespace StreamerBotSkin.Views
 
             ThemeToggle.Checked += HandleCheck;
             ThemeToggle.Unchecked += HandleUnchecked;
+
+            Program.MainWindow = this;
         }
+
+        private void OpenSettings(object sender, RoutedEventArgs e)
+        {
+            PageCarousel.SelectedIndex = 2;
+        }
+
         private void DrawerList_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Space || e.Key == Key.Enter)
@@ -47,8 +58,8 @@ namespace StreamerBotSkin.Views
         {
             var ph = new PaletteHelper();
             var theme = ph.GetTheme();
-            theme.SetPrimaryColor(SwatchHelper.Lookup[MaterialColor.Blue200]);
-            theme.SetSecondaryColor(SwatchHelper.Lookup[MaterialColor.Pink200]);
+            //theme.SetPrimaryColor(SwatchHelper.Lookup[MaterialColor.Blue200]);
+            //theme.SetSecondaryColor(SwatchHelper.Lookup[MaterialColor.Pink200]);
             theme.SetBaseTheme(BaseThemeMode.Dark.GetBaseTheme());
             ph.SetTheme(theme);
         }
@@ -57,8 +68,8 @@ namespace StreamerBotSkin.Views
         {
             var ph = new PaletteHelper();
             var theme = ph.GetTheme();
-            theme.SetPrimaryColor(SwatchHelper.Lookup[MaterialColor.Blue]);
-            theme.SetSecondaryColor(SwatchHelper.Lookup[MaterialColor.Pink400]);
+            //theme.SetPrimaryColor(SwatchHelper.Lookup[MaterialColor.Blue]);
+            //theme.SetSecondaryColor(SwatchHelper.Lookup[MaterialColor.Pink400]);
             theme.SetBaseTheme(BaseThemeMode.Light.GetBaseTheme());
             ph.SetTheme(theme);
         }

@@ -11,6 +11,7 @@ using StreamerBotSkin.Classes;
 using Avalonia.Collections;
 using System;
 using Avalonia.Controls.Templates;
+using StreamerBotSkin.Controls;
 
 namespace StreamerBotSkin.Pages
 {
@@ -23,7 +24,7 @@ namespace StreamerBotSkin.Pages
             ActionsGrid = this.Get<DataGrid>(nameof(ActionsGrid));
             SubActionsTree = this.Get<TreeView>(nameof(SubActionsTree));
 
-            ActionsGrid.LoadingRowGroup += OnLoadingRowGroup;
+            //ActionsGrid.LoadingRowGroup += OnLoadingRowGroup;
 
             var actionsCollectionView = new DataGridCollectionView(SBAction.GetAll());
             actionsCollectionView.GroupDescriptions.Add(new DataGridPathGroupDescription("Group"));
@@ -34,7 +35,7 @@ namespace StreamerBotSkin.Pages
 
         private void OnLoadingRowGroup(object sender, DataGridRowGroupHeaderEventArgs e)
         {
-            e.RowGroupHeader.Template = new FuncControlTemplate((x,y) => new TextBlock{Text = "Test"});
+            e.RowGroupHeader.Template = new FuncControlTemplate((x,y) => new GroupHeaderControl());
         }
         
 

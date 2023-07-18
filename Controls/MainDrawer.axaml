@@ -26,8 +26,9 @@
 					</styles:Card>
 				</StackPanel>
 			</styles:ColorZone>
-			<ListBox Classes="Drawer" Name="DrawerList"
-						 Focusable="{Binding ElementName=LeftDrawer, Path=LeftDrawerOpened}">
+			<ListBox Classes="Drawer"
+					 Name="DrawerList"
+					 Focusable="{Binding ElementName=LeftDrawer, Path=LeftDrawerOpened}">
 				<ListBox.Styles>
 					<Style Selector="ListBoxItem">
 						<Setter Property="Height" Value="48" />

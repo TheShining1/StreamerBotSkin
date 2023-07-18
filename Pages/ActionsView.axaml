@@ -7,6 +7,26 @@
 	mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
 	xmlns:classes="clr-namespace:StreamerBotSkin.Classes"
     x:Class="StreamerBotSkin.Pages.ActionsView">
+	<UserControl.Styles>
+		<Style Selector="ToggleButton:unchecked">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate>
+						<icons:MaterialIcon Kind="ChevronDown"/>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+		<Style Selector="ToggleButton:checked">
+			<Setter Property="Template">
+				<Setter.Value>
+					<ControlTemplate>
+						<icons:MaterialIcon Kind="ChevronUp"/>
+					</ControlTemplate>
+				</Setter.Value>
+			</Setter>
+		</Style>
+	</UserControl.Styles>
 	<Grid ColumnDefinitions="2*, 5, *">
 		<Grid Grid.Column="0"
 			  RowDefinitions="Auto, *">
@@ -34,7 +54,6 @@
 						</DataGridTemplateColumn.CellTemplate>
 					</DataGridTemplateColumn>
 				</DataGrid.Columns>-->
-				
 				<DataGrid.Columns>
 					<DataGridTextColumn Header="Name"
 										Binding="{Binding Name}">
@@ -49,13 +68,22 @@
 						<DataGridTemplateColumn.CellTemplate>
 							<DataTemplate>
 								<StackPanel Orientation="Horizontal">
-									<Button Classes="Flat">
+									<Button Classes="Flat"
+											Padding="5 0">
+										<icons:MaterialIcon
+											Kind="Play"
+											Width="24"
+											Height="24"/>
+									</Button>
+									<Button Classes="Flat"
+											Padding="5 0">
 										<icons:MaterialIcon
 											Kind="PencilOutline"
 											Width="24"
 											Height="24" />
 									</Button>
-									<Button Classes="Flat">
+									<Button Classes="Flat"
+											Padding="5 0">
 										<icons:MaterialIcon
 											Kind="DeleteForeverOutline"
 											Width="24"
@@ -65,9 +93,8 @@
 							</DataTemplate>
 						</DataGridTemplateColumn.CellTemplate>
 					</DataGridTemplateColumn>
-				</DataGrid.Columns>
-			
-		</DataGrid>
+				</DataGrid.Columns>			
+			</DataGrid>
 		</Grid>
 		<GridSplitter Grid.Column="1"/>
 		<Grid Grid.Column="2"
@@ -78,23 +105,28 @@
 					  Name="SubActionsTree">
 				<TreeView.ItemTemplate>
 					<TreeDataTemplate>
-						<Grid ColumnDefinitions="Auto, *, Auto, Auto">
+						<Grid ColumnDefinitions="Auto, *, Auto">
 							<icons:MaterialIcon Grid.Column="0"
 												HorizontalAlignment="Left"
 												Kind="DotsVertical"/>
 							<TextBlock Grid.Column="1"
 									   VerticalAlignment="Center"
 									   Text="{Binding Name}"/>
-							<Button Grid.Column="2"
-									Classes="Flat">
-								<icons:MaterialIcon
-									Kind="PencilOutline"/>
-							</Button>
-							<Button Grid.Column="3"
-									Classes="Flat">
-								<icons:MaterialIcon
-									Kind="DeleteForeverOutline"/>
-							</Button>
+							<StackPanel Grid.Column="2"
+										Orientation="Horizontal">								
+								<Button Classes="Flat"
+											Padding="5">
+									<icons:MaterialIcon Kind="Play"/>
+								</Button>
+								<Button Classes="Flat"
+											Padding="5">
+									<icons:MaterialIcon Kind="PencilOutline"/>
+								</Button>
+								<Button Classes="Flat"
+											Padding="5">
+									<icons:MaterialIcon Kind="DeleteForeverOutline"/>
+								</Button>
+							</StackPanel>
 						</Grid>
 					</TreeDataTemplate>
 				</TreeView.ItemTemplate>
