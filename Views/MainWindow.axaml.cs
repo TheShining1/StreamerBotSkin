@@ -73,5 +73,6 @@ namespace StreamerBotSkin.Views
             theme.SetBaseTheme(BaseThemeMode.Light.GetBaseTheme());
             ph.SetTheme(theme);
         }
+
     }
 }
