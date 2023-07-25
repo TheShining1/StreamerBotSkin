@@ -18,79 +18,16 @@
 	<Design.DataContext>
 		<vm:MainWindowViewModel/>
 	</Design.DataContext>
-	<styles:NavigationDrawer Name="LeftDrawer"
+	<styles:NavigationDrawer x:Name="LeftDrawer"
 							 LeftDrawerOpened="{Binding ElementName=MainBarEl, Path=Content.Content.Children[0].Children[0].IsChecked, Mode=TwoWay}">		
 		<styles:NavigationDrawer.LeftDrawerContent>
-			<ScrollViewer>
-				<StackPanel>
-					<Grid ColumnDefinitions="*,*,*"
-						  Margin="10">
-						<Button
-							Grid.Column="0"
-							Classes="Subtitle1">
-							<StackPanel Orientation="Horizontal">									
-								<icons:MaterialIcon Kind="Import"
-													Margin="0 0 10 0"/>
-								<TextBlock>Import</TextBlock>
-							</StackPanel>
-						</Button>
-						<Button
-							Grid.Column="2"
-							Classes="Subtitle1">
-							<StackPanel Orientation="Horizontal">
-								<TextBlock>Export</TextBlock>
-								<icons:MaterialIcon Kind="Export"
-													Margin="10 0 0 0"/>
-							</StackPanel>
-						</Button>
-					</Grid>
-					<Separator/>
-					<ListBox Classes="Drawer"
-							 Name="DrawerList"
-							 Focusable="{Binding ElementName=LeftDrawer, Path=LeftDrawerOpened}">
-						<ListBox.Styles>
-							<Style Selector="ListBoxItem">
-								<Setter Property="Height" Value="48" />
-								<Setter Property="Padding" Value="16,0" />
-								<Setter Property="VerticalContentAlignment" Value="Center" />
-								<Setter Property="IsEnabled" Value="{Binding $self.Content.IsEnabled}" />
-							</Style>
-						</ListBox.Styles>
-						<TextBlock Classes="Body2" Text="Main"/>
-						<TextBlock Classes="Body2" Text="Actions"/>
-					</ListBox>
-					<Separator/>
-					<Button HorizontalAlignment="Center">
-						<StackPanel Orientation="Horizontal">
-							<icons:MaterialIcon Kind="Download"
-												Margin="0 0 10 0"/>
-							<TextBlock>Check for updates</TextBlock>
-						</StackPanel>
-					</Button>
-				</StackPanel>
-			</ScrollViewer>
+			<controls:MainDrawer x:Name="MainDrawer"/>			
 		</styles:NavigationDrawer.LeftDrawerContent>
 		<Grid RowDefinitions="Auto, *, Auto"
 			  ColumnDefinitions="*">			
 			<controls:MainBar x:Name="MainBarEl" Grid.Row="0"/>
-			<controls:MainCarousel
-					  Grid.Row="1"/>
-			<!--<Carousel Name="PageCarousel"
-					  Grid.Row="1"
-					  Padding="5">
-				--><!--<Carousel.Styles>
-					<Style Selector="Carousel#PageCarousel:not(.notransitions)">
-						<Setter Property="PageTransition">
-							<PageSlide Duration="0.25"
-										SlideOutEasing="CircularEaseOut"
-										SlideInEasing="CircularEaseOut" />
-						</Setter>
-					</Style>
-				</Carousel.Styles>--><!--
-				<pages:MainView/>
-				<pages:ActionsView/>
-				<pages:SettingsView/>
-			</Carousel>-->
+			<controls:MainCarousel x:Name="MainCarousel"
+								   Grid.Row="1"/>
 			<controls:Footer Grid.Row="2"
 							 Padding="0 5 0 0"/>		
 		</Grid>

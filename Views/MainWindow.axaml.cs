@@ -18,8 +18,8 @@ namespace StreamerBotSkin.Views
             InitializeComponent();
             //DataContext = new ViewModels.MainWindowViewModel();
 
-            DrawerList.PointerReleased += DrawerSelectionChanged;
-            DrawerList.KeyUp += DrawerList_KeyUp;
+            //DrawerList.PointerReleased += DrawerSelectionChanged;
+            //DrawerList.KeyUp += DrawerList_KeyUp;
 
             //PageCarousel = this.Get<Carousel>(nameof(PageCarousel));
             //ThemeToggle = this.Get<ToggleButton>(nameof(ThemeToggle));
@@ -35,22 +35,22 @@ namespace StreamerBotSkin.Views
         //    PageCarousel.SelectedIndex = 2;
         //}
 
-        private void DrawerList_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.Key == Key.Space || e.Key == Key.Enter)
-                DrawerSelectionChanged(sender, null);
-        }
+        //private void DrawerList_KeyUp(object sender, KeyEventArgs e)
+        //{
+        //    if (e.Key == Key.Space || e.Key == Key.Enter)
+        //        DrawerSelectionChanged(sender, null);
+        //}
 
-        public void DrawerSelectionChanged(object sender, RoutedEventArgs args)
-        {
-            var listBox = sender as ListBox;
-            if (!listBox.IsFocused && !listBox.IsKeyboardFocusWithin)
-                return;
+        //public void DrawerSelectionChanged(object sender, RoutedEventArgs args)
+        //{
+        //    var listBox = sender as ListBox;
+        //    if (!listBox.IsFocused && !listBox.IsKeyboardFocusWithin)
+        //        return;
 
-            //PageCarousel.SelectedIndex = listBox.SelectedIndex;
+        //    //PageCarousel.SelectedIndex = listBox.SelectedIndex;
 
-            //NavDrawerSwitch.IsChecked = false;
-        }
+        //    //NavDrawerSwitch.IsChecked = false;
+        //}
 
         public bool IsDarkTheme { get; set; }
 

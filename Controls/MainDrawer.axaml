@@ -4,28 +4,32 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="StreamerBotSkin.Controls.MainDrawer"
-			 xmlns:styles="clr-namespace:Material.Styles;assembly=Material.Styles">
+			 xmlns:styles="clr-namespace:Material.Styles;assembly=Material.Styles"
+			 xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia">
 	<ScrollViewer>
 		<StackPanel>
-			<styles:ColorZone Mode="Accent" Padding="12">
-				<StackPanel>
-					<Button Classes="Headline6" HorizontalAlignment="Center">Save</Button>
-					<styles:Card
-						Background="Transparent"
-						BorderBrush="Transparent"
-						Padding="12">
-						<Grid
-							ColumnDefinitions="*,*">
-							<Button
-								Grid.Column="0"
-								Classes="Subtitle1">Import</Button>
-							<Button
-								Grid.Column="1"
-								Classes="Subtitle1">Export</Button>
-						</Grid>
-					</styles:Card>
-				</StackPanel>
-			</styles:ColorZone>
+			<Grid ColumnDefinitions="*,*,*"
+				  Margin="10">
+				<Button
+					Grid.Column="0"
+					Classes="Subtitle1">
+					<StackPanel Orientation="Horizontal">
+						<icons:MaterialIcon Kind="Import"
+											Margin="0 0 10 0"/>
+						<TextBlock>Import</TextBlock>
+					</StackPanel>
+				</Button>
+				<Button
+					Grid.Column="2"
+					Classes="Subtitle1">
+					<StackPanel Orientation="Horizontal">
+						<TextBlock>Export</TextBlock>
+						<icons:MaterialIcon Kind="Export"
+											Margin="10 0 0 0"/>
+					</StackPanel>
+				</Button>
+			</Grid>
+			<Separator/>
 			<ListBox Classes="Drawer"
 					 Name="DrawerList"
 					 Focusable="{Binding ElementName=LeftDrawer, Path=LeftDrawerOpened}">
@@ -40,6 +44,14 @@
 				<TextBlock Classes="Body2" Text="Main"/>
 				<TextBlock Classes="Body2" Text="Actions"/>
 			</ListBox>
+			<Separator/>
+			<Button HorizontalAlignment="Center">
+				<StackPanel Orientation="Horizontal">
+					<icons:MaterialIcon Kind="Download"
+										Margin="0 0 10 0"/>
+					<TextBlock>Check for updates</TextBlock>
+				</StackPanel>
+			</Button>
 		</StackPanel>
 	</ScrollViewer>
 </UserControl>
