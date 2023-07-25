@@ -25,12 +25,12 @@ namespace StreamerBotSkin.ViewModels
 
         public ICommand ChangeThemeCommand { get; }
 
-        public void AboutDialog_Open()
-        {
-            var dialog = new AboutDialog();
-            dialog.Width = Program.MainWindow.Width * 0.9;
-            dialog.ShowDialog(Program.MainWindow);
-        }
+        //public void AboutDialog_Open()
+        //{
+        //    var dialog = new AboutDialog();
+        //    dialog.Width = Program.MainWindow.Width * 0.9;
+        //    dialog.ShowDialog(Program.MainWindow);
+        //}
 
     }
 }
