@@ -1,0 +1,49 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="StreamerBotSkin.Controls.Footer"
+			 xmlns:styles="clr-namespace:Material.Styles;assembly=Material.Styles"
+			 xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia">
+	<styles:ColorZone Height="42"
+					  Padding="5">
+		<Grid HorizontalAlignment="Right"
+			  ColumnDefinitions="Auto,Auto">
+			<Menu Grid.Column="0">
+				<MenuItem Width="16"
+						  Height="16"
+						  Header="{icons:MaterialIconExt AlertCircle}">
+					<MenuItem Header="OBS">
+						<MenuItem.Icon>
+							<icons:MaterialIcon Kind="AlertCircle"
+												Width="16"
+												Height="16" />
+						</MenuItem.Icon>
+					</MenuItem>
+					<MenuItem Header="Twitch" 								  >
+						<MenuItem.Icon>
+							<icons:MaterialIcon Kind="AlertCircle"
+												Width="16"
+												Height="16" />
+						</MenuItem.Icon>
+					</MenuItem>
+					<MenuItem Header="YouTube" 								  >
+						<MenuItem.Icon>
+							<icons:MaterialIcon Kind="AlertCircle"
+												Width="16"
+												Height="16" />
+						</MenuItem.Icon>
+					</MenuItem>
+					<MenuItem Header="Streamer.Bot" 								  >
+						<MenuItem.Icon>
+							<icons:MaterialIcon Kind="AlertCircle"
+												Width="16"
+												Height="16" />
+						</MenuItem.Icon>
+					</MenuItem>
+				</MenuItem>
+			</Menu>
+		</Grid>
+	</styles:ColorZone>
+</UserControl>

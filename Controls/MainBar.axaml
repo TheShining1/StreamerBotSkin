@@ -14,7 +14,8 @@
 				<ToggleButton
 						  Classes="Flat"
 						  Name="NavDrawerSwitch"
-						  VerticalAlignment="Stretch">
+						  VerticalAlignment="Stretch"
+						  IsChecked="{Binding IsDrawerOpen, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}, Mode=TwoWay}">
 					<icons:MaterialIcon Kind="Menu"/>
 				</ToggleButton>
 				<Button Classes="Flat"
@@ -22,6 +23,8 @@
 						VerticalAlignment="Stretch">
 					<icons:MaterialIcon Kind="ContentSave"/>
 				</Button>
+				<TextBlock Text="{Binding IsDrawerOpen, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}, Mode=TwoWay}"></TextBlock>
+				<TextBlock Text="{Binding IsChecked, ElementName=NavDrawerSwitch}"></TextBlock>
 			</StackPanel>
 			<StackPanel Grid.Column="1"
 						Orientation="Horizontal">
@@ -41,7 +44,9 @@
 						<MenuItem.Header>
 							<icons:MaterialIcon Kind="DotsVertical"/>
 						</MenuItem.Header>
-						<MenuItem Header="Settings">
+						<MenuItem Header="Settings"
+								  Command="{Binding	ChangePage}"
+								  CommandParameter="2">
 							<MenuItem.Icon>
 								<icons:MaterialIcon Kind="Cog" />
 							</MenuItem.Icon>

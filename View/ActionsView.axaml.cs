@@ -23,14 +23,16 @@ namespace StreamerBotSkin.Pages
 
             ActionsGrid = this.Get<DataGrid>(nameof(ActionsGrid));
             SubActionsTree = this.Get<TreeView>(nameof(SubActionsTree));
+            TriggersGrid = this.Get<DataGrid>(nameof(TriggersGrid));
 
-            //ActionsGrid.LoadingRowGroup += OnLoadingRowGroup;
+            ActionsGrid.LoadingRowGroup += OnLoadingRowGroup;
 
             var actionsCollectionView = new DataGridCollectionView(SBAction.GetAll());
             actionsCollectionView.GroupDescriptions.Add(new DataGridPathGroupDescription("Group"));
 
             if (ActionsGrid != null) ActionsGrid.Items = actionsCollectionView;
             if (SubActionsTree != null) SubActionsTree.Items = SBSubAction.GetAll();
+            if (TriggersGrid != null) TriggersGrid.Items = SBTrigger.GetAll();
         }
 
         private void OnLoadingRowGroup(object sender, DataGridRowGroupHeaderEventArgs e)

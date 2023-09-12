@@ -8,20 +8,25 @@ using Material.Styles.Themes.Base;
 using Material.Colors;
 using Material.Dialog;
 using StreamerBotSkin.Dialogs;
+using StreamerBotSkin.Controls;
+using StreamerBotSkin.ViewModels;
 
 namespace StreamerBotSkin.Views
 {
     public partial class MainWindow : Window
     {
+        public Carousel PageCarousel;
         public MainWindow()
         {            
             InitializeComponent();
-            //DataContext = new ViewModels.MainWindowViewModel();
+            //MainWindowViewModel vm = new ViewModels.MainWindowViewModel();
+            //DataContext = vm;
 
             //DrawerList.PointerReleased += DrawerSelectionChanged;
             //DrawerList.KeyUp += DrawerList_KeyUp;
 
-            //PageCarousel = this.Get<Carousel>(nameof(PageCarousel));
+            //PageCarousel = MainCarousel.Get<Carousel>(nameof(PageCarousel));
+            //PageCarousel.SelectedIndex = vm.currentPage;
             //ThemeToggle = this.Get<ToggleButton>(nameof(ThemeToggle));
 
             //ThemeToggle.Checked += HandleCheck;

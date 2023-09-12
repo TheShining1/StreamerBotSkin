@@ -6,7 +6,7 @@
     xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
 	mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
 	xmlns:classes="clr-namespace:StreamerBotSkin.Classes"
-    x:Class="StreamerBotSkin.Pages.ActionsView">
+	 x:Class="StreamerBotSkin.Pages.ActionsView">
 	<UserControl.Styles>
 		<Style Selector="ToggleButton:unchecked">
 			<Setter Property="Template">
@@ -56,8 +56,7 @@
 				</DataGrid.Columns>-->
 				<DataGrid.Columns>
 					<DataGridTextColumn Header="Name"
-										Binding="{Binding Name}">
-					</DataGridTextColumn>
+										Binding="{Binding Name}"/>
 					<DataGridTextColumn Header="Options"
 										Binding="{Binding Options}"/>
 					<DataGridTextColumn Header="Queue"
@@ -93,45 +92,68 @@
 							</DataTemplate>
 						</DataGridTemplateColumn.CellTemplate>
 					</DataGridTemplateColumn>
-				</DataGrid.Columns>			
+				</DataGrid.Columns>
 			</DataGrid>
 		</Grid>
 		<GridSplitter Grid.Column="1"/>
 		<Grid Grid.Column="2"
-			  RowDefinitions="Auto, 2*, *">
-			<TextBlock Grid.Row="0"
-					   Margin="5">Sub-Actions</TextBlock>
-			<TreeView Grid.Row="1"
-					  Name="SubActionsTree">
-				<TreeView.ItemTemplate>
-					<TreeDataTemplate>
-						<Grid ColumnDefinitions="Auto, *, Auto">
-							<icons:MaterialIcon Grid.Column="0"
-												HorizontalAlignment="Left"
-												Kind="DotsVertical"/>
-							<TextBlock Grid.Column="1"
-									   VerticalAlignment="Center"
-									   Text="{Binding Name}"/>
-							<StackPanel Grid.Column="2"
-										Orientation="Horizontal">								
-								<Button Classes="Flat"
-											Padding="5">
-									<icons:MaterialIcon Kind="Play"/>
-								</Button>
-								<Button Classes="Flat"
-											Padding="5">
-									<icons:MaterialIcon Kind="PencilOutline"/>
-								</Button>
-								<Button Classes="Flat"
-											Padding="5">
-									<icons:MaterialIcon Kind="DeleteForeverOutline"/>
-								</Button>
-							</StackPanel>
-						</Grid>
-					</TreeDataTemplate>
-				</TreeView.ItemTemplate>
-			</TreeView>
-			<Panel Grid.Row="2"
+			  RowDefinitions="*, 5, *, 5, *">
+			<Grid Grid.Row="0"
+				  RowDefinitions="Auto, *">
+				<TextBlock Grid.Row="0"
+						   Margin="5">Triggers</TextBlock>
+				<DataGrid Grid.Row="1"
+						  Name="TriggersGrid">
+					<DataGrid.Columns>
+						<DataGridTextColumn Header="Source"
+											Binding="{Binding Source}"/>
+						<DataGridTextColumn Header="Type"
+											Binding="{Binding Type}"/>
+						<DataGridTextColumn Header="Enabled"
+											Binding="{Binding Enabled}"/>
+						<DataGridTextColumn Header="Criteria"
+											Binding="{Binding Criteria}"/>
+					</DataGrid.Columns>
+				</DataGrid>
+			</Grid>
+			<GridSplitter Grid.Row="1"/>
+			<Grid Grid.Row="2"
+				  RowDefinitions="Auto, *">
+				<TextBlock Grid.Row="0"
+						   Margin="5">Sub-Actions</TextBlock>
+				<TreeView Grid.Row="1"
+						  Name="SubActionsTree">
+					<TreeView.ItemTemplate>
+						<TreeDataTemplate>
+							<Grid ColumnDefinitions="Auto, *, Auto">
+								<icons:MaterialIcon Grid.Column="0"
+													HorizontalAlignment="Left"
+													Kind="DotsVertical"/>
+								<TextBlock Grid.Column="1"
+										   VerticalAlignment="Center"
+										   Text="{Binding Name}"/>
+								<StackPanel Grid.Column="2"
+											Orientation="Horizontal">
+									<Button Classes="Flat"
+												Padding="5">
+										<icons:MaterialIcon Kind="Play"/>
+									</Button>
+									<Button Classes="Flat"
+												Padding="5">
+										<icons:MaterialIcon Kind="PencilOutline"/>
+									</Button>
+									<Button Classes="Flat"
+												Padding="5">
+										<icons:MaterialIcon Kind="DeleteForeverOutline"/>
+									</Button>
+								</StackPanel>
+							</Grid>
+						</TreeDataTemplate>
+					</TreeView.ItemTemplate>
+				</TreeView>
+			</Grid>
+			<GridSplitter Grid.Row="3"/>
+			<Panel Grid.Row="4"
 				   Margin="5">
 				<Border BorderBrush="Gray"
 						BorderThickness="0.5">

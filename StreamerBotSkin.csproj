@@ -10,9 +10,7 @@
 
   <ItemGroup>
     <AvaloniaResource Include="Assets\**" />
-    <AvaloniaXaml Remove="Pages\UserControl1.axaml" />
-    <AvaloniaXaml Remove="Views\Actions.axaml" />
-    <Compile Remove="Pages\UserControl1.axaml.cs" />
+    <AvaloniaXaml Remove="View\Actions.axaml" />
     <None Remove=".gitignore" />
   </ItemGroup>
 
@@ -30,5 +28,10 @@
     <PackageReference Include="Material.Avalonia" Version="2.5.1" />
     <PackageReference Include="Material.Icons.Avalonia" Version="1.1.10" />
     <PackageReference Include="XamlNameReferenceGenerator" Version="1.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Model\" />
+    <Folder Include="View\Settings\" />
   </ItemGroup>
 </Project>

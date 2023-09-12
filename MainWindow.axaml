@@ -15,11 +15,11 @@
         Title="StreamerBotSkin"
 		ExtendClientAreaToDecorationsHint="False"
 		HasSystemDecorations="True">
-	<Design.DataContext>
+	<!--<Design.DataContext>
 		<vm:MainWindowViewModel/>
-	</Design.DataContext>
+	</Design.DataContext>-->
 	<styles:NavigationDrawer x:Name="LeftDrawer"
-							 LeftDrawerOpened="{Binding ElementName=MainBarEl, Path=Content.Content.Children[0].Children[0].IsChecked, Mode=TwoWay}">		
+							 LeftDrawerOpened="{Binding ElementName=MainBarEl, Path=IsDrawerOpen, Mode=TwoWay}">		
 		<styles:NavigationDrawer.LeftDrawerContent>
 			<controls:MainDrawer x:Name="MainDrawer"/>			
 		</styles:NavigationDrawer.LeftDrawerContent>

@@ -1,9 +1,9 @@
+using Avalonia;
 using Avalonia.Controls;
-using Avalonia.Interactivity;
-using Material.Styles.Themes.Base;
-using Material.Styles.Themes;
-using StreamerBotSkin.Dialogs;
 using Avalonia.Controls.Primitives;
+using Avalonia.Data;
+using Avalonia.Interactivity;
+using StreamerBotSkin.Dialogs;
 
 namespace StreamerBotSkin.Controls
 {
@@ -13,34 +13,59 @@ namespace StreamerBotSkin.Controls
         {
             InitializeComponent();
 
-            ThemeToggle = this.Get<ToggleButton>(nameof(ThemeToggle));
-            ThemeToggle.Checked += HandleCheck;
-            ThemeToggle.Unchecked += HandleUnchecked;
+            //ThemeToggle = this.Get<ToggleButton>(nameof(ThemeToggle));
+            //ThemeToggle.Checked += HandleCheck;
+            //ThemeToggle.Unchecked += HandleUnchecked;
         }
-        public void HandleCheck(object sender, RoutedEventArgs e)
+       
+        public static readonly DirectProperty<ToggleButton, bool?> IsDrawerOpenProperty =
+            AvaloniaProperty.RegisterDirect<ToggleButton, bool?>(
+                nameof(IsDrawerOpen),
+                o => o.IsChecked,
+                (o, v) => o.IsChecked = v,
+                unsetValue: null,
+                defaultBindingMode: BindingMode.TwoWay);
+
+        private bool? _isDrawerOpen = false;
+        public bool? IsDrawerOpen
         {
-            var ph = new PaletteHelper();
-            var theme = ph.GetTheme();
-            //theme.SetPrimaryColor(SwatchHelper.Lookup[MaterialColor.Blue200]);
-            //theme.SetSecondaryColor(SwatchHelper.Lookup[MaterialColor.Pink200]);
-            theme.SetBaseTheme(BaseThemeMode.Dark.GetBaseTheme());
-            ph.SetTheme(theme);
+            get => _isDrawerOpen;
+            set
+            {
+                SetAndRaise(IsDrawerOpenProperty, ref _isDrawerOpen, value);
+            }
         }
 
-        public void HandleUnchecked(object sender, RoutedEventArgs e)
-        {
-            var ph = new PaletteHelper();
-            var theme = ph.GetTheme();
-            //theme.SetPrimaryColor(SwatchHelper.Lookup[MaterialColor.Blue]);
-            //theme.SetSecondaryColor(SwatchHelper.Lookup[MaterialColor.Pink400]);
-            theme.SetBaseTheme(BaseThemeMode.Light.GetBaseTheme());
-            ph.SetTheme(theme);
-        }
+        //public bool IsDrawerOpen
+        //{
+        //    get => GetValue(IsDrawerOpenProperty);
+        //    set => SetValue(IsDrawerOpenProperty, value);
+        //}
 
-        private void OpenSettings(object sender, RoutedEventArgs e)
-        {
-            //PageCarousel.SelectedIndex = 2;
-        }
+        //public void HandleCheck(object sender, RoutedEventArgs e)
+        //{
+        //    var ph = new PaletteHelper();
+        //    var theme = ph.GetTheme();
+        //    //theme.SetPrimaryColor(SwatchHelper.Lookup[MaterialColor.Blue200]);
+        //    //theme.SetSecondaryColor(SwatchHelper.Lookup[MaterialColor.Pink200]);
+        //    theme.SetBaseTheme(BaseThemeMode.Dark.GetBaseTheme());
+        //    ph.SetTheme(theme);
+        //}
+
+        //public void HandleUnchecked(object sender, RoutedEventArgs e)
+        //{
+        //    var ph = new PaletteHelper();
+        //    var theme = ph.GetTheme();
+        //    //theme.SetPrimaryColor(SwatchHelper.Lookup[MaterialColor.Blue]);
+        //    //theme.SetSecondaryColor(SwatchHelper.Lookup[MaterialColor.Pink400]);
+        //    theme.SetBaseTheme(BaseThemeMode.Light.GetBaseTheme());
+        //    ph.SetTheme(theme);
+        //}
+
+        //private void OpenSettings(object sender, RoutedEventArgs e)
+        //{
+        //    //PageCarousel.SelectedIndex = 2;
+        //}
 
         public void AboutDialog_Open(object sender, RoutedEventArgs args)
         {

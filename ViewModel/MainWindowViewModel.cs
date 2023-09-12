@@ -25,6 +25,13 @@ namespace StreamerBotSkin.ViewModels
 
         public ICommand ChangeThemeCommand { get; }
 
+        public int currentPage = 0;
+
+        public void ChangePage(int pageId)
+        {
+            this.currentPage = pageId;
+        }
+
         //public void AboutDialog_Open()
         //{
         //    var dialog = new AboutDialog();
