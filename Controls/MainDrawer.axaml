@@ -2,10 +2,9 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="StreamerBotSkin.Controls.MainDrawer"
-			 xmlns:styles="clr-namespace:Material.Styles;assembly=Material.Styles"
-			 xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia">
+             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="450"
+             x:Class="StreamerBotSkin.Controls.MainDrawer">
 	<ScrollViewer>
 		<StackPanel>
 			<Grid ColumnDefinitions="*,*,*"
@@ -14,7 +13,7 @@
 					Grid.Column="0"
 					Classes="Subtitle1">
 					<StackPanel Orientation="Horizontal">
-						<icons:MaterialIcon Kind="Import"
+						<mIcons:MaterialIcon Kind="Import"
 											Margin="0 0 10 0"/>
 						<TextBlock>Import</TextBlock>
 					</StackPanel>
@@ -24,21 +23,19 @@
 					Classes="Subtitle1">
 					<StackPanel Orientation="Horizontal">
 						<TextBlock>Export</TextBlock>
-						<icons:MaterialIcon Kind="Export"
+						<mIcons:MaterialIcon Kind="Export"
 											Margin="10 0 0 0"/>
 					</StackPanel>
 				</Button>
 			</Grid>
 			<Separator/>
 			<ListBox Classes="Drawer"
-					 Name="DrawerList"
-					 Focusable="{Binding ElementName=LeftDrawer, Path=LeftDrawerOpened}">
+					 Name="DrawerList">
 				<ListBox.Styles>
 					<Style Selector="ListBoxItem">
 						<Setter Property="Height" Value="48" />
 						<Setter Property="Padding" Value="16,0" />
 						<Setter Property="VerticalContentAlignment" Value="Center" />
-						<Setter Property="IsEnabled" Value="{Binding $self.Content.IsEnabled}" />
 					</Style>
 				</ListBox.Styles>
 				<TextBlock Classes="Body2" Text="Main"/>
@@ -47,7 +44,7 @@
 			<Separator/>
 			<Button HorizontalAlignment="Center">
 				<StackPanel Orientation="Horizontal">
-					<icons:MaterialIcon Kind="Download"
+					<mIcons:MaterialIcon Kind="Download"
 										Margin="0 0 10 0"/>
 					<TextBlock>Check for updates</TextBlock>
 				</StackPanel>

@@ -1,0 +1,36 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:StreamerBotSkin.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:mcCntrols="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
+		xmlns:sbControls="clr-namespace:StreamerBotSkin.Controls"
+		mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="StreamerBotSkin.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="StreamerBotSkin"
+		ExtendClientAreaToDecorationsHint="False">
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+
+	<mcCntrols:NavigationDrawer x:Name="LeftDrawer"
+								LeftDrawerOpened="{Binding ElementName=MainBarEl, Path=IsDrawerOpen, Mode=TwoWay}">
+		<mcCntrols:NavigationDrawer.LeftDrawerContent>
+			<sbControls:MainDrawer x:Name="MainDrawer"/>
+		</mcCntrols:NavigationDrawer.LeftDrawerContent>
+		<Grid RowDefinitions="Auto, *, Auto"
+			  ColumnDefinitions="*">
+			<sbControls:MainBar x:Name="MainBarEl"
+								Grid.Row="0"/>
+			<!--<controls:MainCarousel x:Name="MainCarousel"
+								   Grid.Row="1"/>-->
+			<sbControls:Footer Grid.Row="2"
+							   Padding="0 5 0 0"/>
+		</Grid>
+	</mcCntrols:NavigationDrawer>
+
+</Window>

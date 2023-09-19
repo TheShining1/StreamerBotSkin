@@ -1,2 +1,0 @@
-# StreamerBotSkin
-New StreamerBot UI

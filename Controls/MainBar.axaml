@@ -2,29 +2,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="42"
-             x:Class="StreamerBotSkin.Controls.MainBar"
-			 xmlns:styles="clr-namespace:Material.Styles;assembly=Material.Styles"
-			 xmlns:icons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia">
-	<styles:ColorZone Grid.Row="0">
+			 xmlns:mcontrols="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
+             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+			 xmlns:sbcontrols="clr-namespace:StreamerBotSkin.Controls"
+			 mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="500"
+             x:Class="StreamerBotSkin.Controls.MainBar">
+	<mcontrols:ColorZone Grid.Row="0">
 		<Grid ColumnDefinitions="Auto, *, Auto">
 			<StackPanel Grid.Column="0"
 						Orientation="Horizontal"
 						VerticalAlignment="Stretch">
 				<ToggleButton
 						  Classes="Flat"
-						  Name="NavDrawerSwitch"
+						  x:Name="NavDrawerSwitch"
 						  VerticalAlignment="Stretch"
-						  IsChecked="{Binding IsDrawerOpen, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}, Mode=TwoWay}">
-					<icons:MaterialIcon Kind="Menu"/>
+						  IsChecked="{Binding IsDrawerOpen RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}, Mode=TwoWay}">
+					<mIcons:MaterialIcon Kind="Menu"/>
 				</ToggleButton>
 				<Button Classes="Flat"
-						Foreground="Black"
 						VerticalAlignment="Stretch">
-					<icons:MaterialIcon Kind="ContentSave"/>
+					<mIcons:MaterialIcon Kind="ContentSave"/>
 				</Button>
-				<TextBlock Text="{Binding IsDrawerOpen, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}, Mode=TwoWay}"></TextBlock>
-				<TextBlock Text="{Binding IsChecked, ElementName=NavDrawerSwitch}"></TextBlock>
+				<!--<TextBlock Text="{Binding IsDrawerOpen, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}, Mode=TwoWay}"></TextBlock>-->
+				<!--<TextBlock Text="{Binding IsChecked, ElementName=NavDrawerSwitch}"></TextBlock>-->
 			</StackPanel>
 			<StackPanel Grid.Column="1"
 						Orientation="Horizontal">
@@ -35,31 +35,10 @@
 				<ToggleButton Name="ThemeToggle"
 							  Classes="Flat"
 							  VerticalAlignment="Stretch">
-					<icons:MaterialIcon Kind="ThemeLightDark"/>
+					<mIcons:MaterialIcon Kind="ThemeLightDark"/>
 				</ToggleButton>
-				<Menu Width="48"
-					  Height="48">
-					<MenuItem VerticalAlignment="Stretch"
-							  Padding="16">
-						<MenuItem.Header>
-							<icons:MaterialIcon Kind="DotsVertical"/>
-						</MenuItem.Header>
-						<MenuItem Header="Settings"
-								  Command="{Binding	ChangePage}"
-								  CommandParameter="2">
-							<MenuItem.Icon>
-								<icons:MaterialIcon Kind="Cog" />
-							</MenuItem.Icon>
-						</MenuItem>
-						<MenuItem Header="About"
-								  Click="AboutDialog_Open">
-							<MenuItem.Icon>
-								<icons:MaterialIcon Kind="AlertCircle" />
-							</MenuItem.Icon>
-						</MenuItem>
-					</MenuItem>
-				</Menu>
+				<sbcontrols:MainBarMenu />
 			</StackPanel>
 		</Grid>
-	</styles:ColorZone>
+	</mcontrols:ColorZone>
 </UserControl>
