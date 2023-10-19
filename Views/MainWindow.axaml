@@ -3,12 +3,11 @@
         xmlns:vm="using:StreamerBotSkin.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:mcCntrols="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
+        xmlns:mcControls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
 		xmlns:sbControls="clr-namespace:StreamerBotSkin.Controls"
 		mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="StreamerBotSkin.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
-        Icon="/Assets/avalonia-logo.ico"
         Title="StreamerBotSkin"
 		ExtendClientAreaToDecorationsHint="False">
     <Design.DataContext>
@@ -17,20 +16,21 @@
         <vm:MainWindowViewModel/>
     </Design.DataContext>
 
-	<mcCntrols:NavigationDrawer x:Name="LeftDrawer"
-								LeftDrawerOpened="{Binding ElementName=MainBarEl, Path=IsDrawerOpen, Mode=TwoWay}">
-		<mcCntrols:NavigationDrawer.LeftDrawerContent>
+	<mcControls:NavigationDrawer x:Name="LeftDrawer"
+								 LeftDrawerOpened="{Binding ElementName=MainBarEl, Path=IsDrawerOpen, Mode=TwoWay}">
+		<mcControls:NavigationDrawer.LeftDrawerContent>
 			<sbControls:MainDrawer x:Name="MainDrawer"/>
-		</mcCntrols:NavigationDrawer.LeftDrawerContent>
+		</mcControls:NavigationDrawer.LeftDrawerContent>
 		<Grid RowDefinitions="Auto, *, Auto"
 			  ColumnDefinitions="*">
 			<sbControls:MainBar x:Name="MainBarEl"
 								Grid.Row="0"/>
-			<!--<controls:MainCarousel x:Name="MainCarousel"
-								   Grid.Row="1"/>-->
+			<sbControls:MainCarousel x:Name="MainCarousel"
+									 Grid.Row="1"
+									 Padding="5"/>
 			<sbControls:Footer Grid.Row="2"
 							   Padding="0 5 0 0"/>
 		</Grid>
-	</mcCntrols:NavigationDrawer>
+	</mcControls:NavigationDrawer>
 
 </Window>

@@ -1,4 +1,6 @@
 using Avalonia.Controls;
+using Avalonia.Interactivity;
+using static StreamerBotSkin.Controls.MainDrawer;
 
 namespace StreamerBotSkin.Views
 {
@@ -7,6 +9,8 @@ namespace StreamerBotSkin.Views
         public MainWindow()
         {
             InitializeComponent();
+
+            Program.MainWindow = this;
         }
     }
 }

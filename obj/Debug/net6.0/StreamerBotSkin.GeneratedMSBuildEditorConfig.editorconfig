@@ -4,21 +4,19 @@ build_property.AvaloniaNameGeneratorBehavior = InitializeComponent
 build_property.AvaloniaNameGeneratorDefaultFieldModifier = internal
 build_property.AvaloniaNameGeneratorFilterByPath = *
 build_property.AvaloniaNameGeneratorFilterByNamespace = *
-build_property.TargetFramework = net6.0
-build_property.TargetPlatformMinVersion = 
-build_property.UsingMicrosoftNETSdkWeb = 
-build_property.ProjectTypeGuids = 
-build_property.InvariantGlobalization = 
-build_property.PlatformNeutralAssembly = 
-build_property.EnforceExtendedAnalyzerRules = 
-build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = StreamerBotSkin
 build_property.ProjectDir = C:\Stream\repos\StreamerBotSkin\
 
 [C:/Stream/repos/StreamerBotSkin/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[C:/Stream/repos/StreamerBotSkin/Controls/ActionsPanel.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [C:/Stream/repos/StreamerBotSkin/Controls/Footer.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Stream/repos/StreamerBotSkin/Controls/InfoPanel.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [C:/Stream/repos/StreamerBotSkin/Controls/MainBar.axaml]
@@ -27,8 +25,44 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 [C:/Stream/repos/StreamerBotSkin/Controls/MainBarMenu.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[C:/Stream/repos/StreamerBotSkin/Controls/MainCarousel.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [C:/Stream/repos/StreamerBotSkin/Controls/MainDrawer.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[C:/Stream/repos/StreamerBotSkin/Controls/Settings/SettingsMenu.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Stream/repos/StreamerBotSkin/Controls/SubActionsPanel.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Stream/repos/StreamerBotSkin/Controls/TriggersPanel.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Stream/repos/StreamerBotSkin/Dialogs/AboutDialog.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Stream/repos/StreamerBotSkin/Views/ActionsView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Stream/repos/StreamerBotSkin/Views/MainView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [C:/Stream/repos/StreamerBotSkin/Views/MainWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Stream/repos/StreamerBotSkin/Views/Settings/SettingsIntegrations.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Stream/repos/StreamerBotSkin/Views/Settings/SettingsMain.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Stream/repos/StreamerBotSkin/Views/Settings/SettingsPlatforms.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Stream/repos/StreamerBotSkin/Views/Settings/SettingsView.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Stream/repos/StreamerBotSkin/Views/Settings/StreamApps.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

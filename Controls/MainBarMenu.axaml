@@ -14,12 +14,13 @@
 				<mIcons:MaterialIcon Kind="DotsVertical"/>
 			</MenuItem.Header>
 			<MenuItem Header="Settings"
-					  CommandParameter="2">
+					  Click="OpenSettings">
 				<MenuItem.Icon>
 					<mIcons:MaterialIcon Kind="Cog" />
 				</MenuItem.Icon>
 			</MenuItem>
-			<MenuItem Header="About">
+			<MenuItem Header="About"
+					  Click="AboutDialog_Open">
 				<MenuItem.Icon>
 					<mIcons:MaterialIcon Kind="AlertCircle" />
 				</MenuItem.Icon>

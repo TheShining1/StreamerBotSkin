@@ -6,11 +6,23 @@
     <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
+    <RunAnalyzersDuringBuild>True</RunAnalyzersDuringBuild>
+    <RunAnalyzersDuringLiveAnalysis>False</RunAnalyzersDuringLiveAnalysis>
+    <EnableNETAnalyzers>False</EnableNETAnalyzers>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
     <AvaloniaResource Include="Assets\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AvaloniaResource Remove="Assets\actions.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Assets\actions.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
 
@@ -26,5 +38,13 @@
     <PackageReference Include="Material.Avalonia.DataGrid" Version="3.0.0" />
     <PackageReference Include="Material.Avalonia.Dialogs" Version="3.0.0" />
     <PackageReference Include="Material.Icons.Avalonia" Version="2.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Compile Update="Controls\ActionsPanel.axaml.cs">
+      <DependentUpon>ActionsPanel.axaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>

@@ -6,7 +6,8 @@
              xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
 			 xmlns:sbcontrols="clr-namespace:StreamerBotSkin.Controls"
 			 mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="500"
-             x:Class="StreamerBotSkin.Controls.MainBar">
+             x:Class="StreamerBotSkin.Controls.MainBar"
+			 x:Name="root">
 	<mcontrols:ColorZone Grid.Row="0">
 		<Grid ColumnDefinitions="Auto, *, Auto">
 			<StackPanel Grid.Column="0"
@@ -16,15 +17,13 @@
 						  Classes="Flat"
 						  x:Name="NavDrawerSwitch"
 						  VerticalAlignment="Stretch"
-						  IsChecked="{Binding IsDrawerOpen RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}, Mode=TwoWay}">
+						  IsChecked="{Binding IsDrawerOpen, ElementName=root}">
 					<mIcons:MaterialIcon Kind="Menu"/>
 				</ToggleButton>
 				<Button Classes="Flat"
 						VerticalAlignment="Stretch">
 					<mIcons:MaterialIcon Kind="ContentSave"/>
 				</Button>
-				<!--<TextBlock Text="{Binding IsDrawerOpen, RelativeSource={RelativeSource FindAncestor, AncestorType=UserControl}, Mode=TwoWay}"></TextBlock>-->
-				<!--<TextBlock Text="{Binding IsChecked, ElementName=NavDrawerSwitch}"></TextBlock>-->
 			</StackPanel>
 			<StackPanel Grid.Column="1"
 						Orientation="Horizontal">
@@ -32,9 +31,10 @@
 			<StackPanel Grid.Column="2"
 						Orientation="Horizontal"
 						VerticalAlignment="Stretch">
-				<ToggleButton Name="ThemeToggle"
+				<ToggleButton x:Name="ThemeToggle"
 							  Classes="Flat"
-							  VerticalAlignment="Stretch">
+							  VerticalAlignment="Stretch"
+							  Click="ThemeChange">
 					<mIcons:MaterialIcon Kind="ThemeLightDark"/>
 				</ToggleButton>
 				<sbcontrols:MainBarMenu />

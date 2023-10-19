@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "DDwdM0MfLe55dbIyobMu4lmlB9tfUvx/ZEZFTED/KrVQcbIuXtq+te5ymDe+cui3RE0lN+x/Upw+9KUs2bqjpQ==",
+  "dgSpecHash": "bFwo4DoVS5S8Yg/Lfq+I/0vFLJjY+TB4kdD6JVjGxJOvGNTC8XANGz8zaP9M0wnIw5IYSNUISPAYH/kStnIgJg==",
   "success": true,
   "projectFilePath": "C:\\Stream\\repos\\StreamerBotSkin\\StreamerBotSkin.csproj",
   "expectedPackageFiles": [
@@ -43,6 +43,7 @@
     "C:\\Users\\ShiningOne\\.nuget\\packages\\microsoft.netcore.platforms\\2.1.2\\microsoft.netcore.platforms.2.1.2.nupkg.sha512",
     "C:\\Users\\ShiningOne\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\ShiningOne\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\ShiningOne\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
     "C:\\Users\\ShiningOne\\.nuget\\packages\\reactiveui\\18.3.1\\reactiveui.18.3.1.nupkg.sha512",
     "C:\\Users\\ShiningOne\\.nuget\\packages\\skiasharp\\2.88.3\\skiasharp.2.88.3.nupkg.sha512",
     "C:\\Users\\ShiningOne\\.nuget\\packages\\skiasharp.nativeassets.linux\\2.88.3\\skiasharp.nativeassets.linux.2.88.3.nupkg.sha512",
