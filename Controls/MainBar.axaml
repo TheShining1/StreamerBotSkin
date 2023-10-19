@@ -1,0 +1,44 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+			 xmlns:mcontrols="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
+             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+			 xmlns:sbcontrols="clr-namespace:StreamerBotSkin.Controls"
+			 mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="500"
+             x:Class="StreamerBotSkin.Controls.MainBar"
+			 x:Name="root">
+	<mcontrols:ColorZone Grid.Row="0">
+		<Grid ColumnDefinitions="Auto, *, Auto">
+			<StackPanel Grid.Column="0"
+						Orientation="Horizontal"
+						VerticalAlignment="Stretch">
+				<ToggleButton
+						  Classes="Flat"
+						  x:Name="NavDrawerSwitch"
+						  VerticalAlignment="Stretch"
+						  IsChecked="{Binding IsDrawerOpen, ElementName=root}">
+					<mIcons:MaterialIcon Kind="Menu"/>
+				</ToggleButton>
+				<Button Classes="Flat"
+						VerticalAlignment="Stretch">
+					<mIcons:MaterialIcon Kind="ContentSave"/>
+				</Button>
+			</StackPanel>
+			<StackPanel Grid.Column="1"
+						Orientation="Horizontal">
+			</StackPanel>
+			<StackPanel Grid.Column="2"
+						Orientation="Horizontal"
+						VerticalAlignment="Stretch">
+				<ToggleButton x:Name="ThemeToggle"
+							  Classes="Flat"
+							  VerticalAlignment="Stretch"
+							  Click="ThemeChange">
+					<mIcons:MaterialIcon Kind="ThemeLightDark"/>
+				</ToggleButton>
+				<sbcontrols:MainBarMenu />
+			</StackPanel>
+		</Grid>
+	</mcontrols:ColorZone>
+</UserControl>
