@@ -3,6 +3,71 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:mControls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
+             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              x:Class="StreamerBotSkin.Views.PlatfromsSettingsView">
-  Platforms
+  <TabControl>
+    <TabControl.Items>
+      <TabItem Header="Twtich">
+        <Grid ColumnDefinitions="*,*">
+          <mControls:Card Grid.Column="0"
+                          MinWidth="240"
+                          VerticalAlignment="Center"
+                          Margin="10">
+            <StackPanel Margin="0,4">
+              <TextBlock Classes="Headline6" Text="Broadcaster" />
+              <TextBox Classes="solo" Theme="{StaticResource SoloTextBox}" Watermark="ShiningOne">
+                <TextBox.InnerLeftContent>
+                  <Button Classes="Flat" Padding="4" Content="{mIcons:MaterialIconExt Alert, Size=48}" />
+                </TextBox.InnerLeftContent>
+              </TextBox>
+            </StackPanel>
+          </mControls:Card>
+          <mControls:Card Grid.Column="1"
+                          MinWidth="240"
+                          VerticalAlignment="Center"
+                          Margin="10">
+            <StackPanel Margin="0,4">
+              <TextBlock Classes="Headline6" Text="Bot" />
+              <TextBox Classes="solo" Theme="{StaticResource SoloTextBox}" Watermark="ShiningOne">
+                <TextBox.InnerLeftContent>
+                  <Button Classes="Flat" Padding="4" Content="{mIcons:MaterialIconExt Alert, Size=48}" />
+                </TextBox.InnerLeftContent>
+              </TextBox>
+            </StackPanel>
+          </mControls:Card>
+        </Grid>
+      </TabItem>
+      <TabItem Header="YouTube">
+        <Grid ColumnDefinitions="*,*">
+          <mControls:Card Grid.Column="0"
+                          MinWidth="240"
+                          VerticalAlignment="Center"
+                          Margin="10">
+            <StackPanel Margin="0,4">
+              <TextBlock Classes="Headline6" Text="Broadcaster" />
+              <TextBox Classes="solo" Theme="{StaticResource SoloTextBox}" Watermark="ShiningOne">
+                <TextBox.InnerLeftContent>
+                  <Button Classes="Flat" Padding="4" Content="{mIcons:MaterialIconExt Alert, Size=48}" />
+                </TextBox.InnerLeftContent>
+              </TextBox>
+            </StackPanel>
+          </mControls:Card>
+          <mControls:Card Grid.Column="1"
+                          MinWidth="240"
+                          VerticalAlignment="Center"
+                          Margin="10">
+            <StackPanel Margin="0,4">
+              <TextBlock Classes="Headline6" Text="Bot" />
+              <TextBox Classes="solo" Theme="{StaticResource SoloTextBox}" Watermark="ShiningOne">
+                <TextBox.InnerLeftContent>
+                  <Button Classes="Flat" Padding="4" Content="{mIcons:MaterialIconExt Alert, Size=48}" />
+                </TextBox.InnerLeftContent>
+              </TextBox>
+            </StackPanel>
+          </mControls:Card>
+        </Grid>
+      </TabItem>
+    </TabControl.Items>
+  </TabControl>
 </UserControl>

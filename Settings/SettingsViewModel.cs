@@ -8,7 +8,7 @@ using ReactiveUI;
 
 namespace StreamerBotSkin.ViewModels
 {
-    internal class SettingsViewModel : ViewModelBase
+    public class SettingsViewModel : ViewModelBase
     {
         public string ModelName { get; set; } = "SettingsViewModel";
         public SettingsViewModel()
