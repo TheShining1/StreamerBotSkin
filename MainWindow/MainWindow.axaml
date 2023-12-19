@@ -6,30 +6,45 @@
         xmlns:mcControls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
 		xmlns:sbControls="clr-namespace:StreamerBotSkin.Controls"
 		mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+		xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+		x:CompileBindings="True"
         x:Class="StreamerBotSkin.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Title="StreamerBotSkin"
 		ExtendClientAreaToDecorationsHint="False">
-    <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+    <!--<Design.DataContext>
         <vm:MainWindowViewModel/>
-    </Design.DataContext>
+    </Design.DataContext>-->
 
 	<mcControls:NavigationDrawer x:Name="LeftDrawer"
 								 LeftDrawerOpened="{Binding ElementName=MainBarEl, Path=IsDrawerOpen, Mode=TwoWay}">
 		<mcControls:NavigationDrawer.LeftDrawerContent>
 			<sbControls:MainDrawer x:Name="MainDrawer"/>
+			<!--<Grid RowDefinitions="Auto,Auto">
+				<Button Grid.Row="0" Content="Main" Command="{Binding NavigateCommand}"/>
+				<Button Grid.Row="1" Content="Actions" Command="{Binding NavigateCommand}"/>
+			</Grid>-->
 		</mcControls:NavigationDrawer.LeftDrawerContent>
 		<Grid RowDefinitions="Auto, *, Auto"
 			  ColumnDefinitions="*">
 			<sbControls:MainBar x:Name="MainBarEl"
 								Grid.Row="0"/>
-			<sbControls:MainCarousel x:Name="MainCarousel"
+				<Grid RowDefinitions="*,Auto" Margin="10">
+					<StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="5"
+								HorizontalAlignment="Right">
+						<!--<Button Command="{Binding NavigateCommand}" Content="Main" />-->
+						<!--<Button Command="{Binding NavigateCommand}" Content="Actions" />-->
+						<TransitioningContentControl Content="{Binding CurrentViewModel}" Grid.Row="1"/>
+					</StackPanel>
+				</Grid>
+			<!--<sbControls:MainCarousel x:Name="MainCarousel"
 									 Grid.Row="1"
-									 Padding="5"/>
+									 Padding="5"
+									 DataContext="{Binding CurrentViewModel}"/>-->
+			
 			<sbControls:Footer Grid.Row="2"
 							   Padding="0 5 0 0"/>
+			<!--<TextBlock Grid.Row="2" Text="{Binding ModelName}"/>-->
 		</Grid>
 	</mcControls:NavigationDrawer>
 

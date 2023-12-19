@@ -4,6 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="450"
+			 xmlns:vm="using:StreamerBotSkin.ViewModels"
+			 x:DataType="vm:MainWindowViewModel"
              x:Class="StreamerBotSkin.Controls.MainDrawer">
 	<ScrollViewer>
 			<StackPanel>
@@ -31,15 +33,15 @@
 				<Separator/>
 				<ListBox Classes="Drawer"
 						 x:Name="DrawerList">
-					<ListBox.Styles>
+					<!--<ListBox.Styles>
 						<Style Selector="ListBoxItem">
 							<Setter Property="Height" Value="48" />
 							<Setter Property="Padding" Value="16,0" />
 							<Setter Property="VerticalContentAlignment" Value="Center" />
 						</Style>
-					</ListBox.Styles>
-					<TextBlock Classes="Body2" Text="Main"/>
-					<TextBlock Classes="Body2" Text="Actions"/>
+					</ListBox.Styles>-->
+					<Button Classes="Flat" Content="Main" Command="{Binding NavigateCommand}" CommandParameter="main"/>
+					<Button Classes="Flat" Content="Actions" Command="{Binding NavigateCommand}" CommandParameter="actions"/>
 				</ListBox>
 				<Separator/>
 				<Button HorizontalAlignment="Center">

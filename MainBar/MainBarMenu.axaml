@@ -5,6 +5,8 @@
 			 xmlns:mcontrols="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
              xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="400"
+			 xmlns:vm="using:StreamerBotSkin.ViewModels"
+			 x:DataType="vm:MainWindowViewModel"
              x:Class="StreamerBotSkin.Controls.MainBarMenu">
 	<Menu Width="48"
 		  Height="48">
@@ -14,7 +16,8 @@
 				<mIcons:MaterialIcon Kind="DotsVertical"/>
 			</MenuItem.Header>
 			<MenuItem Header="Settings"
-					  Click="OpenSettings">
+					  Command="{Binding NavigateCommand}"
+					  CommandParameter="settings">
 				<MenuItem.Icon>
 					<mIcons:MaterialIcon Kind="Cog" />
 				</MenuItem.Icon>

@@ -11,7 +11,7 @@ public partial class MainCarousel : UserControl
     {
         InitializeComponent();
 
-        GlobalCommands.mainCarousel = this;
+        //GlobalCommands.mainCarousel = this;
     }
 
     public static readonly DirectProperty<MainCarousel, int> SelectedViewProperty =

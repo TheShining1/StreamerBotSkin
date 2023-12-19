@@ -2,7 +2,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace StreamerBotSkin.Views.Settings;
+namespace StreamerBotSkin.Views;
 
 public partial class SettingsView : UserControl
 {
@@ -10,6 +10,6 @@ public partial class SettingsView : UserControl
     {
         InitializeComponent();
 
-        GlobalCommands.SettingsCarousel = SettingsCarousel;
+        //GlobalCommands.SettingsCarousel = SettingsCarousel;
     }
 }

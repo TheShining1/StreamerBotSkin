@@ -3,8 +3,19 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="StreamerBotSkin.Views.MainView"
+             x:Class="StreamerBotSkin.Views.SettingsView"
 			 xmlns:vm="using:StreamerBotSkin.ViewModels"
-			 x:DataType="vm:MainViewModel">
+			 x:DataType="vm:SettingsViewModel">
 	<TextBlock Text="{Binding ModelName}"></TextBlock>
+	<!--<Grid
+		ColumnDefinitions="Auto, *">
+		<sbsettingscontrols:settingsmenu grid.column="0"/>
+		<carousel grid.column="1"
+				  x:name="settingscarousel">
+			<sbsettingsviews:settingsmain/>
+			<sbsettingsviews:settingsplatforms/>
+			<sbsettingsviews:settingsintegrations/>
+			<sbsettingsviews:settingsstreamapps/>
+		</carousel>
+	</Grid>-->
 </UserControl>

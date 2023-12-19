@@ -5,12 +5,12 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="StreamerBotSkin.Controls.MainCarousel"
 			 xmlns:sbViews="clr-namespace:StreamerBotSkin.Views"
-			 xmlns:sbSettingsViews="clr-namespace:StreamerBotSkin.Views.Settings"
+			 xmlns:sbSettingsViews="clr-namespace:StreamerBotSkin.Views"
 			 x:Name="root">
-	<Carousel x:Name="ViewsCarousel"
+	<!--<Carousel x:Name="ViewsCarousel"
 			  SelectedIndex="{Binding ElementName=root, Path=SelectedView}">
 		<sbViews:MainView/>
 		<sbViews:ActionsView/>
 		<sbSettingsViews:SettingsView/>
-	</Carousel>
+	</Carousel>-->
 </UserControl>

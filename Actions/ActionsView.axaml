@@ -4,8 +4,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 			 xmlns:sbControls="clr-namespace:StreamerBotSkin.Controls"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="StreamerBotSkin.Views.ActionsView">
+             x:Class="StreamerBotSkin.Views.ActionsView"
+			 xmlns:vm="using:StreamerBotSkin.ViewModels"
+			 x:DataType="vm:ActionsViewModel">
+	<Design.DataContext>
+		<vm:ActionsViewModel/>
+	</Design.DataContext>
 	<Grid ColumnDefinitions="*,5,*">
+		<TextBlock Text="{Binding ModelName}"/>
 		<sbControls:ActionsPanel x:Name="ActionsGrid"/>
 		<GridSplitter Grid.Column="1"/>
 		<Grid Grid.Column="2">
