@@ -1,11 +1,12 @@
 using Avalonia.Controls;
 
-namespace StreamerBotSkin.Controls;
-
-public partial class Footer : UserControl
+namespace StreamerBotSkin
 {
-    public Footer()
+    public partial class Footer : UserControl
     {
-        InitializeComponent();
+        public Footer()
+        {
+            InitializeComponent();
+        }
     }
 }

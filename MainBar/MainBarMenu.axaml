@@ -2,12 +2,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-			 xmlns:mcontrols="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
-             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="400"
+             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
 			 xmlns:vm="using:StreamerBotSkin.ViewModels"
 			 x:DataType="vm:MainWindowViewModel"
-             x:Class="StreamerBotSkin.Controls.MainBarMenu">
+             x:Class="StreamerBotSkin.MainBarMenu">
 	<Menu Width="48"
 		  Height="48">
 		<MenuItem VerticalAlignment="Stretch"

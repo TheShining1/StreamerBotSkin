@@ -1,51 +1,34 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:vm="using:StreamerBotSkin.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:mcControls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
-		xmlns:sbControls="clr-namespace:StreamerBotSkin.Controls"
 		mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        xmlns:mControls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
 		xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+		xmlns:sbControls="clr-namespace:StreamerBotSkin"
 		x:CompileBindings="True"
+        xmlns:vm="using:StreamerBotSkin.ViewModels"
         x:Class="StreamerBotSkin.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Title="StreamerBotSkin"
 		ExtendClientAreaToDecorationsHint="False">
-    <!--<Design.DataContext>
+	<!--<Design.DataContext>
         <vm:MainWindowViewModel/>
     </Design.DataContext>-->
 
-	<mcControls:NavigationDrawer x:Name="LeftDrawer"
-								 LeftDrawerOpened="{Binding ElementName=MainBarEl, Path=IsDrawerOpen, Mode=TwoWay}">
-		<mcControls:NavigationDrawer.LeftDrawerContent>
+	<mControls:NavigationDrawer x:Name="LeftDrawer"
+								LeftDrawerOpened="{Binding ElementName=MainBarEl, Path=IsDrawerOpen, Mode=TwoWay}">
+		<mControls:NavigationDrawer.LeftDrawerContent>
 			<sbControls:MainDrawer x:Name="MainDrawer"/>
-			<!--<Grid RowDefinitions="Auto,Auto">
-				<Button Grid.Row="0" Content="Main" Command="{Binding NavigateCommand}"/>
-				<Button Grid.Row="1" Content="Actions" Command="{Binding NavigateCommand}"/>
-			</Grid>-->
-		</mcControls:NavigationDrawer.LeftDrawerContent>
+		</mControls:NavigationDrawer.LeftDrawerContent>
 		<Grid RowDefinitions="Auto, *, Auto"
 			  ColumnDefinitions="*">
 			<sbControls:MainBar x:Name="MainBarEl"
-								Grid.Row="0"/>
-				<Grid RowDefinitions="*,Auto" Margin="10">
-					<StackPanel Grid.Row="0" Orientation="Horizontal" Spacing="5"
-								HorizontalAlignment="Right">
-						<!--<Button Command="{Binding NavigateCommand}" Content="Main" />-->
-						<!--<Button Command="{Binding NavigateCommand}" Content="Actions" />-->
-						<TransitioningContentControl Content="{Binding CurrentViewModel}" Grid.Row="1"/>
-					</StackPanel>
-				</Grid>
-			<!--<sbControls:MainCarousel x:Name="MainCarousel"
-									 Grid.Row="1"
-									 Padding="5"
-									 DataContext="{Binding CurrentViewModel}"/>-->
-			
+					 Grid.Row="0"/>
+			<TransitioningContentControl Grid.Row="1"
+										 Content="{Binding CurrentViewModel}"/>
 			<sbControls:Footer Grid.Row="2"
-							   Padding="0 5 0 0"/>
-			<!--<TextBlock Grid.Row="2" Text="{Binding ModelName}"/>-->
+					Padding="0 5 0 0"/>
 		</Grid>
-	</mcControls:NavigationDrawer>
-
+	</mControls:NavigationDrawer>
 </Window>

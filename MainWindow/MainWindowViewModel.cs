@@ -32,20 +32,7 @@ namespace StreamerBotSkin.ViewModels
         private string index = "main";
         private void NavigateTo(string key)
         {
-            //index = index == "main" ? "actions" : "main";
             CurrentViewModel = ViewModelsAvailable[key];
         }
-
-        //public string Greeting => "Welcome to Avalonia!";
-        //public int CurrentView { get; set; }
-
-        //public string ModelName { get; set; } = "MainWindowViewModel";
-
-        //public ActionsViewModel Actions { get; }
-
-        //public void OpenActionsView()
-        //{
-        //    CurrentViewModel = new ActionsViewModel();
-        //}
     }
 }

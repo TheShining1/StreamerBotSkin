@@ -2,13 +2,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-			 xmlns:mcontrols="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
-             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
-			 xmlns:sbcontrols="clr-namespace:StreamerBotSkin.Controls"
 			 mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="500"
-             x:Class="StreamerBotSkin.Controls.MainBar"
+			 xmlns:mControls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
+             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+			 xmlns:sbControls="clr-namespace:StreamerBotSkin"
+             x:Class="StreamerBotSkin.MainBar"
 			 x:Name="root">
-	<mcontrols:ColorZone Grid.Row="0">
+	<mControls:ColorZone Grid.Row="0">
 		<Grid ColumnDefinitions="Auto, *, Auto">
 			<StackPanel Grid.Column="0"
 						Orientation="Horizontal"
@@ -37,8 +37,8 @@
 							  Click="ThemeChange">
 					<mIcons:MaterialIcon Kind="ThemeLightDark"/>
 				</ToggleButton>
-				<sbcontrols:MainBarMenu />
+				<sbControls:MainBarMenu />
 			</StackPanel>
 		</Grid>
-	</mcontrols:ColorZone>
+	</mControls:ColorZone>
 </UserControl>

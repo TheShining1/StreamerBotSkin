@@ -2,12 +2,13 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace StreamerBotSkin.Views;
-
-public partial class MainView : UserControl
+namespace StreamerBotSkin.Views
 {
-    public MainView()
+    public partial class MainView : UserControl
     {
-        InitializeComponent();
+        public MainView()
+        {
+            InitializeComponent();
+        }
     }
 }

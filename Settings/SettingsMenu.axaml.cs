@@ -19,7 +19,7 @@ public partial class SettingsMenu : UserControl
         var listBox = sender as ListBox;
         if (listBox == null) return;
 
-        GlobalCommands.SettingsCarousel.SelectedIndex = listBox.SelectedIndex;
+        //GlobalCommands.SettingsCarousel.SelectedIndex = listBox.SelectedIndex;
     }
 
     private void SettingsListSelectionChanged(object? sender, RoutedEventArgs e)
@@ -28,6 +28,6 @@ public partial class SettingsMenu : UserControl
         if (listBox == null) return;
         if (!listBox.IsFocused && !listBox.IsKeyboardFocusWithin) return;
 
-        GlobalCommands.SettingsCarousel.SelectedIndex = listBox.SelectedIndex;
+        //GlobalCommands.SettingsCarousel.SelectedIndex = listBox.SelectedIndex;
     }
 }

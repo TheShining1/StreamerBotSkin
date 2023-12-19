@@ -7,38 +7,39 @@ using Material.Styles.Themes;
 using Material.Styles.Themes.Base;
 using System;
 
-namespace StreamerBotSkin.Controls;
-
-public partial class MainBar : UserControl
+namespace StreamerBotSkin
 {
-    public MainBar()
+    public partial class MainBar : UserControl
     {
-        InitializeComponent();
-    }
+        public MainBar()
+        {
+            InitializeComponent();
+        }
 
-    public static readonly DirectProperty<MainBar, bool> IsDrawerOpenProperty =
-        AvaloniaProperty.RegisterDirect<MainBar, bool>(
-            nameof(IsDrawerOpen),
-            o => o.IsDrawerOpen,
-            (o, v) => o.IsDrawerOpen = v);
+        public static readonly DirectProperty<MainBar, bool> IsDrawerOpenProperty =
+            AvaloniaProperty.RegisterDirect<MainBar, bool>(
+                nameof(IsDrawerOpen),
+                o => o.IsDrawerOpen,
+                (o, v) => o.IsDrawerOpen = v);
 
-    private bool _isDrawerOpen = false;
-    public bool IsDrawerOpen
-    {
-        get { return _isDrawerOpen; }
-        set { SetAndRaise(IsDrawerOpenProperty, ref _isDrawerOpen, value); }
-    }
+        private bool _isDrawerOpen = false;
+        public bool IsDrawerOpen
+        {
+            get { return _isDrawerOpen; }
+            set { SetAndRaise(IsDrawerOpenProperty, ref _isDrawerOpen, value); }
+        }
 
-    private static readonly MaterialTheme MaterialThemeStyles =
-            Application.Current!.LocateMaterialTheme<MaterialTheme>();
+        private static readonly MaterialTheme MaterialThemeStyles =
+                Application.Current!.LocateMaterialTheme<MaterialTheme>();
 
-    void ThemeChange(object? sender, RoutedEventArgs e)
-    {
-        var toggleButton = sender as ToggleButton;
-        if (toggleButton == null) return;
+        void ThemeChange(object? sender, RoutedEventArgs e)
+        {
+            var toggleButton = sender as ToggleButton;
+            if (toggleButton == null) return;
 
-        bool isChecked = toggleButton.IsChecked ?? false;
+            bool isChecked = toggleButton.IsChecked ?? false;
 
-        MaterialThemeStyles.BaseTheme = isChecked ? BaseThemeMode.Dark : BaseThemeMode.Light;
+            MaterialThemeStyles.BaseTheme = isChecked ? BaseThemeMode.Dark : BaseThemeMode.Light;
+        }
     }
 }
