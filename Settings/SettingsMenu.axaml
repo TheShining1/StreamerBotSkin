@@ -3,11 +3,25 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="StreamerBotSkin.Controls.Settings.SettingsMenu">
+			 xmlns:vm="using:StreamerBotSkin.ViewModels"
+			 x:DataType="vm:SettingsViewModel"
+             x:Class="StreamerBotSkin.SettingsMenu">
 	<ListBox x:Name="SettingsList">
-		<ListBoxItem>Main</ListBoxItem>
-		<ListBoxItem>Platforms</ListBoxItem>
-		<ListBoxItem>Integrations</ListBoxItem>
-		<ListBoxItem>Stream apps</ListBoxItem>
+		<Button	Classes="Flat"
+				Content="Main"
+				Command="{Binding NavigateSettingsCommand}"
+				CommandParameter="main"/>
+		<Button Classes="Flat"
+				Content="Platforms"
+				Command="{Binding NavigateSettingsCommand}"
+				CommandParameter="platforms"/>
+		<Button Classes="Flat"
+				Content="Integrations"
+				Command="{Binding NavigateSettingsCommand}"
+				CommandParameter="integrations"/>
+		<Button Classes="Flat"
+				Content="Stream apps"
+				Command="{Binding NavigateSettingsCommand}"
+				CommandParameter="streamapps"/>
 	</ListBox>
 </UserControl>

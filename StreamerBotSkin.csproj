@@ -42,4 +42,20 @@
     <PackageReference Include="Material.Icons.Avalonia" Version="2.0.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
+
+
+  <ItemGroup>
+    <Compile Update="Settings\Integrations\IntegrationsSettingsView.axaml.cs">
+      <DependentUpon>IntegrationsSettingsView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Settings\Main\MainSettingsView.axaml.cs">
+      <DependentUpon>MainSettingsView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Settings\Platforms\PlatfromsSettingsView.axaml.cs">
+      <DependentUpon>PlatfromsSettingsView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Settings\StreamApps\StreamappsSettingsView.axaml.cs">
+      <DependentUpon>StreamappsSettingsView.axaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>
