@@ -3,6 +3,54 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="StreamerBotSkin.Views.StreamappsSettingsView">
-  Stream Apps
+             xmlns:sbControls="clr-namespace:StreamerBotSkin"
+             xmlns:mControls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
+             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             x:Class="StreamerBotSkin.Views.StreamappsSettingsView"
+             xmlns:vm="using:StreamerBotSkin.ViewModels"
+             x:DataType="vm:StreamappsSettingsViewModel">
+  <Design.DataContext>
+    <vm:StreamappsSettingsViewModel/>
+  </Design.DataContext>
+  
+  <TabControl>
+    <TabControl.Items>
+      <TabItem Header="OBS">
+        <DataGrid ItemsSource="{Binding obsSettings}"
+                  AutoGenerateColumns="True">
+          <!-- <DataGrid.Columns>
+            <DataGridTextColumn Header="ID"
+                                Binding="{Binding ID}"/>
+          </DataGrid.Columns> -->
+        </DataGrid>
+      </TabItem>
+      <TabItem Header="Streamlabs Desktop">
+
+      </TabItem>
+      <TabItem Header="PolyPop">
+
+      </TabItem>
+    </TabControl.Items>
+  </TabControl>
+  <!--<mControls:SideSheet Width="500"
+                       Height="560"
+                       BorderBrush="Black"
+                       BorderThickness="1"
+                       SideSheetDirection="Right">
+    <mControls:SideSheet.SideSheetContentTemplate>
+      <DataTemplate>
+        <StackPanel>
+          <TextBlock>SideSHeet</TextBlock>
+        </StackPanel>
+      </DataTemplate>
+    </mControls:SideSheet.SideSheetContentTemplate>
+    <Panel>
+      <Button Classes="Icon"
+              Width="36"
+              Height="36"
+              HorizontalAlignment="Right"
+              VerticalAlignment="Top"
+              Content="{mIcons:MaterialIconExt MenuOpen, Size=20}"/>
+    </Panel>
+  </mControls:SideSheet>-->
 </UserControl>

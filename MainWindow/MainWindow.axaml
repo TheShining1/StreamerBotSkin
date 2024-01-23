@@ -11,7 +11,7 @@
         x:DataType="vm:MainWindowViewModel"
         x:Class="StreamerBotSkin.Views.MainWindow"
         Title="StreamerBotSkin"
-		ExtendClientAreaToDecorationsHint="False">
+        ExtendClientAreaToDecorationsHint="False">
   <Design.DataContext>
     <vm:MainWindowViewModel/>
   </Design.DataContext>
@@ -24,11 +24,10 @@
     <Grid RowDefinitions="Auto, *, Auto"
 			  ColumnDefinitions="*">
       <sbControls:MainBar x:Name="MainBarEl"
-					 Grid.Row="0"/>
+                          Grid.Row="0"/>
       <TransitioningContentControl Grid.Row="1"
-										 Content="{Binding CurrentViewModel}"/>
-      <sbControls:Footer Grid.Row="2"
-					Padding="0 5 0 0"/>
+                                   Content="{Binding CurrentViewModel}"/>
+      <sbControls:Footer Grid.Row="2"/>
     </Grid>
   </mControls:NavigationDrawer>
 </Window>

@@ -1,6 +1,7 @@
 ﻿namespace StreamerBotSkin.ViewModels
 {
-    internal class PlatfromsSettingsViewModel : ViewModelBase
-    {
-    }
+  internal class PlatfromsSettingsViewModel : ViewModelBase
+  {
+
+  }
 }

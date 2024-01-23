@@ -8,64 +8,250 @@
              x:Class="StreamerBotSkin.Views.PlatfromsSettingsView">
   <TabControl>
     <TabControl.Items>
-      <TabItem Header="Twtich">
-        <Grid ColumnDefinitions="*,*">
+      <TabItem Header="Twtich"
+               Foreground="#9146FF">
+        <Grid ColumnDefinitions="*,*"
+              VerticalAlignment="Center">
           <mControls:Card Grid.Column="0"
-                          MinWidth="240"
-                          VerticalAlignment="Center"
-                          Margin="10">
-            <StackPanel Margin="0,4">
-              <TextBlock Classes="Headline6" Text="Broadcaster" />
-              <TextBox Classes="solo" Theme="{StaticResource SoloTextBox}" Watermark="ShiningOne">
-                <TextBox.InnerLeftContent>
-                  <Button Classes="Flat" Padding="4" Content="{mIcons:MaterialIconExt Alert, Size=48}" />
-                </TextBox.InnerLeftContent>
-              </TextBox>
-            </StackPanel>
+                          VerticalAlignment="Center">
+            <Grid RowDefinitions="Auto, *, *, *">
+              <Grid Grid.Row="0"
+                    ColumnDefinitions="*, Auto">
+                <TextBlock Grid.Column="0"
+                           Classes="Headline6"
+                           Text="Broadcaster"/>
+                <mIcons:MaterialIcon Grid.Column="1"
+                                     Kind="Information"
+                                     ToolTip.Placement="Left">
+                  <ToolTip.Tip>
+                    <TextBox MaxWidth="300"
+                             TextWrapping="Wrap">Connecting your broadcaster account is a must in order to receive specific events and query certain API endpoints.</TextBox>
+                  </ToolTip.Tip>
+                </mIcons:MaterialIcon>
+              </Grid>
+              <StackPanel Grid.Row="1"
+                          Orientation="Horizontal">
+                <mIcons:MaterialIcon Kind="Alert"
+                                     Height="48"
+                                     Width="48"/>
+                <StackPanel VerticalAlignment="Center">
+                  <TextBlock Text="ShiningOne"
+                             VerticalAlignment="Center"/>
+                  <TextBlock Text="Affiliate"
+                             VerticalAlignment="Center"/>
+                </StackPanel>
+              </StackPanel>
+              <Grid Grid.Row="2"
+                    ColumnDefinitions="*,*">
+                <Button Grid.Column="0"
+                        Content="Login"/>
+                <Button Grid.Column="1"
+                        Content="Forget"/>
+              </Grid>
+              <mControls:Card Grid.Row="3">
+                <Grid RowDefinitions="Auto,*,*,*">
+                  <TextBlock Grid.Row="0"
+                             Text="Services"/>
+                  <Grid Grid.Row="1"
+                        ColumnDefinitions="Auto, *,Auto">
+                    <TextBlock Grid.Column="0"
+                               Text="Chat Client"/>
+                    <Button Grid.Column="2"
+                            Content="Connect"/>
+                  </Grid>
+                  <Grid Grid.Row="2"
+                        ColumnDefinitions="Auto,*, Auto">
+                    <TextBlock Grid.Column="0"
+                               Text="PubSub"/>
+                    <Button Grid.Column="2"
+                            Content="Connect"/>
+                  </Grid>
+                  <Grid Grid.Row="3"
+                        ColumnDefinitions="Auto,*, Auto">
+                    <TextBlock Grid.Column="0"
+                               Text="Event Sub"/>
+                    <Button Grid.Column="2"
+                            Content="Connect"/>
+                  </Grid>
+                </Grid>
+              </mControls:Card>
+            </Grid>
           </mControls:Card>
           <mControls:Card Grid.Column="1"
-                          MinWidth="240"
-                          VerticalAlignment="Center"
-                          Margin="10">
-            <StackPanel Margin="0,4">
-              <TextBlock Classes="Headline6" Text="Bot" />
-              <TextBox Classes="solo" Theme="{StaticResource SoloTextBox}" Watermark="ShiningOne">
-                <TextBox.InnerLeftContent>
-                  <Button Classes="Flat" Padding="4" Content="{mIcons:MaterialIconExt Alert, Size=48}" />
-                </TextBox.InnerLeftContent>
-              </TextBox>
-            </StackPanel>
+                          VerticalAlignment="Center">
+            <Grid RowDefinitions="Auto, *, *, *">
+              <Grid Grid.Row="0"
+                    ColumnDefinitions="*, Auto">
+                <TextBlock Grid.Column="0"
+                           Classes="Headline6"
+                           Text="Bot" />
+                <mIcons:MaterialIcon Grid.Column="1"
+                                     Kind="Information"
+                                     ToolTip.Placement="Left">
+                  <ToolTip.Tip>
+                    <TextBox MaxWidth="300"
+                             TextWrapping="Wrap">
+                      Connecing a bot account will let you direct messages and whispers thorought this account. If this account is not connected, it will default to your broadcaster account.
+                    </TextBox>
+                  </ToolTip.Tip>
+
+                </mIcons:MaterialIcon>
+              </Grid>
+              <StackPanel Grid.Row="1"
+                          Orientation="Horizontal">
+                <Button Classes="Flat"
+                        Content="{mIcons:MaterialIconExt Alert, Size=48}" />
+                <StackPanel>
+                  <TextBlock Text="ShiningOneBot"/>
+                </StackPanel>
+              </StackPanel>
+              <Grid Grid.Row="2"
+                    ColumnDefinitions="*,*">
+                <Button Grid.Column="0"
+                        Content="Login"/>
+                <Button Grid.Column="1"
+                        Content="Forget"/>
+              </Grid>
+              <mControls:Card Grid.Row="3">
+                <Grid RowDefinitions="Auto,*">
+                  <TextBlock Grid.Row="0"
+                             Text="Services"/>
+                  <Grid Grid.Row="1"
+                        ColumnDefinitions="Auto, *,Auto">
+                    <TextBlock Grid.Column="0"
+                               Text="Chat Client"/>
+                    <Button Grid.Column="2"
+                            Content="Connect"/>
+                  </Grid>
+                </Grid>
+              </mControls:Card>
+            </Grid>
           </mControls:Card>
         </Grid>
       </TabItem>
-      <TabItem Header="YouTube">
-        <Grid ColumnDefinitions="*,*">
-          <mControls:Card Grid.Column="0"
-                          MinWidth="240"
-                          VerticalAlignment="Center"
-                          Margin="10">
-            <StackPanel Margin="0,4">
-              <TextBlock Classes="Headline6" Text="Broadcaster" />
-              <TextBox Classes="solo" Theme="{StaticResource SoloTextBox}" Watermark="ShiningOne">
-                <TextBox.InnerLeftContent>
-                  <Button Classes="Flat" Padding="4" Content="{mIcons:MaterialIconExt Alert, Size=48}" />
-                </TextBox.InnerLeftContent>
-              </TextBox>
-            </StackPanel>
-          </mControls:Card>
-          <mControls:Card Grid.Column="1"
-                          MinWidth="240"
-                          VerticalAlignment="Center"
-                          Margin="10">
-            <StackPanel Margin="0,4">
-              <TextBlock Classes="Headline6" Text="Bot" />
-              <TextBox Classes="solo" Theme="{StaticResource SoloTextBox}" Watermark="ShiningOne">
-                <TextBox.InnerLeftContent>
-                  <Button Classes="Flat" Padding="4" Content="{mIcons:MaterialIconExt Alert, Size=48}" />
-                </TextBox.InnerLeftContent>
-              </TextBox>
-            </StackPanel>
-          </mControls:Card>
+      <TabItem Header="YouTube"
+               Foreground="#FF0000">
+        <Grid RowDefinitions="*,Auto">
+          <Grid Grid.Row="0"
+                ColumnDefinitions="*,*"
+                VerticalAlignment="Center">
+            <mControls:Card Grid.Column="0"
+                            VerticalAlignment="Center">
+              <Grid RowDefinitions="Auto, *, *">
+                <Grid Grid.Row="0"
+                      ColumnDefinitions="*, Auto">
+                  <TextBlock Grid.Column="0"
+                             Classes="Headline6"
+                             Text="Broadcaster" />
+                  <mIcons:MaterialIcon Grid.Column="1"
+                                       Kind="Information"
+                                       ToolTip.Placement="Left">
+                    <ToolTip.Tip>
+                      <TextBox MaxWidth="300"
+                               TextWrapping="Wrap">Connecting your broadcaster account is a must in order to receive specific events and query certain API endpoints.</TextBox>
+                    </ToolTip.Tip>
+                  </mIcons:MaterialIcon>
+                </Grid>
+                <StackPanel Grid.Row="1"
+                            Orientation="Horizontal">
+                  <mIcons:MaterialIcon Kind="Alert"
+                                       Height="48"
+                                       Width="48"/>
+                  <TextBlock Text="ShiningOne"
+                             VerticalAlignment="Center"/>
+                </StackPanel>
+                <Grid Grid.Row="2"
+                      ColumnDefinitions="*,*">
+                  <Button Grid.Column="0">
+                    <Button.Content>
+                      <StackPanel Orientation="Horizontal">
+                        <mIcons:MaterialIcon Kind="Google"/>
+                        <TextBlock Text="Sign in with Google"/>
+                      </StackPanel>
+                    </Button.Content>
+                  </Button>
+                  <Button Grid.Column="1"
+                          Content="Forget"/>
+                </Grid>
+              </Grid>
+            </mControls:Card>
+            <mControls:Card Grid.Column="1"
+                            VerticalAlignment="Center">
+              <Grid RowDefinitions="Auto, *, *">
+                <Grid Grid.Row="0"
+                      ColumnDefinitions="*, Auto">
+                  <TextBlock Grid.Column="0"
+                             Classes="Headline6"
+                             Text="Bot" />
+                  <mIcons:MaterialIcon Grid.Column="1"
+                                       Kind="Information"
+                                       ToolTip.Placement="Left">
+                    <ToolTip.Tip>
+                      <TextBox MaxWidth="300"
+                               TextWrapping="Wrap">Connecting your broadcaster account is a must in order to receive specific events and query certain API endpoints.</TextBox>
+                    </ToolTip.Tip>
+                  </mIcons:MaterialIcon>
+                </Grid>
+                <StackPanel Grid.Row="1"
+                            Orientation="Horizontal">
+                  <mIcons:MaterialIcon Kind="Alert"
+                                       Height="48"
+                                       Width="48"/>
+                  <TextBlock Text="ShiningOne"
+                             VerticalAlignment="Center"/>
+                </StackPanel>
+                <Grid Grid.Row="2"
+                      ColumnDefinitions="*,*">
+                  <Button Grid.Column="0">
+                    <Button.Content>
+                      <StackPanel Orientation="Horizontal">
+                        <mIcons:MaterialIcon Kind="Google"/>
+                        <TextBlock Text="Sign in with Google"/>
+                      </StackPanel>
+                    </Button.Content>
+                  </Button>
+                  <Button Grid.Column="1"
+                          Content="Forget"/>
+                </Grid>
+              </Grid>
+            </mControls:Card>
+          </Grid>
+          <StackPanel Grid.Row="3"
+                      Orientation="Horizontal"
+                      HorizontalAlignment="Center">
+            <Button Classes="Flat">
+              <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                  <mIcons:MaterialIcon Kind="Youtube"/>
+                  <TextBlock Text="Terms of Service"/>
+                </StackPanel>
+              </Button.Content>  
+            </Button>
+            <Button Classes="Flat">
+              <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                  <mIcons:MaterialIcon Kind="Google"/>
+                  <TextBlock Text="Privacy Policy"/>
+                </StackPanel>
+              </Button.Content>
+            </Button>
+            <Button Classes="Flat">
+              <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                  <mIcons:MaterialIcon Kind="Web"/>
+                  <TextBlock Text="Terms of Service"/>
+                </StackPanel>
+              </Button.Content>
+            </Button>
+            <Button Classes="Flat">
+              <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                  <mIcons:MaterialIcon Kind="Web"/>
+                  <TextBlock Text="Privacy Policy"/>
+                </StackPanel>
+              </Button.Content>
+            </Button>
+          </StackPanel>
         </Grid>
       </TabItem>
     </TabControl.Items>

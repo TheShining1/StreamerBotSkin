@@ -3,6 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              x:Class="StreamerBotSkin.Views.MainSettingsView">
 	<Grid RowDefinitions="Auto, *">
 		<TextBlock Grid.Row="0"
@@ -113,7 +114,18 @@
 				<ScrollViewer>
 					<Grid Margin="10"
 						  RowDefinitions="Auto, *, Auto">
-						<TextBlock Grid.Row="0">Common references</TextBlock>
+            <Grid Grid.Row="0"
+                  ColumnDefinitions="Auto, *, Auto">              
+							<TextBlock Grid.Column="0">Common references</TextBlock>
+              <mIcons:MaterialIcon Grid.Column="2"
+                                   Kind="Information"
+                                   ToolTip.Placement="Left">
+                <ToolTip.Tip>
+                  <TextBox MaxWidth="300"
+                           TextWrapping="Wrap">Any references added to this list will be automatically added to every Execute C# code when its compiled. Making changes to this list will not invalidate any currently compiled Execute C# code sud-actions.</TextBox>
+                </ToolTip.Tip>
+              </mIcons:MaterialIcon>
+            </Grid>
 						<TextBox Grid.Row="1"
 								 x:Name="refBox">
 						</TextBox>

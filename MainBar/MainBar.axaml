@@ -2,26 +2,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-			 mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="500"
-			 xmlns:mControls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="500"
+             xmlns:mControls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
              xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
-			 xmlns:sbControls="clr-namespace:StreamerBotSkin"
+             xmlns:sbControls="clr-namespace:StreamerBotSkin"
              x:Class="StreamerBotSkin.MainBar"
-			 x:Name="root">
+             x:Name="root">
 	<mControls:ColorZone Grid.Row="0">
 		<Grid ColumnDefinitions="Auto, *, Auto">
 			<StackPanel Grid.Column="0"
 						Orientation="Horizontal"
-						VerticalAlignment="Stretch">
+						VerticalAlignment="Center">
 				<ToggleButton
 						  Classes="Flat"
 						  x:Name="NavDrawerSwitch"
-						  VerticalAlignment="Stretch"
+						  VerticalAlignment="Center"
 						  IsChecked="{Binding IsDrawerOpen, ElementName=root}">
 					<mIcons:MaterialIcon Kind="Menu"/>
 				</ToggleButton>
 				<Button Classes="Flat"
-						VerticalAlignment="Stretch">
+                VerticalAlignment="Center">
 					<mIcons:MaterialIcon Kind="ContentSave"/>
 				</Button>
 			</StackPanel>
@@ -29,12 +29,12 @@
 						Orientation="Horizontal">
 			</StackPanel>
 			<StackPanel Grid.Column="2"
-						Orientation="Horizontal"
-						VerticalAlignment="Stretch">
+                  Orientation="Horizontal"
+                  VerticalAlignment="Center">
 				<ToggleButton x:Name="ThemeToggle"
-							  Classes="Flat"
-							  VerticalAlignment="Stretch"
-							  Click="ThemeChange">
+                      Classes="Flat"
+                      VerticalAlignment="Center"
+                      Click="ThemeChange">
 					<mIcons:MaterialIcon Kind="ThemeLightDark"/>
 				</ToggleButton>
 				<sbControls:MainBarMenu />
