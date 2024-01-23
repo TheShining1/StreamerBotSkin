@@ -5,6 +5,7 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              xmlns:sbControls="clr-namespace:StreamerBotSkin"
              xmlns:mControls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
+             xmlns:mAssist="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
              xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              x:Class="StreamerBotSkin.Views.StreamappsSettingsView"
              xmlns:vm="using:StreamerBotSkin.ViewModels"
@@ -16,12 +17,32 @@
   <TabControl>
     <TabControl.Items>
       <TabItem Header="OBS">
-        <DataGrid ItemsSource="{Binding obsSettings}"/>
+        <DataGrid ItemsSource="{Binding OBSSettings}"
+                  AutoGenerateColumns="True"></DataGrid>
       </TabItem>
       <TabItem Header="Streamlabs Desktop">
+        <DataGrid ItemsSource="{Binding SLDSettings}"
+                  AutoGenerateColumns="True"></DataGrid>
       </TabItem>
       <TabItem Header="PolyPop">
-
+        <Grid RowDefinitions="*,Auto">
+          <Grid Grid.Row="0"
+                RowDefinitions="Auto,Auto,Auto">
+            <TextBox Grid.Row="0"
+                     mAssist:TextFieldAssist.Label="Address"></TextBox>
+              <TextBox Grid.Row="1"
+                       mAssist:TextFieldAssist.Label="Port"></TextBox>
+                <TextBox Grid.Row="2"
+                         mAssist:TextFieldAssist.Label="Endpoint"></TextBox>
+          </Grid>
+          <StackPanel Grid.Row="1"
+                      Orientation="Horizontal"
+                      HorizontalAlignment="Center">
+            <CheckBox>Auto start</CheckBox>
+            <Button>Start</Button>
+            <Button>Stop</Button>
+          </StackPanel>
+        </Grid>
       </TabItem>
     </TabControl.Items>
   </TabControl>

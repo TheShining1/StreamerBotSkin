@@ -3,19 +3,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="StreamerBotSkin.OBSSettingsView"
+             xmlns:sbControls="clr-namespace:StreamerBotSkin"
+             x:Class="StreamerBotSkin.Views.OBSSettingsView"
              xmlns:vm="using:StreamerBotSkin.ViewModels"
-             x:DataType="vm:StreamappsSettingsViewModel">
+             x:DataType="vm:OBSSettingsViewModel">
   <Design.DataContext>
-    <vm:StreamappsSettingsViewModel/>
+    <vm:OBSSettingsViewModel/>
   </Design.DataContext>
 
-  <!--<Grid RowDefinitions="Auto,*">
-    <TextBlock Grid.Row="0"
-               Text="{Binding ModelName}"/>
-    <DataGrid Grid.Row="1"
-              ItemsSource="{Binding obsSettings}">
-
-    </DataGrid>
-  </Grid>-->
+  <DataGrid ItemsSource="{Binding OBSSettings}"
+            AutoGenerateColumns="True"></DataGrid>
 </UserControl>
