@@ -13,7 +13,11 @@ namespace StreamerBotSkin.ViewModels
     {
       new SBOBSConnection{
         ID = 0,
-        Host = "localhost:4545",
+        Name = "main",
+        Host = "localhost",
+        Port = 4545,
+        Password = "",
+        Version = "v5.x",
         AutoConnect = false,
         Reconnect = false,
         Retry = 30,
