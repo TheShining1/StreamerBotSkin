@@ -4,5 +4,36 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="StreamerBotSkin.Views.IntegrationsSettingsView">
-  Integrations
+  <ScrollViewer HorizontalScrollBarVisibility="Visible">
+    <TabControl ScrollViewer.AllowAutoHide="True">
+      <TabControl.Items>
+        <TabItem Header="Streamlabs">
+          <TextBlock>Some content</TextBlock>
+        </TabItem>
+        <TabItem Header="StreamElements"></TabItem>
+        <TabItem Header="VoiceMod"></TabItem>
+        <TabItem Header="DonorDrive"></TabItem>
+        <TabItem Header="Pulsoid"></TabItem>
+        <TabItem Header="HypeRate"></TabItem>
+        <TabItem Header="TipeeeStream"></TabItem>
+        <TabItem Header="TreatStream"></TabItem>
+        <TabItem Header="LumiaStream"></TabItem>
+        <TabItem Header="VTubeStudio"></TabItem>
+        <TabItem Header="CrowdControl"></TabItem>
+        <TabItem Header="Elgato"></TabItem>
+        <TabItem Header="StreamerBotWebsite"></TabItem>
+      </TabControl.Items>
+    </TabControl>
+  </ScrollViewer>
+  <!--<ScrollViewer HorizontalScrollBarVisibility="Visible">
+    <TabControl Items="{Binding TabItems}">
+      <TabControl.ItemTemplate>
+        <DataTemplate>
+          <TabItem Header="{Binding Header}" Width="100">
+            <TextBlock Text="{Binding Content}" />
+          </TabItem>
+        </DataTemplate>
+      </TabControl.ItemTemplate>
+    </TabControl>
+  </ScrollViewer>-->
 </UserControl>
