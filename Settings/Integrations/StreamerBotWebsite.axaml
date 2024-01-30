@@ -1,0 +1,46 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mAssist="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
+             xmlns:mControls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
+             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="StreamerBotSkin.StreamerBotWebsite">
+  <mControls:Card Grid.Column="1"
+                  VerticalAlignment="Center">
+    <Grid RowDefinitions="Auto, *, *, *">
+      <TextBlock Grid.Row="0"
+                  Classes="Headline6"
+                  Text="Bot" />
+      <StackPanel Grid.Row="1"
+                  Orientation="Horizontal">
+        <Button Classes="Flat"
+                Content="{mIcons:MaterialIconExt Alert, Size=48}" />
+        <StackPanel>
+          <TextBlock Text="ShiningOneBot"/>
+        </StackPanel>
+      </StackPanel>
+      <Grid Grid.Row="2"
+            ColumnDefinitions="*,*">
+        <Button Grid.Column="0"
+                Content="Login"/>
+        <Button Grid.Column="1"
+                Content="Forget"/>
+      </Grid>
+      <mControls:Card Grid.Row="3">
+        <Grid RowDefinitions="Auto,*">
+          <TextBlock Grid.Row="0"
+                      Text="Services"/>
+          <Grid Grid.Row="1"
+                ColumnDefinitions="Auto, *,Auto">
+            <TextBlock Grid.Column="0"
+                        Text="Web Client"/>
+            <Button Grid.Column="2"
+                    Content="Connect"/>
+          </Grid>
+        </Grid>
+      </mControls:Card>
+    </Grid>
+  </mControls:Card>
+</UserControl>

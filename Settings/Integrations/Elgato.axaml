@@ -1,0 +1,33 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mAssist="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="StreamerBotSkin.Elgato">
+  <TabControl>
+    <TabControl.Items>
+      <TabItem Header="Stream Deck">
+        <StackPanel>
+          <TextBox mAssist:TextFieldAssist.Label="Address"
+                  Classes="clearButton"
+                  mAssist:TextFieldAssist.Hints="VTubeStudio->Settings->API Settings"></TextBox>
+          <TextBox mAssist:TextFieldAssist.Label="Port"
+                  Classes="clearButton"
+                  mAssist:TextFieldAssist.Hints="VTubeStudio->Settings->API Settings"></TextBox>            
+          <CheckBox Content="Autostart"/>
+          <Button>Start</Button>
+        </StackPanel>
+      </TabItem>
+      <TabItem Header="WaveLink">
+        <StackPanel>
+          <StackPanel Orientation="Horizontal">
+            <CheckBox Content="Autoconnect"/>  
+            <CheckBox Content="Reconnect"/>
+          </StackPanel>
+          <Button>Connect</Button>
+        </StackPanel>
+      </TabItem>    
+    </TabControl.Items>
+  </TabControl>
+</UserControl>

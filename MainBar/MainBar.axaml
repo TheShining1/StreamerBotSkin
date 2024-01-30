@@ -24,6 +24,14 @@
                 VerticalAlignment="Center">
 					<mIcons:MaterialIcon Kind="ContentSave"/>
 				</Button>
+				<Button Classes="Flat"
+                VerticalAlignment="Center">
+					<mIcons:MaterialIcon Kind="Chat"/>
+				</Button>
+				<Button Classes="Flat"
+                VerticalAlignment="Center">
+					<mIcons:MaterialIcon Kind="ApplicationVariable"/>
+				</Button>
 			</StackPanel>
 			<StackPanel Grid.Column="1"
 						Orientation="Horizontal">

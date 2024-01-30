@@ -2,29 +2,54 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:sbControls="clr-namespace:StreamerBotSkin"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:mControls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
              x:Class="StreamerBotSkin.Views.IntegrationsSettingsView">
-  <ScrollViewer HorizontalScrollBarVisibility="Visible">
-    <TabControl ScrollViewer.AllowAutoHide="True">
-      <TabControl.Items>
-        <TabItem Header="Streamlabs">
-          <TextBlock>Some content</TextBlock>
-        </TabItem>
-        <TabItem Header="StreamElements"></TabItem>
-        <TabItem Header="VoiceMod"></TabItem>
-        <TabItem Header="DonorDrive"></TabItem>
-        <TabItem Header="Pulsoid"></TabItem>
-        <TabItem Header="HypeRate"></TabItem>
-        <TabItem Header="TipeeeStream"></TabItem>
-        <TabItem Header="TreatStream"></TabItem>
-        <TabItem Header="LumiaStream"></TabItem>
-        <TabItem Header="VTubeStudio"></TabItem>
-        <TabItem Header="CrowdControl"></TabItem>
-        <TabItem Header="Elgato"></TabItem>
-        <TabItem Header="StreamerBotWebsite"></TabItem>
-      </TabControl.Items>
-    </TabControl>
-  </ScrollViewer>
+
+  <TabControl AutoScrollToSelectedItem="True" Theme="{StaticResource ScrollableTabControl}">
+    <TabControl.Items>
+      <TabItem Header="Streamlabs">
+        <sbControls:Streamlabs></sbControls:Streamlabs>
+      </TabItem>
+      <TabItem Header="StreamElements">
+        <sbControls:StreamElements></sbControls:StreamElements>
+      </TabItem>
+      <TabItem Header="VoiceMod">
+        <sbControls:VoiceMod></sbControls:VoiceMod>
+      </TabItem>
+      <TabItem Header="DonorDrive">
+        <TextBlock>DonorDrive</TextBlock>
+      </TabItem>
+      <TabItem Header="Pulsoid">
+        <sbControls:Pulsoid></sbControls:Pulsoid>
+      </TabItem>
+      <TabItem Header="HypeRate">
+        <sbControls:HypeRate></sbControls:HypeRate>
+      </TabItem>
+      <TabItem Header="TipeeeStream">
+        <sbControls:TipeeeStream></sbControls:TipeeeStream>
+      </TabItem>
+      <TabItem Header="TreatStream">
+        <sbControls:TreatStream></sbControls:TreatStream>
+      </TabItem>
+      <TabItem Header="LumiaStream">
+        <sbControls:LumiaStream></sbControls:LumiaStream>
+      </TabItem>
+      <TabItem Header="VTubeStudio">
+        <sbControls:VTubeStudio></sbControls:VTubeStudio>
+      </TabItem>
+      <TabItem Header="CrowdControl">
+        <sbControls:CrowdControl></sbControls:CrowdControl>
+      </TabItem>
+      <TabItem Header="Elgato">
+        <sbControls:Elgato></sbControls:Elgato>
+      </TabItem>
+      <TabItem Header="StreamerBotWebsite">
+        <sbControls:StreamerBotWebsite></sbControls:StreamerBotWebsite>
+      </TabItem>
+    </TabControl.Items>
+  </TabControl>
   <!--<ScrollViewer HorizontalScrollBarVisibility="Visible">
     <TabControl Items="{Binding TabItems}">
       <TabControl.ItemTemplate>
