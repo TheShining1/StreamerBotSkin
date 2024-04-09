@@ -2,11 +2,11 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace StreamerBotSkin.Controls;
+namespace StreamerBotSkin.Panels;
 
-public partial class SubActionsPanel : UserControl
+public partial class InfoPanel : UserControl
 {
-    public SubActionsPanel()
+    public InfoPanel()
     {
         InitializeComponent();
     }

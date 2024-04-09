@@ -2,7 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-			 xmlns:sbControls="clr-namespace:StreamerBotSkin.Controls"
+			 xmlns:sbPanels="clr-namespace:StreamerBotSkin.Panels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="StreamerBotSkin.Views.ActionsView"
 			 xmlns:vm="using:StreamerBotSkin.ViewModels"
@@ -12,16 +12,15 @@
 	</Design.DataContext>
 	<Grid ColumnDefinitions="*,5,*">
 		<TextBlock Text="{Binding ModelName}"/>
-		<sbControls:ActionsPanel x:Name="ActionsGrid"/>
+    <sbPanels:ActionsPanel/>
 		<GridSplitter Grid.Column="1"/>
 		<Grid Grid.Column="2">
 			<Grid RowDefinitions="*,5,*,5,*">
-				<sbControls:TriggersPanel Grid.Row="0"
-										  x:Name="TriggersGrid"/>
+        <sbPanels:TriggersPanel Grid.Row="0"/>
 				<GridSplitter Grid.Row="1"/>
-				<sbControls:SubActionsPanel Grid.Row="2"/>
+        <sbPanels:SubActionsPanel Grid.Row="2"/>
 				<GridSplitter Grid.Row="3"/>
-				<sbControls:InfoPanel Grid.Row="4"/>
+        <sbPanels:InfoPanel Grid.Row="4"/>
 			</Grid>
 		</Grid>
 	</Grid>

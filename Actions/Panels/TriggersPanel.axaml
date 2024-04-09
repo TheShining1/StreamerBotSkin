@@ -3,11 +3,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="StreamerBotSkin.Controls.TriggersPanel"
-			 x:Name="root">
+             x:Class="StreamerBotSkin.Panels.TriggersPanel">
 	<DataGrid x:Name="TriggersGrid"
 			  AutoGenerateColumns="True"
-			  ColumnWidth="*"
-			  ItemsSource="{Binding Path=Items, ElementName=root}">
+			  ColumnWidth="*">
 	</DataGrid>
 </UserControl>

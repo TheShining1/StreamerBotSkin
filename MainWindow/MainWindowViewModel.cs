@@ -34,5 +34,17 @@ namespace StreamerBotSkin.ViewModels
     {
       CurrentViewModel = ViewModelsAvailable[key];
     }
+
+    //private string _testString = string.Empty;
+    //public string TestString { 
+    //  get
+    //  {
+    //    return _testString;
+    //  }
+    //  set
+    //  {
+    //    this.RaiseAndSetIfChanged(ref _testString, value);
+    //  }
+    //}
   }
 }

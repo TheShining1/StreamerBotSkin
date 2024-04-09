@@ -5,6 +5,8 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              xmlns:mAssist="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
+						 xmlns:vm="using:StreamerBotSkin.ViewModels"
+						 x:DataType="vm:MainSettingsViewModel"
              x:Class="StreamerBotSkin.Views.MainSettingsView">
 	<Grid RowDefinitions="Auto, *">
 		<TextBlock Grid.Row="0"
@@ -12,7 +14,7 @@
 				   FontSize="18"
 				   FontWeight="Bold">Settings</TextBlock>
 		<TabControl Grid.Row="1"
-					SelectedIndex="0">
+                SelectedIndex="0">
 			<TabItem Header="General">
 				<Grid Margin="10"
 						RowDefinitions="Auto,*,Auto">
@@ -26,7 +28,7 @@
 										Margin="5"
 										mAssist:TextFieldAssist.Label="ID">345w3g45g5gw-4tw43t-e4tbe4vt-e4te4vct										   
 								<TextBox.InnerRightContent>
-									<Button Classes="Flat" Content="{mIcons:MaterialIconExt Refresh}" />
+									<!-- <Button Classes="Flat" Content="{mIcons:MaterialIconExt Refresh}" /> -->
 									<!-- <Button Classes="Icon">
 										<mIcons:MaterialIcon Kind="Refresh"/>
 									</Button> -->
@@ -37,8 +39,8 @@
 										VerticalAlignment="Center"
 										Margin="5"
 									mAssist:TextFieldAssist.Label="Name">345w3g45g5gw-4tw43t-e4tbe4vt-e4te4vct										   
-								<TextBox.InnerRightContent>									
-									<Button Classes="Flat" Content="{mIcons:MaterialIconExt Save}" />
+								<TextBox.InnerRightContent>
+									<!-- <Button Classes="Flat" Content="{mIcons:MaterialIconExt Save}" /> -->
 									<!-- <Button Classes="Icon">
 										<mIcons:MaterialIcon Kind="Save"/>
 									</Button> -->
@@ -49,7 +51,15 @@
 					<StackPanel Grid.Row="2"
 								Orientation="Horizontal"
 								HorizontalAlignment="Right">
-						<ComboBox x:Name="debugLevels"/>
+						<ComboBox x:Name="debugLevels"
+                      ItemsSource="{Binding _logLevels}"
+                      SelectedItem="{Binding CurrentLogLevel}">
+              <ComboBox.ItemTemplate>
+                <DataTemplate>
+                  <!--<TextBlock Text="{Binding Value}" />-->
+                </DataTemplate>
+              </ComboBox.ItemTemplate>
+            </ComboBox>
 					</StackPanel>
 				</Grid>
 			</TabItem>

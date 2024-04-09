@@ -1,0 +1,38 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="36"
+             x:Class="StreamerBotSkin.ControlBar">
+  <Grid ColumnDefinitions="Auto,*,Auto">
+    <!--<mIcons:MaterialIcon Grid.Column="0"
+                         Kind="Controller"
+                         IsHitTestVisible="False"/>-->
+    <Button Width="36"
+            Height="36"
+            Classes="Flat">
+      <Button.Background>
+        <ImageBrush Source="../Assets/sb-logo.png"/>
+      </Button.Background>
+    </Button>
+    <TextBlock Grid.Column="1"
+               Text="Streamer.Bot"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"
+               IsHitTestVisible="False"
+               Classes="Headline6"/>
+    <StackPanel Grid.Column="2"
+                Orientation="Horizontal">
+      <Button Classes="Flat">
+        <mIcons:MaterialIcon Kind="WindowMinimize"/>
+      </Button>
+      <Button Classes="Flat">
+        <mIcons:MaterialIcon Kind="WindowMaximize"/>
+      </Button>
+      <Button Classes="Flat">
+        <mIcons:MaterialIcon Kind="WindowClose"/>
+      </Button>
+    </StackPanel>
+  </Grid>
+</UserControl>

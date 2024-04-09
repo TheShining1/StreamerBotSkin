@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace StreamerBotSkin.Models
 {
-    internal class SBTrigger
-    {
-        public uint ID { get; set; }
-        public uint Type { get; set; }
-        public bool Enabled { get; set; }
-        public bool AlwaysRun { get; set; }
-    }
+  public class SBTrigger
+  {
+    public string ID { get; set; }
+    public uint Type { get; set; }
+    public bool Enabled { get; set; }
+    public bool AlwaysRun { get; set; }
+  }
 }

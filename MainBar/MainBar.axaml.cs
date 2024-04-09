@@ -39,7 +39,7 @@ namespace StreamerBotSkin
 
             bool isChecked = toggleButton.IsChecked ?? false;
 
-            MaterialThemeStyles.BaseTheme = isChecked ? BaseThemeMode.Dark : BaseThemeMode.Light;
-        }
+            MaterialThemeStyles.BaseTheme = MaterialThemeStyles.BaseTheme == BaseThemeMode.Light ? BaseThemeMode.Dark : BaseThemeMode.Light;
+    }
     }
 }
