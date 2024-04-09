@@ -3,7 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
 			 xmlns:sbPanels="clr-namespace:StreamerBotSkin.Panels"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="600"
              x:Class="StreamerBotSkin.Views.ActionsView"
 			 xmlns:vm="using:StreamerBotSkin.ViewModels"
 			 x:DataType="vm:ActionsViewModel">
@@ -11,7 +11,7 @@
 		<vm:ActionsViewModel/>
 	</Design.DataContext>
 	<Grid ColumnDefinitions="*,5,*">
-		<TextBlock Text="{Binding ModelName}"/>
+		<!--<TextBlock Text="{Binding ModelName}"/>-->
     <sbPanels:ActionsPanel/>
 		<GridSplitter Grid.Column="1"/>
 		<Grid Grid.Column="2">

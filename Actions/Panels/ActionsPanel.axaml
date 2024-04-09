@@ -31,11 +31,14 @@
   </UserControl.Styles>
   <Grid RowDefinitions="Auto,*">
     <Grid Grid.Row="0"
-				ColumnDefinitions="*,*,*"
-				VerticalAlignment="Center">
-      <TextBlock Grid.Column="0">Actions</TextBlock>
+				ColumnDefinitions="*,*,2*"
+				VerticalAlignment="Center"
+        Margin="5">
+      <TextBlock Grid.Column="0"
+                 Classes="Subtitle2"
+                 VerticalAlignment="Center">Actions</TextBlock>
       <TextBox Grid.Column="2"
-					 Watermark="Filter"></TextBox>
+               Watermark="Filter"></TextBox>
     </Grid>
     <!--<ScrollViewer Grid.Row="1">-->
     <DataGrid Grid.Row="1"
@@ -43,11 +46,15 @@
               AutoGenerateColumns="False"
               ColumnWidth="*"
               ItemsSource="{Binding Path=actionsItems}"
-              SelectedItem="{Binding Path=currentAction}">
+              SelectedItem="{Binding Path=currentAction}"
+              CanUserResizeColumns="True"
+              ColumnHeaderHeight="36">
       <DataGrid.Columns>
-        <DataGridCheckBoxColumn Header="Enabled"
-							x:DataType="sbModels:SBAction"
-							Binding="{Binding Enabled}"/>
+        <DataGridCheckBoxColumn Header=""
+                                CanUserResize="False"
+                                x:DataType="sbModels:SBAction"
+                                Binding="{Binding Enabled}"
+                                Width="24"/>
         <DataGridTextColumn Header="Name"
 									x:DataType="sbModels:SBAction"
 									Binding="{Binding Name}"/>
@@ -64,7 +71,7 @@
             </DataTemplate>
           </DataGridTemplateColumn.CellTemplate>
         </DataGridTemplateColumn>
-        <DataGridTemplateColumn>
+        <DataGridTemplateColumn CanUserResize="False">
           <DataGridTemplateColumn.CellTemplate>
             <DataTemplate>
               <StackPanel Orientation="Horizontal">

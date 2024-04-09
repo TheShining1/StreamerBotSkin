@@ -14,7 +14,7 @@ namespace StreamerBotSkin.ViewModels
     public class ActionsViewModel : ViewModelBase
     {
         public string ModelName { get; set; } = "ActionsViewModel";
-        public DataGridCollectionView actionsItems { get; set; } = new DataGridCollectionView(SBAction.GetAll());
+        public DataGridCollectionView actionsItems { get; set; } = SBAction.GetAll();
 
         private SBAction _currentAction;
 

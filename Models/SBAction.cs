@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using Avalonia.Collections;
+
 using Newtonsoft.Json;
 
 namespace StreamerBotSkin.Models
@@ -59,11 +61,15 @@ namespace StreamerBotSkin.Models
     //    };
     //}
 
-    public static ObservableCollection<SBAction> GetAll()
+    public static DataGridCollectionView GetAll()
     {
-
       string actionsFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "actions.json");
-      return JsonConvert.DeserializeObject<ObservableCollection<SBAction>>(File.ReadAllText(actionsFilePath));
+      var actions = JsonConvert.DeserializeObject<ObservableCollection<SBAction>>(File.ReadAllText(actionsFilePath));
+
+      var actionsCollectionView = new DataGridCollectionView(actions);
+      actionsCollectionView.GroupDescriptions.Add(new DataGridPathGroupDescription("Group"));
+
+      return actionsCollectionView;
     }
   }
 }
