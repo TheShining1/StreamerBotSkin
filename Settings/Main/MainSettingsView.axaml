@@ -6,7 +6,7 @@
              xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              xmlns:mAssist="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
 						 xmlns:vm="using:StreamerBotSkin.ViewModels"
-xmlns:sbControls="clr-namespace:StreamerBotSkin.Controls"
+             xmlns:sbControls="clr-namespace:StreamerBotSkin.Controls"
 						 x:DataType="vm:MainSettingsViewModel"
              x:Class="StreamerBotSkin.Views.MainSettingsView">
   <Grid RowDefinitions="Auto, *">
@@ -18,81 +18,9 @@ xmlns:sbControls="clr-namespace:StreamerBotSkin.Controls"
                 SelectedIndex="0">
       <TabItem Header="General">       
           <sbControls:General/>
-        <!--<Grid Margin="10"
-           RowDefinitions="Auto,*,Auto">
-          <TextBlock Grid.Row="0">Instance information</TextBlock>
-          <StackPanel Grid.Row="1"
-                Margin="10">
-            <StackPanel Orientation="Horizontal">
-              <TextBox Grid.Column="1"
-                    Grid.Row="0"
-                    VerticalAlignment="Center"
-                    Margin="5"
-                    mAssist:TextFieldAssist.Label="ID">
-                345w3g45g5gw-4tw43t-e4tbe4vt-e4te4vct
-                <TextBox.InnerRightContent>
-                  --><!-- <Button Classes="Flat" Content="{mIcons:MaterialIconExt Refresh}" /> --><!--
-                  --><!-- <Button Classes="Icon">
-										<mIcons:MaterialIcon Kind="Refresh"/>
-									</Button> --><!--
-                </TextBox.InnerRightContent>
-              </TextBox>
-              <TextBox Grid.Column="1"
-                    Grid.Row="1"
-                    VerticalAlignment="Center"
-                    Margin="5"
-                  mAssist:TextFieldAssist.Label="Name">
-                345w3g45g5gw-4tw43t-e4tbe4vt-e4te4vct
-                <TextBox.InnerRightContent>
-                  --><!-- <Button Classes="Flat" Content="{mIcons:MaterialIconExt Save}" /> --><!--
-                  --><!-- <Button Classes="Icon">
-										<mIcons:MaterialIcon Kind="Save"/>
-									</Button> --><!--
-                </TextBox.InnerRightContent>
-              </TextBox>
-            </StackPanel>
-          </StackPanel>
-          <StackPanel Grid.Row="2"
-                      Orientation="Horizontal"
-                      HorizontalAlignment="Right">
-            <TextBlock>Log level:</TextBlock>
-            <ComboBox x:Name="debugLevels"
-                      ItemsSource="{Binding logLevels}"
-                      SelectedIndex="{Binding currentLogLevelIndex}"
-                      Width="150">
-              <ComboBox.ItemTemplate>
-              </ComboBox.ItemTemplate>
-            </ComboBox>
-          </StackPanel>
-        </Grid>-->
       </TabItem>
       <TabItem Header="Interface">
-        <ScrollViewer>
-          <Grid Margin="10"
-						  RowDefinitions="Auto,Auto,Auto,Auto">
-            <TextBlock Grid.Row="0">Action Colors</TextBlock>
-            <StackPanel Grid.Row="1">
-              <Grid ColumnDefinitions="*,Auto">
-                <TextBox x:Name="CommentColor"
-										 Grid.Column="0"></TextBox>
-                <Button Grid.Column="1"
-										Margin="20 0 0 0">...</Button>
-              </Grid>
-              <Grid ColumnDefinitions="*,Auto">
-                <TextBox x:Name="DisabledColor"
-										  Grid.Column="0"></TextBox>
-                <Button Grid.Column="1"
-										VerticalAlignment="Center"
-										Margin="20 0 0 0">...</Button>
-              </Grid>
-            </StackPanel>
-            <StackPanel Grid.Row="2">
-              <CheckBox>Minimize to tray</CheckBox>
-              <CheckBox>Confirmation on close</CheckBox>
-            </StackPanel>
-            <Button Grid.Row="3">Reset Delete Confirations</Button>
-          </Grid>
-        </ScrollViewer>
+        <sbControls:Interface/>        
       </TabItem>
       <TabItem Header="Audio">
         <ScrollViewer>
