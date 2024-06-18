@@ -4,7 +4,7 @@ using Avalonia.Interactivity;
 using Avalonia.Markup.Xaml;
 using StreamerBotSkin.Dialogs;
 
-namespace StreamerBotSkin
+namespace StreamerBotSkin.Controls
 {
     public partial class MainBarMenu : UserControl
     {

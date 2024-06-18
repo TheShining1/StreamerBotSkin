@@ -1,4 +1,5 @@
 ﻿using ReactiveUI;
+
 using System;
 using System.Collections.Generic;
 using System.Windows.Input;
@@ -9,42 +10,30 @@ namespace StreamerBotSkin.ViewModels
   {
     public MainWindowViewModel()
     {
-      _currentViewModel = ViewModelsAvailable["main"];
+      currentViewModel = ViewModelsAvailable["main"];
 
       NavigateCommand = ReactiveCommand.Create<string>(NavigateTo);
     }
 
-    private readonly Dictionary<string, ViewModelBase> ViewModelsAvailable = new Dictionary<string, ViewModelBase>
-        {
-            {"main", new MainViewModel() },
-            {"actions", new ActionsViewModel() },
-            {"settings", new SettingsViewModel() }
-        };
+    private readonly Dictionary<string, ViewModelBase> ViewModelsAvailable = new()
+    {
+        {"main", new MainViewModel() },
+        {"actions", new ActionsViewModel() },
+        {"settings", new SettingsViewModel() }
+    };
 
-    private ViewModelBase _currentViewModel;
+    private ViewModelBase currentViewModel;
     public ViewModelBase CurrentViewModel
     {
-      get => _currentViewModel;
-      private set => this.RaiseAndSetIfChanged(ref _currentViewModel, value);
+      get => currentViewModel;
+      private set => this.RaiseAndSetIfChanged(ref currentViewModel, value);
     }
+
     public ICommand NavigateCommand { get; }
 
-    private string index = "main";
     private void NavigateTo(string key)
     {
       CurrentViewModel = ViewModelsAvailable[key];
     }
-
-    //private string _testString = string.Empty;
-    //public string TestString { 
-    //  get
-    //  {
-    //    return _testString;
-    //  }
-    //  set
-    //  {
-    //    this.RaiseAndSetIfChanged(ref _testString, value);
-    //  }
-    //}
   }
 }

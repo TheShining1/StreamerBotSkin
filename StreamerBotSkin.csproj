@@ -60,7 +60,7 @@
     <Compile Update="Settings\StreamApps\StreamappsSettingsView.axaml.cs">
       <DependentUpon>StreamappsSettingsView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="ControlBar\ControlBar.axaml.cs">
+    <Compile Update="Controls\ControlBar\ControlBar.axaml.cs">
       <DependentUpon>ControlBar.axaml</DependentUpon>
     </Compile>
   </ItemGroup>

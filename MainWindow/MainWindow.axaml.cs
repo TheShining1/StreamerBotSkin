@@ -3,13 +3,13 @@ using Avalonia.Interactivity;
 
 namespace StreamerBotSkin.Views
 {
-    public partial class MainWindow : Window
+  public partial class MainWindow : Window
+  {
+    public MainWindow()
     {
-        public MainWindow()
-        {
-            InitializeComponent();
+      InitializeComponent();
 
-            Program.MainWindow = this;
-        }
+      Program.MainWindow = this;
     }
+  }
 }

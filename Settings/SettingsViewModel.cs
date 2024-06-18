@@ -4,21 +4,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+
 using ReactiveUI;
 
 namespace StreamerBotSkin.ViewModels
 {
-    public class SettingsViewModel : ViewModelBase
+  public class SettingsViewModel : ViewModelBase
+  {
+    public string ModelName { get; set; } = "SettingsViewModel";
+    public SettingsViewModel()
     {
-        public string ModelName { get; set; } = "SettingsViewModel";
-        public SettingsViewModel()
-        {
-            _currentSettingsViewModel = SettingsViewModelsAvailable["main"];
+      currentSettingsViewModel = SettingsViewModelsAvailable["main"];
 
-            NavigateSettingsCommand = ReactiveCommand.Create<string>(NavigateToSetting);
-        }
+      NavigateSettingsCommand = ReactiveCommand.Create<string>(NavigateToSetting);
+    }
 
-        private readonly Dictionary<string, ViewModelBase> SettingsViewModelsAvailable = new Dictionary<string, ViewModelBase>
+    private readonly Dictionary<string, ViewModelBase> SettingsViewModelsAvailable = new Dictionary<string, ViewModelBase>
         {
             {"main", new MainSettingsViewModel() },
             {"platforms", new PlatfromsSettingsViewModel() },
@@ -26,19 +27,18 @@ namespace StreamerBotSkin.ViewModels
             {"streamapps", new StreamappsSettingsViewModel() }
         };
 
-        public ICommand NavigateSettingsCommand { get; }
+    public ICommand NavigateSettingsCommand { get; }
 
-        private string index = "main";
-        private void NavigateToSetting(string key)
-        {
-            CurrentSettingsViewModel = SettingsViewModelsAvailable[key];
-        }
-
-        private ViewModelBase _currentSettingsViewModel;
-        public ViewModelBase CurrentSettingsViewModel
-        {
-            get => _currentSettingsViewModel;
-            private set => this.RaiseAndSetIfChanged(ref _currentSettingsViewModel, value);
-        }
+    private void NavigateToSetting(string key)
+    {
+      CurrentSettingsViewModel = SettingsViewModelsAvailable[key];
     }
+
+    private ViewModelBase currentSettingsViewModel;
+    public ViewModelBase CurrentSettingsViewModel
+    {
+      get => currentSettingsViewModel;
+      private set => this.RaiseAndSetIfChanged(ref currentSettingsViewModel, value);
+    }
+  }
 }

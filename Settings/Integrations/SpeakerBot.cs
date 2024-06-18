@@ -4,9 +4,9 @@ using Avalonia.Markup.Xaml;
 
 namespace StreamerBotSkin;
 
-public partial class ControlBar : UserControl
+public partial class SpeakerBot : UserControl
 {
-    public ControlBar()
+    public SpeakerBot()
     {
         InitializeComponent();
     }

@@ -61,15 +61,10 @@ namespace StreamerBotSkin.Models
     //    };
     //}
 
-    public static DataGridCollectionView GetAll()
+    public static ObservableCollection<SBAction> GetAll()
     {
       string actionsFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "actions.json");
-      var actions = JsonConvert.DeserializeObject<ObservableCollection<SBAction>>(File.ReadAllText(actionsFilePath));
-
-      var actionsCollectionView = new DataGridCollectionView(actions);
-      actionsCollectionView.GroupDescriptions.Add(new DataGridPathGroupDescription("Group"));
-
-      return actionsCollectionView;
+      return JsonConvert.DeserializeObject<ObservableCollection<SBAction>>(File.ReadAllText(actionsFilePath));
     }
   }
 }

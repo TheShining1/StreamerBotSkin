@@ -5,8 +5,8 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="500"
              xmlns:mControls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
              xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
-             xmlns:sbControls="clr-namespace:StreamerBotSkin"
-             x:Class="StreamerBotSkin.MainBar"
+             xmlns:sbControls="clr-namespace:StreamerBotSkin.Controls"
+             x:Class="StreamerBotSkin.Controls.MainBar"
              x:Name="root">
 	<mControls:ColorZone Grid.Row="0">
 		<Grid ColumnDefinitions="Auto, Auto, *, Auto">
@@ -39,7 +39,7 @@
                       Click="ThemeChange">
 					<mIcons:MaterialIcon Kind="ThemeLightDark"/>
 				</ToggleButton>
-				<sbControls:MainBarMenu />
+        <sbControls:MainBarMenu />
 			</StackPanel>
 		</Grid>
 	</mControls:ColorZone>

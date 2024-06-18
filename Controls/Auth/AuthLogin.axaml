@@ -1,0 +1,51 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="200"
+             x:Class="StreamerBotSkin.Controls.Auth.AuthLogin"
+             xmlns:mControls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
+             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             x:Name="root">
+  <mControls:Card>
+    <Grid RowDefinitions="Auto,*,Auto">
+      <Grid Grid.Row="0"
+            ColumnDefinitions="*, Auto">
+        <TextBlock Grid.Column="0"
+                   Classes="Subtitle1"
+                   Text="{Binding Account.AccType, ElementName=root}"/>
+        <mIcons:MaterialIcon Grid.Column="1"
+                             Kind="Information"
+                             ToolTip.Placement="Left">
+          <ToolTip.Tip>
+            <TextBox MaxWidth="300"
+                     TextWrapping="Wrap">Connecting your broadcaster account is a must in order to receive specific events and query certain API endpoints.</TextBox>
+          </ToolTip.Tip>
+        </mIcons:MaterialIcon>
+      </Grid>
+      <Grid Grid.Row="1"
+            ColumnDefinitions="Auto,*">
+        <mIcons:MaterialIcon Grid.Column="0"
+                             Kind="AccountCircleOutline"
+                             Height="96"
+                             Width="96"/>
+        <StackPanel Grid.Column="1"
+                    VerticalAlignment="Center">
+          <TextBlock Text="{Binding Account.Name, ElementName=root}"
+                     Classes="Headline6"/>
+          <TextBlock Text="{Binding Account.Level, ElementName=root}"
+                     Classes="Subtitle1"/>
+        </StackPanel>
+      </Grid>
+      <Grid Grid.Row="2"
+            ColumnDefinitions="*,*">
+        <Button Grid.Column="0"
+                Margin="5"
+                Content="Login"/>
+        <Button Grid.Column="1"
+                Margin="5"
+                Content="Forget"/>
+      </Grid>
+    </Grid>
+  </mControls:Card>
+</UserControl>

@@ -1,0 +1,43 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="200"
+             xmlns:mControls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
+             xmlns:mAssist="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
+             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             x:Class="StreamerBotSkin.Controls.InstanceInformation">
+    <mControls:Card Padding="10">
+      <StackPanel>        
+        <TextBlock
+                   Text="Instance Information"/>
+        <Grid RowDefinitions="*,*">
+          <TextBox Grid.Row="0"
+                   IsEnabled="False"
+                   VerticalAlignment="Center"
+                   mAssist:TextFieldAssist.Label="ID">
+            <TextBox.Text>
+              345w3g45g5gw-4tw43t-e4tbe4vt-e4te4vct
+            </TextBox.Text>
+            <TextBox.InnerRightContent>
+              <Button Classes="Icon">
+                <mIcons:MaterialIcon Kind="Refresh"/>
+              </Button>
+            </TextBox.InnerRightContent>
+          </TextBox>
+          <TextBox Grid.Row="1"
+                   VerticalAlignment="Center"
+                   mAssist:TextFieldAssist.Label="Name">
+            <TextBox.Text>
+              Streamer.Bot
+            </TextBox.Text>
+            <TextBox.InnerRightContent>
+              <Button Classes="Icon">
+                <mIcons:MaterialIcon Kind="ContentSave"/>
+              </Button>
+            </TextBox.InnerRightContent>
+          </TextBox>
+        </Grid>
+      </StackPanel>
+    </mControls:Card>
+</UserControl>

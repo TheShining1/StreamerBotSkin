@@ -5,14 +5,27 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              xmlns:mControls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
              xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
-             x:Class="StreamerBotSkin.Views.PlatfromsSettingsView">
+             xmlns:sbAuthControls="clr-namespace:StreamerBotSkin.Controls.Auth"
+			       xmlns:sbModels="clr-namespace:StreamerBotSkin.Models"
+             x:Class="StreamerBotSkin.Views.PlatfromsSettingsView"
+			       xmlns:vm="using:StreamerBotSkin.ViewModels"
+			       x:DataType="vm:PlatfromsSettingsViewModel">
+  <Design.DataContext>
+    <vm:PlatfromsSettingsViewModel/>
+  </Design.DataContext>
   <TabControl>
     <TabControl.Items>
       <TabItem Header="Twtich"
                Foreground="#9146FF">
         <Grid ColumnDefinitions="*,*"
               VerticalAlignment="Center">
-          <mControls:Card Grid.Column="0"
+          <sbAuthControls:AuthLogin Grid.Column="0"
+                                    Padding="10"
+                                    Account="{Binding accounts[Twitch][Broadcaster]}"/>
+          <sbAuthControls:AuthLogin Grid.Column="1"
+                                    Padding="10"
+                                    Account="{Binding accounts[Twitch][Bot]}"/>
+          <!--<mControls:Card Grid.Column="0"
                           VerticalAlignment="Center">
             <Grid RowDefinitions="Auto, *, *, *">
               <Grid Grid.Row="0"
@@ -76,8 +89,8 @@
                 </Grid>
               </mControls:Card>
             </Grid>
-          </mControls:Card>
-          <mControls:Card Grid.Column="1"
+          </mControls:Card>-->
+          <!--<mControls:Card Grid.Column="1"
                           VerticalAlignment="Center">
             <Grid RowDefinitions="Auto, *, *, *">
               <Grid Grid.Row="0"
@@ -126,7 +139,7 @@
                 </Grid>
               </mControls:Card>
             </Grid>
-          </mControls:Card>
+          </mControls:Card>-->
         </Grid>
       </TabItem>
       <TabItem Header="YouTube"
@@ -225,7 +238,7 @@
                   <mIcons:MaterialIcon Kind="Youtube"/>
                   <TextBlock Text="Terms of Service"/>
                 </StackPanel>
-              </Button.Content>  
+              </Button.Content>
             </Button>
             <Button Classes="Flat">
               <Button.Content>

@@ -1,6 +1,6 @@
 using Avalonia.Controls;
 
-namespace StreamerBotSkin
+namespace StreamerBotSkin.Controls
 {
     public partial class Footer : UserControl
     {

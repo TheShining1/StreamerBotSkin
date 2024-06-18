@@ -6,7 +6,7 @@
              xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              xmlns:vm="using:StreamerBotSkin.ViewModels"
              x:DataType="vm:MainWindowViewModel"
-             x:Class="StreamerBotSkin.MainDrawer">
+             x:Class="StreamerBotSkin.Controls.MainDrawer">
   <Grid RowDefinitions="Auto, *, Auto">    
     <StackPanel Grid.Row="0">
       <StackPanel Orientation="Horizontal"

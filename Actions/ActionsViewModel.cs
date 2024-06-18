@@ -11,25 +11,40 @@ using System.Runtime.CompilerServices;
 
 namespace StreamerBotSkin.ViewModels
 {
-    public class ActionsViewModel : ViewModelBase
+  public class ActionsViewModel : ViewModelBase
+  {
+    public string ModelName { get; set; } = "ActionsViewModel";
+    public DataGridCollectionView actionsItems { get; set; } = new DataGridCollectionView(new ObservableCollection<SBAction>());
+
+    public ActionsViewModel()
     {
-        public string ModelName { get; set; } = "ActionsViewModel";
-        public DataGridCollectionView actionsItems { get; set; } = SBAction.GetAll();
-
-        private SBAction _currentAction;
-
-        public SBAction currentAction
-        {
-            get { return _currentAction; }
-            set {                 
-                this.RaiseAndSetIfChanged(ref _currentAction, value);
-            }
-        }
-        private List<SBSubAction> _currentSubActions;
-        public List<SBSubAction> currentSubActions
-        {
-            get { return _currentSubActions; }
-            set { _currentSubActions = value; }
-        }
+      actionsItems = LoadActions();
     }
+
+    private DataGridCollectionView LoadActions()
+    {
+      var actions = SBAction.GetAll();
+      var actionsCollectionView = new DataGridCollectionView(actions);
+      actionsCollectionView.GroupDescriptions.Add(new DataGridPathGroupDescription("Group"));
+
+      return actionsCollectionView;
+    }
+
+    private SBAction _currentAction;
+
+    public SBAction currentAction
+    {
+      get { return _currentAction; }
+      set
+      {
+        this.RaiseAndSetIfChanged(ref _currentAction, value);
+      }
+    }
+    private List<SBSubAction> _currentSubActions;
+    public List<SBSubAction> currentSubActions
+    {
+      get { return _currentSubActions; }
+      set { _currentSubActions = value; }
+    }
+  }
 }

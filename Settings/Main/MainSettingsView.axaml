@@ -6,125 +6,128 @@
              xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              xmlns:mAssist="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
 						 xmlns:vm="using:StreamerBotSkin.ViewModels"
+xmlns:sbControls="clr-namespace:StreamerBotSkin.Controls"
 						 x:DataType="vm:MainSettingsViewModel"
              x:Class="StreamerBotSkin.Views.MainSettingsView">
-	<Grid RowDefinitions="Auto, *">
-		<TextBlock Grid.Row="0"
+  <Grid RowDefinitions="Auto, *">
+    <TextBlock Grid.Row="0"
 				   Margin="5"
 				   FontSize="18"
 				   FontWeight="Bold">Settings</TextBlock>
-		<TabControl Grid.Row="1"
+    <TabControl Grid.Row="1"
                 SelectedIndex="0">
-			<TabItem Header="General">
-				<Grid Margin="10"
-						RowDefinitions="Auto,*,Auto">
-					<TextBlock Grid.Row="0">Instance information</TextBlock>
-					<StackPanel Grid.Row="1"
-								Margin="10">
-						<StackPanel Orientation="Horizontal">
-							<TextBox Grid.Column="1"
-										Grid.Row="0"
-										VerticalAlignment="Center"
-										Margin="5"
-										mAssist:TextFieldAssist.Label="ID">345w3g45g5gw-4tw43t-e4tbe4vt-e4te4vct										   
-								<TextBox.InnerRightContent>
-									<!-- <Button Classes="Flat" Content="{mIcons:MaterialIconExt Refresh}" /> -->
-									<!-- <Button Classes="Icon">
+      <TabItem Header="General">       
+          <sbControls:General/>
+        <!--<Grid Margin="10"
+           RowDefinitions="Auto,*,Auto">
+          <TextBlock Grid.Row="0">Instance information</TextBlock>
+          <StackPanel Grid.Row="1"
+                Margin="10">
+            <StackPanel Orientation="Horizontal">
+              <TextBox Grid.Column="1"
+                    Grid.Row="0"
+                    VerticalAlignment="Center"
+                    Margin="5"
+                    mAssist:TextFieldAssist.Label="ID">
+                345w3g45g5gw-4tw43t-e4tbe4vt-e4te4vct
+                <TextBox.InnerRightContent>
+                  --><!-- <Button Classes="Flat" Content="{mIcons:MaterialIconExt Refresh}" /> --><!--
+                  --><!-- <Button Classes="Icon">
 										<mIcons:MaterialIcon Kind="Refresh"/>
-									</Button> -->
-								</TextBox.InnerRightContent>
-							</TextBox>
-							<TextBox Grid.Column="1"
-										Grid.Row="1"
-										VerticalAlignment="Center"
-										Margin="5"
-									mAssist:TextFieldAssist.Label="Name">345w3g45g5gw-4tw43t-e4tbe4vt-e4te4vct										   
-								<TextBox.InnerRightContent>
-									<!-- <Button Classes="Flat" Content="{mIcons:MaterialIconExt Save}" /> -->
-									<!-- <Button Classes="Icon">
+									</Button> --><!--
+                </TextBox.InnerRightContent>
+              </TextBox>
+              <TextBox Grid.Column="1"
+                    Grid.Row="1"
+                    VerticalAlignment="Center"
+                    Margin="5"
+                  mAssist:TextFieldAssist.Label="Name">
+                345w3g45g5gw-4tw43t-e4tbe4vt-e4te4vct
+                <TextBox.InnerRightContent>
+                  --><!-- <Button Classes="Flat" Content="{mIcons:MaterialIconExt Save}" /> --><!--
+                  --><!-- <Button Classes="Icon">
 										<mIcons:MaterialIcon Kind="Save"/>
-									</Button> -->
-								</TextBox.InnerRightContent>
-							</TextBox>
-						</StackPanel>
-					</StackPanel>
-					<StackPanel Grid.Row="2"
-								Orientation="Horizontal"
-								HorizontalAlignment="Right">
-						<ComboBox x:Name="debugLevels"
-                      ItemsSource="{Binding _logLevels}"
-                      SelectedItem="{Binding CurrentLogLevel}">
+									</Button> --><!--
+                </TextBox.InnerRightContent>
+              </TextBox>
+            </StackPanel>
+          </StackPanel>
+          <StackPanel Grid.Row="2"
+                      Orientation="Horizontal"
+                      HorizontalAlignment="Right">
+            <TextBlock>Log level:</TextBlock>
+            <ComboBox x:Name="debugLevels"
+                      ItemsSource="{Binding logLevels}"
+                      SelectedIndex="{Binding currentLogLevelIndex}"
+                      Width="150">
               <ComboBox.ItemTemplate>
-                <DataTemplate>
-                  <!--<TextBlock Text="{Binding Value}" />-->
-                </DataTemplate>
               </ComboBox.ItemTemplate>
             </ComboBox>
-					</StackPanel>
-				</Grid>
-			</TabItem>
-			<TabItem Header="Interface">
-				<ScrollViewer>
-					<Grid Margin="10"
+          </StackPanel>
+        </Grid>-->
+      </TabItem>
+      <TabItem Header="Interface">
+        <ScrollViewer>
+          <Grid Margin="10"
 						  RowDefinitions="Auto,Auto,Auto,Auto">
-						<TextBlock Grid.Row="0">Action Colors</TextBlock>
-						<StackPanel Grid.Row="1">
-							<Grid ColumnDefinitions="*,Auto">
-								<TextBox x:Name="CommentColor"
+            <TextBlock Grid.Row="0">Action Colors</TextBlock>
+            <StackPanel Grid.Row="1">
+              <Grid ColumnDefinitions="*,Auto">
+                <TextBox x:Name="CommentColor"
 										 Grid.Column="0"></TextBox>
-								<Button Grid.Column="1"
+                <Button Grid.Column="1"
 										Margin="20 0 0 0">...</Button>
-							</Grid>
-							<Grid ColumnDefinitions="*,Auto">
-								<TextBox x:Name="DisabledColor"
+              </Grid>
+              <Grid ColumnDefinitions="*,Auto">
+                <TextBox x:Name="DisabledColor"
 										  Grid.Column="0"></TextBox>
-								<Button Grid.Column="1"
+                <Button Grid.Column="1"
 										VerticalAlignment="Center"
 										Margin="20 0 0 0">...</Button>
-							</Grid>
-						</StackPanel>
-						<StackPanel Grid.Row="2">
-							<CheckBox>Minimize to tray</CheckBox>
-							<CheckBox>Confirmation on close</CheckBox>
-						</StackPanel>
-						<Button Grid.Row="3">Reset Delete Confirations</Button>
-					</Grid>
-				</ScrollViewer>
-			</TabItem>
-			<TabItem Header="Audio">
-				<ScrollViewer>
-					<Grid Margin="10"
+              </Grid>
+            </StackPanel>
+            <StackPanel Grid.Row="2">
+              <CheckBox>Minimize to tray</CheckBox>
+              <CheckBox>Confirmation on close</CheckBox>
+            </StackPanel>
+            <Button Grid.Row="3">Reset Delete Confirations</Button>
+          </Grid>
+        </ScrollViewer>
+      </TabItem>
+      <TabItem Header="Audio">
+        <ScrollViewer>
+          <Grid Margin="10"
 						  RowDefinitions="Auto, Auto, Auto, Auto">
-						<TextBlock Grid.Row="0">Audio output device</TextBlock>
-						<ComboBox Grid.Row="1"
+            <TextBlock Grid.Row="0">Audio output device</TextBlock>
+            <ComboBox Grid.Row="1"
 								  Padding="10"
 								  x:Name="audioDevices"></ComboBox>
-						<Grid  Grid.Row="2"
+            <Grid  Grid.Row="2"
 							   ColumnDefinitions="Auto, *, Auto">
-							<CheckBox Grid.Column="0">Use system default when selected device not found</CheckBox>
-							<Button Grid.Column="2">Refresh</Button>
-						</Grid>
-						<StackPanel Grid.Row="3">
-							<StackPanel Orientation="Horizontal">
-								<TextBlock>Application volume: </TextBlock>
-								<TextBlock Text="{Binding #volume.Value}"/>
-							</StackPanel>
-							<Slider x:Name="volume"
+              <CheckBox Grid.Column="0">Use system default when selected device not found</CheckBox>
+              <Button Grid.Column="2">Refresh</Button>
+            </Grid>
+            <StackPanel Grid.Row="3">
+              <StackPanel Orientation="Horizontal">
+                <TextBlock>Application volume: </TextBlock>
+                <TextBlock Text="{Binding #volume.Value}"/>
+              </StackPanel>
+              <Slider x:Name="volume"
 									IsSnapToTickEnabled="True"
 									TickFrequency="1"
 									Classes="Modern Ticks"
 									Margin="10"/>
-						</StackPanel>
-					</Grid>
-				</ScrollViewer>
-			</TabItem>
-			<TabItem Header="C# Compiler">
-				<ScrollViewer>
-					<Grid Margin="10"
+            </StackPanel>
+          </Grid>
+        </ScrollViewer>
+      </TabItem>
+      <TabItem Header="C# Compiler">
+        <ScrollViewer>
+          <Grid Margin="10"
 						  RowDefinitions="Auto, *, Auto">
             <Grid Grid.Row="0"
-                  ColumnDefinitions="Auto, *, Auto">              
-							<TextBlock Grid.Column="0">Common references</TextBlock>
+                  ColumnDefinitions="Auto, *, Auto">
+              <TextBlock Grid.Column="0">Common references</TextBlock>
               <mIcons:MaterialIcon Grid.Column="2"
                                    Kind="Information"
                                    ToolTip.Placement="Left">
@@ -134,26 +137,26 @@
                 </ToolTip.Tip>
               </mIcons:MaterialIcon>
             </Grid>
-						<TextBox Grid.Row="1"
+            <TextBox Grid.Row="1"
 								 x:Name="refBox">
-						</TextBox>
-						<CheckBox Grid.Row="2">Auto complete braces and quotes</CheckBox>
-					</Grid>
-				</ScrollViewer>
-			</TabItem>
-			<TabItem Header="Labs">
-				<ScrollViewer>
-					<Grid RowDefinitions="Auto,Auto,Auto"
+            </TextBox>
+            <CheckBox Grid.Row="2">Auto complete braces and quotes</CheckBox>
+          </Grid>
+        </ScrollViewer>
+      </TabItem>
+      <TabItem Header="Labs">
+        <ScrollViewer>
+          <Grid RowDefinitions="Auto,Auto,Auto"
 						  Margin="10">
-						<TextBlock Grid.Row="0">Alternative queue</TextBlock>
-						<CheckBox Grid.Row="1">Enabled</CheckBox>
-						<StackPanel Grid.Row="2">
-							<TextBlock>This experimental feature introduces a new Action queue system</TextBlock>
-							<TextBlock>This setting requires a restart after enabling or disabling</TextBlock>
-						</StackPanel>
-					</Grid>
-				</ScrollViewer>
-			</TabItem>
-		</TabControl>
-	</Grid>
+            <TextBlock Grid.Row="0">Alternative queue</TextBlock>
+            <CheckBox Grid.Row="1">Enabled</CheckBox>
+            <StackPanel Grid.Row="2">
+              <TextBlock>This experimental feature introduces a new Action queue system</TextBlock>
+              <TextBlock>This setting requires a restart after enabling or disabling</TextBlock>
+            </StackPanel>
+          </Grid>
+        </ScrollViewer>
+      </TabItem>
+    </TabControl>
+  </Grid>
 </UserControl>

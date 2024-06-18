@@ -6,7 +6,7 @@
              xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              xmlns:vm="using:StreamerBotSkin.ViewModels"
              x:DataType="vm:MainWindowViewModel"
-             x:Class="StreamerBotSkin.MainBarMenu">
+             x:Class="StreamerBotSkin.Controls.MainBarMenu">
 	<Menu>
 		<MenuItem VerticalAlignment="Center">
 			<MenuItem.Header>

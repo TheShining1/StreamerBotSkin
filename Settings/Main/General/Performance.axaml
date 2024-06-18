@@ -1,0 +1,24 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:mControls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
+             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             x:Class="StreamerBotSkin.Controls.Performance">
+  <mControls:Card Padding="10">
+    <StackPanel>
+      <StackPanel Orientation="Horizontal">        
+        <TextBlock>Performance</TextBlock>
+        <mIcons:MaterialIcon Kind="Information"
+                             ToolTip.Placement="Left">
+          <ToolTip.Tip>
+            <TextBlock>These settings require a restart after changing</TextBlock>
+          </ToolTip.Tip>
+        </mIcons:MaterialIcon>
+      </StackPanel>
+      <CheckBox>Disable viewers tab</CheckBox>
+      <CheckBox>Disable action history</CheckBox>
+    </StackPanel>
+  </mControls:Card>
+</UserControl>

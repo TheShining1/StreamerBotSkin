@@ -7,22 +7,11 @@
              xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              xmlns:sbAuthControls="clr-namespace:StreamerBotSkin.Controls.Auth"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="StreamerBotSkin.StreamerBotWebsite">
-    <Grid RowDefinitions="*, *"
+             x:Class="StreamerBotSkin.SpeakerBot">
+    <Grid RowDefinitions="Auto, *"
           ColumnDefinitions="*,*">
-      <sbAuthControls:AuthLogin Grid.Row="0"
-                                Grid.Column="0"/>
-      <mControls:Card Grid.Row="1"
-                      Grid.Column="0">
-
-        <Grid Grid.Row="1"
-                    ColumnDefinitions="Auto, *, Auto"
-                    VerticalAlignment="Top">
-          <TextBlock Grid.Column="0"
-                     Text="Web Client"/>
-          <Button Grid.Column="2"
-                  Content="Connect"/>
-        </Grid>
-      </mControls:Card>
+      <sbAuthControls:AuthServer Address="True"
+                                 Port="True"
+                                 Endpoint="True"/>
     </Grid>
 </UserControl>

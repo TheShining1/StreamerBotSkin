@@ -31,9 +31,9 @@
   </UserControl.Styles>
   <Grid RowDefinitions="Auto,*">
     <Grid Grid.Row="0"
-				ColumnDefinitions="*,*,2*"
-				VerticalAlignment="Center"
-        Margin="5">
+          ColumnDefinitions="*,*,2*"
+          VerticalAlignment="Center"
+          Margin="5">
       <TextBlock Grid.Column="0"
                  Classes="Subtitle2"
                  VerticalAlignment="Center">Actions</TextBlock>
@@ -56,14 +56,14 @@
                                 Binding="{Binding Enabled}"
                                 Width="24"/>
         <DataGridTextColumn Header="Name"
-									x:DataType="sbModels:SBAction"
-									Binding="{Binding Name}"/>
+                            x:DataType="sbModels:SBAction"
+                            Binding="{Binding Name}"/>
         <DataGridTextColumn Header="Options"
-									x:DataType="sbModels:SBAction"
-									Binding="{Binding Options}"/>
+                            x:DataType="sbModels:SBAction"
+                            Binding="{Binding Options}"/>
         <DataGridTextColumn Header="Triggers"
-									x:DataType="sbModels:SBAction"
-									Binding="{Binding TriggersCout}"/>
+                            x:DataType="sbModels:SBAction"
+                            Binding="{Binding TriggersCout}"/>
         <DataGridTemplateColumn Header="Queue">
           <DataGridTemplateColumn.CellTemplate>
             <DataTemplate>
@@ -76,19 +76,16 @@
             <DataTemplate>
               <StackPanel Orientation="Horizontal">
                 <Button Classes="Flat"
-										Padding="5 0">
-                  <mIcons:MaterialIcon
-										Kind="Play"/>
+                        Padding="5 0">
+                  <mIcons:MaterialIcon Kind="Play"/>
                 </Button>
                 <Button Classes="Flat"
-										Padding="5 0">
-                  <mIcons:MaterialIcon
-										Kind="PencilOutline"/>
+                        Padding="5 0">
+                  <mIcons:MaterialIcon Kind="PencilOutline"/>
                 </Button>
                 <Button Classes="Flat"
-										Padding="5 0">
-                  <mIcons:MaterialIcon
-										Kind="DeleteForeverOutline"/>
+                        Padding="5 0">
+                  <mIcons:MaterialIcon Kind="DeleteForeverOutline"/>
                 </Button>
               </StackPanel>
             </DataTemplate>
