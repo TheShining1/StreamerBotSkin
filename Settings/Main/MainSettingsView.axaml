@@ -9,18 +9,22 @@
              xmlns:sbControls="clr-namespace:StreamerBotSkin.Controls"
 						 x:DataType="vm:MainSettingsViewModel"
              x:Class="StreamerBotSkin.Views.MainSettingsView">
-  <Grid RowDefinitions="Auto, *">
+  <Grid RowDefinitions="Auto, Auto, Auto, *">
     <TextBlock Grid.Row="0"
 				   Margin="5"
 				   FontSize="18"
 				   FontWeight="Bold">Settings</TextBlock>
     <TabControl Grid.Row="1"
+                ItemsSource="{Binding Tabs}"
+                SelectedItem="{Binding SelectedTab}"/>
+    <ContentControl Grid.Row="2"
+                    Content="{Binding CurrentMainSettingsViewModel}"/>
+    <TabControl Grid.Row="3"
                 SelectedIndex="0">
-      <TabItem Header="General">       
-          <sbControls:General/>
+      <TabItem Header="General">     
       </TabItem>
       <TabItem Header="Interface">
-        <sbControls:Interface/>        
+        <ContentControl Content="{Binding CurrentMainSettingsViewModel}"/>        
       </TabItem>
       <TabItem Header="Audio">
         <ScrollViewer>

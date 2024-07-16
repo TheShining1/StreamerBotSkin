@@ -4,8 +4,11 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 using Microsoft.VisualBasic;
+
+using ReactiveUI;
 
 using Windows.Foundation.Diagnostics;
 
@@ -15,6 +18,8 @@ namespace StreamerBotSkin.ViewModels
     {
       public MainSettingsViewModel()
       {
+      SelectedTab = "General";
+      currentMainSettingsViewModel = MainSettingsViewModelsAvailable[SelectedTab];
       //_logLevels = Array.ForEach<typeof(LogLevel)>(Enum.GetValues(typeof(LogLevel)), l => new Dictionary<LogLevel, string>() { l, "Test" }).ToList();
 
       //logLevels = new Dictionary<int, string>()
@@ -40,7 +45,35 @@ namespace StreamerBotSkin.ViewModels
       //_logLevels.Add(new Dictionary<int, string>{ { 2, "Information" } });
 
       //_currentLogLevel = _logLevels[0];
-      }
+    }
+
+    public List<string> Tabs { get; set; } = new List<string>()
+    {
+      "General",
+      "Interface"
+    };
+
+    public string SelectedTab { get; set; } = "General";
+
+    private readonly Dictionary<string, ViewModelBase> MainSettingsViewModelsAvailable = new Dictionary<string, ViewModelBase>
+    {
+      { "General", new GeneralViewModel() },
+      { "Interface", new InterfaceViewModel() }
+    };
+
+    public ICommand NavigateMainSettingsCommand { get; }
+
+    private void NavigateToMainSetting(string key)
+    {
+      CurrentMainSettingsViewModel = MainSettingsViewModelsAvailable[key];
+    }
+
+    private ViewModelBase currentMainSettingsViewModel;
+    public ViewModelBase CurrentMainSettingsViewModel
+    {
+      get => currentMainSettingsViewModel;
+      private set => this.RaiseAndSetIfChanged(ref currentMainSettingsViewModel, value);
+    }
 
     //private Dictionary<int, string> logLevels { get; set; }
     private int currentLogLevelIndex { get; set; }

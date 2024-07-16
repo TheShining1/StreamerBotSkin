@@ -3,6 +3,18 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			       xmlns:vm="using:StreamerBotSkin.ViewModels"
+			       x:DataType="vm:InterfaceViewModel"
+             x:Name="root"
              x:Class="StreamerBotSkin.Controls.SubActionsEnabled">
-  Welcome to Avalonia!
+  <StackPanel>
+    <TextBlock Text="{Binding Title, ElementName=root}"/>
+    <TreeView ItemsSource="{Binding SubActions}">
+      <TreeView.ItemTemplate>
+        <TreeDataTemplate ItemsSource="{Binding Items}">
+          <CheckBox Content="{Binding Name}"/>
+        </TreeDataTemplate>
+      </TreeView.ItemTemplate>
+    </TreeView>
+  </StackPanel>
 </UserControl>

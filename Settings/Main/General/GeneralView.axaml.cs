@@ -4,11 +4,11 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace StreamerBotSkin.Controls;
+namespace StreamerBotSkin.Views;
 
-public partial class General : UserControl
+public partial class GeneralView : UserControl
 {
-  public General()
+  public GeneralView()
   {
     InitializeComponent();
   }

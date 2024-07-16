@@ -4,17 +4,19 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:sbControls="clr-namespace:StreamerBotSkin.Controls"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="StreamerBotSkin.Controls.Interface">
+             x:Class="StreamerBotSkin.Views.InterfaceView">
   <Grid ColumnDefinitions="Auto,*,*">
     <StackPanel Grid.Column="0">
       <CheckBox>Minimize to tray</CheckBox>
       <CheckBox>Hide splash screen</CheckBox>
       <CheckBox>Auto open chat on startup</CheckBox>
       <CheckBox>Confirmation on close</CheckBox>
-      <Button>Reset Delete Confirations</Button>
+      <Button>Reset Delete Confirmations</Button>
       <sbControls:ActionColors/>
     </StackPanel>
-    <sbControls:SubActionsEnabled Grid.Column="1"/>
-    <sbControls:TriggersEnabled Grid.Column="2"/>    
+    <sbControls:SubActionsEnabled Grid.Column="1"
+                                  Title="Enabled Sub-Actions"/>
+    <sbControls:SubActionsEnabled Grid.Column="2"
+                                  Title="Enabled Triggers"/> 
   </Grid>
 </UserControl>

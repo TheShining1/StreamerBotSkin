@@ -14,7 +14,7 @@
         <Grid RowDefinitions="*,*">
           <TextBox Grid.Row="0"
                    IsEnabled="False"
-                   VerticalAlignment="Center"
+                   UseFloatingWatermark="True"
                    mAssist:TextFieldAssist.Label="ID">
             <TextBox.Text>
               345w3g45g5gw-4tw43t-e4tbe4vt-e4te4vct
@@ -26,7 +26,7 @@
             </TextBox.InnerRightContent>
           </TextBox>
           <TextBox Grid.Row="1"
-                   VerticalAlignment="Center"
+                   UseFloatingWatermark="True"
                    mAssist:TextFieldAssist.Label="Name">
             <TextBox.Text>
               Streamer.Bot

@@ -10,6 +10,8 @@
     <TextBlock>Action Colors</TextBlock>
     <StackPanel>
         <TextBox mAssist:TextFieldAssist.Label="Comment color"
+                 UseFloatingWatermark="True"
+                 Background="{Binding $self.Text}"
                  Text="#229977">
           <TextBox.InnerRightContent>
             <Button Classes="Icon">
@@ -18,6 +20,8 @@
           </TextBox.InnerRightContent>
         </TextBox>
         <TextBox mAssist:TextFieldAssist.Label="Sub-action disabled color"
+                 UseFloatingWatermark="True"
+                 Background="{Binding $self.Text}"
                  Text="#DB7093">
           <TextBox.InnerRightContent>
             <Button Classes="Icon">

@@ -51,6 +51,12 @@
     <Compile Update="Settings\Integrations\Streamlabs.axaml.cs">
       <DependentUpon>Streamlabs.axaml</DependentUpon>
     </Compile>
+    <Compile Update="Settings\Main\General\GeneralView.axaml.cs">
+      <DependentUpon>GeneralView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Settings\Main\Interface\InterfaceView.axaml.cs">
+      <DependentUpon>InterfaceView.axaml</DependentUpon>
+    </Compile>
     <Compile Update="Settings\Main\MainSettingsView.axaml.cs">
       <DependentUpon>MainSettingsView.axaml</DependentUpon>
     </Compile>

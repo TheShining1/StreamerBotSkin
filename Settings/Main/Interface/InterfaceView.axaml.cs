@@ -2,11 +2,11 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 
-namespace StreamerBotSkin.Controls;
+namespace StreamerBotSkin.Views;
 
-public partial class Interface : UserControl
+public partial class InterfaceView : UserControl
 {
-    public Interface()
+    public InterfaceView()
     {
         InitializeComponent();
     }
