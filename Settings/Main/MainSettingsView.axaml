@@ -15,80 +15,35 @@
 				   FontSize="18"
 				   FontWeight="Bold">Settings</TextBlock>
     <TabControl Grid.Row="1"
-                ItemsSource="{Binding Tabs}"
-                SelectedItem="{Binding SelectedTab}"/>
-    <ContentControl Grid.Row="2"
-                    Content="{Binding CurrentMainSettingsViewModel}"/>
-    <TabControl Grid.Row="3"
+                ItemsSource="{Binding MainSettingsViewModelsAvailable}">
+      <TabControl.ItemTemplate>
+        <DataTemplate x:DataType="vm:ViewModelBase">
+          <TextBox Text="{Binding Name }"
+                   BorderBrush="DarkGreen"
+                   BorderThickness="2"/>
+        </DataTemplate>
+      </TabControl.ItemTemplate>
+      <TabControl.ContentTemplate>
+        <DataTemplate x:DataType="vm:ViewModelBase">
+          <ContentControl Content="{Binding }"/>
+        </DataTemplate>
+      </TabControl.ContentTemplate>
+    </TabControl>
+    <!--<ContentControl Grid.Row="2"
+                    Content="{Binding CurrentMainSettingsViewModel}"/>-->
+    <!--<TabControl Grid.Row="3"
                 SelectedIndex="0">
       <TabItem Header="General">     
       </TabItem>
       <TabItem Header="Interface">
         <ContentControl Content="{Binding CurrentMainSettingsViewModel}"/>        
       </TabItem>
-      <TabItem Header="Audio">
-        <ScrollViewer>
-          <Grid Margin="10"
-						  RowDefinitions="Auto, Auto, Auto, Auto">
-            <TextBlock Grid.Row="0">Audio output device</TextBlock>
-            <ComboBox Grid.Row="1"
-								  Padding="10"
-								  x:Name="audioDevices"></ComboBox>
-            <Grid  Grid.Row="2"
-							   ColumnDefinitions="Auto, *, Auto">
-              <CheckBox Grid.Column="0">Use system default when selected device not found</CheckBox>
-              <Button Grid.Column="2">Refresh</Button>
-            </Grid>
-            <StackPanel Grid.Row="3">
-              <StackPanel Orientation="Horizontal">
-                <TextBlock>Application volume: </TextBlock>
-                <TextBlock Text="{Binding #volume.Value}"/>
-              </StackPanel>
-              <Slider x:Name="volume"
-									IsSnapToTickEnabled="True"
-									TickFrequency="1"
-									Classes="Modern Ticks"
-									Margin="10"/>
-            </StackPanel>
-          </Grid>
-        </ScrollViewer>
+      <TabItem Header="Audio">        
       </TabItem>
-      <TabItem Header="C# Compiler">
-        <ScrollViewer>
-          <Grid Margin="10"
-						  RowDefinitions="Auto, *, Auto">
-            <Grid Grid.Row="0"
-                  ColumnDefinitions="Auto, *, Auto">
-              <TextBlock Grid.Column="0">Common references</TextBlock>
-              <mIcons:MaterialIcon Grid.Column="2"
-                                   Kind="Information"
-                                   ToolTip.Placement="Left">
-                <ToolTip.Tip>
-                  <TextBox MaxWidth="300"
-                           TextWrapping="Wrap">Any references added to this list will be automatically added to every Execute C# code when its compiled. Making changes to this list will not invalidate any currently compiled Execute C# code sud-actions.</TextBox>
-                </ToolTip.Tip>
-              </mIcons:MaterialIcon>
-            </Grid>
-            <TextBox Grid.Row="1"
-								 x:Name="refBox">
-            </TextBox>
-            <CheckBox Grid.Row="2">Auto complete braces and quotes</CheckBox>
-          </Grid>
-        </ScrollViewer>
+      <TabItem Header="C# Compiler">        
       </TabItem>
-      <TabItem Header="Labs">
-        <ScrollViewer>
-          <Grid RowDefinitions="Auto,Auto,Auto"
-						  Margin="10">
-            <TextBlock Grid.Row="0">Alternative queue</TextBlock>
-            <CheckBox Grid.Row="1">Enabled</CheckBox>
-            <StackPanel Grid.Row="2">
-              <TextBlock>This experimental feature introduces a new Action queue system</TextBlock>
-              <TextBlock>This setting requires a restart after enabling or disabling</TextBlock>
-            </StackPanel>
-          </Grid>
-        </ScrollViewer>
+      <TabItem Header="Labs">        
       </TabItem>
-    </TabControl>
+    </TabControl>-->
   </Grid>
 </UserControl>

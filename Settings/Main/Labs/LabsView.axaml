@@ -1,0 +1,18 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="StreamerBotSkin.Views.LabsView">
+  <ScrollViewer>
+    <Grid RowDefinitions="Auto,Auto,Auto"
+        Margin="10">
+      <TextBlock Grid.Row="0">Alternative queue</TextBlock>
+      <CheckBox Grid.Row="1">Enabled</CheckBox>
+      <StackPanel Grid.Row="2">
+        <TextBlock>This experimental feature introduces a new Action queue system</TextBlock>
+        <TextBlock>This setting requires a restart after enabling or disabling</TextBlock>
+      </StackPanel>
+    </Grid>
+  </ScrollViewer>
+</UserControl>

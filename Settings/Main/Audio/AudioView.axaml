@@ -1,0 +1,31 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="StreamerBotSkin.Views.AudioView">
+  <ScrollViewer>
+    <Grid RowDefinitions="Auto, Auto, Auto, Auto">
+      <TextBlock Grid.Row="0">Audio output device</TextBlock>
+      <ComboBox Grid.Row="1"
+            Padding="10"
+            x:Name="audioDevices"></ComboBox>
+      <Grid  Grid.Row="2"
+           ColumnDefinitions="Auto, *, Auto">
+        <CheckBox Grid.Column="0">Use system default when selected device not found</CheckBox>
+        <Button Grid.Column="2">Refresh</Button>
+      </Grid>
+      <StackPanel Grid.Row="3">
+        <StackPanel Orientation="Horizontal">
+          <TextBlock>Application volume: </TextBlock>
+          <TextBlock Text="{Binding #volume.Value}"/>
+        </StackPanel>
+        <Slider x:Name="volume"
+            IsSnapToTickEnabled="True"
+            TickFrequency="1"
+            Classes="Modern Ticks"
+            Margin="10"/>
+      </StackPanel>
+    </Grid>
+  </ScrollViewer>
+</UserControl>

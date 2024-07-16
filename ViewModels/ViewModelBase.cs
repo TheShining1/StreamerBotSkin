@@ -1,11 +1,14 @@
 ﻿using ReactiveUI;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Security.Policy;
 
 namespace StreamerBotSkin.ViewModels
 {
     public abstract class ViewModelBase : ReactiveObject
     {
+        public string Name { get; }
+
         protected virtual void SetProperty<T>(ref T member, T val,
             [CallerMemberName] string propertyName = null)
         {

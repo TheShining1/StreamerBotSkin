@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace StreamerBotSkin.ViewModels
 {
-  internal class GeneralViewModel : ViewModelBase
+  internal class LabsViewModel : ViewModelBase
   {
-    public string Name { get; } = "General";
   }
 }

@@ -19,7 +19,7 @@
   </Design.DataContext>
   <Grid RowDefinitions="Auto,*">
     <sbControls:ControlBar  Grid.Row="0"
-                            Height="24"/>
+                            Height="28"/>
     <mControls:NavigationDrawer Grid.Row="1"
                                 x:Name="LeftDrawer"
                                 LeftDrawerOpened="{Binding ElementName=MainBarEl, Path=IsDrawerOpen, Mode=TwoWay}">
