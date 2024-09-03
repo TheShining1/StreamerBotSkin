@@ -4,16 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:mAssist="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:sbControls="clr-namespace:StreamerBotSkin.Controls.Auth"
              x:Class="StreamerBotSkin.LumiaStream">
-  <StackPanel>
-    <TextBox mAssist:TextFieldAssist.Label="Token"
-             PasswordChar="*"
-             Classes="clearButton revealPasswordButton"
-             mAssist:TextFieldAssist.Hints="LumiaStream->Settings->API Settings"></TextBox>
-    <StackPanel Orientation="Horizontal">
-      <CheckBox Content="Autoconnect"/>  
-      <CheckBox Content="Reconnect"/>
-    </StackPanel>
-    <Button>Connect</Button>
-  </StackPanel>
+  <sbControls:AuthToken/>
 </UserControl>

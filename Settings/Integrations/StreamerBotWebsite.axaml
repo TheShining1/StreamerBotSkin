@@ -12,17 +12,8 @@
           ColumnDefinitions="*,*">
       <sbAuthControls:AuthLogin Grid.Row="0"
                                 Grid.Column="0"/>
-      <mControls:Card Grid.Row="1"
-                      Grid.Column="0">
-
-        <Grid Grid.Row="1"
-                    ColumnDefinitions="Auto, *, Auto"
-                    VerticalAlignment="Top">
-          <TextBlock Grid.Column="0"
-                     Text="Web Client"/>
-          <Button Grid.Column="2"
-                  Content="Connect"/>
-        </Grid>
-      </mControls:Card>
+      <sbAuthControls:AuthService Grid.Row="1"
+                                  Grid.Column="0"
+                                  Label="Website client" />
     </Grid>
 </UserControl>

@@ -48,4 +48,16 @@ public partial class AuthServer : UserControl
     get { return GetValue(EndpointProperty); }
     set { SetValue(EndpointProperty, value); }
   }
+
+  public static readonly StyledProperty<bool> ForgetProperty =
+    AvaloniaProperty.Register<AuthServer, bool>(
+      nameof(Forget),
+      true
+      );
+
+  public bool Forget
+  {
+    get { return GetValue(ForgetProperty); }
+    set { SetValue(ForgetProperty, value); }
+  }
 }

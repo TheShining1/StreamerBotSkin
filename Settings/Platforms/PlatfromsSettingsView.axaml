@@ -267,6 +267,17 @@
           </StackPanel>
         </Grid>
       </TabItem>
+      <TabItem Header="Trovo" Foreground="#19d66b">
+        <Grid ColumnDefinitions="*,*"
+              VerticalAlignment="Center">
+          <sbAuthControls:AuthLogin Grid.Column="0"
+                                    Padding="10"
+                                    Account="{Binding accounts[Trovo][Broadcaster]}"/>
+          <sbAuthControls:AuthLogin Grid.Column="1"
+                                    Padding="10"
+                                    Account="{Binding accounts[Trovo][Bot]}"/>
+        </Grid>
+      </TabItem>
     </TabControl.Items>
   </TabControl>
 </UserControl>

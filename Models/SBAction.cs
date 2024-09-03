@@ -40,13 +40,13 @@ namespace StreamerBotSkin.Models
 
     public List<SBTrigger> Triggers { get; set; } = new List<SBTrigger> { };
 
-    public int TriggersCout
-    {
-      get
-      {
-        return Triggers.Count;
-      }
-    }
+    //public int TriggersCout
+    //{
+    //  get
+    //  {
+    //    return Triggers.Count;
+    //  }
+    //}
     public List<SBSubAction> Actions { get; set; } = new List<SBSubAction> { };
     List<String> ActionGroups { get; set; } = new List<String> { };
     List<String> CollapsedGroups { get; set; } = new List<String> { };

@@ -12,17 +12,15 @@
         <Grid RowDefinitions="Auto"
               ColumnDefinitions="Auto">          
           <sbAuthControls:AuthServer Endpoint="False"
+                                     Forget="False"
                                      Margin="10"/>
         </Grid>
       </TabItem>
       <TabItem Header="WaveLink">
-        <StackPanel>
-          <StackPanel Orientation="Horizontal">
-            <CheckBox Content="Autoconnect"/>
-            <CheckBox Content="Reconnect"/>
-          </StackPanel>
-          <Button>Connect</Button>
-        </StackPanel>
+        <sbAuthControls:AuthNone Forget="False"/>
+      </TabItem>
+      <TabItem Header="Camera Hub">
+        <sbAuthControls:AuthNone Forget="False"/>
       </TabItem>
     </TabControl.Items>
   </TabControl>

@@ -5,17 +5,14 @@
              mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="500"
              xmlns:mControls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
              xmlns:mAssist="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
-             x:Class="StreamerBotSkin.Controls.Auth.AuthServer"
+             x:Class="StreamerBotSkin.Controls.Auth.AuthClient"
              x:Name="root">
   <mControls:Card Width="250">
     <StackPanel>
-      <CheckBox Content="Autostart"/>
-      <TextBox IsVisible="{Binding Address, ElementName=root}"
-               mAssist:TextFieldAssist.Label="Address"/>
-      <TextBox IsVisible="{Binding Port, ElementName=root}"
-               mAssist:TextFieldAssist.Label="Port"/>
-      <TextBox IsVisible="{Binding Endpoint, ElementName=root}"
-        mAssist:TextFieldAssist.Label="Endpoint"/>
+      <CheckBox Content="Auto connect"/>
+      <CheckBox Content="Auto reconnect"/>
+      <TextBox mAssist:TextFieldAssist.Label="Address"/>
+      <TextBox mAssist:TextFieldAssist.Label="Port"/>
       <Button Content="Start"
               Margin="0 10 0 0"/>
       <Button IsVisible="{Binding Forget, ElementName=root}"

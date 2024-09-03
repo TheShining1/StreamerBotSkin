@@ -10,8 +10,6 @@
              x:Class="StreamerBotSkin.SpeakerBot">
     <Grid RowDefinitions="Auto, *"
           ColumnDefinitions="*,*">
-      <sbAuthControls:AuthServer Address="True"
-                                 Port="True"
-                                 Endpoint="True"/>
+      <sbAuthControls:AuthClient Forget="False"/>
     </Grid>
 </UserControl>

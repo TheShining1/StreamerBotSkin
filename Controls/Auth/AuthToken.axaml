@@ -1,0 +1,32 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:mControls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
+             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             xmlns:mAssist="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
+             x:Class="StreamerBotSkin.Controls.Auth.AuthToken"
+             x:Name="root">
+  <mControls:Card>
+    <StackPanel>
+      <TextBox
+        PasswordChar="*"
+        Classes="clearButton revealPasswordButton"
+        UseFloatingWatermark="True"
+        mAssist:TextFieldAssist.Label="{Binding TokenLabel, ElementName=root}"
+        mAssist:TextFieldAssist.Hints="{Binding TokenHint, ElementName=root}">
+        <TextBox.InnerRightContent>
+          <Button Classes="Icon">
+            <mIcons:MaterialIcon Kind="Safe"/>
+          </Button>
+        </TextBox.InnerRightContent>
+      </TextBox>
+      <StackPanel Orientation="Horizontal">
+        <CheckBox Content="Auto connect"/>
+        <CheckBox Content="Auto reconnect"/>
+      </StackPanel>
+      <Button Content="Connect"/>
+    </StackPanel>
+  </mControls:Card>
+</UserControl>

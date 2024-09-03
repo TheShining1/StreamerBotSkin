@@ -5,6 +5,8 @@
              xmlns:mAssist="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
              xmlns:sbControls="clr-namespace:StreamerBotSkin.Controls"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:vm="using:StreamerBotSkin.ViewModels"
+             x:DataType="vm:GeneralViewModel"
              x:Class="StreamerBotSkin.Views.GeneralView">
   <Grid RowDefinitions="*,*"
         ColumnDefinitions="*,*">

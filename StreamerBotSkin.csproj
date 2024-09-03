@@ -11,6 +11,7 @@
     <EnableNETAnalyzers>False</EnableNETAnalyzers>
     <UseWPF>True</UseWPF>
     <SignAssembly>False</SignAssembly>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
@@ -45,6 +46,12 @@
 
 
   <ItemGroup>
+    <Compile Update="Controls\Auth\AuthNone.axaml.cs">
+      <DependentUpon>AuthNone.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Controls\Auth\AuthClient.axaml.cs">
+      <DependentUpon>AuthClient.axaml</DependentUpon>
+    </Compile>
     <Compile Update="Settings\Integrations\IntegrationsSettingsView.axaml.cs">
       <DependentUpon>IntegrationsSettingsView.axaml</DependentUpon>
     </Compile>
@@ -72,5 +79,10 @@
     <Compile Update="Controls\ControlBar\ControlBar.axaml.cs">
       <DependentUpon>ControlBar.axaml</DependentUpon>
     </Compile>
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Controls\Auth\AuthToken.axaml" />
   </ItemGroup>
 </Project>

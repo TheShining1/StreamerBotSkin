@@ -2,12 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:mAssist="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             xmlns:sbControls="clr-namespace:StreamerBotSkin.Controls.Auth"
-             x:Class="StreamerBotSkin.TreatStream">
-  <StackPanel>
-    <sbControls:AuthLogin/>
-    <sbControls:AuthService/>
-  </StackPanel>
+             x:Class="StreamerBotSkin.Controls.UserControl1">
+  Welcome to Avalonia!
 </UserControl>

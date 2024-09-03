@@ -9,7 +9,8 @@
     <StackPanel Grid.Column="0">
       <CheckBox>Minimize to tray</CheckBox>
       <CheckBox>Hide splash screen</CheckBox>
-      <CheckBox>Auto open chat on startup</CheckBox>
+      <CheckBox>Auto open Chat on startup</CheckBox>
+      <CheckBox>Auto open Event Feed on startup</CheckBox>
       <CheckBox>Confirmation on close</CheckBox>
       <Button>Reset Delete Confirmations</Button>
       <sbControls:ActionColors/>

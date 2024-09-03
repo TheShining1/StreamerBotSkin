@@ -6,16 +6,7 @@ using System.Threading.Tasks;
 
 namespace StreamerBotSkin.Models
 {
-  public enum AccountType
+  internal class Test
   {
-    Broadcaster,
-    Bot
-  }
-
-  public enum Platform
-  {
-    Twitch,
-    YouTube,
-    Trovo
   }
 }

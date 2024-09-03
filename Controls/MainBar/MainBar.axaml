@@ -25,6 +25,9 @@
 				<Button Classes="Flat">
 					<mIcons:MaterialIcon Kind="Chat"/>
 				</Button>
+        <Button Classes="Flat">
+          <mIcons:MaterialIcon Kind="Timeline"/>
+        </Button>
 				<Button Classes="Flat">
 					<mIcons:MaterialIcon Kind="ApplicationVariable"/>
 				</Button>

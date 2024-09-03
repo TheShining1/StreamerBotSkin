@@ -6,7 +6,5 @@
              xmlns:sbAuthControls="clr-namespace:StreamerBotSkin.Controls.Auth"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="StreamerBotSkin.StreamElements">
-  <Grid>
-    <sbAuthControls:AuthLogin/>
-  </Grid>
+  <sbAuthControls:AuthLogin/>
 </UserControl>
