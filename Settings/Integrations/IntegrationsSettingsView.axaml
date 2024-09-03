@@ -79,7 +79,8 @@
       </TabControl.ItemTemplate>
     </TabControl>
   </ScrollViewer>-->
-  <TabControl Classes="horizontalScroller">
+  <TabControl Classes="horizontalScroller"
+              TabStripPlacement="Left">
     <TabControl.Items>
       <TabItem Header="Streamlabs">
         <sbControls:Streamlabs></sbControls:Streamlabs>

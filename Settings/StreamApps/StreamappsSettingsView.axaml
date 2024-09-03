@@ -3,7 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             xmlns:sbControls="clr-namespace:StreamerBotSkin"
+             xmlns:sbControls="clr-namespace:StreamerBotSkin.Controls.Auth"
              xmlns:mControls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
              xmlns:mAssist="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
              xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
@@ -25,24 +25,7 @@
                   AutoGenerateColumns="True"></DataGrid>
       </TabItem>
       <TabItem Header="PolyPop">
-        <Grid RowDefinitions="*,Auto">
-          <Grid Grid.Row="0"
-                RowDefinitions="Auto,Auto,Auto">
-            <TextBox Grid.Row="0"
-                     mAssist:TextFieldAssist.Label="Address"></TextBox>
-              <TextBox Grid.Row="1"
-                       mAssist:TextFieldAssist.Label="Port"></TextBox>
-                <TextBox Grid.Row="2"
-                         mAssist:TextFieldAssist.Label="Endpoint"></TextBox>
-          </Grid>
-          <StackPanel Grid.Row="1"
-                      Orientation="Horizontal"
-                      HorizontalAlignment="Center">
-            <CheckBox>Auto start</CheckBox>
-            <Button>Start</Button>
-            <Button>Stop</Button>
-          </StackPanel>
-        </Grid>
+        <sbControls:AuthServer Forget="False"/>
       </TabItem>
     </TabControl.Items>
   </TabControl>
