@@ -1,0 +1,73 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="StreamerBotSkin.Controls.UserInfo"
+             xmlns:sbModel="clr-namespace:StreamerBotSkin.Models;assembly=StreamerBotSkin"
+             xmlns:sys="clr-namespace:System.Reflection;assembly=System.Runtime"
+             x:DataType="sbModel:SBUser"
+             x:Name="root">
+  <ListBox ItemsSource="{Binding Fields, ElementName=root}">
+    <ListBox.ItemTemplate>
+      <DataTemplate x:DataType="sys:PropertyInfo">
+        <TextBlock Text="{Binding Name}"/>
+      </DataTemplate>
+    </ListBox.ItemTemplate>
+  </ListBox>
+  <!--<Grid ColumnDefinitions="*,*"
+        RowDefinitions="*,*">    
+      <Label Content="ID"
+             Grid.Row="0"
+             Grid.Column="0"/>
+      <TextBlock Text="{Binding User.ID, ElementName=root}"
+                 Grid.Row="0"
+                 Grid.Column="1"></TextBlock>
+      <Label Content="Type"
+             Grid.Row="1"
+             Grid.Column="0"/>
+      <TextBlock Text="{Binding User.Type, ElementName=root}"
+             Grid.Row="1"
+             Grid.Column="1"></TextBlock>
+  </Grid>-->
+    <!--<StackPanel Orientation="Horizontal">
+      <Label Content="Username"/>
+      <TextBlock Text="{Binding User.Username, ElementName=root}"></TextBlock>
+    </StackPanel>
+    <StackPanel Orientation="Horizontal">
+      <Label Content="Display"/>
+      <TextBlock Text="{Binding User.Display, ElementName=root}"></TextBlock>
+    </StackPanel>
+    <StackPanel Orientation="Horizontal">
+      <Label Content="Role"/>
+      <TextBlock Text="{Binding User.Role, ElementName=root}"></TextBlock>
+    </StackPanel>
+    <StackPanel Orientation="Horizontal">
+      <Label Content="Last Active"/>
+      <TextBlock Text="{Binding User.LastActive, ElementName=root}"></TextBlock>
+    </StackPanel>
+    <StackPanel Orientation="Horizontal">
+      <Label Content="Timeout Exempt"/>
+      <TextBlock Text="{Binding User.TimeoutExempt, ElementName=root}"></TextBlock>
+    </StackPanel>
+    <StackPanel Orientation="Horizontal">
+      <Label Content="Subscribed"/>
+      <TextBlock Text="{Binding User.Subscribed, ElementName=root}"></TextBlock>
+    </StackPanel>
+    <StackPanel Orientation="Horizontal">
+      <Label Content="Bits Donated"/>
+      <TextBlock Text="{Binding User.BitsDonated, ElementName=root}"></TextBlock>
+    </StackPanel>
+    <StackPanel Orientation="Horizontal">
+      <Label Content="Channel Points Spent"/>
+      <TextBlock Text="{Binding User.ChannelPointsSpent, ElementName=root}"></TextBlock>
+    </StackPanel>
+    <StackPanel Orientation="Horizontal">
+      <Label Content="Pyramids Made"/>
+      <TextBlock Text="{Binding User.PyramidsMade, ElementName=root}"></TextBlock>
+    </StackPanel>
+    <StackPanel Orientation="Horizontal">
+      <Label Content="Groups"/>
+      <TextBlock Text="{Binding User.Groups, ElementName=root}"></TextBlock>
+    </StackPanel>-->
+</UserControl>

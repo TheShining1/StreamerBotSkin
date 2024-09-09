@@ -1,0 +1,25 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:sbControls="clr-namespace:StreamerBotSkin.Controls"
+             x:Class="StreamerBotSkin.Views.ViewersView"             
+			       xmlns:vm="using:StreamerBotSkin.ViewModels"
+             x:DataType="vm:ViewersViewModel">
+  <Grid ColumnDefinitions="*,Auto,*">
+      <ListBox Grid.Column="0"
+               ItemsSource="{Binding users}"
+               SelectedItem="{Binding selectedUser}">
+        <ListBox.ItemTemplate>
+          <DataTemplate>
+            <TextBlock Text="{Binding Username}"/>
+          </DataTemplate>
+        </ListBox.ItemTemplate>      
+    </ListBox>
+    <GridSplitter Grid.Column="1"/>
+    <StackPanel Grid.Column="2">
+      <sbControls:UserInfo User="{Binding selectedUser}"/>
+    </StackPanel>
+  </Grid>
+</UserControl>

@@ -85,4 +85,9 @@
   <ItemGroup>
     <UpToDateCheckInput Remove="Controls\Auth\AuthToken.axaml" />
   </ItemGroup>
+
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Controls\UserInfo.axaml" />
+  </ItemGroup>
 </Project>

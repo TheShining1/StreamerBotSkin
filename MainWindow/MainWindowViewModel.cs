@@ -10,7 +10,7 @@ namespace StreamerBotSkin.ViewModels
   {
     public MainWindowViewModel()
     {
-      currentViewModel = ViewModelsAvailable["main"];
+      currentViewModel = ViewModelsAvailable["viewers"];
 
       NavigateCommand = ReactiveCommand.Create<string>(NavigateTo);
     }
@@ -18,6 +18,7 @@ namespace StreamerBotSkin.ViewModels
     private readonly Dictionary<string, ViewModelBase> ViewModelsAvailable = new()
     {
         {"main", new MainViewModel() },
+        {"viewers", new ViewersViewModel() },
         {"actions", new ActionsViewModel() },
         {"settings", new SettingsViewModel() }
     };

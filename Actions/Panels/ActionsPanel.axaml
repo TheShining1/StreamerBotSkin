@@ -54,8 +54,8 @@
               x:Name="ActionsGrid"
               AutoGenerateColumns="False"
               ColumnWidth="*"
-              ItemsSource="{Binding Path=actionsItems}"
-              SelectedItem="{Binding Path=currentAction}"
+              ItemsSource="{Binding actionsItems}"
+              SelectedItem="{Binding currentAction}"
               CanUserResizeColumns="True"
               ColumnHeaderHeight="36">
       <DataGrid.Columns>

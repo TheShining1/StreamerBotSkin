@@ -6,6 +6,15 @@ using System.Threading.Tasks;
 
 namespace StreamerBotSkin.Models
 {
+  public enum RoleType
+  {
+    Broadcaster,
+    Mod,
+    VIP,
+    Viewer,
+    Anonymous
+  }
+
   public enum AccountType
   {
     Broadcaster,
