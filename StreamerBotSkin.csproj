@@ -90,4 +90,9 @@
   <ItemGroup>
     <UpToDateCheckInput Remove="Controls\UserInfo.axaml" />
   </ItemGroup>
+
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Controls\LabelledTextBlock.axaml" />
+  </ItemGroup>
 </Project>

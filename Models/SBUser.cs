@@ -20,6 +20,7 @@ namespace StreamerBotSkin.Models
     public int ChannelPointsSpent { get; set; }
     public int PyramidsMade { get; set; }
     public List<string> Groups { get; set; }
+    public bool IsPresent { get; set; }
 
     public static List<SBUser> GetAll()
     {
@@ -28,6 +29,8 @@ namespace StreamerBotSkin.Models
 
       for (int i = 1; i <= 10; i++)
       {
+        var groups = new List<string> { "GroupA", "GroupB", "GroupC", "GroupD", "GroupE" }; // Sample groups
+
         SBUser user = new SBUser
         {
           ID = Guid.NewGuid().ToString(),
@@ -41,7 +44,8 @@ namespace StreamerBotSkin.Models
           BitsDonated = random.Next(0, 5000),
           ChannelPointsSpent = random.Next(0, 10000),
           PyramidsMade = random.Next(0, 10),
-          Groups = new List<string> { "GroupA", "GroupB", "GroupC" } // Sample groups
+          Groups = groups.Take(random.Next(1, groups.Count)).ToList<string>(),
+          IsPresent = random.Next(0, 5) == 0
         };
 
         users.Add(user);

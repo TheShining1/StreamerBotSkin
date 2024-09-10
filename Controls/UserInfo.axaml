@@ -5,69 +5,83 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="StreamerBotSkin.Controls.UserInfo"
              xmlns:sbModel="clr-namespace:StreamerBotSkin.Models;assembly=StreamerBotSkin"
-             xmlns:sys="clr-namespace:System.Reflection;assembly=System.Runtime"
+             xmlns:sbControls="clr-namespace:StreamerBotSkin.Controls;assembly=StreamerBotSkin"
              x:DataType="sbModel:SBUser"
              x:Name="root">
-  <ListBox ItemsSource="{Binding Fields, ElementName=root}">
-    <ListBox.ItemTemplate>
-      <DataTemplate x:DataType="sys:PropertyInfo">
-        <TextBlock Text="{Binding Name}"/>
-      </DataTemplate>
-    </ListBox.ItemTemplate>
-  </ListBox>
-  <!--<Grid ColumnDefinitions="*,*"
-        RowDefinitions="*,*">    
-      <Label Content="ID"
-             Grid.Row="0"
-             Grid.Column="0"/>
-      <TextBlock Text="{Binding User.ID, ElementName=root}"
-                 Grid.Row="0"
-                 Grid.Column="1"></TextBlock>
-      <Label Content="Type"
-             Grid.Row="1"
-             Grid.Column="0"/>
-      <TextBlock Text="{Binding User.Type, ElementName=root}"
-             Grid.Row="1"
-             Grid.Column="1"></TextBlock>
-  </Grid>-->
-    <!--<StackPanel Orientation="Horizontal">
-      <Label Content="Username"/>
-      <TextBlock Text="{Binding User.Username, ElementName=root}"></TextBlock>
-    </StackPanel>
+  <!--<ListBox>
     <StackPanel Orientation="Horizontal">
-      <Label Content="Display"/>
-      <TextBlock Text="{Binding User.Display, ElementName=root}"></TextBlock>
-    </StackPanel>
-    <StackPanel Orientation="Horizontal">
-      <Label Content="Role"/>
-      <TextBlock Text="{Binding User.Role, ElementName=root}"></TextBlock>
-    </StackPanel>
-    <StackPanel Orientation="Horizontal">
-      <Label Content="Last Active"/>
-      <TextBlock Text="{Binding User.LastActive, ElementName=root}"></TextBlock>
-    </StackPanel>
-    <StackPanel Orientation="Horizontal">
-      <Label Content="Timeout Exempt"/>
-      <TextBlock Text="{Binding User.TimeoutExempt, ElementName=root}"></TextBlock>
-    </StackPanel>
-    <StackPanel Orientation="Horizontal">
-      <Label Content="Subscribed"/>
-      <TextBlock Text="{Binding User.Subscribed, ElementName=root}"></TextBlock>
-    </StackPanel>
-    <StackPanel Orientation="Horizontal">
-      <Label Content="Bits Donated"/>
-      <TextBlock Text="{Binding User.BitsDonated, ElementName=root}"></TextBlock>
-    </StackPanel>
-    <StackPanel Orientation="Horizontal">
-      <Label Content="Channel Points Spent"/>
-      <TextBlock Text="{Binding User.ChannelPointsSpent, ElementName=root}"></TextBlock>
-    </StackPanel>
-    <StackPanel Orientation="Horizontal">
-      <Label Content="Pyramids Made"/>
-      <TextBlock Text="{Binding User.PyramidsMade, ElementName=root}"></TextBlock>
-    </StackPanel>
-    <StackPanel Orientation="Horizontal">
-      <Label Content="Groups"/>
-      <TextBlock Text="{Binding User.Groups, ElementName=root}"></TextBlock>
+      <Label Content="ID"/>
+      <TextBlock Text="{Binding User.ID, ElementName=root}"></TextBlock>
+      </StackPanel>
+      <StackPanel Orientation="Horizontal">        
+      <Label Content="Type"/>
+      <TextBlock Text="{Binding User.Type, ElementName=root}"></TextBlock>
+      </StackPanel>
+  </ListBox>-->
+  <StackPanel Grid.IsSharedSizeScope="True">
+    <sbControls:LabelledTextBlock Group="Labels"
+                                  Label="ID:"
+                                  Text="{Binding User.ID, ElementName=root}"/>
+    <sbControls:LabelledTextBlock Group="Labels"
+                                  Label="Type:"
+                                  Text="{Binding User.Type, ElementName=root}"/>
+    <sbControls:LabelledTextBlock Group="Labels"
+                                  Label="Username:"
+                                  Text="{Binding User.Username, ElementName=root}"/>
+    <sbControls:LabelledTextBlock Group="Labels"
+                                  Label="Display:"
+                                  Text="{Binding User.Display, ElementName=root}"/>
+    <sbControls:LabelledTextBlock Group="Labels"
+                                  Label="Role:"
+                                  Text="{Binding User.Role, ElementName=root}"/>
+    <sbControls:LabelledTextBlock Group="Labels"
+                                  Label="Last Active:"
+                                  Text="{Binding User.LastActive, ElementName=root}"/>
+    <sbControls:LabelledTextBlock Group="Labels"
+                                  Label="Timeout exempt:"
+                                  Text="{Binding User.TimeoutExempt, ElementName=root}"/>
+    <sbControls:LabelledTextBlock Group="Labels"
+                                  Label="Subscribed:"
+                                  Text="{Binding User.Subscribed, ElementName=root}"/>
+    <sbControls:LabelledTextBlock Group="Labels"
+                                  Label="Bits Donated:"
+                                  Text="{Binding User.BitsDonated, ElementName=root}"/>
+    <sbControls:LabelledTextBlock Group="Labels"
+                                  Label="Channel Points Spent:"
+                                  Text="{Binding User.ChannelPointsSpent, ElementName=root}"/>
+    <sbControls:LabelledTextBlock Group="Labels"
+                                  Label="Pyramids Made:"
+                                  Text="{Binding User.PyramidsMade, ElementName=root}"/>
+    <sbControls:LabelledTextBlock Group="Labels"
+                                  Label="Groups:"
+                                  Text="{Binding Groups, ElementName=root}">
+      <!--<ItemsControl ItemsSource="{Binding User.Groups, ElementName=root}">
+        <ItemsControl.ItemsPanel>
+          <ItemsPanelTemplate>
+            <StackPanel Orientation="Horizontal"></StackPanel>
+          </ItemsPanelTemplate>
+        </ItemsControl.ItemsPanel>
+        <ItemsControl.ItemTemplate>
+          <DataTemplate>
+            <TextBlock Text="{Binding .}"></TextBlock>
+          </DataTemplate>
+        </ItemsControl.ItemTemplate>
+      </ItemsControl>-->
+      </sbControls:LabelledTextBlock>
+    <!--<StackPanel HorizontalAlignment="Center">
+      <StackPanel Orientation="Horizontal"
+                  HorizontalAlignment="Right">
+        <Label Content="Groups:"/>
+        <StackPanel Orientation="Horizontal">
+          <ItemsControl ItemsSource="{Binding User.Groups, ElementName=root}">
+            <ItemsControl.ItemTemplate>
+              <DataTemplate>
+                <TextBlock Text="{Binding .}"></TextBlock>
+              </DataTemplate>
+            </ItemsControl.ItemTemplate>
+          </ItemsControl>
+        </StackPanel>
+      </StackPanel>
     </StackPanel>-->
+  </StackPanel>
 </UserControl>
