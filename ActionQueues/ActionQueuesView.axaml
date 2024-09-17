@@ -1,0 +1,24 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:views="using:StreamerBotSkin.Views"
+             xmlns:vm="using:StreamerBotSkin.ViewModels"
+             x:DataType="vm:ActionQueuesViewModel"
+             x:Class="StreamerBotSkin.Views.ActionQueuesView">
+  <Design.DataContext>
+    <vm:ActionQueuesViewModel/>
+  </Design.DataContext>
+  <TabControl>
+    <TabItem Header="Pending actions">
+      <views:PendingActionsView/>
+    </TabItem>
+    <TabItem Header="Queues">
+      <TextBlock Text="Queues view"/>
+    </TabItem>
+    <TabItem Header="Actions history">
+      <TextBlock Text="Actions history"/>
+        </TabItem>
+  </TabControl>
+</UserControl>

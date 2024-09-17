@@ -46,6 +46,9 @@
 
 
   <ItemGroup>
+    <Compile Update="ActionQueues\ActionsHistory\ActionsHistoryView.axaml.cs">
+      <DependentUpon>ActionsHistoryView.axaml</DependentUpon>
+    </Compile>
     <Compile Update="Controls\Auth\AuthNone.axaml.cs">
       <DependentUpon>AuthNone.axaml</DependentUpon>
     </Compile>

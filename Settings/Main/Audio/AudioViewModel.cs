@@ -8,5 +8,6 @@ namespace StreamerBotSkin.ViewModels
 {
   internal class AudioViewModel : ViewModelBase
   {
+    public string Name { get; set; } = "Audio";
   }
 }

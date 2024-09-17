@@ -41,6 +41,10 @@
                   Content="Actions"
                   Command="{Binding NavigateCommand}"
                   CommandParameter="actions"/>
+          <Button Classes="Flat"
+                  Content="Queues"
+                  Command="{Binding NavigateCommand}"
+                  CommandParameter="queues"/>
         </ListBox>
         <Separator/>        
       </StackPanel>

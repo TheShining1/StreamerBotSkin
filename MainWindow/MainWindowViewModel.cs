@@ -20,6 +20,7 @@ namespace StreamerBotSkin.ViewModels
         {"main", new MainViewModel() },
         {"viewers", new ViewersViewModel() },
         {"actions", new ActionsViewModel() },
+        {"queues", new ActionQueuesViewModel() },
         {"settings", new SettingsViewModel() }
     };
 

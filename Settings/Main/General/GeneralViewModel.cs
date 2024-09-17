@@ -9,13 +9,6 @@ namespace StreamerBotSkin.ViewModels
 {
   public class GeneralViewModel : ViewModelBase
   {
-    public string Name { get; } = "General";
-
-    //private string name = "General";
-    //public string Name
-    //{
-    //  get => name;
-    //  private set => this.RaiseAndSetIfChanged(ref name, value);
-    //}
+    public string Name { get; set; } = "General";
   }
 }

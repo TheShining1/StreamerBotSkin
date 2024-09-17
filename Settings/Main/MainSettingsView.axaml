@@ -11,21 +11,19 @@
              x:Class="StreamerBotSkin.Views.MainSettingsView">
   <Grid RowDefinitions="Auto, Auto, Auto, *">
     <TextBlock Grid.Row="0"
-				   Margin="5"
-				   FontSize="18"
-				   FontWeight="Bold">Settings</TextBlock>
+               Margin="5"
+               FontSize="18"
+               FontWeight="Bold">Settings</TextBlock>
     <TabControl Grid.Row="1"
                 ItemsSource="{Binding MainSettingsViewModelsAvailable}">
       <TabControl.ItemTemplate>
-        <DataTemplate x:DataType="vm:ViewModelBase">
-          <TextBox Text="{Binding Name }"
-                   BorderBrush="DarkGreen"
-                   BorderThickness="2"/>
+        <DataTemplate x:DataType="vm:TabItemModel">
+          <TextBlock Text="{Binding Header}"/>
         </DataTemplate>
       </TabControl.ItemTemplate>
       <TabControl.ContentTemplate>
-        <DataTemplate x:DataType="vm:ViewModelBase">
-          <ContentControl Content="{Binding }"/>
+        <DataTemplate x:DataType="vm:TabItemModel">
+          <ContentControl Content="{Binding ViewModel}"/>
         </DataTemplate>
       </TabControl.ContentTemplate>
     </TabControl>

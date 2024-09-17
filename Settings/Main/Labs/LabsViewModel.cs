@@ -8,5 +8,6 @@ namespace StreamerBotSkin.ViewModels
 {
   internal class LabsViewModel : ViewModelBase
   {
+    public string Name { get; set; } = "Labs";
   }
 }
