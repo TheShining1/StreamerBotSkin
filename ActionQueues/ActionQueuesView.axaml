@@ -15,10 +15,10 @@
       <views:PendingActionsView/>
     </TabItem>
     <TabItem Header="Queues">
-      <TextBlock Text="Queues view"/>
+      <views:QueuesView/>
     </TabItem>
     <TabItem Header="Actions history">
-      <TextBlock Text="Actions history"/>
+      <views:ActionsHistoryView/>
         </TabItem>
   </TabControl>
 </UserControl>
