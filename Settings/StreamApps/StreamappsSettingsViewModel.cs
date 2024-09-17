@@ -8,7 +8,7 @@ namespace StreamerBotSkin.ViewModels
 {
   public class StreamappsSettingsViewModel : ViewModelBase
   {
-    public string ModelName { get; set; } = "StreamappsSettingsViewModel";
+    public override string Name => this.GetType().Name;
     public List<SBOBSConnection> OBSSettings { get; set; } = new()
     {
       new SBOBSConnection{

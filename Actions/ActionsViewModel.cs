@@ -13,7 +13,7 @@ namespace StreamerBotSkin.ViewModels
 {
   public class ActionsViewModel : ViewModelBase
   {
-    public string ModelName { get; set; } = "ActionsViewModel";
+    public override string Name => this.GetType().Name;
     public DataGridCollectionView actionsItems { get; set; } = new DataGridCollectionView(new ObservableCollection<SBAction>());
 
     public ActionsViewModel()

@@ -15,6 +15,7 @@ namespace StreamerBotSkin.ViewModels
 {
   public class ViewersViewModel : ViewModelBase
   {
+    public override string Name => this.GetType().Name;
     private List<SBUser> _users = SBUser.GetAll();
     public List<SBUser> Users
     {

@@ -8,6 +8,7 @@ namespace StreamerBotSkin.ViewModels
 {
   internal class PlatfromsSettingsViewModel : ViewModelBase
   {
+    public override string Name => this.GetType().Name;
     public Dictionary<Platform, Dictionary<AccountType, SBAccount>> accounts { get; set; }
 
     public PlatfromsSettingsViewModel()

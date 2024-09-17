@@ -21,10 +21,7 @@ namespace StreamerBotSkin.ViewModels
 {
   public class MainSettingsViewModel : ViewModelBase
   {
-    public MainSettingsViewModel()
-    {
-
-    }
+    public override string Name => this.GetType().Name;
 
     public ObservableCollection<TabItemModel> MainSettingsViewModelsAvailable { get; set; } = new ObservableCollection<TabItemModel>
       {

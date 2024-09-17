@@ -6,5 +6,5 @@
              x:Class="StreamerBotSkin.Views.MainView"
 			 xmlns:vm="using:StreamerBotSkin.ViewModels"
 			 x:DataType="vm:MainViewModel">
-	<TextBlock Text="{Binding ModelName}"></TextBlock>
+	<TextBlock Text="{Binding Name}"></TextBlock>
 </UserControl>

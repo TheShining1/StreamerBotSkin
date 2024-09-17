@@ -8,6 +8,7 @@ namespace StreamerBotSkin.ViewModels
 {
   public class MainWindowViewModel : ViewModelBase
   {
+    public override string Name => this.GetType().Name;
     public MainWindowViewModel()
     {
       currentViewModel = ViewModelsAvailable["viewers"];

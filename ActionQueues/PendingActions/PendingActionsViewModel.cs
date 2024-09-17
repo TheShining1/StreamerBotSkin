@@ -13,7 +13,7 @@ namespace StreamerBotSkin.ViewModels
 {
   public class PendingActionsViewModel : ViewModelBase
   {
-    public string Name { get; set; } = "PendingActionsViewModel";
+    public override string Name => this.GetType().Name;
 
     public DataGridCollectionView PendingActions { get; set; } = new DataGridCollectionView(PendingAction.GetAll());
   }

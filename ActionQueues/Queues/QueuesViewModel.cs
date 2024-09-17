@@ -9,8 +9,9 @@ using StreamerBotSkin.Models;
 
 namespace StreamerBotSkin.ViewModels
 {
-  internal class QueuesViewModel
+  internal class QueuesViewModel : ViewModelBase
   {
+    public override string Name => this.GetType().Name;
     public DataGridCollectionView Queues { get; set; } = new DataGridCollectionView(SBQueue.GetAll());
   }
 }

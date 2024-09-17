@@ -11,7 +11,7 @@ namespace StreamerBotSkin.ViewModels
 {
   public class SettingsViewModel : ViewModelBase
   {
-    public string ModelName { get; set; } = "SettingsViewModel";
+    public override string Name => this.GetType().Name;
     public SettingsViewModel()
     {
       currentSettingsViewModel = SettingsViewModelsAvailable["main"];

@@ -2,8 +2,8 @@
 
 namespace StreamerBotSkin.ViewModels
 {
-    public class MainViewModel : ViewModelBase
-    {
-        public string ModelName { get; set; } = "MainViewModel";
-    }
+  public class MainViewModel : ViewModelBase
+  {
+    public override string Name => this.GetType().Name;
+  }
 }

@@ -13,7 +13,7 @@ namespace StreamerBotSkin.ViewModels
 {
   public class ActionQueuesViewModel : ViewModelBase
   {
-    public string Name { get; set; } = "ActionQueuesViewModel";
+    public override string Name => this.GetType().Name;
 
     public ActionQueuesViewModel()
     {
