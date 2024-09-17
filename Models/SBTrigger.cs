@@ -8,7 +8,7 @@ namespace StreamerBotSkin.Models
 {
   public class SBTrigger
   {
-    public string ID { get; set; }
+    public string? ID { get; set; }
     public uint Type { get; set; }
     public bool Enabled { get; set; }
     public bool AlwaysRun { get; set; }

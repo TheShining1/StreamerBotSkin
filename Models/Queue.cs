@@ -9,12 +9,11 @@ namespace StreamerBotSkin.Models
 {
   internal class SBQueue
   {
-    public string Name { get; set; }
+    public string? Name { get; set; }
     public int PendingCount { get; set; }
     public int CompletedCount { get; set; }
     public bool Paused { get; set; }
     public bool Blocking { get; set; }
-
 
     public static ObservableCollection<SBQueue> GetAll()
     {

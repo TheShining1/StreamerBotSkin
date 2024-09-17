@@ -8,6 +8,6 @@ namespace StreamerBotSkin.ViewModels
 {
   internal class CompilerViewModel : ViewModelBase
   {
-    public string Name { get; set; } = "Compiler";
+    public override string Name { get; set; } = "Compiler";
   }
 }

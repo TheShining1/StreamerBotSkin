@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+
 using Avalonia.Collections;
 
 using Newtonsoft.Json;
@@ -14,8 +15,8 @@ namespace StreamerBotSkin.Models
 {
   public class SBAction
   {
-    public string ID { get; set; }
-    public string Name { get; set; }
+    public string? ID { get; set; }
+    public string? Name { get; set; }
     public bool Enabled { get; set; }
     public string? Queue { get; set; }
     public string? Group { get; set; }
@@ -64,7 +65,8 @@ namespace StreamerBotSkin.Models
     public static ObservableCollection<SBAction> GetAll()
     {
       string actionsFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "actions.json");
-      return JsonConvert.DeserializeObject<ObservableCollection<SBAction>>(File.ReadAllText(actionsFilePath));
+      return JsonConvert.DeserializeObject<ObservableCollection<SBAction>>(File.ReadAllText(actionsFilePath))
+        ?? new ObservableCollection<SBAction>();
     }
   }
 }

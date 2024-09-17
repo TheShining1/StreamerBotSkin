@@ -8,6 +8,6 @@ namespace StreamerBotSkin.ViewModels
 {
   internal class LabsViewModel : ViewModelBase
   {
-    public string Name { get; set; } = "Labs";
+    public override string Name { get; set; } = "Labs";
   }
 }

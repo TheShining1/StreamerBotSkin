@@ -8,7 +8,7 @@ namespace StreamerBotSkin.Models
 {
   internal class SBSubActionsList
   {
-    public string Name { get; set; }
+    public string? Name { get; set; }
     public List<SBSubActionsList>? Items { get; set; }
 
     static List<SBSubActionsList> subSubCollection = new List<SBSubActionsList>()

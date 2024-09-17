@@ -8,19 +8,19 @@ namespace StreamerBotSkin.Models
 {
   public class SBUser
   {
-    public string ID { get; set; }
-    public Platform Type { get; set; }
-    public string Username { get; set; }
-    public string Display { get; set; }
-    public RoleType Role { get; set; }
-    public DateTime LastActive { get; set; }
-    public bool TimeoutExempt { get; set; }
-    public string Subscribed { get; set; }
-    public int BitsDonated { get; set; }
-    public int ChannelPointsSpent { get; set; }
-    public int PyramidsMade { get; set; }
-    public List<string> Groups { get; set; }
-    public bool IsPresent { get; set; }
+    public string? ID { get; set; }
+    public Platform? Type { get; set; }
+    public string? Username { get; set; }
+    public string? Display { get; set; }
+    public RoleType? Role { get; set; }
+    public DateTime? LastActive { get; set; }
+    public bool? TimeoutExempt { get; set; }
+    public string? Subscribed { get; set; }
+    public int? BitsDonated { get; set; }
+    public int? ChannelPointsSpent { get; set; }
+    public int? PyramidsMade { get; set; }
+    public List<string>? Groups { get; set; }
+    public bool? IsPresent { get; set; }
 
     public static List<SBUser> GetAll()
     {

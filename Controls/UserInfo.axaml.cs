@@ -37,15 +37,20 @@ public partial class UserInfo : UserControl
     }
     
     SBUser user = (SBUser)e.NewValue;
+    if (user.Groups == null)
+    {
+      Groups = null;
+      return;
+    }
     Groups = string.Join(", ", user.Groups);
   }
 
-  private static readonly StyledProperty<string> GroupsProperty =
-    AvaloniaProperty.Register<UserInfo, string>(
+  private static readonly StyledProperty<string?> GroupsProperty =
+    AvaloniaProperty.Register<UserInfo, string?>(
       nameof(Groups)
     );
 
-  public string Groups
+  public string? Groups
   {
     get { return GetValue(GroupsProperty); }
     set { SetValue(GroupsProperty, value); }

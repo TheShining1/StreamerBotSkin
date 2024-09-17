@@ -24,13 +24,13 @@ public partial class LabelledTextBlock : UserControl
     set { SetValue(GroupProperty, value); }
   }
 
-  public static readonly StyledProperty<string> HorizontalAlignmentProperty =
+  public new static readonly StyledProperty<string> HorizontalAlignmentProperty =
   AvaloniaProperty.Register<LabelledTextBlock, string>(
     nameof(HorizontalAlignment),
     "Right"
   );
 
-  public string HorizontalAlignment
+  public new string HorizontalAlignment
   {
     get { return GetValue(HorizontalAlignmentProperty); }
     set { SetValue(HorizontalAlignmentProperty, value); }

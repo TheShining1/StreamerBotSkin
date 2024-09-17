@@ -9,6 +9,6 @@ namespace StreamerBotSkin.ViewModels
 {
   public class GeneralViewModel : ViewModelBase
   {
-    public string Name { get; set; } = "General";
+    public override string Name { get; set; } = "General";
   }
 }

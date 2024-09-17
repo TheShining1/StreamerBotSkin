@@ -17,11 +17,11 @@ namespace StreamerBotSkin.Models
 
   internal class PendingAction
   {
-    public string Name { get; set; }
+    public string? Name { get; set; }
     public ActionState State { get; set; }
     public bool Enabled { get; set; }
-    public Dictionary<string, object> Arguments { get; set; }
-    public string Queue { get; set; }
+    public Dictionary<string, object>? Arguments { get; set; }
+    public string? Queue { get; set; }
     public DateTime QueuedAt { get; set; }
     public DateTime StartedAd { get; set; }
 

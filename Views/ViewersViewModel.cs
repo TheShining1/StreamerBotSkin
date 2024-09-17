@@ -52,8 +52,8 @@ namespace StreamerBotSkin.ViewModels
       UsersFiltered = Users.FindAll(u => u.IsPresent == true);
     }
 
-    private SBUser _selectedUser;
-    public SBUser SelectedUser
+    private SBUser? _selectedUser;
+    public SBUser? SelectedUser
     {
       get { return _selectedUser; }
       set

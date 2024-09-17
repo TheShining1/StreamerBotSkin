@@ -14,14 +14,9 @@ namespace StreamerBotSkin.ViewModels
   public class ActionsViewModel : ViewModelBase
   {
     public override string Name => this.GetType().Name;
-    public DataGridCollectionView actionsItems { get; set; } = new DataGridCollectionView(new ObservableCollection<SBAction>());
+    public DataGridCollectionView actionsItems { get; set; } = LoadActions();
 
-    public ActionsViewModel()
-    {
-      actionsItems = LoadActions();
-    }
-
-    private DataGridCollectionView LoadActions()
+    public static DataGridCollectionView LoadActions()
     {
       var actions = SBAction.GetAll();
       var actionsCollectionView = new DataGridCollectionView(actions);
@@ -30,9 +25,9 @@ namespace StreamerBotSkin.ViewModels
       return actionsCollectionView;
     }
 
-    private SBAction _currentAction;
+    private SBAction? _currentAction;
 
-    public SBAction currentAction
+    public SBAction? currentAction
     {
       get { return _currentAction; }
       set
@@ -40,8 +35,8 @@ namespace StreamerBotSkin.ViewModels
         this.RaiseAndSetIfChanged(ref _currentAction, value);
       }
     }
-    private List<SBSubAction> _currentSubActions;
-    public List<SBSubAction> currentSubActions
+    private ObservableCollection<SBSubAction>? _currentSubActions;
+    public ObservableCollection<SBSubAction>? currentSubActions
     {
       get { return _currentSubActions; }
       set { _currentSubActions = value; }

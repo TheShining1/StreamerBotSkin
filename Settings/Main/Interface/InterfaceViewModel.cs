@@ -10,7 +10,7 @@ namespace StreamerBotSkin.ViewModels
 {
   internal class InterfaceViewModel: ViewModelBase
   {
-    public string Name { get; } = "Interface";
+    public override string Name { get; set; } = "Interface";
 
     public List<SBSubActionsList> SubActions { get; set; } = SBSubActionsList.GetAll();
   }
