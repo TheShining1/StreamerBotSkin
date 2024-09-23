@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows10.0.22621.0</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PlatformTarget>x64</PlatformTarget>
+    <Platforms>x64</Platforms>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Avalonia">
+    <AvaloniaUseCompiledBindingsByDefault>True</AvaloniaUseCompiledBindingsByDefault>
+    <AvaloniaNameGeneratorDefaultFieldModifier>Public</AvaloniaNameGeneratorDefaultFieldModifier>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.1.3" />
+    <PackageReference Include="Material.Avalonia" Version="3.7.4" />
+    <PackageReference Include="Material.Icons.Avalonia" Version="2.1.10" />
+  </ItemGroup>
+
+</Project>

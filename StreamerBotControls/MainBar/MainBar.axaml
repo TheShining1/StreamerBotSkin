@@ -1,0 +1,49 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="500"
+             xmlns:mControls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
+             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             xmlns:sbControls="clr-namespace:StreamerBotControls"
+             x:Class="StreamerBotControls.MainBar"
+             x:Name="root">
+	<mControls:ColorZone Grid.Row="0">
+		<Grid ColumnDefinitions="Auto, Auto, *, Auto">
+      <ToggleButton Grid.Column="0"
+                    Classes="Flat"
+                    x:Name="NavDrawerSwitch"
+                    IsChecked="{Binding IsDrawerOpen, ElementName=root}">
+        <mIcons:MaterialIcon Kind="Menu"/>
+      </ToggleButton>
+			<StackPanel Grid.Column="1"
+						Orientation="Horizontal"
+						VerticalAlignment="Center">
+				<Button Classes="Flat">
+					<mIcons:MaterialIcon Kind="ContentSave"/>
+				</Button>
+				<Button Classes="Flat">
+					<mIcons:MaterialIcon Kind="Chat"/>
+				</Button>
+        <Button Classes="Flat">
+          <mIcons:MaterialIcon Kind="Timeline"/>
+        </Button>
+				<Button Classes="Flat">
+					<mIcons:MaterialIcon Kind="ApplicationVariable"/>
+				</Button>
+			</StackPanel>
+			<StackPanel Grid.Column="2"
+						Orientation="Horizontal">
+			</StackPanel>
+			<StackPanel Grid.Column="3"
+                  Orientation="Horizontal">
+				<ToggleButton x:Name="ThemeToggle"
+                      Classes="Flat"
+                      Click="ThemeChange">
+					<mIcons:MaterialIcon Kind="ThemeLightDark"/>
+				</ToggleButton>
+        <!--<sbControls:MainBarMenu />-->
+			</StackPanel>
+		</Grid>
+	</mControls:ColorZone>
+</UserControl>
