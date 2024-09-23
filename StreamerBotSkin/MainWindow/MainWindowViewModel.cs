@@ -1,5 +1,7 @@
 ﻿using ReactiveUI;
 
+using StreamerBotSkin.Dialogs;
+
 using System;
 using System.Collections.Generic;
 using System.Windows.Input;
@@ -14,6 +16,7 @@ namespace StreamerBotSkin.ViewModels
       currentViewModel = ViewModelsAvailable["main"];
 
       NavigateCommand = ReactiveCommand.Create<string>(NavigateTo);
+      OpenAboutCommand = ReactiveCommand.Create(OpenAboutDialog);
     }
 
     private readonly Dictionary<string, ViewModelBase> ViewModelsAvailable = new()
@@ -37,6 +40,16 @@ namespace StreamerBotSkin.ViewModels
     private void NavigateTo(string key)
     {
       CurrentViewModel = ViewModelsAvailable[key];
+    }
+
+    public ICommand OpenAboutCommand { get; }
+
+    private void OpenAboutDialog()
+    {
+      if (Program.MainWindow == null) return;
+      var dialog = new AboutDialog();
+      dialog.Width = Program.MainWindow.Width * 0.9;
+      dialog.ShowDialog(Program.MainWindow);
     }
   }
 }
