@@ -11,7 +11,7 @@ namespace StreamerBotSkin.ViewModels
     public override string Name => this.GetType().Name;
     public MainWindowViewModel()
     {
-      currentViewModel = ViewModelsAvailable["viewers"];
+      currentViewModel = ViewModelsAvailable["main"];
 
       NavigateCommand = ReactiveCommand.Create<string>(NavigateTo);
     }

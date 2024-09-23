@@ -6,7 +6,6 @@
         xmlns:mControls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
         xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
         xmlns:sbControls="clr-namespace:StreamerBotSkin.Controls"
-        xmlns:sbControlsLib="clr-namespace:StreamerBotControls;assembly=StreamerBotControls"
         x:CompileBindings="True"
         xmlns:vm="using:StreamerBotSkin.ViewModels"
         x:DataType="vm:MainWindowViewModel"
@@ -28,7 +27,7 @@
         <sbControls:MainDrawer x:Name="MainDrawer"/>
       </mControls:NavigationDrawer.LeftDrawerContent>
       <Grid RowDefinitions="Auto, *, Auto">
-        <sbControlsLib:MainBar x:Name="MainBarEl"
+        <sbControls:MainBar x:Name="MainBarEl"
                                Grid.Row="0"/>
         <TransitioningContentControl Grid.Row="1"
                                      Content="{Binding CurrentViewModel}"/>
