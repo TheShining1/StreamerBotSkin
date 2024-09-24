@@ -46,6 +46,10 @@
                   Command="{Binding NavigateCommand}"
                   CommandParameter="commands"/>
           <Button Classes="Flat"
+                  Content="MIDI"
+                  Command="{Binding NavigateCommand}"
+                  CommandParameter="midi"/>
+          <Button Classes="Flat"
                   Content="Queues"
                   Command="{Binding NavigateCommand}"
                   CommandParameter="queues"/>
