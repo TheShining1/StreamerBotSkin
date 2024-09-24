@@ -42,6 +42,10 @@
                   Command="{Binding NavigateCommand}"
                   CommandParameter="actions"/>
           <Button Classes="Flat"
+                  Content="Commands"
+                  Command="{Binding NavigateCommand}"
+                  CommandParameter="commands"/>
+          <Button Classes="Flat"
                   Content="Queues"
                   Command="{Binding NavigateCommand}"
                   CommandParameter="queues"/>
