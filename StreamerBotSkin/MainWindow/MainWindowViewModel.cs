@@ -13,7 +13,7 @@ namespace StreamerBotSkin.ViewModels
     public override string Name => this.GetType().Name;
     public MainWindowViewModel()
     {
-      currentViewModel = ViewModelsAvailable["main"];
+      currentViewModel = ViewModelsAvailable["queues"];
 
       NavigateCommand = ReactiveCommand.Create<string>(NavigateTo);
       OpenAboutCommand = ReactiveCommand.Create(OpenAboutDialog);
@@ -21,11 +21,11 @@ namespace StreamerBotSkin.ViewModels
 
     private readonly Dictionary<string, ViewModelBase> ViewModelsAvailable = new()
     {
-        {"main", new MainViewModel() },
-        {"viewers", new ViewersViewModel() },
-        {"actions", new ActionsViewModel() },
-        {"queues", new ActionQueuesViewModel() },
-        {"settings", new SettingsViewModel() }
+      {"main", new MainViewModel() },
+      {"viewers", new ViewersViewModel() },
+      {"actions", new ActionsViewModel() },
+      {"queues", new ActionQueuesViewModel() },
+      {"settings", new SettingsViewModel() }
     };
 
     private ViewModelBase currentViewModel;

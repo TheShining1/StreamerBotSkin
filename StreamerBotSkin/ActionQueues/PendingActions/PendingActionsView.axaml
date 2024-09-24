@@ -5,6 +5,7 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              xmlns:vm="using:StreamerBotSkin.ViewModels"
              x:DataType="vm:PendingActionsViewModel"
+             xmlns:m="using:StreamerBotSkin.Models"
              x:Class="StreamerBotSkin.Views.PendingActionsView">
   <UserControl.DataContext>
     <vm:PendingActionsViewModel/>
@@ -13,5 +14,29 @@
     <vm:PendingActionsViewModel/>
   </Design.DataContext>
   <DataGrid ItemsSource="{Binding PendingActions}"
-            AutoGenerateColumns="True"></DataGrid>
+            CanUserResizeColumns="True"
+            CanUserReorderColumns="True"
+            HorizontalScrollBarVisibility="Visible"
+            VerticalScrollBarVisibility="Visible">
+    <DataGrid.Columns>
+      <DataGridTextColumn Header="Name"
+                          Binding="{Binding Name}"
+                          x:DataType="m:PendingAction"/>
+      <DataGridTextColumn Header="State"
+                          Binding="{Binding State}"
+                          x:DataType="m:PendingAction"/>
+      <DataGridTextColumn Header="Arguments"
+                          Binding="{Binding Arguments.Count}"
+                          x:DataType="m:PendingAction"/>
+      <DataGridTextColumn Header="Queue"
+                          Binding="{Binding Queue}"
+                          x:DataType="m:PendingAction"/>
+      <DataGridTextColumn Header="QueuedAt"
+                          Binding="{Binding QueuedAt}"
+                          x:DataType="m:PendingAction"/>
+      <DataGridTextColumn Header="Started At"
+                          Binding="{Binding StartedAt}"
+                          x:DataType="m:PendingAction"/>
+    </DataGrid.Columns>
+  </DataGrid>
 </UserControl>

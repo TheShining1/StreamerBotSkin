@@ -23,7 +23,9 @@ namespace StreamerBotSkin.Models
     public Dictionary<string, object>? Arguments { get; set; }
     public string? Queue { get; set; }
     public DateTime QueuedAt { get; set; }
-    public DateTime StartedAd { get; set; }
+    public DateTime StartedAt { get; set; }
+    public DateTime CompletedAt { get; set; }
+    public TimeSpan Duration { get; set; }
 
     public static ObservableCollection<PendingAction> GetAll()
     {
@@ -44,8 +46,12 @@ namespace StreamerBotSkin.Models
                 },
           Queue = $"Queue{i}",
           QueuedAt = DateTime.Now.AddMinutes(-random.Next(1, 1000)), // Random time when it was queued
-          StartedAd = DateTime.Now.AddMinutes(-random.Next(1, 500))  // Random time when it started
+          StartedAt = DateTime.Now.AddMinutes(-random.Next(1, 500)),  // Random time when it started
+          CompletedAt = DateTime.Now.AddMinutes(-random.Next(1, 500))  // Random time when it completed
+          
         };
+
+        action.Duration = action.CompletedAt - action.StartedAt;
 
         actions.Add(action);
       }

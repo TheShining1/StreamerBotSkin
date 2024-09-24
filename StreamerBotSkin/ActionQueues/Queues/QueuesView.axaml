@@ -5,6 +5,7 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              xmlns:vm="using:StreamerBotSkin.ViewModels"
              x:DataType="vm:QueuesViewModel"
+             xmlns:m="using:StreamerBotSkin.Models"
              x:Class="StreamerBotSkin.Views.QueuesView">
   <UserControl.DataContext>
     <vm:QueuesViewModel/>
@@ -13,5 +14,26 @@
     <vm:QueuesViewModel/>
   </Design.DataContext>
   <DataGrid ItemsSource="{Binding Queues}"
-            AutoGenerateColumns="True"></DataGrid>
+            CanUserResizeColumns="True"
+            CanUserReorderColumns="True"
+            HorizontalScrollBarVisibility="Visible"
+            VerticalScrollBarVisibility="Visible">
+    <DataGrid.Columns>
+      <DataGridTextColumn Header="Name"
+                          Binding="{Binding Name}"
+                          x:DataType="m:SBQueue"/>
+      <DataGridTextColumn Header="Pending Count"
+                          Binding="{Binding PendingCount}"
+                          x:DataType="m:SBQueue"/>
+      <DataGridTextColumn Header="Completed Count"
+                          Binding="{Binding CompletedCount}"
+                          x:DataType="m:SBQueue"/>
+      <DataGridCheckBoxColumn Header="Paused"
+                              Binding="{Binding Paused}"
+                              x:DataType="m:SBQueue"/>
+      <DataGridCheckBoxColumn Header="Blocking"
+                              Binding="{Binding Blocking}"
+                              x:DataType="m:SBQueue"/>
+    </DataGrid.Columns>
+  </DataGrid>
 </UserControl>

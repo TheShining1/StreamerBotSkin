@@ -29,7 +29,7 @@
       </mControls:NavigationDrawer.LeftDrawerContent>
       <Grid RowDefinitions="Auto, *, Auto">
         <sbControls:MainBar x:Name="MainBarEl"
-                               Grid.Row="0"/>
+                            Grid.Row="0"/>
         <TransitioningContentControl Grid.Row="1"
                                      Content="{Binding CurrentViewModel}"/>
         <sbControls:Footer Grid.Row="2"/>
