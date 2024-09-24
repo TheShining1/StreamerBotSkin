@@ -13,7 +13,7 @@ namespace StreamerBotSkin.ViewModels
     public override string Name => this.GetType().Name;
     public MainWindowViewModel()
     {
-      currentViewModel = ViewModelsAvailable["midi"];
+      currentViewModel = ViewModelsAvailable["voicecontrol"];
 
       NavigateCommand = ReactiveCommand.Create<string>(NavigateTo);
       OpenAboutCommand = ReactiveCommand.Create(OpenAboutDialog);
@@ -27,6 +27,7 @@ namespace StreamerBotSkin.ViewModels
       {"queues", new ActionQueuesViewModel() },
       {"commands", new CommandsViewModel() },
       {"midi", new MidiViewModel() },
+      {"voicecontrol", new VoiceControlViewModel() },
       {"settings", new SettingsViewModel() }
     };
 
