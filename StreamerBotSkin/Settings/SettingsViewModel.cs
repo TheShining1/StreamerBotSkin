@@ -25,7 +25,11 @@ namespace StreamerBotSkin.ViewModels
             {"main", new MainSettingsViewModel() },
             {"platforms", new PlatfromsSettingsViewModel() },
             {"integrations", new IntegrationsSettingsViewModel() },
-            {"streamapps", new StreamappsSettingsViewModel() }
+            {"streamapps", new StreamappsSettingsViewModel() },
+            {"timedactions", new TimedActionsViewModel() },
+            {"watchers", new WatchersViewModel() },
+            {"credits", new CreditsViewModel() },
+            {"quotes", new QuotesViewModel() }
         };
 
     public ICommand NavigateSettingsCommand { get; }

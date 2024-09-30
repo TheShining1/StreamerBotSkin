@@ -60,6 +60,9 @@
     <Compile Update="Controls\Auth\AuthClient.axaml.cs">
       <DependentUpon>AuthClient.axaml</DependentUpon>
     </Compile>
+    <Compile Update="Platforms\Twitch\Predictions\PredictionsView.axaml.cs">
+      <DependentUpon>PredictionsView.axaml</DependentUpon>
+    </Compile>
     <Compile Update="Settings\Integrations\IntegrationsSettingsView.axaml.cs">
       <DependentUpon>IntegrationsSettingsView.axaml</DependentUpon>
     </Compile>

@@ -1,0 +1,19 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:views="clr-namespace:StreamerBotSkin.Views"
+             x:Class="StreamerBotSkin.Views.WatchersView">
+  <TabControl>
+    <TabItem Header="Process watcher">
+      <views:ProcessWatcherView/>
+    </TabItem>
+    <TabItem Header="File/Folder watcher">
+      <views:FileFolderWatcherView/>
+    </TabItem>
+    <TabItem Header="File tail">
+      <views:FileTailView/>
+    </TabItem>
+  </TabControl>
+</UserControl>

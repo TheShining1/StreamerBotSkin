@@ -1,0 +1,43 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="StreamerBotSkin.Views.CreditsView">
+  <Grid ColumnDefinitions="*,*,*,Auto">
+    <StackPanel  Grid.Column="0">
+      <TextBlock Text="Events to Record" />
+      <ListBox>
+        <CheckBox Content="Event 0"/>
+        <CheckBox Content="Event 1"/>
+        <CheckBox Content="Event 2"/>
+        <CheckBox Content="Event 3"/>
+        <CheckBox Content="Event 4"/>
+      </ListBox>
+    </StackPanel>
+    <StackPanel Grid.Column="1">
+      <TextBlock Text="Users present (spoke)" />
+      <ListBox >
+        <CheckBox Content="Event 0"/>
+        <CheckBox Content="Event 1"/>
+        <CheckBox Content="Event 2"/>
+        <CheckBox Content="Event 3"/>
+        <CheckBox Content="Event 4"/>
+      </ListBox>
+    </StackPanel>
+    <StackPanel Grid.Column="2">
+      <TextBlock Text="Track top" />
+      <ListBox>
+        <CheckBox Content="Event 0"/>
+        <CheckBox Content="Event 1"/>
+        <CheckBox Content="Event 2"/>
+        <CheckBox Content="Event 3"/>
+        <CheckBox Content="Event 4"/>
+      </ListBox>
+    </StackPanel>
+    <StackPanel Grid.Column="3">
+      <TextBox Text="Autoreset"/>
+      <Button Content="Reset" />
+    </StackPanel>
+  </Grid>
+</UserControl>

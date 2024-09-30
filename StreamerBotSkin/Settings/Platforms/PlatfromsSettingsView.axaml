@@ -5,6 +5,7 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              xmlns:mControls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
              xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             xmlns:sbControls="clr-namespace:StreamerBotSkin.Controls"
              xmlns:sbAuthControls="clr-namespace:StreamerBotSkin.Controls.Auth"
 			       xmlns:sbModels="clr-namespace:StreamerBotSkin.Models"
              x:Class="StreamerBotSkin.Views.PlatfromsSettingsView"
@@ -17,15 +18,16 @@
     <TabControl.Items>
       <TabItem Header="Twtich"
                Foreground="#9146FF">
-        <Grid ColumnDefinitions="*,*"
-              VerticalAlignment="Center">
-          <sbAuthControls:AuthLogin Grid.Column="0"
-                                    Padding="10"
-                                    Account="{Binding accounts[Twitch][Broadcaster]}"/>
-          <sbAuthControls:AuthLogin Grid.Column="1"
-                                    Padding="10"
-                                    Account="{Binding accounts[Twitch][Bot]}"/>
-          <!--<mControls:Card Grid.Column="0"
+        <StackPanel>
+          <Grid ColumnDefinitions="*,*"
+                VerticalAlignment="Center">
+            <sbAuthControls:AuthLogin Grid.Column="0"
+                                      Padding="10"
+                                      Account="{Binding accounts[Twitch][Broadcaster]}"/>
+            <sbAuthControls:AuthLogin Grid.Column="1"
+                                      Padding="10"
+                                      Account="{Binding accounts[Twitch][Bot]}"/>
+            <!--<mControls:Card Grid.Column="0"
                           VerticalAlignment="Center">
             <Grid RowDefinitions="Auto, *, *, *">
               <Grid Grid.Row="0"
@@ -90,7 +92,7 @@
               </mControls:Card>
             </Grid>
           </mControls:Card>-->
-          <!--<mControls:Card Grid.Column="1"
+            <!--<mControls:Card Grid.Column="1"
                           VerticalAlignment="Center">
             <Grid RowDefinitions="Auto, *, *, *">
               <Grid Grid.Row="0"
@@ -140,11 +142,14 @@
               </mControls:Card>
             </Grid>
           </mControls:Card>-->
-        </Grid>
+          </Grid>
+          <sbControls:PresentViewersSettings/>
+          <sbControls:FirstWordsSettings/>
+        </StackPanel>
       </TabItem>
       <TabItem Header="YouTube"
                Foreground="#FF0000">
-        <Grid RowDefinitions="*,Auto">
+        <Grid RowDefinitions="*,*,Auto">
           <Grid Grid.Row="0"
                 ColumnDefinitions="*,*"
                 VerticalAlignment="Center">
@@ -229,7 +234,11 @@
               </Grid>
             </mControls:Card>
           </Grid>
-          <StackPanel Grid.Row="3"
+          <StackPanel Grid.Row="1">
+            <sbControls:PresentViewersSettings/>
+            <sbControls:FirstWordsSettings/>
+          </StackPanel>
+          <StackPanel Grid.Row="2"
                       Orientation="Horizontal"
                       HorizontalAlignment="Center">
             <Button Classes="Flat">
@@ -268,15 +277,19 @@
         </Grid>
       </TabItem>
       <TabItem Header="Trovo" Foreground="#19d66b">
-        <Grid ColumnDefinitions="*,*"
-              VerticalAlignment="Center">
-          <sbAuthControls:AuthLogin Grid.Column="0"
-                                    Padding="10"
-                                    Account="{Binding accounts[Trovo][Broadcaster]}"/>
-          <sbAuthControls:AuthLogin Grid.Column="1"
-                                    Padding="10"
-                                    Account="{Binding accounts[Trovo][Bot]}"/>
-        </Grid>
+        <StackPanel>
+          <Grid ColumnDefinitions="*,*"
+                VerticalAlignment="Center">
+            <sbAuthControls:AuthLogin Grid.Column="0"
+                                      Padding="10"
+                                      Account="{Binding accounts[Trovo][Broadcaster]}"/>
+            <sbAuthControls:AuthLogin Grid.Column="1"
+                                      Padding="10"
+                                      Account="{Binding accounts[Trovo][Bot]}"/>
+          </Grid>
+          <sbControls:PresentViewersSettings/>
+          <sbControls:FirstWordsSettings/>
+        </StackPanel>
       </TabItem>
     </TabControl.Items>
   </TabControl>

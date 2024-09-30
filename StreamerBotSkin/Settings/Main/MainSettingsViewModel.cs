@@ -28,7 +28,9 @@ namespace StreamerBotSkin.ViewModels
         new TabItemModel{ Header = "General", ViewModel = new GeneralViewModel() },
         new TabItemModel{ Header = "Interface", ViewModel = new InterfaceViewModel() },
         new TabItemModel{ Header = "Audio", ViewModel = new AudioViewModel() },
+        new TabItemModel{ Header = "Groups", ViewModel = new GroupsViewModel() },
         new TabItemModel{ Header = "Compiler", ViewModel = new CompilerViewModel() },
+        new TabItemModel{ Header = "Variables", ViewModel = new VariablesViewModel() },
         new TabItemModel{ Header = "Labs", ViewModel = new LabsViewModel() }
       };
   }

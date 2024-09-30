@@ -7,7 +7,7 @@
              xmlns:vm="using:StreamerBotSkin.ViewModels"
              x:DataType="vm:MainWindowViewModel"
              x:Class="StreamerBotSkin.Controls.MainDrawer">
-  <Grid RowDefinitions="Auto, *, Auto">    
+  <Grid RowDefinitions="Auto, *, Auto">
     <StackPanel Grid.Row="0">
       <StackPanel Orientation="Horizontal"
                   HorizontalAlignment="Center">
@@ -58,31 +58,61 @@
                   Command="{Binding NavigateCommand}"
                   CommandParameter="hotkeys"/>
           <Button Classes="Flat"
+                  Content="Voice control"
+                  Command="{Binding NavigateCommand}"
+                  CommandParameter="voicecontrol"/>
+          <Button Classes="Flat"
                   Content="Servers"
                   Command="{Binding NavigateCommand}"
                   CommandParameter="servers"/>
+          <Expander>
+            <Expander.Header>
+              Platforms
+            </Expander.Header>
+            <Expander>
+              <Expander.Header>
+                Twitch
+              </Expander.Header>
+              <ListBox>
+                <ListBox.Items>
+                  <Button Classes="Flat"
+                          Content="Channel point rewards"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="cpr"/>
+                  <Button Classes="Flat"
+                          Content="Polls"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="polls"/>
+                  <Button Classes="Flat"
+                          Content="Predictions"
+                          Command="{Binding NavigateCommand}"
+                          CommandParameter="predictions"/>
+                </ListBox.Items>
+              </ListBox>
+            </Expander>
+          </Expander>
         </ListBox>
-        <Separator/>        
+        <Separator/>
       </StackPanel>
     </ScrollViewer>
     <StackPanel Grid.Row="2">
       <Button HorizontalAlignment="Center">
-          <StackPanel Orientation="Horizontal">
-            <mIcons:MaterialIcon Kind="Download"/>
-            <TextBlock>Check for updates</TextBlock>
-          </StackPanel>
-        </Button>
-        <StackPanel Orientation="Horizontal"
-                    HorizontalAlignment="Center">
-          <Button Classes="Icon"
-            Foreground="Black">
+        <StackPanel Orientation="Horizontal">
+          <mIcons:MaterialIcon Kind="Download"/>
+          <TextBlock>Check for updates</TextBlock>
+        </StackPanel>
+      </Button>
+      <StackPanel Orientation="Horizontal"
+                  HorizontalAlignment="Center">
+        <Button Classes="Icon"
+          Foreground="Black">
           <mIcons:MaterialIcon Kind="Patreon" />
         </Button>
         <Button Classes="Icon"
             Foreground="Black">
           <mIcons:MaterialIcon Kind="Coffee" />
         </Button>
-        </StackPanel>
+      </StackPanel>
     </StackPanel>
   </Grid>
 </UserControl>

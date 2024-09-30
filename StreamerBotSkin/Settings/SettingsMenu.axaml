@@ -23,5 +23,21 @@
 				Content="Stream apps"
 				Command="{Binding NavigateSettingsCommand}"
 				CommandParameter="streamapps"/>
+    <Button Classes="Flat"
+				Content="Timed actions"
+				Command="{Binding NavigateSettingsCommand}"
+				CommandParameter="timedactions"/>
+    <Button Classes="Flat"
+				Content="Watchers"
+				Command="{Binding NavigateSettingsCommand}"
+				CommandParameter="watchers"/>
+    <Button Classes="Flat"
+				Content="Credits"
+				Command="{Binding NavigateSettingsCommand}"
+				CommandParameter="credits"/>
+    <Button Classes="Flat"
+				Content="Quotes"
+				Command="{Binding NavigateSettingsCommand}"
+				CommandParameter="quotes"/>
 	</ListBox>
 </UserControl>

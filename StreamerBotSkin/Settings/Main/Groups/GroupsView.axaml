@@ -1,0 +1,26 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="StreamerBotSkin.Views.GroupsView">
+  <Grid ColumnDefinitions="Auto,*">
+    <DataGrid Grid.Column="0">
+      <DataGrid.Columns>
+        <DataGridTextColumn Header="Name"/>
+        <DataGridCheckBoxColumn Header="Bots"/>
+      </DataGrid.Columns>
+    </DataGrid>
+    <ListBox Grid.Column="1">
+      <ListBox.Items>
+        <TextBlock Text="Line 0"/>
+        <TextBlock Text="Line 1"/>
+        <TextBlock Text="Line 2"/>
+        <TextBlock Text="Line 3"/>
+        <TextBlock Text="Line 4"/>
+        <TextBlock Text="Line 5"/>
+        <TextBlock Text="Line 6"/>
+      </ListBox.Items>
+    </ListBox>
+  </Grid>
+</UserControl>
