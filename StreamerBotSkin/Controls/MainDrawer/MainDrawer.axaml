@@ -53,6 +53,14 @@
                   Content="Queues"
                   Command="{Binding NavigateCommand}"
                   CommandParameter="queues"/>
+          <Button Classes="Flat"
+                  Content="Hotkeys"
+                  Command="{Binding NavigateCommand}"
+                  CommandParameter="hotkeys"/>
+          <Button Classes="Flat"
+                  Content="Servers"
+                  Command="{Binding NavigateCommand}"
+                  CommandParameter="servers"/>
         </ListBox>
         <Separator/>        
       </StackPanel>

@@ -1,0 +1,60 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:mAssist="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
+             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             x:Class="StreamerBotSkin.Views.VoiceControlView">
+  <TabControl>
+    <TabItem Header="Commands">
+      <DataGrid>
+        <DataGrid.Columns>
+          <DataGridCheckBoxColumn />
+          <DataGridTextColumn Header="Name"/>
+          <DataGridTextColumn Header="Command"/>
+          <DataGridTextColumn Header="Location"/>
+          <DataGridTextColumn Header="Stop after"/>
+        </DataGrid.Columns>
+      </DataGrid>
+    </TabItem>
+    <TabItem Header="Settings">
+      <StackPanel>
+        <ComboBox>
+          <ComboBoxItem Content="en-US"/>
+          <ComboBoxItem Content="ru-RU"/>
+          <ComboBoxItem Content="fr-FR"/>
+        </ComboBox>
+        <TextBox mAssist:TextFieldAssist.Label="Confidence treshold"/>
+        <CheckBox Content="Log speech to text dictation"/>
+        <StackPanel Orientation="Horizontal">
+          <ComboBox>
+            <ComboBoxItem Content="Device 0"/>
+            <ComboBoxItem Content="Device 1"/>
+            <ComboBoxItem Content="Device 2"/>
+          </ComboBox>
+          <Button>
+            <mIcons:MaterialIcon Kind="Refresh"/>
+          </Button>
+        </StackPanel>
+      <StackPanel Orientation="Horizontal">
+        <CheckBox Content="Autostart"/>
+        <Button Content="Start"/>
+      </StackPanel>
+      </StackPanel>
+    </TabItem>
+    <TabItem Header="Logs">
+      <ListBox>
+        <ListBox.Items>
+          <TextBlock Text="Line 0"/>
+          <TextBlock Text="Line 1"/>
+          <TextBlock Text="Line 2"/>
+          <TextBlock Text="Line 3"/>
+          <TextBlock Text="Line 4"/>
+          <TextBlock Text="Line 5"/>
+          <TextBlock Text="Line 6"/>
+        </ListBox.Items>
+      </ListBox>
+    </TabItem>
+  </TabControl>
+</UserControl>

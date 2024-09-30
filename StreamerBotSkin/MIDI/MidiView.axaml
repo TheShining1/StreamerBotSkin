@@ -1,0 +1,43 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="StreamerBotSkin.Views.MidiView">
+  <TabControl>
+    <TabItem Header="In">
+      <Grid RowDefinitions="*,Auto,*">
+        <DataGrid Grid.Row="0">
+          <DataGrid.Columns>
+            <DataGridTextColumn Header="Name"/>
+            <DataGridTextColumn Header="Device name"/>
+            <DataGridCheckBoxColumn Header="Autoconnect"/>
+            <DataGridCheckBoxColumn Header="Reconnect"/>
+            <DataGridTextColumn Header="Status"/>
+          </DataGrid.Columns>
+        </DataGrid>
+        <GridSplitter/>
+        <DataGrid Grid.Row="2">
+          <DataGrid.Columns>
+            <DataGridTextColumn Header="Name"/>
+            <DataGridTextColumn Header="Command type"/>
+            <DataGridTextColumn Header="Channel"/>
+            <DataGridTextColumn Header="Data"/>
+            <DataGridCheckBoxColumn Header="Enabled"/>
+          </DataGrid.Columns>        
+        </DataGrid>        
+      </Grid>
+    </TabItem>
+    <TabItem Header="Out">
+      <DataGrid>
+        <DataGrid.Columns>
+          <DataGridTextColumn Header="Name"/>
+          <DataGridTextColumn Header="Device name"/>
+          <DataGridCheckBoxColumn Header="Autoconnect"/>
+          <DataGridCheckBoxColumn Header="Reconnect"/>
+          <DataGridTextColumn Header="Status"/>
+        </DataGrid.Columns>
+      </DataGrid>
+    </TabItem>
+  </TabControl>
+</UserControl>

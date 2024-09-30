@@ -1,0 +1,66 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+			       xmlns:m="clr-namespace:StreamerBotSkin.Models"
+			       xmlns:vm="clr-namespace:StreamerBotSkin.ViewModels"
+             x:DataType="vm:CommandsViewModel"
+             x:Class="StreamerBotSkin.Views.CommandsView">
+  <UserControl.Styles>
+    <Style Selector="ToggleButton:unchecked">
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate>
+            <mIcons:MaterialIcon Kind="ChevronDown"/>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <Style Selector="ToggleButton:checked">
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate>
+            <mIcons:MaterialIcon Kind="ChevronUp"/>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+  </UserControl.Styles>
+  <Grid RowDefinitions="Auto,*">
+    <TextBox Grid.Column="0"
+             Watermark="Filter"></TextBox>
+    <DataGrid Grid.Row="1"
+              ItemsSource="{Binding commandsItems}"
+              CanUserResizeColumns="True"
+              HorizontalScrollBarVisibility="Visible"
+              VerticalScrollBarVisibility="Visible">
+      <DataGrid.Columns>
+        <DataGridCheckBoxColumn Header=""
+                                CanUserResize="False"
+                                x:DataType="m:SBCommand"
+                                Binding="{Binding Enabled}"
+                                Width="24"/>
+        <DataGridTextColumn Header="Name"
+                            x:DataType="m:SBCommand"
+                            Binding="{Binding Name}"/>
+        <DataGridTextColumn Header="Command"
+                            x:DataType="m:SBCommand"
+                            Binding="{Binding Command}"/>
+        <DataGridTextColumn Header="Options"
+                            x:DataType="m:SBCommand"
+                            Binding="{Binding Options}"/>
+        <DataGridTextColumn Header="Location"
+                            x:DataType="m:SBCommand"
+                            Binding="{Binding Location}"/>
+        <DataGridTextColumn Header="GCD"
+                            x:DataType="m:SBCommand"
+                            Binding="{Binding GlobalCooldown}"/>
+        <DataGridTextColumn Header="UCD"
+                            x:DataType="m:SBCommand"
+                            Binding="{Binding UserCooldown}"/>
+      </DataGrid.Columns>
+    </DataGrid>
+  </Grid>
+</UserControl>

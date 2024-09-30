@@ -1,0 +1,65 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             x:Class="StreamerBotSkin.Views.CustomServersView">
+  <TabControl TabStripPlacement="Left">
+    <TabItem Header="Servers">
+      <DataGrid>
+        <DataGrid.Columns>
+          <DataGridTextColumn Header="Status"/>
+          <DataGridTextColumn Header="Name"/>
+          <DataGridTextColumn Header="Security"/>
+          <DataGridTextColumn Header="Host"/>
+          <DataGridTextColumn Header="Port"/>
+          <DataGridTextColumn Header="Endpoint"/>
+          <DataGridCheckBoxColumn Header="Autostart"/>
+          <DataGridTemplateColumn>
+            <DataGridTemplateColumn.CellTemplate>
+              <DataTemplate>
+                <Button>
+                  <mIcons:MaterialIcon Kind="Play"/>
+                </Button>
+              </DataTemplate>
+            </DataGridTemplateColumn.CellTemplate>
+          </DataGridTemplateColumn>
+          <DataGridTemplateColumn>
+            <DataGridTemplateColumn.CellTemplate>
+              <DataTemplate>
+                <Button>
+                  <mIcons:MaterialIcon Kind="PowerOff"/>
+                </Button>
+              </DataTemplate>
+            </DataGridTemplateColumn.CellTemplate>
+          </DataGridTemplateColumn>
+        </DataGrid.Columns>
+      </DataGrid>
+    </TabItem>
+    <TabItem Header="Clients">
+      <DataGrid>
+        <DataGrid.Columns>
+          <DataGridTextColumn Header="Status"/>
+          <DataGridTextColumn Header="Name"/>
+          <DataGridTextColumn Header="Security"/>
+          <DataGridTextColumn Header="Host"/>
+          <DataGridTextColumn Header="Port"/>
+          <DataGridTextColumn Header="Endpoint"/>
+          <DataGridCheckBoxColumn Header="Autoconnect"/>
+          <DataGridCheckBoxColumn Header="Autoreconnect"/>
+          <DataGridTextColumn Header="Retry"/>
+          <DataGridTemplateColumn>
+            <DataGridTemplateColumn.CellTemplate>
+              <DataTemplate>
+                <Button>
+                  <mIcons:MaterialIcon Kind="Bolt"/>
+                </Button>
+              </DataTemplate>
+            </DataGridTemplateColumn.CellTemplate>
+          </DataGridTemplateColumn>
+        </DataGrid.Columns>
+      </DataGrid>
+    </TabItem>
+  </TabControl>
+</UserControl>

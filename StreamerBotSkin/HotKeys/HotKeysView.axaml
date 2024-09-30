@@ -1,0 +1,42 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+			       xmlns:m="clr-namespace:StreamerBotSkin.Models"
+			       xmlns:vm="clr-namespace:StreamerBotSkin.ViewModels"
+             x:DataType="vm:HotKeysViewModel"
+             x:Class="StreamerBotSkin.Views.HotKeysView">
+  <UserControl.Styles>
+    <Style Selector="ToggleButton:unchecked">
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate>
+            <mIcons:MaterialIcon Kind="ChevronDown"/>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <Style Selector="ToggleButton:checked">
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate>
+            <mIcons:MaterialIcon Kind="ChevronUp"/>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+  </UserControl.Styles>
+  <DataGrid 
+            CanUserResizeColumns="True"
+            HorizontalScrollBarVisibility="Visible"
+            VerticalScrollBarVisibility="Visible">
+    <DataGrid.Columns>
+      <DataGridCheckBoxColumn Header=""
+                              CanUserResize="False"
+                              Width="24"/>
+      <DataGridTextColumn Header="HotKey"/>
+    </DataGrid.Columns>
+  </DataGrid>
+</UserControl>
