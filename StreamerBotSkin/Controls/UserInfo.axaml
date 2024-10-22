@@ -8,16 +8,6 @@
              xmlns:sbControls="clr-namespace:StreamerBotSkin.Controls;assembly=StreamerBotSkin"
              x:DataType="sbModel:SBUser"
              x:Name="root">
-  <!--<ListBox>
-    <StackPanel Orientation="Horizontal">
-      <Label Content="ID"/>
-      <TextBlock Text="{Binding User.ID, ElementName=root}"></TextBlock>
-      </StackPanel>
-      <StackPanel Orientation="Horizontal">        
-      <Label Content="Type"/>
-      <TextBlock Text="{Binding User.Type, ElementName=root}"></TextBlock>
-      </StackPanel>
-  </ListBox>-->
   <StackPanel Grid.IsSharedSizeScope="True">
     <sbControls:LabelledTextBlock Group="Labels"
                                   Label="ID:"
@@ -55,33 +45,6 @@
     <sbControls:LabelledTextBlock Group="Labels"
                                   Label="Groups:"
                                   Text="{Binding Groups, ElementName=root}">
-      <!--<ItemsControl ItemsSource="{Binding User.Groups, ElementName=root}">
-        <ItemsControl.ItemsPanel>
-          <ItemsPanelTemplate>
-            <StackPanel Orientation="Horizontal"></StackPanel>
-          </ItemsPanelTemplate>
-        </ItemsControl.ItemsPanel>
-        <ItemsControl.ItemTemplate>
-          <DataTemplate>
-            <TextBlock Text="{Binding .}"></TextBlock>
-          </DataTemplate>
-        </ItemsControl.ItemTemplate>
-      </ItemsControl>-->
-      </sbControls:LabelledTextBlock>
-    <!--<StackPanel HorizontalAlignment="Center">
-      <StackPanel Orientation="Horizontal"
-                  HorizontalAlignment="Right">
-        <Label Content="Groups:"/>
-        <StackPanel Orientation="Horizontal">
-          <ItemsControl ItemsSource="{Binding User.Groups, ElementName=root}">
-            <ItemsControl.ItemTemplate>
-              <DataTemplate>
-                <TextBlock Text="{Binding .}"></TextBlock>
-              </DataTemplate>
-            </ItemsControl.ItemTemplate>
-          </ItemsControl>
-        </StackPanel>
-      </StackPanel>
-    </StackPanel>-->
+    </sbControls:LabelledTextBlock>
   </StackPanel>
 </UserControl>

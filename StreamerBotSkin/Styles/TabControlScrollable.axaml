@@ -8,7 +8,7 @@
   </Design.PreviewWith>
 
   <!-- Add Styles Here -->
-  <Style Selector="ScrollViewer.horizontalScroller">
+  <!--<Style Selector="ScrollViewer.horizontalScroller">
     <Setter Property="Template">
       <ControlTemplate>
         <DockPanel>
@@ -105,5 +105,5 @@
         </Border>
       </ControlTemplate>
     </Setter>
-  </Style>
+  </Style>-->
 </Styles>

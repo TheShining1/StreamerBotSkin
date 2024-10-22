@@ -8,7 +8,7 @@
 			       xmlns:vm="clr-namespace:StreamerBotSkin.ViewModels"
              x:DataType="vm:HotKeysViewModel"
              x:Class="StreamerBotSkin.Views.HotKeysView">
-  <UserControl.Styles>
+  <!--<UserControl.Styles>
     <Style Selector="ToggleButton:unchecked">
       <Setter Property="Template">
         <Setter.Value>
@@ -27,7 +27,7 @@
         </Setter.Value>
       </Setter>
     </Style>
-  </UserControl.Styles>
+  </UserControl.Styles>-->
   <DataGrid 
             CanUserResizeColumns="True"
             HorizontalScrollBarVisibility="Visible"

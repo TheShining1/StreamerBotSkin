@@ -31,17 +31,17 @@ namespace StreamerBotControls
       set { SetAndRaise(IsDrawerOpenProperty, ref _isDrawerOpen, value); }
     }
 
-    private static readonly MaterialTheme MaterialThemeStyles =
-            Application.Current!.LocateMaterialTheme<MaterialTheme>();
+    //private static readonly MaterialTheme MaterialThemeStyles =
+    //        Application.Current!.LocateMaterialTheme<MaterialTheme>();
 
-    void ThemeChange(object? sender, RoutedEventArgs e)
-    {
-      var toggleButton = sender as ToggleButton;
-      if (toggleButton == null) return;
+    //void ThemeChange(object? sender, RoutedEventArgs e)
+    //{
+    //  var toggleButton = sender as ToggleButton;
+    //  if (toggleButton == null) return;
 
-      bool isChecked = toggleButton.IsChecked ?? false;
+    //  bool isChecked = toggleButton.IsChecked ?? false;
 
-      MaterialThemeStyles.BaseTheme = MaterialThemeStyles.BaseTheme == BaseThemeMode.Light ? BaseThemeMode.Dark : BaseThemeMode.Light;
-    }
+    //  MaterialThemeStyles.BaseTheme = MaterialThemeStyles.BaseTheme == BaseThemeMode.Light ? BaseThemeMode.Dark : BaseThemeMode.Light;
+    //}
   }
 }

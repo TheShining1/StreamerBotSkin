@@ -54,6 +54,9 @@
     <Compile Update="ActionQueues\ActionsHistory\ActionsHistoryView.axaml.cs">
       <DependentUpon>ActionsHistoryView.axaml</DependentUpon>
     </Compile>
+    <Compile Update="Actions\Panels\ActionRow.axaml.cs">
+      <DependentUpon>ActionRow.axaml</DependentUpon>
+    </Compile>
     <Compile Update="Controls\Auth\AuthNone.axaml.cs">
       <DependentUpon>AuthNone.axaml</DependentUpon>
     </Compile>
@@ -62,6 +65,11 @@
     </Compile>
     <Compile Update="Platforms\Twitch\Predictions\PredictionsView.axaml.cs">
       <DependentUpon>PredictionsView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
     <Compile Update="Settings\Integrations\IntegrationsSettingsView.axaml.cs">
       <DependentUpon>IntegrationsSettingsView.axaml</DependentUpon>
@@ -109,7 +117,14 @@
 
 
   <ItemGroup>
-    <ProjectReference Include="..\StreamerBotControls\StreamerBotControls.csproj" />
-    <ProjectReference Include="..\StreamerBotControls\StreamerBotControls.csproj" />
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="Assets\platforms\" />
   </ItemGroup>
 </Project>

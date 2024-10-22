@@ -1,21 +1,33 @@
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:themes="clr-namespace:Material.Styles.Themes;assembly=Material.Styles"
+             xmlns:mThemes="clr-namespace:Material.Styles.Themes;assembly=Material.Styles"
              xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
-             x:Class="StreamerBotSkin.App"
-             xmlns:local="using:StreamerBotSkin"
-             RequestedThemeVariant="Default">
+             xmlns:conv="clr-namespace:StreamerBotSkin.Converters"
+             xmlns:local="clr-namespace:StreamerBotSkin"
+             x:Class="StreamerBotSkin.App">
   <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
   <Application.DataTemplates>
     <local:ViewLocator/>
   </Application.DataTemplates>
 
+
   <Application.Styles>
-    <themes:MaterialTheme BaseTheme="Dark" />
-    <!--<themes:MaterialTheme />-->
+    <mThemes:MaterialTheme/>
+
+    <!--<themes:MaterialTheme BaseTheme="Dark" />-->
+    <!--<mThemes:MaterialTheme />-->
     <mIcons:MaterialIconStyles />
 
-    <StyleInclude Source="avares://StreamerBotSkin/Styles/TabControlScrollable.axaml" />
+    <!--<StyleInclude Source="avares://StreamerBotSkin/Styles/TabControlScrollable.axaml" />-->
   </Application.Styles>
+
+  <Application.Resources>
+    <conv:PlatformToIconConverter x:Key="PlatformToIconConverter" />
+    <conv:RoleToIconConverter x:Key="RoleToIconConverter" />
+    <!--<Path x:Key="TrovoIcon"
+          Data="M15.2 0C15.5 0 15.7 0.2 15.7 0.5V0.6L15 3.8C15 3.9 15.1 4.1 15.2 4.1C15.2 4.1 15.2 4.1 15.3 4.1H21.7C22 4.1 22.2924 4.3 22.2 4.7L20.7 11C20.6 11.3 20.4 11.4 20.1 11.4L16.6 11.2C15.5 11.2 14.3 11.5 13.4 12.5C12.2 13.7 12.1 15.5 12.6 16.8C13.1 18.1 14.5 18.8 15.9 18.5C17 18.3 17.6 17.2 17.5 16.3C17.4 15.3 17 15 16.4 15C15.8 15 15.6 15.3 15.6 15.6C15.6 15.9 15.7 16.1 15.9 16.3C16.2 16.6 15.6 17.5 14.8 17C14.3 16.7 14 16.1 14.1 15.2C14.2 14.1 15.1 13.1 16.7 13.1C18.3 13.1 19.5 14.1 19.8 15.6C20.3 17.5 19.3 19.8 17 21C14.2 22.5 9.5 22.4 6.9 19.6C5.4 18 4.9 15.9 5 14C5 13.4 5.1 12.7 5.3 12.1C5.3 11.9 5.2 11.7 5 11.6H4.9H0.5C0.2 11.6 0 11.3 0 11V10.9L1.4 4.8C1.5 4.4 1.8 4.2 2.2 4.2H6.5C6.7 4.1 6.9 4 7 3.7L7.7 0.6C7.8 0.2 8.2 0 8.5 0H15.2Z"
+          Width="24" Height="24"
+          Fill="Black"/>-->    
+  </Application.Resources>
 </Application>

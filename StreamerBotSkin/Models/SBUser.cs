@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using DynamicData;
+
 namespace StreamerBotSkin.Models
 {
   public class SBUser
@@ -27,7 +29,7 @@ namespace StreamerBotSkin.Models
       List<SBUser> users = new List<SBUser>();
       Random random = new Random();
 
-      for (int i = 1; i <= 10; i++)
+      for (int i = 1; i <= 100; i++)
       {
         var groups = new List<string> { "GroupA", "GroupB", "GroupC", "GroupD", "GroupE" }; // Sample groups
 

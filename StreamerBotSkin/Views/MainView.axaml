@@ -6,5 +6,10 @@
              x:Class="StreamerBotSkin.Views.MainView"
 			 xmlns:vm="using:StreamerBotSkin.ViewModels"
 			 x:DataType="vm:MainViewModel">
-	<TextBlock Text="{Binding Name}"></TextBlock>
+  <StackPanel>
+    <Button>
+      <TextBlock Text="Button"/>
+    </Button>
+    <Button Content="Button Flat" Classes="Flat" />
+  </StackPanel>
 </UserControl>

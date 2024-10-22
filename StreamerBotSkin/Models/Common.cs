@@ -15,6 +15,15 @@ namespace StreamerBotSkin.Models
     Anonymous
   }
 
+  public enum RoleTypeIcon
+  {
+    Video,
+    Sword,
+    Diamond,
+    EyeOutline,
+    Incognito
+  }
+
   public enum AccountType
   {
     Broadcaster,
@@ -26,5 +35,12 @@ namespace StreamerBotSkin.Models
     Twitch,
     YouTube,
     Trovo
+  }
+
+  public enum PlatformIcon
+  {
+    Twitch,
+    YouTube,
+    AlphaT
   }
 }

@@ -4,31 +4,42 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="450"
              xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
-             xmlns:vm="using:StreamerBotSkin.ViewModels"
-             x:DataType="vm:MainWindowViewModel"
+             xmlns:models="clr-namespace:StreamerBotSkin.Models"
+             x:Name="root"
              x:Class="StreamerBotSkin.Controls.MainDrawer">
-  <Grid RowDefinitions="Auto, *, Auto">
-    <StackPanel Grid.Row="0">
-      <StackPanel Orientation="Horizontal"
-                  HorizontalAlignment="Center">
-        <Button>
-          <StackPanel Orientation="Horizontal">
-            <mIcons:MaterialIcon Kind="Import"/>
-            <TextBlock>Import</TextBlock>
-          </StackPanel>
-        </Button>
-        <Button>
-          <StackPanel Orientation="Horizontal">
-            <TextBlock>Export</TextBlock>
-            <mIcons:MaterialIcon Kind="Export"/>
-          </StackPanel>
-        </Button>
-      </StackPanel>
-      <Separator/>
+  <Grid RowDefinitions="Auto, Auto, *, Auto, Auto">
+    <StackPanel Grid.Row="0"
+                Orientation="Horizontal"
+                HorizontalAlignment="Center">
+      <Button Classes="Flat">
+        <StackPanel Orientation="Horizontal">
+          <mIcons:MaterialIcon Kind="Import"
+                               Margin="0,5,5,5"/>
+          <TextBlock VerticalAlignment="Center">Import</TextBlock>
+        </StackPanel>
+      </Button>
+      <Button Classes="Flat">
+        <StackPanel Orientation="Horizontal">
+          <mIcons:MaterialIcon Kind="Export"
+                               Margin="0,5,5,5"/>
+          <TextBlock VerticalAlignment="Center">Export</TextBlock>
+        </StackPanel>
+      </Button>
     </StackPanel>
-    <ScrollViewer Grid.Row="1">
-      <StackPanel>
-        <ListBox Classes="Drawer">
+    <Separator Grid.Row="1"/>
+    <ListBox Grid.Row="2"
+             Classes="Drawer"
+             ItemsSource="{Binding MenuItems, ElementName=root}">
+      <ListBox.ItemTemplate>
+        <DataTemplate x:DataType="models:MainDrawerMenuItem">
+          <Button Classes="Flat"
+                  Content="{Binding Label}"
+                  Command="{Binding NavigateCommand, ElementName=root}"
+                  CommandParameter="{Binding CommandParameter}"/>
+        </DataTemplate>
+      </ListBox.ItemTemplate>
+    </ListBox>
+    <!--<ListBox Classes="Drawer">
           <Button Classes="Flat"
                   Content="Main"
                   Command="{Binding NavigateCommand}"
@@ -91,25 +102,23 @@
               </ListBox>
             </Expander>
           </Expander>
-        </ListBox>
-        <Separator/>
-      </StackPanel>
-    </ScrollViewer>
-    <StackPanel Grid.Row="2">
-      <Button HorizontalAlignment="Center">
+        </ListBox>-->
+    <Separator Grid.Row="3"/>
+    <StackPanel Grid.Row="4"
+                HorizontalAlignment="Center">
+      <Button Classes="Flat">
         <StackPanel Orientation="Horizontal">
           <mIcons:MaterialIcon Kind="Download"/>
           <TextBlock>Check for updates</TextBlock>
         </StackPanel>
       </Button>
       <StackPanel Orientation="Horizontal"
-                  HorizontalAlignment="Center">
-        <Button Classes="Icon"
-          Foreground="Black">
+                  HorizontalAlignment="Center"
+                  Margin="10">
+        <Button Classes="Flat">
           <mIcons:MaterialIcon Kind="Patreon" />
         </Button>
-        <Button Classes="Icon"
-            Foreground="Black">
+        <Button Classes="Flat">
           <mIcons:MaterialIcon Kind="Coffee" />
         </Button>
       </StackPanel>

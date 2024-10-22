@@ -6,12 +6,14 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="72"
              x:Class="StreamerBotSkin.Controls.ControlBar">   
   <Grid ColumnDefinitions="Auto,*,Auto">
-    <Button Grid.Column="0"
-            Classes="Flat">
-      <Button.Background>
+    <Border Grid.Column="0"
+            MinHeight="24"
+            MinWidth="24"
+            Margin="5,0">
+      <Border.Background>
         <ImageBrush Source="../../Assets/sb-logo.png"/>
-      </Button.Background>
-    </Button>
+      </Border.Background>
+    </Border>
     <TextBlock Grid.Column="1"
                 Text="Streamer.Bot"
                 HorizontalAlignment="Center"

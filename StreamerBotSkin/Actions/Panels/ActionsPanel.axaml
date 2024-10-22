@@ -9,7 +9,7 @@
              x:Class="StreamerBotSkin.Panels.ActionsPanel"
 			       xmlns:vm="using:StreamerBotSkin.ViewModels"
 			       x:DataType="vm:ActionsViewModel">
-  <UserControl.Styles>
+  <!--<UserControl.Styles>
     <Style Selector="ToggleButton:unchecked">
       <Setter Property="Template">
         <Setter.Value>
@@ -28,7 +28,21 @@
         </Setter.Value>
       </Setter>
     </Style>
-  </UserControl.Styles>
+    -->
+  <!--<Style Selector="DataGridRow">
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate TargetType="{x:Type DataGridRow}">
+          <sbControls:ActionRow/>
+            -->
+  <!--<TextBlock>ROW</TextBlock>-->
+  <!--
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>      
+    </Style>-->
+  <!--
+  </UserControl.Styles>-->
   <Grid RowDefinitions="Auto,*">
     <Grid Grid.Row="0"
           ColumnDefinitions="*,*,2*"
@@ -47,12 +61,14 @@
               SelectedItem="{Binding Path=currentAction}">
       <DataGrid.DataTemplates>
         <DataGridRow></DataGridRow>
-          --><!--<sbControls:UserControl1></sbControls:UserControl1>--><!--
+          -->
+    <!--<sbControls:UserControl1></sbControls:UserControl1>-->
+    <!--
       </DataGrid.DataTemplates>
     </DataGrid>-->
     <DataGrid Grid.Row="1"
               x:Name="ActionsGrid"
-              AutoGenerateColumns="False"
+              AutoGenerateColumns="True"
               ColumnWidth="*"
               ItemsSource="{Binding actionsItems}"
               SelectedItem="{Binding currentAction}"

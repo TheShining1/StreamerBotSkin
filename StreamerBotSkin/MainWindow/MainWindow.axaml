@@ -2,35 +2,40 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="500"
         xmlns:mControls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
         xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
         xmlns:sbControls="clr-namespace:StreamerBotSkin.Controls"
         x:CompileBindings="True"
         xmlns:vm="using:StreamerBotSkin.ViewModels"
         x:DataType="vm:MainWindowViewModel"
-        x:Class="StreamerBotSkin.Views.MainWindow"
         Title="Streamer.Bot"
         ExtendClientAreaToDecorationsHint="True"
-        Width="800"
-        Height="400"
-        WindowStartupLocation="CenterScreen">
+        MinWidth="900"
+        MinHeight="500"
+        WindowStartupLocation="CenterScreen"
+        x:Class="StreamerBotSkin.Views.MainWindow">
   <Design.DataContext>
     <vm:MainWindowViewModel/>
   </Design.DataContext>
   <Grid RowDefinitions="Auto,*">
     <sbControls:ControlBar  Grid.Row="0"
-                            Height="28"/>
+                            Height="28"
+                            Margin="5"/>
     <mControls:NavigationDrawer Grid.Row="1"
                                 x:Name="LeftDrawer"
-                                LeftDrawerOpened="{Binding ElementName=MainBarEl, Path=IsDrawerOpen, Mode=TwoWay}">
+                                LeftDrawerExpandThresholdWidth="100000"
+                                LeftDrawerOpened="{Binding IsMainDrawerOpen, Mode=TwoWay}">
       <mControls:NavigationDrawer.LeftDrawerContent>
-        <sbControls:MainDrawer x:Name="MainDrawer"/>
+        <sbControls:MainDrawer x:Name="MainDrawer"
+                               MenuItems="{Binding MainDrawerMenuItems}"
+                               NavigateCommand="{Binding NavigateCommand}"/>
       </mControls:NavigationDrawer.LeftDrawerContent>
       <Grid RowDefinitions="Auto, *, Auto">
-        <sbControls:MainBar x:Name="MainBarEl"
-                            Grid.Row="0"/>
+        <sbControls:MainBar Grid.Row="0"
+                            IsDrawerOpen="{Binding IsMainDrawerOpen, Mode=TwoWay}"/>
         <TransitioningContentControl Grid.Row="1"
+                                     Margin="10,0"
                                      Content="{Binding CurrentViewModel}"/>
         <sbControls:Footer Grid.Row="2"/>
       </Grid>

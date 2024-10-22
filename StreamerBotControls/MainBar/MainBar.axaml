@@ -37,11 +37,11 @@
 			</StackPanel>
 			<StackPanel Grid.Column="3"
                   Orientation="Horizontal">
-				<ToggleButton x:Name="ThemeToggle"
+				<!--<ToggleButton x:Name="ThemeToggle"
                       Classes="Flat"
                       Click="ThemeChange">
 					<mIcons:MaterialIcon Kind="ThemeLightDark"/>
-				</ToggleButton>
+				</ToggleButton>-->
         <!--<sbControls:MainBarMenu />-->
 			</StackPanel>
 		</Grid>

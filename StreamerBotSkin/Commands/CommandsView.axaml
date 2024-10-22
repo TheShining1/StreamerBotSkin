@@ -8,7 +8,7 @@
 			       xmlns:vm="clr-namespace:StreamerBotSkin.ViewModels"
              x:DataType="vm:CommandsViewModel"
              x:Class="StreamerBotSkin.Views.CommandsView">
-  <UserControl.Styles>
+  <!--<UserControl.Styles>
     <Style Selector="ToggleButton:unchecked">
       <Setter Property="Template">
         <Setter.Value>
@@ -27,7 +27,7 @@
         </Setter.Value>
       </Setter>
     </Style>
-  </UserControl.Styles>
+  </UserControl.Styles>-->
   <Grid RowDefinitions="Auto,*">
     <TextBox Grid.Column="0"
              Watermark="Filter"></TextBox>
