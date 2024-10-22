@@ -23,6 +23,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <AvaloniaXaml Remove="NewFolder\**" />
+    <Compile Remove="NewFolder\**" />
+    <EmbeddedResource Remove="NewFolder\**" />
+    <None Remove="NewFolder\**" />
+    <Page Remove="NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <AvaloniaResource Remove="Assets\actions.json" />
   </ItemGroup>
 
@@ -51,10 +59,10 @@
 
 
   <ItemGroup>
-    <Compile Update="ActionQueues\ActionsHistory\ActionsHistoryView.axaml.cs">
+    <Compile Update="Pages\ActionQueues\ActionsHistory\ActionsHistoryView.axaml.cs">
       <DependentUpon>ActionsHistoryView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Actions\Panels\ActionRow.axaml.cs">
+    <Compile Update="Pages\Actions\Panels\ActionRow.axaml.cs">
       <DependentUpon>ActionRow.axaml</DependentUpon>
     </Compile>
     <Compile Update="Controls\Auth\AuthNone.axaml.cs">
@@ -63,7 +71,7 @@
     <Compile Update="Controls\Auth\AuthClient.axaml.cs">
       <DependentUpon>AuthClient.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Platforms\Twitch\Predictions\PredictionsView.axaml.cs">
+    <Compile Update="Pages\Platforms\Twitch\Predictions\PredictionsView.axaml.cs">
       <DependentUpon>PredictionsView.axaml</DependentUpon>
     </Compile>
     <Compile Update="Properties\Settings.Designer.cs">
@@ -71,28 +79,28 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
-    <Compile Update="Settings\Integrations\IntegrationsSettingsView.axaml.cs">
+    <Compile Update="Pages\Settings\Integrations\IntegrationsSettingsView.axaml.cs">
       <DependentUpon>IntegrationsSettingsView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Settings\Integrations\Streamlabs.axaml.cs">
+    <Compile Update="Pages\Settings\Integrations\Streamlabs.axaml.cs">
       <DependentUpon>Streamlabs.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Settings\Main\Compiler\CompilerView.axaml.cs">
+    <Compile Update="Pages\Settings\Main\Compiler\CompilerView.axaml.cs">
       <DependentUpon>CompilerView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Settings\Main\General\GeneralView.axaml.cs">
+    <Compile Update="Pages\Settings\Main\General\GeneralView.axaml.cs">
       <DependentUpon>GeneralView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Settings\Main\Interface\InterfaceView.axaml.cs">
+    <Compile Update="Pages\Settings\Main\Interface\InterfaceView.axaml.cs">
       <DependentUpon>InterfaceView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Settings\Main\MainSettingsView.axaml.cs">
+    <Compile Update="Pages\Settings\Main\MainSettingsView.axaml.cs">
       <DependentUpon>MainSettingsView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Settings\Platforms\PlatfromsSettingsView.axaml.cs">
+    <Compile Update="Pages\Settings\Platforms\PlatfromsSettingsView.axaml.cs">
       <DependentUpon>PlatfromsSettingsView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Settings\StreamApps\StreamappsSettingsView.axaml.cs">
+    <Compile Update="Pages\Settings\StreamApps\StreamappsSettingsView.axaml.cs">
       <DependentUpon>StreamappsSettingsView.axaml</DependentUpon>
     </Compile>
     <Compile Update="Controls\ControlBar\ControlBar.axaml.cs">
