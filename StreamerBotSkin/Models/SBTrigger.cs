@@ -12,5 +12,7 @@ namespace StreamerBotSkin.Models
     public uint Type { get; set; }
     public bool Enabled { get; set; }
     public bool AlwaysRun { get; set; }
+    public string? Criteria { get; set; }
+    public Platform Source { get; set; }
   }
 }

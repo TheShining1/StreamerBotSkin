@@ -3,6 +3,8 @@ using Avalonia.Collections;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using StreamerBotSkin.Models;
+using StreamerBotSkin.ViewModels;
+
 using System.Collections.ObjectModel;
 
 namespace StreamerBotSkin.Panels;

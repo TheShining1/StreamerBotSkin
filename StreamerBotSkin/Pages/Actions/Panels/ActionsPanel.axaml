@@ -9,7 +9,10 @@
              x:Class="StreamerBotSkin.Panels.ActionsPanel"
 			       xmlns:vm="using:StreamerBotSkin.ViewModels"
 			       x:DataType="vm:ActionsViewModel">
-  <!--<UserControl.Styles>
+  <Design.DataContext>
+    <vm:ActionsViewModel/>
+  </Design.DataContext>
+  <UserControl.Styles>
     <Style Selector="ToggleButton:unchecked">
       <Setter Property="Template">
         <Setter.Value>
@@ -28,24 +31,41 @@
         </Setter.Value>
       </Setter>
     </Style>
-    -->
-  <!--<Style Selector="DataGridRow">
+    <Style Selector="ToggleButton:unchecked:pointerover">
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate>
+            <mIcons:MaterialIcon Kind="ChevronDownCircle"/>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <Style Selector="ToggleButton:checked:pointerover">
+      <Setter Property="Template">
+        <Setter.Value>
+          <ControlTemplate>
+            <mIcons:MaterialIcon Kind="ChevronUpCircle"/>
+          </ControlTemplate>
+        </Setter.Value>
+      </Setter>
+    </Style>
+    <!--<Style Selector="DataGridRow">
       <Setter Property="Template">
         <Setter.Value>
           <ControlTemplate TargetType="{x:Type DataGridRow}">
           <sbControls:ActionRow/>
             -->
-  <!--<TextBlock>ROW</TextBlock>-->
-  <!--
+    <!--<TextBlock>ROW</TextBlock>-->
+    <!--
           </ControlTemplate>
         </Setter.Value>
       </Setter>      
     </Style>-->
-  <!--
-  </UserControl.Styles>-->
+
+  </UserControl.Styles>
   <Grid RowDefinitions="Auto,*">
     <Grid Grid.Row="0"
-          ColumnDefinitions="*,*,2*"
+          ColumnDefinitions="*,*,2*,*"
           VerticalAlignment="Center"
           Margin="5">
       <TextBlock Grid.Column="0"
@@ -53,6 +73,18 @@
                  VerticalAlignment="Center">Actions</TextBlock>
       <TextBox Grid.Column="2"
                Watermark="Filter"></TextBox>
+      <StackPanel Grid.Column="3">        
+        <ComboBox
+                  ItemsSource="{Binding QueuesItems}"
+                  SelectedItem="{Binding SelectedQueue}">
+          <ComboBox.ItemTemplate>
+            <DataTemplate>
+              <TextBlock Text="{Binding Name}"/>
+            </DataTemplate>
+          </ComboBox.ItemTemplate>
+        </ComboBox>
+        <TextBlock Text="{Binding SelectedQueueId}"/>
+      </StackPanel>
     </Grid>
     <!--<ScrollViewer Grid.Row="1">-->
     <!--<DataGrid Grid.Row="1"
@@ -68,12 +100,13 @@
     </DataGrid>-->
     <DataGrid Grid.Row="1"
               x:Name="ActionsGrid"
-              AutoGenerateColumns="True"
+              AutoGenerateColumns="False"
               ColumnWidth="*"
-              ItemsSource="{Binding actionsItems}"
+              ItemsSource="{Binding ActionsItems}"
               SelectedItem="{Binding currentAction}"
               CanUserResizeColumns="True"
-              ColumnHeaderHeight="36">
+              ColumnHeaderHeight="36"
+              MinColumnWidth="50">
       <DataGrid.Columns>
         <DataGridCheckBoxColumn Header=""
                                 CanUserResize="False"
@@ -91,8 +124,10 @@
                             Binding="{Binding TriggersCount}"/>
         <DataGridTemplateColumn Header="Queue">
           <DataGridTemplateColumn.CellTemplate>
-            <DataTemplate>
-              <ComboBox></ComboBox>
+            <DataTemplate x:DataType="sbModels:SBAction">
+              <!--<ComboBox ItemsSource="{Binding QueuesItems}"
+                        SelectedItem="{Binding Queue}"></ComboBox>-->
+              <TextBlock Text="{Binding Queue}" />
             </DataTemplate>
           </DataGridTemplateColumn.CellTemplate>
         </DataGridTemplateColumn>

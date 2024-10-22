@@ -32,10 +32,14 @@
 
   <ItemGroup>
     <AvaloniaResource Remove="Assets\actions.json" />
+    <AvaloniaResource Remove="Assets\queues.json" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="Assets\actions.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\queues.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="streamerbot-logo-transparent.ico" />

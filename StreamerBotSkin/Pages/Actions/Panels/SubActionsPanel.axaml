@@ -12,7 +12,7 @@
     <DataGrid Grid.Row="1"
                 x:Name="ActionsGrid"
                 ColumnWidth="*"
-                ItemsSource="{Binding Path=currentAction.Actions}">
+                ItemsSource="{Binding currentAction.Actions}">
       <DataGrid.Columns>
         <DataGridCheckBoxColumn Header="Enabled"
 							x:DataType="sbModels:SBSubAction"

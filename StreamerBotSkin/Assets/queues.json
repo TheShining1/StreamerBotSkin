@@ -1,0 +1,52 @@
+[
+    {
+      "id": "11a6ede6-f961-470d-9333-6d46fe93a416",
+      "blocking": false,
+      "name": "FileActions"
+    },
+    {
+      "id": "34c58e78-9963-431d-b8fb-6d105903e42f",
+      "blocking": false,
+      "name": "TH"
+    },
+    {
+      "id": "3f231964-deb5-4715-a182-19dcb0a27c9d",
+      "blocking": false,
+      "name": "TH: visit hospital"
+    },
+    {
+      "id": "9239d03d-975a-47cc-9bb0-f7ca75db759c",
+      "blocking": false,
+      "name": "soundalerts"
+    },
+    {
+      "id": "8f890881-0746-42dc-9247-843bf961afa7",
+      "blocking": false,
+      "name": "ThemeSongEvents"
+    },
+    {
+      "id": "49e1b5b1-170b-4f32-8486-c7dd59560112",
+      "blocking": false,
+      "name": "ThemeSong"
+    },
+    {
+      "id": "ca23f539-7ae6-4eaa-aad5-c87812ebf9c4",
+      "blocking": true,
+      "name": "Chat Commands"
+    },
+    {
+      "id": "e7be3644-4a68-4f66-a6ae-b3cd616cccc4",
+      "blocking": true,
+      "name": "BlockingQueue"
+    },
+    {
+      "id": "5cf0f7ae-1340-4176-a3a7-1cb2c8ae2ecd",
+      "blocking": true,
+      "name": "HoldKey"
+    },
+    {
+      "id": "3613ed44-f1cf-4031-91d6-3ff0db4873c5",
+      "blocking": false,
+      "name": "TSO::Roulette"
+    }
+  ]

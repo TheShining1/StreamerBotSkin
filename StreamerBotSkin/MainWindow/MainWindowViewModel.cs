@@ -24,7 +24,7 @@ namespace StreamerBotSkin.ViewModels
         ViewModelsAvailable[item.CommandParameter] = item.ViewModel;
       }
 
-      currentViewModel = ViewModelsAvailable["viewers"];
+      currentViewModel = ViewModelsAvailable["actions"];
 
       NavigateCommand = ReactiveCommand.Create<string>(NavigateTo);
       OpenAboutCommand = ReactiveCommand.Create(OpenAboutDialog);

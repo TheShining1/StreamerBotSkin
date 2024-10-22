@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace StreamerBotSkin.Models
 {
-  internal class SBQueue
+  public class SBQueue
   {
+    public string? ID { get; set; }
     public string? Name { get; set; }
     public int PendingCount { get; set; }
     public int CompletedCount { get; set; }
@@ -17,6 +20,11 @@ namespace StreamerBotSkin.Models
 
     public static ObservableCollection<SBQueue> GetAll()
     {
+      string queuesFilePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", "queues.json");
+      return JsonConvert.DeserializeObject<ObservableCollection<SBQueue>>(File.ReadAllText(queuesFilePath))
+        ?? new ObservableCollection<SBQueue>();
+
+
       ObservableCollection<SBQueue> queues = new ObservableCollection<SBQueue>();
       Random random = new Random();
 

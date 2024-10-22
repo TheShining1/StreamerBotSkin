@@ -3,9 +3,31 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			       xmlns:sbModels="clr-namespace:StreamerBotSkin.Models"
+             xmlns:vm="using:StreamerBotSkin.ViewModels"
+             x:DataType="vm:ActionsViewModel"
              x:Class="StreamerBotSkin.Panels.TriggersPanel">
-	<DataGrid x:Name="TriggersGrid"
-			  AutoGenerateColumns="True"
-			  ColumnWidth="*">
-	</DataGrid>
+  <Grid RowDefinitions="Auto,*">
+    <TextBlock Grid.Row="0"
+               Text="Trigger"/>
+    <DataGrid Grid.Row="1"
+              AutoGenerateColumns="False"
+              ColumnWidth="*"
+              ItemsSource="{Binding currentAction.Triggers}">
+      <DataGrid.Columns>
+        <DataGridCheckBoxColumn Header="Enabled"
+							x:DataType="sbModels:SBTrigger"
+							Binding="{Binding Enabled}"/>
+        <DataGridTextColumn Header="Source"
+									x:DataType="sbModels:SBTrigger"
+									Binding="{Binding Source}"/>
+        <DataGridTextColumn Header="Type"
+									x:DataType="sbModels:SBTrigger"
+									Binding="{Binding Type}"/>
+        <DataGridTextColumn Header="Criteria"
+									x:DataType="sbModels:SBTrigger"
+									Binding="{Binding Criteria}"/>
+      </DataGrid.Columns>
+    </DataGrid>
+  </Grid>
 </UserControl>
