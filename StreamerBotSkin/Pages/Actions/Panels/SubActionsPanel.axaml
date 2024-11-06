@@ -7,20 +7,26 @@
 			       xmlns:sbModels="clr-namespace:StreamerBotSkin.Models"
              xmlns:vm="using:StreamerBotSkin.ViewModels"
              x:DataType="vm:ActionsViewModel">
-  <Grid>
-    <TextBlock Grid.Row="2">Sub-Actions</TextBlock>
-    <DataGrid Grid.Row="1"
-                x:Name="ActionsGrid"
-                ColumnWidth="*"
-                ItemsSource="{Binding currentAction.Actions}">
-      <DataGrid.Columns>
-        <DataGridCheckBoxColumn Header="Enabled"
-							x:DataType="sbModels:SBSubAction"
-							Binding="{Binding Enabled}"/>
-        <DataGridTextColumn Header="Type"
-									x:DataType="sbModels:SBSubAction"
-									Binding="{Binding Type}"/>
-      </DataGrid.Columns>
-    </DataGrid>
+  <Grid RowDefinitions="Auto,*">
+    <TextBlock Grid.Row="0">Sub-Actions</TextBlock>
+    <TreeView Grid.Row="1"
+              ItemsSource="{Binding CurrentSubActionsTree}">
+      <TreeView.ItemTemplate>
+        <TreeDataTemplate ItemsSource="{Binding Items}">
+          <TextBlock Text="{Binding Name, Converter={StaticResource ActionTypeToNameConverter}}"/>
+        </TreeDataTemplate>
+       </TreeView.ItemTemplate>
+      <!--<TreeView.ItemTemplate>
+        <TreeDataTemplate>
+          <Grid ColumnDefinitions="*, Auto">
+            --><!--<TextBlock Grid.Column="0"
+                       Text="{Binding ID}"
+                       VerticalAlignment="Center"/>--><!--
+            --><!--<CheckBox Grid.Column="1"
+                      IsChecked="{Binding Enabled}"/>--><!--
+          </Grid>
+        </TreeDataTemplate>
+      </TreeView.ItemTemplate>-->
+    </TreeView>
   </Grid>
 </UserControl>

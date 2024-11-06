@@ -2,25 +2,43 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:sbPanels="clr-namespace:StreamerBotSkin.Panels"
              mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="600"
-             x:Class="StreamerBotSkin.Views.ActionsView"
-			 xmlns:vm="using:StreamerBotSkin.ViewModels"
-			 x:DataType="vm:ActionsViewModel">
-	<Design.DataContext>
-		<vm:ActionsViewModel/>
-	</Design.DataContext>
-	<Grid ColumnDefinitions="*,5,*">
+             xmlns:sbPanels="clr-namespace:StreamerBotSkin.Panels"
+						 xmlns:vm="using:StreamerBotSkin.ViewModels"
+						 x:DataType="vm:ActionsViewModel"
+             x:Class="StreamerBotSkin.Views.ActionsView">
+  <Design.DataContext>
+    <vm:ActionsViewModel/>
+  </Design.DataContext>
+  <UserControl.Styles>
+    <Style Selector="DataGridColumnHeader">
+      <Setter Property="HorizontalContentAlignment" Value="Center"/>
+    </Style>
+    <Style Selector="DataGridCell">
+      <Setter Property="HorizontalContentAlignment" Value="Center"/>
+    </Style>
+  </UserControl.Styles>
+  <Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="2*" MinWidth="500"/>
+      <ColumnDefinition Width="5"/>
+      <ColumnDefinition Width="*" MinWidth="250"/>
+    </Grid.ColumnDefinitions>
     <sbPanels:ActionsPanel/>
-		<GridSplitter Grid.Column="1"/>
-		<Grid Grid.Column="2">
-			<Grid RowDefinitions="*,5,*,5,*">
-        <sbPanels:TriggersPanel Grid.Row="0"/>
-				<GridSplitter Grid.Row="1"/>
-        <sbPanels:SubActionsPanel Grid.Row="2"/>
-				<GridSplitter Grid.Row="3"/>
-        <sbPanels:InfoPanel Grid.Row="4"/>
-			</Grid>
-		</Grid>
-	</Grid>
+    <GridSplitter Grid.Column="1"/>
+    <Grid Grid.Column="2">
+      <Grid.RowDefinitions>
+        <RowDefinition Height="*" MinHeight="100"></RowDefinition>
+        <RowDefinition Height="5"></RowDefinition>
+        <RowDefinition Height="*" MinHeight="100"></RowDefinition>
+        <RowDefinition Height="5"></RowDefinition>
+        <RowDefinition Height="*" MinHeight="100"></RowDefinition>
+      </Grid.RowDefinitions>
+      <sbPanels:TriggersPanel Grid.Row="0"/>
+      <GridSplitter Grid.Row="1"/>
+      <sbPanels:SubActionsPanel Grid.Row="2"/>
+      <GridSplitter Grid.Row="3"/>
+      <sbPanels:InfoPanel Grid.Row="4"/>
+    </Grid>
+  </Grid>
 </UserControl>

@@ -4,10 +4,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamerBotSkin", "StreamerBotSkin\StreamerBotSkin.csproj", "{F5DE1F56-A2F5-4AAF-B4E4-4C06CFF09B39}"
+	ProjectSection(ProjectDependencies) = postProject
+		{69235797-A262-4FDC-9BE5-5BE88F6A027E} = {69235797-A262-4FDC-9BE5-5BE88F6A027E}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StreamerBotControls", "StreamerBotControls\StreamerBotControls.csproj", "{69235797-A262-4FDC-9BE5-5BE88F6A027E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaApplication1", "AvaloniaApplication1\AvaloniaApplication1.csproj", "{39FF2DDE-97A6-4F75-A130-953B81FE4056}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AvaloniaApplication1", "AvaloniaApplication1\AvaloniaApplication1.csproj", "{39FF2DDE-97A6-4F75-A130-953B81FE4056}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

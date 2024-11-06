@@ -12,7 +12,7 @@
     <TreeView ItemsSource="{Binding SubActions}">
       <TreeView.ItemTemplate>
         <TreeDataTemplate ItemsSource="{Binding Items}">
-          <CheckBox Content="{Binding Name}"/>
+          <CheckBox Content="{Binding Name} "/>
         </TreeDataTemplate>
       </TreeView.ItemTemplate>
     </TreeView>

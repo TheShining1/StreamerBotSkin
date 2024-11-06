@@ -49,8 +49,8 @@ namespace StreamerBotSkin.Models
       }
     }
     public List<SBSubAction> Actions { get; set; } = new List<SBSubAction> { };
-    List<String> ActionGroups { get; set; } = new List<String> { };
-    List<String> CollapsedGroups { get; set; } = new List<String> { };
+    public List<SBActionGroup> ActionGroups { get; set; } = new List<SBActionGroup> { };
+    public List<SBActionGroup> CollapsedGroups { get; set; } = new List<SBActionGroup> { };
     //public static ObservableCollection<SBAction> GetAll()
     //{
     //    return new ObservableCollection<SBAction>(){

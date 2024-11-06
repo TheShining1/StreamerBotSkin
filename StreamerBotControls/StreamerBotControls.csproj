@@ -14,9 +14,25 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="11.1.3" />
+    <AvaloniaXaml Remove="UserControl1.axaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="UserControl1.axaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.1.4" />
     <PackageReference Include="Material.Avalonia" Version="3.7.4" />
     <PackageReference Include="Material.Icons.Avalonia" Version="2.1.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="TextField.axaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="UserControl1.axaml" />
   </ItemGroup>
 
 </Project>

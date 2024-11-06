@@ -13,20 +13,25 @@
     <DataGrid Grid.Row="1"
               AutoGenerateColumns="False"
               ColumnWidth="*"
-              ItemsSource="{Binding currentAction.Triggers}">
+              ItemsSource="{Binding currentAction.Triggers}"
+              ColumnHeaderHeight="36"
+              MinColumnWidth="50"
+              VerticalScrollBarVisibility="Visible">
       <DataGrid.Columns>
-        <DataGridCheckBoxColumn Header="Enabled"
-							x:DataType="sbModels:SBTrigger"
-							Binding="{Binding Enabled}"/>
+        <DataGridCheckBoxColumn Header=""
+                                x:DataType="sbModels:SBTrigger"
+                                Binding="{Binding Enabled}"
+                                CanUserResize="False"
+                                Width="24"/>
         <DataGridTextColumn Header="Source"
-									x:DataType="sbModels:SBTrigger"
-									Binding="{Binding Source}"/>
+                            x:DataType="sbModels:SBTrigger"
+                            Binding="{Binding Source}"/>
         <DataGridTextColumn Header="Type"
-									x:DataType="sbModels:SBTrigger"
-									Binding="{Binding Type}"/>
+                            x:DataType="sbModels:SBTrigger"
+                            Binding="{Binding Type}"/>
         <DataGridTextColumn Header="Criteria"
-									x:DataType="sbModels:SBTrigger"
-									Binding="{Binding Criteria}"/>
+                            x:DataType="sbModels:SBTrigger"
+                            Binding="{Binding Criteria}"/>
       </DataGrid.Columns>
     </DataGrid>
   </Grid>

@@ -16,28 +16,36 @@ namespace StreamerBotSkin.ViewModels
     public override string Name => this.GetType().Name;
     public MainWindowViewModel()
     {
-      ViewModelsAvailable = new Dictionary<string, ViewModelBase>();
+      ViewModelsAvailable = new Dictionary<string, ViewModelBase>() {
+        {"settings", new SettingsViewModel() }
+      };
 
-      foreach(var item in MainDrawerMenuItems)
+      foreach (var item in MainDrawerMenuItems)
       {
         if (item.CommandParameter == null) continue;
         ViewModelsAvailable[item.CommandParameter] = item.ViewModel;
       }
 
-      currentViewModel = ViewModelsAvailable["actions"];
+      currentViewModel = ViewModelsAvailable["main"];
 
       NavigateCommand = ReactiveCommand.Create<string>(NavigateTo);
       OpenAboutCommand = ReactiveCommand.Create(OpenAboutDialog);
     }
 
     private bool isMainDrawerOpen;
-    public bool IsMainDrawerOpen {
+    public bool IsMainDrawerOpen
+    {
       get => isMainDrawerOpen;
       set => this.RaiseAndSetIfChanged(ref isMainDrawerOpen, value);
     }
 
     public List<MainDrawerMenuItem> MainDrawerMenuItems { get; } = new()
     {
+      new(){
+        Label="main",
+        CommandParameter="main",
+        ViewModel=new MainViewModel()
+      },
       new(){
         Label="Viewers",
         CommandParameter="viewers",

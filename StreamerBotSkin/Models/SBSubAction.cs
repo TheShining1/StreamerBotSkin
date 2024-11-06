@@ -12,6 +12,7 @@ namespace StreamerBotSkin.Models
     public string? Name { get; set; }
     public bool Enabled { get; set; }
     public int Type { get; set; }
+    public string? Group { get; set; }
 
     public static List<SBSubAction> GetAll()
     {

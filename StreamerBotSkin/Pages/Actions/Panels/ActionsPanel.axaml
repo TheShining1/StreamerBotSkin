@@ -2,16 +2,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
 			       xmlns:sbModels="clr-namespace:StreamerBotSkin.Models"
 			       xmlns:sbControls="clr-namespace:StreamerBotSkin.Controls"
-             x:Class="StreamerBotSkin.Panels.ActionsPanel"
+			       xmlns:sbbControls="clr-namespace:StreamerBotControls;assembly=StreamerBotControls"
+             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
 			       xmlns:vm="using:StreamerBotSkin.ViewModels"
-			       x:DataType="vm:ActionsViewModel">
-  <Design.DataContext>
-    <vm:ActionsViewModel/>
-  </Design.DataContext>
+			       x:DataType="vm:ActionsViewModel"
+             x:Class="StreamerBotSkin.Panels.ActionsPanel">
   <UserControl.Styles>
     <Style Selector="ToggleButton:unchecked">
       <Setter Property="Template">
@@ -61,22 +59,23 @@
         </Setter.Value>
       </Setter>      
     </Style>-->
-
   </UserControl.Styles>
   <Grid RowDefinitions="Auto,*">
     <Grid Grid.Row="0"
-          ColumnDefinitions="*,*,2*,*"
+          ColumnDefinitions="*,*,2*"
           VerticalAlignment="Center"
           Margin="5">
       <TextBlock Grid.Column="0"
                  Classes="Subtitle2"
                  VerticalAlignment="Center">Actions</TextBlock>
-      <TextBox Grid.Column="2"
-               Watermark="Filter"></TextBox>
-      <StackPanel Grid.Column="3">        
-        <ComboBox
-                  ItemsSource="{Binding QueuesItems}"
-                  SelectedItem="{Binding SelectedQueue}">
+      <!--<TextBox Grid.Column="2"
+               Text="{Binding NameFilter}"
+               Watermark="Filter"></TextBox>-->
+      <sbbControls:FilterTextField Grid.Column="2"
+                                   Text="{Binding NameFilter}"/>
+      <!--<StackPanel Grid.Column="3">        
+        <ComboBox ItemsSource="{Binding QueuesItems}"
+                  SelectedValue="{Binding SelectedQueue}">
           <ComboBox.ItemTemplate>
             <DataTemplate>
               <TextBlock Text="{Binding Name}"/>
@@ -84,7 +83,7 @@
           </ComboBox.ItemTemplate>
         </ComboBox>
         <TextBlock Text="{Binding SelectedQueueId}"/>
-      </StackPanel>
+      </StackPanel>-->
     </Grid>
     <!--<ScrollViewer Grid.Row="1">-->
     <!--<DataGrid Grid.Row="1"
@@ -102,15 +101,16 @@
               x:Name="ActionsGrid"
               AutoGenerateColumns="False"
               ColumnWidth="*"
-              ItemsSource="{Binding ActionsItems}"
+              ItemsSource="{Binding ActionsItemsFiltered}"
               SelectedItem="{Binding currentAction}"
               CanUserResizeColumns="True"
               ColumnHeaderHeight="36"
-              MinColumnWidth="50">
+              MinColumnWidth="50"
+              VerticalScrollBarVisibility="Visible">
       <DataGrid.Columns>
         <DataGridCheckBoxColumn Header=""
-                                CanUserResize="False"
                                 x:DataType="sbModels:SBAction"
+                                CanUserResize="False"
                                 Binding="{Binding Enabled}"
                                 Width="24"/>
         <DataGridTextColumn Header="Name"
@@ -125,29 +125,9 @@
         <DataGridTemplateColumn Header="Queue">
           <DataGridTemplateColumn.CellTemplate>
             <DataTemplate x:DataType="sbModels:SBAction">
-              <!--<ComboBox ItemsSource="{Binding QueuesItems}"
+              <!--<ComboBox ItemsSource="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=DataContext.QueuesItems}"
                         SelectedItem="{Binding Queue}"></ComboBox>-->
               <TextBlock Text="{Binding Queue}" />
-            </DataTemplate>
-          </DataGridTemplateColumn.CellTemplate>
-        </DataGridTemplateColumn>
-        <DataGridTemplateColumn CanUserResize="False">
-          <DataGridTemplateColumn.CellTemplate>
-            <DataTemplate>
-              <StackPanel Orientation="Horizontal">
-                <Button Classes="Flat"
-                        Padding="5 0">
-                  <mIcons:MaterialIcon Kind="Play"/>
-                </Button>
-                <Button Classes="Flat"
-                        Padding="5 0">
-                  <mIcons:MaterialIcon Kind="PencilOutline"/>
-                </Button>
-                <Button Classes="Flat"
-                        Padding="5 0">
-                  <mIcons:MaterialIcon Kind="DeleteForeverOutline"/>
-                </Button>
-              </StackPanel>
             </DataTemplate>
           </DataGridTemplateColumn.CellTemplate>
         </DataGridTemplateColumn>
