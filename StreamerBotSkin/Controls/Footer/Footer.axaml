@@ -6,11 +6,13 @@
              xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="400"
              x:Class="StreamerBotSkin.Controls.Footer">
-	<mControls:ColorZone Padding="5">
+	<mControls:ColorZone>
 		<Grid HorizontalAlignment="Right"
-			  ColumnDefinitions="Auto">
+          ColumnDefinitions="Auto"
+          Height="24">
 			<Menu Grid.Column="0">
-				<MenuItem Header="{mIcons:MaterialIconExt AlertCircle}">
+				<MenuItem Header="{mIcons:MaterialIconExt AlertCircle}"
+                  Height="24">
 					<MenuItem Header="OBS">
 						<MenuItem.Icon>
 							<mIcons:MaterialIcon Kind="AlertCircle"/>

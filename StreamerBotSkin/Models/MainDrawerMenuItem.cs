@@ -10,6 +10,7 @@ namespace StreamerBotSkin.Models
 {
   public class MainDrawerMenuItem
   {
+    public string? Icon { get; set; }
     public string? Label { get; set; }
     public string? CommandParameter { get; set; }
     public ViewModelBase? ViewModel { get; set; }

@@ -8,7 +8,8 @@
              x:DataType="vm:MainWindowViewModel"
              x:Class="StreamerBotSkin.Controls.MainBarMenu">
 	<Menu>
-		<MenuItem VerticalAlignment="Center">
+		<MenuItem VerticalAlignment="Center"
+              Height="24">
 			<MenuItem.Header>
 				<mIcons:MaterialIcon Kind="DotsVertical"/>
 			</MenuItem.Header>

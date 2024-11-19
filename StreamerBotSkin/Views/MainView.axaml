@@ -18,22 +18,48 @@
                             Maximum="100"
                             Value="{Binding NumberText}"/>-->
 
-    <!--<TextBox Text="{Binding FilePathText}"/>
+    <TextBox Text="{Binding FilePathText}"/>
     <sbControls:FilePathField Title="Output file"
-                              FilePath="{Binding FilePathText}"/>-->
-    
-    <TextBox Text="{Binding FileText}"/>
+                              FilePath="{Binding FilePathText}"/>
+
+    <!--<TextBox Text="{Binding FileText}"/>
     <sbControls:MultilineTextField Title="Output text"
-                                   Text="{Binding FileText}"/>
+                                   Text="{Binding FileText}"/>-->
 
     <!--<TextBox Text="{Binding Text}"/>
     <sbControls:TextField Title="Title"
                           Text="{Binding Text, Mode=TwoWay}"
                           Length="100"/>-->
-    
-    <TextBox Text="{Binding FileText}"/>
+
+    <!--<TextBox Text="{Binding FileText}"/>
     <sbControls:MultilineTextField Title="Output text"
                                    Text="{Binding FileText}"
-                                   Length="5000"/>
+                                   Length="5000"/>-->
+
+    <!--<TextBox Text="{Binding Text}"/>
+    <sbControls:SensitiveTextField Title="Token"
+                                   Text="{Binding Text}"/>-->
+
+    <TextBox Text="{Binding ColorText}"/>
+    <sbControls:ColoredTextField Color="{Binding ColorText}"/>
+
+    <TabControl>
+      <TabItem Header="ColorSpectrum">
+        <ColorSpectrum/>
+      </TabItem>
+      <TabItem Header="ColorSlider">
+        <ColorSlider/>
+      </TabItem>
+      <TabItem Header="ColorPreviewer">
+        <ColorPreviewer/>
+      </TabItem>
+      <TabItem Header="ColorPicker">
+        <ColorPicker/>
+      </TabItem>
+      <TabItem Header="ColorView">
+        <ColorView/>
+      </TabItem>
+    </TabControl>
+
   </StackPanel>
 </UserControl>

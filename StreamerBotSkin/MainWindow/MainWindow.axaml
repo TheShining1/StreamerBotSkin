@@ -25,7 +25,8 @@
     <mControls:NavigationDrawer Grid.Row="1"
                                 x:Name="LeftDrawer"
                                 LeftDrawerExpandThresholdWidth="100000"
-                                LeftDrawerOpened="{Binding IsMainDrawerOpen, Mode=TwoWay}">
+                                LeftDrawerOpened="{Binding IsMainDrawerOpen, Mode=TwoWay}"
+                                LeftDrawerWidth="240">
       <mControls:NavigationDrawer.LeftDrawerContent>
         <sbControls:MainDrawer x:Name="MainDrawer"
                                MenuItems="{Binding MainDrawerMenuItems}"

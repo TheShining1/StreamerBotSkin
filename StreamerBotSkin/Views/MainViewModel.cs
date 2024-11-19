@@ -72,5 +72,12 @@ namespace StreamerBotSkin.ViewModels
       get => counter;
       set => this.RaiseAndSetIfChanged(ref counter, value);
     }
+
+    private string? colorText;
+    public string ColorText
+    {
+      get => colorText;
+      set => this.RaiseAndSetIfChanged(ref colorText, value);
+    }
   }
 }

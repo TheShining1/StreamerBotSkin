@@ -21,10 +21,12 @@
     <!--<mThemes:MaterialTheme />-->
     <mIcons:MaterialIconStyles />
 
+    <StyleInclude Source="avares://Avalonia.Controls.ColorPicker/Themes/Fluent/Fluent.xaml" />
     <!--<StyleInclude Source="avares://StreamerBotSkin/Styles/TabControlScrollable.axaml" />-->
   </Application.Styles>
 
   <Application.Resources>
+    
     <conv:PlatformToIconConverter x:Key="PlatformToIconConverter" />
     <conv:RoleToIconConverter x:Key="RoleToIconConverter" />
     <conv:ActionTypeToNameConverter x:Key="ActionTypeToNameConverter" />

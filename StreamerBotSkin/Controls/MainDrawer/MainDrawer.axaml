@@ -7,7 +7,9 @@
              xmlns:models="clr-namespace:StreamerBotSkin.Models"
              x:Name="root"
              x:Class="StreamerBotSkin.Controls.MainDrawer">
-  <Grid RowDefinitions="Auto, Auto, *, Auto, Auto">
+  <Grid RowDefinitions="Auto, Auto, *, Auto, Auto"
+        Width="{Binding #root.Width}"
+        Margin="10">
     <StackPanel Grid.Row="0"
                 Orientation="Horizontal"
                 HorizontalAlignment="Center">
@@ -32,10 +34,31 @@
              ItemsSource="{Binding MenuItems, ElementName=root}">
       <ListBox.ItemTemplate>
         <DataTemplate x:DataType="models:MainDrawerMenuItem">
+          <!--<StackPanel Orientation="Horizontal"
+                      Margin="5,0,0,0">
+            <mIcons:MaterialIcon Width="24"
+                                 Height="24"
+                                 Margin="0,0,5,0"
+                                 Kind="{Binding Icon}"/>
+          <TextBlock Classes="Body1"
+                     VerticalAlignment="Center"
+                     Text="{Binding Label}"/>
+          </StackPanel>-->
           <Button Classes="Flat"
-                  Content="{Binding Label}"
+                  HorizontalContentAlignment="Left"
                   Command="{Binding NavigateCommand, ElementName=root}"
-                  CommandParameter="{Binding CommandParameter}"/>
+                  CommandParameter="{Binding CommandParameter}">
+            <StackPanel Orientation="Horizontal"
+                        Margin="5,0,0,0">
+              <mIcons:MaterialIcon Width="24"
+                                   Height="24"
+                                   Margin="0,0,5,0"
+                                   Kind="{Binding Icon}"/>
+              <TextBlock Classes="Body1"
+                         VerticalAlignment="Center"
+                         Text="{Binding Label}"/>
+            </StackPanel>
+          </Button>
         </DataTemplate>
       </ListBox.ItemTemplate>
     </ListBox>
@@ -108,8 +131,9 @@
                 HorizontalAlignment="Center">
       <Button Classes="Flat">
         <StackPanel Orientation="Horizontal">
-          <mIcons:MaterialIcon Kind="Download"/>
-          <TextBlock>Check for updates</TextBlock>
+          <mIcons:MaterialIcon Margin="0,0,5,0"
+                               Kind="DownloadOutline"/>
+          <TextBlock VerticalAlignment="Center">Check for updates</TextBlock>
         </StackPanel>
       </Button>
       <StackPanel Orientation="Horizontal"

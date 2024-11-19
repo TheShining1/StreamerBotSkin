@@ -14,6 +14,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <AvaloniaXaml Remove="Menues\**" />
+    <Compile Remove="Menues\**" />
+    <EmbeddedResource Remove="Menues\**" />
+    <None Remove="Menues\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <AvaloniaXaml Remove="UserControl1.axaml" />
   </ItemGroup>
 
@@ -23,6 +30,7 @@
 
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="11.1.4" />
+    <PackageReference Include="Avalonia.Controls.ColorPicker" Version="11.1.4" />
     <PackageReference Include="Material.Avalonia" Version="3.7.4" />
     <PackageReference Include="Material.Icons.Avalonia" Version="2.1.10" />
   </ItemGroup>
@@ -33,6 +41,12 @@
 
   <ItemGroup>
     <UpToDateCheckInput Remove="UserControl1.axaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Fields\SensitiveTextField.axaml.cs">
+      <DependentUpon>SensitiveTextField.axaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
 </Project>

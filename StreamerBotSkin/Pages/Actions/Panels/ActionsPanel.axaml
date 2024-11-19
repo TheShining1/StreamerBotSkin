@@ -12,38 +12,38 @@
              x:Class="StreamerBotSkin.Panels.ActionsPanel">
   <UserControl.Styles>
     <Style Selector="ToggleButton:unchecked">
-      <Setter Property="Template">
+      <Setter Property="Content">
         <Setter.Value>
-          <ControlTemplate>
+          <Template>
             <mIcons:MaterialIcon Kind="ChevronDown"/>
-          </ControlTemplate>
+          </Template>
         </Setter.Value>
       </Setter>
     </Style>
     <Style Selector="ToggleButton:checked">
-      <Setter Property="Template">
+      <Setter Property="Content">
         <Setter.Value>
-          <ControlTemplate>
+          <Template>
             <mIcons:MaterialIcon Kind="ChevronUp"/>
-          </ControlTemplate>
+          </Template>
         </Setter.Value>
       </Setter>
     </Style>
     <Style Selector="ToggleButton:unchecked:pointerover">
-      <Setter Property="Template">
+      <Setter Property="Content">
         <Setter.Value>
-          <ControlTemplate>
+          <Template>
             <mIcons:MaterialIcon Kind="ChevronDownCircle"/>
-          </ControlTemplate>
+          </Template>
         </Setter.Value>
       </Setter>
     </Style>
     <Style Selector="ToggleButton:checked:pointerover">
-      <Setter Property="Template">
+      <Setter Property="Content">
         <Setter.Value>
-          <ControlTemplate>
+          <Template>
             <mIcons:MaterialIcon Kind="ChevronUpCircle"/>
-          </ControlTemplate>
+          </Template>
         </Setter.Value>
       </Setter>
     </Style>
@@ -52,9 +52,9 @@
         <Setter.Value>
           <ControlTemplate TargetType="{x:Type DataGridRow}">
           <sbControls:ActionRow/>
-            -->
-    <!--<TextBlock>ROW</TextBlock>-->
-    <!--
+            
+    <TextBlock>ROW</TextBlock>
+    
           </ControlTemplate>
         </Setter.Value>
       </Setter>      
@@ -107,21 +107,62 @@
               ColumnHeaderHeight="36"
               MinColumnWidth="50"
               VerticalScrollBarVisibility="Visible">
+      <DataGrid.Styles>
+        <Style Selector="DataGridRow">
+          <Setter Property="Height" Value="38" />
+        </Style>
+      </DataGrid.Styles>
       <DataGrid.Columns>
-        <DataGridCheckBoxColumn Header=""
+        <!--<DataGridCheckBoxColumn Header=""
                                 x:DataType="sbModels:SBAction"
                                 CanUserResize="False"
                                 Binding="{Binding Enabled}"
-                                Width="24"/>
-        <DataGridTextColumn Header="Name"
+                                Width="16"/>-->
+        <DataGridTemplateColumn Header=""                                
+                                CanUserResize="False"
+                                Width="18">
+          <DataGridTemplateColumn.CellTemplate>
+            <DataTemplate x:DataType="sbModels:SBAction">
+              <CheckBox IsChecked="{Binding Enabled}"/>
+            </DataTemplate>
+          </DataGridTemplateColumn.CellTemplate>
+        </DataGridTemplateColumn>
+        <!--<DataGridTextColumn Header="Name"
                             x:DataType="sbModels:SBAction"
-                            Binding="{Binding Name}"/>
+                            Binding="{Binding Name}"/>-->
+        <DataGridTemplateColumn Header="Name"
+                            x:DataType="sbModels:SBAction">
+          <DataGridTemplateColumn.CellTemplate>
+            <DataTemplate x:DataType="sbModels:SBAction">
+              <TextBlock Classes="dense"
+                         Text="{Binding Name}"/>
+            </DataTemplate>
+          </DataGridTemplateColumn.CellTemplate>
+        </DataGridTemplateColumn>
         <DataGridTextColumn Header="Options"
                             x:DataType="sbModels:SBAction"
                             Binding="{Binding Options}"/>
+        <!--<DataGridTemplateColumn Header="Options"
+                            x:DataType="sbModels:SBAction">
+          <DataGridTemplateColumn.CellTemplate>
+            <DataTemplate x:DataType="sbModels:SBAction">
+              <TextBlock Classes="dense"
+                         Text="{Binding Options}"/>
+            </DataTemplate>
+          </DataGridTemplateColumn.CellTemplate>
+        </DataGridTemplateColumn>-->
         <DataGridTextColumn Header="Triggers"
                             x:DataType="sbModels:SBAction"
                             Binding="{Binding TriggersCount}"/>
+        <!--<DataGridTemplateColumn Header="Triggers"
+                            x:DataType="sbModels:SBAction">
+          <DataGridTemplateColumn.CellTemplate>
+            <DataTemplate x:DataType="sbModels:SBAction">
+              <TextBlock Classes="dense"
+                         Text="{Binding TriggersCount}"/>
+            </DataTemplate>
+          </DataGridTemplateColumn.CellTemplate>
+        </DataGridTemplateColumn>-->
         <DataGridTemplateColumn Header="Queue">
           <DataGridTemplateColumn.CellTemplate>
             <DataTemplate x:DataType="sbModels:SBAction">

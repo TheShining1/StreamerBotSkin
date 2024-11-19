@@ -26,7 +26,7 @@ namespace StreamerBotSkin.ViewModels
         ViewModelsAvailable[item.CommandParameter] = item.ViewModel;
       }
 
-      currentViewModel = ViewModelsAvailable["main"];
+      currentViewModel = ViewModelsAvailable["actions"];
 
       NavigateCommand = ReactiveCommand.Create<string>(NavigateTo);
       OpenAboutCommand = ReactiveCommand.Create(OpenAboutDialog);
@@ -42,46 +42,55 @@ namespace StreamerBotSkin.ViewModels
     public List<MainDrawerMenuItem> MainDrawerMenuItems { get; } = new()
     {
       new(){
+        Icon="",
         Label="main",
         CommandParameter="main",
         ViewModel=new MainViewModel()
       },
       new(){
+        Icon="BadgeAccountHorizontalOutline",
         Label="Viewers",
         CommandParameter="viewers",
         ViewModel=new ViewersViewModel()
       },
       new(){
+        Icon="LightningBoltOutline",
         Label="Actions",
         CommandParameter="actions",
         ViewModel=new ActionsViewModel()
       },
       new(){
+        Icon="ListBoxOutline",
         Label="Queues",
         CommandParameter="queues",
         ViewModel=new ActionQueuesViewModel()
       },
       new(){
+        Icon="MessageFlashOutline",
         Label="Commands",
         CommandParameter="commands",
         ViewModel=new CommandsViewModel()
       },
       new(){
+        Icon="MidiPort",
         Label="Midi",
         CommandParameter="midi",
         ViewModel=new MidiViewModel()
       },
       new(){
+        Icon="AccountVoice",
         Label="Voice Control",
         CommandParameter="voicecontrol",
         ViewModel=new VoiceControlViewModel()
       },
       new(){
+        Icon="KeyboardOutline",
         Label="Hotkeys",
         CommandParameter="hotkeys",
         ViewModel=new HotKeysViewModel()
       },
       new(){
+        Icon="ServerNetworkOutline",
         Label="Servers",
         CommandParameter="servers",
         ViewModel=new ServersViewModel()

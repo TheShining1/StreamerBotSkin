@@ -17,8 +17,7 @@
                              VerticalAlignment="Center"
                              Width="20"
                              Height="20"
-                             Kind="DotsHorizontal"
-                             Margin="5,0,0,0"/>
+                             Kind="DotsHorizontal"/>
       </Button>
     </TextBox.InnerRightContent>
   </TextBox>
