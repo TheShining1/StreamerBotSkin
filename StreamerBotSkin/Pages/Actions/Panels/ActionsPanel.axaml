@@ -5,48 +5,13 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
 			       xmlns:sbModels="clr-namespace:StreamerBotSkin.Models"
 			       xmlns:sbControls="clr-namespace:StreamerBotSkin.Controls"
+			       xmlns:sbContextMenus="clr-namespace:StreamerBotSkin.ContextMenus"
 			       xmlns:sbbControls="clr-namespace:StreamerBotControls;assembly=StreamerBotControls"
              xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
 			       xmlns:vm="using:StreamerBotSkin.ViewModels"
 			       x:DataType="vm:ActionsViewModel"
              x:Class="StreamerBotSkin.Panels.ActionsPanel">
   <UserControl.Styles>
-    <Style Selector="ToggleButton:unchecked">
-      <Setter Property="Content">
-        <Setter.Value>
-          <Template>
-            <mIcons:MaterialIcon Kind="ChevronDown"/>
-          </Template>
-        </Setter.Value>
-      </Setter>
-    </Style>
-    <Style Selector="ToggleButton:checked">
-      <Setter Property="Content">
-        <Setter.Value>
-          <Template>
-            <mIcons:MaterialIcon Kind="ChevronUp"/>
-          </Template>
-        </Setter.Value>
-      </Setter>
-    </Style>
-    <Style Selector="ToggleButton:unchecked:pointerover">
-      <Setter Property="Content">
-        <Setter.Value>
-          <Template>
-            <mIcons:MaterialIcon Kind="ChevronDownCircle"/>
-          </Template>
-        </Setter.Value>
-      </Setter>
-    </Style>
-    <Style Selector="ToggleButton:checked:pointerover">
-      <Setter Property="Content">
-        <Setter.Value>
-          <Template>
-            <mIcons:MaterialIcon Kind="ChevronUpCircle"/>
-          </Template>
-        </Setter.Value>
-      </Setter>
-    </Style>
     <!--<Style Selector="DataGridRow">
       <Setter Property="Template">
         <Setter.Value>
@@ -102,14 +67,103 @@
               AutoGenerateColumns="False"
               ColumnWidth="*"
               ItemsSource="{Binding ActionsItemsFiltered}"
-              SelectedItem="{Binding currentAction}"
+              SelectedItem="{Binding CurrentAction}"
               CanUserResizeColumns="True"
               ColumnHeaderHeight="36"
               MinColumnWidth="50"
               VerticalScrollBarVisibility="Visible">
+      <DataGrid.ContextMenu>
+        <ContextMenu>
+          <MenuItem Header="Add" Command="{Binding OpenAddEditActionDialogCommand}"/>
+          <Separator />
+          <MenuItem Header="Collapse All" />
+          <MenuItem Header="Expand All" />
+        </ContextMenu>
+      </DataGrid.ContextMenu>
       <DataGrid.Styles>
+        <Style Selector="ToggleButton:unchecked">
+          <Setter Property="Content">
+            <Setter.Value>
+              <Template>
+                <mIcons:MaterialIcon Kind="ChevronDown"/>
+              </Template>
+            </Setter.Value>
+          </Setter>
+        </Style>
+        <Style Selector="ToggleButton:checked">
+          <Setter Property="Content">
+            <Setter.Value>
+              <Template>
+                <mIcons:MaterialIcon Kind="ChevronUp"/>
+              </Template>
+            </Setter.Value>
+          </Setter>
+        </Style>
+        <Style Selector="ToggleButton:unchecked:pointerover">
+          <Setter Property="Content">
+            <Setter.Value>
+              <Template>
+                <mIcons:MaterialIcon Kind="ChevronDownCircle"/>
+              </Template>
+            </Setter.Value>
+          </Setter>
+        </Style>
+        <Style Selector="ToggleButton:checked:pointerover">
+          <Setter Property="Content">
+            <Setter.Value>
+              <Template>
+                <mIcons:MaterialIcon Kind="ChevronUpCircle"/>
+              </Template>
+            </Setter.Value>
+          </Setter>
+        </Style>
+        <Style Selector="DataGridRowGroupHeader">
+          <Setter Property="IsItemCountVisible" Value="True" />
+          <Setter Property="ItemCountFormat" Value="({0} actions)" />
+          <Setter Property="ContextMenu">
+            <ContextMenu>
+              <MenuItem Header="Add" Command="{Binding OpenAddEditActionDialogCommand}"/>
+              <MenuItem Header="Delete" />
+              <Separator />
+              <MenuItem Header="Group" />
+              <Separator />
+              <MenuItem Header="Collapse All" />
+              <MenuItem Header="Expand All" />
+            </ContextMenu>
+          </Setter>
+        </Style>
         <Style Selector="DataGridRow">
           <Setter Property="Height" Value="38" />
+          <!--<Setter Property="ContextMenu" Value="{Binding ActionRowContextMenu}"/>-->
+          <Setter Property="ContextMenu">
+            <ContextMenu>
+              <MenuItem Header="Add" Command="{Binding OpenAddEditActionDialogCommand}"/>
+              <MenuItem Header="Edit" />
+              <MenuItem Header="Delete" />
+              <MenuItem Header="Duplicate" />
+              <MenuItem Header="Copy action ID" />
+              <Separator />
+              <MenuItem Header="Rename Group" />
+              <MenuItem Header="Set Group" />
+              <MenuItem Header="Queue" />
+              <Separator />
+              <MenuItem Header="Always Run"/>
+              <MenuItem Header="Random" />
+              <MenuItem Header="Concurrent" />
+              <MenuItem Header="Exclude from history" />
+              <Separator />
+              <MenuItem Header="Add to Export" />
+              <Separator />
+              <MenuItem Header="Collapse All" />
+              <MenuItem Header="Expand All" />
+            </ContextMenu>
+          </Setter>
+        </Style>
+        <Style Selector="ContextMenu">
+          <Setter Property="Padding" Value="0"/>
+        </Style>
+        <Style Selector="MenuItem">
+          <Setter Property="Height" Value="24"/>
         </Style>
       </DataGrid.Styles>
       <DataGrid.Columns>
@@ -118,7 +172,7 @@
                                 CanUserResize="False"
                                 Binding="{Binding Enabled}"
                                 Width="16"/>-->
-        <DataGridTemplateColumn Header=""                                
+        <DataGridTemplateColumn Header=""
                                 CanUserResize="False"
                                 Width="18">
           <DataGridTemplateColumn.CellTemplate>

@@ -13,10 +13,15 @@
     <DataGrid Grid.Row="1"
               AutoGenerateColumns="False"
               ColumnWidth="*"
-              ItemsSource="{Binding currentAction.Triggers}"
+              ItemsSource="{Binding CurrentAction.Triggers}"
               ColumnHeaderHeight="36"
               MinColumnWidth="50"
               VerticalScrollBarVisibility="Visible">
+      <DataGrid.Styles>
+        <Style Selector="DataGridRow">
+          <Setter Property="Height" Value="38" />
+        </Style>
+      </DataGrid.Styles>
       <DataGrid.Columns>
         <DataGridCheckBoxColumn Header=""
                                 x:DataType="sbModels:SBTrigger"

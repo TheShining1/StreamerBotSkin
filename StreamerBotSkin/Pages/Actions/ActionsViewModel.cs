@@ -10,12 +10,38 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Linq;
 using Avalonia.Controls;
+using StreamerBotSkin.ContextMenus;
+using DynamicData;
+using StreamerBotSkin.Dialogs;
 
 namespace StreamerBotSkin.ViewModels
 {
   public class ActionsViewModel : ViewModelBase
   {
     public override string Name => this.GetType().Name;
+
+    public ActionsViewModel()
+    {
+      ActionDataGridContextMenu = new ContextMenu
+      {
+        ItemsSource = new GroupContextMenu().ItemsSource
+      };
+
+      List<MenuItem> items = new List<MenuItem>();
+
+      items.AddRange((List<MenuItem>)new ActionContextMenu().ItemsSource);
+      items.AddRange((List<MenuItem>)new GroupContextMenu().ItemsSource);
+
+      //items.Concat(new ActionContextMenu().ItemsSource)
+      //  .Concat(new GroupContextMenu().ItemsSource);
+
+      ActionRowContextMenu = new ContextMenu
+      {
+        ItemsSource = items
+      };
+
+      OpenAddEditActionDialogCommand = ReactiveCommand.Create(OpenAddEditActionDialog);
+    }
 
     private DataGridCollectionView actionsItemsFiltered = setActions();
     public DataGridCollectionView ActionsItemsFiltered
@@ -78,15 +104,37 @@ namespace StreamerBotSkin.ViewModels
       set => this.RaiseAndSetIfChanged(ref queuesItems, value);
     }
 
-    private SBAction? _currentAction;
-    public SBAction? currentAction
+    private SBAction? currentAction;
+    public SBAction? CurrentAction
     {
-      get { return _currentAction; }
+      get { return currentAction; }
       set
       {
-        this.RaiseAndSetIfChanged(ref _currentAction, value);
+        this.RaiseAndSetIfChanged(ref currentAction, value);
         generateSubActionTree(value);
       }
+    }
+
+    private ContextMenu actionDataGridContextMenu;
+    public ContextMenu ActionDataGridContextMenu
+    {
+      get => actionDataGridContextMenu;
+      set => this.RaiseAndSetIfChanged(ref actionDataGridContextMenu, value);
+    }
+
+    private ContextMenu actionRowContextMenu;
+    public ContextMenu ActionRowContextMenu
+    {
+      get => actionRowContextMenu;
+      set => this.RaiseAndSetIfChanged(ref actionRowContextMenu, value);
+    }
+
+    public ICommand OpenAddEditActionDialogCommand { get; }
+    private void OpenAddEditActionDialog()
+    {
+      if (Program.MainWindow == null) return;
+      var dialog = new AddEditActionDialog();
+      dialog.ShowDialog(Program.MainWindow);
     }
 
     void generateSubActionTree(SBAction? value)
@@ -99,7 +147,7 @@ namespace StreamerBotSkin.ViewModels
 
       if (value.ActionGroups.Count == 0)
       {
-        CurrentSubActionsTree = value.Actions.Select(action => new SBNode { ID=action.ID, Name=action.Type.ToString() }).ToList();
+        CurrentSubActionsTree = value.Actions.Select(action => new SBNode { ID = action.ID, Name = action.Type.ToString() }).ToList();
 
         return;
       };
@@ -108,8 +156,9 @@ namespace StreamerBotSkin.ViewModels
       foreach (var group in value.ActionGroups)
       {
         var items = value.Actions.Where(action => string.Equals(action.Group, group.Name, StringComparison.CurrentCultureIgnoreCase));
-        
-        groupedTree.Add(new SBNode {
+
+        groupedTree.Add(new SBNode
+        {
           IsExpanded = true,
           ID = group.ID,
           Name = group.Name,
@@ -151,18 +200,20 @@ namespace StreamerBotSkin.ViewModels
 
       for (var i = 0; i < 10; i++)
       {
-        var item = new SBNode() {
-          ID=$"{i}",
-          Name=$"Node_{i}",
-          Items=null
+        var item = new SBNode()
+        {
+          ID = $"{i}",
+          Name = $"Node_{i}",
+          Items = null
         };
 
         var items = new List<SBNode>();
         for (var j = 0; j < 10; j++)
         {
-          items.Add(new SBNode() {
-            ID=$"{j}",
-            Name=$"Sub_Node_{j}"
+          items.Add(new SBNode()
+          {
+            ID = $"{j}",
+            Name = $"Sub_Node_{j}"
           });
         }
 

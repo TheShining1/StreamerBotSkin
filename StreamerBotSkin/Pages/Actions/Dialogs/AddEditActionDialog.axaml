@@ -1,0 +1,81 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        xmlns:sbControls="clr-namespace:StreamerBotControls;assembly=StreamerBotControls"
+        xmlns:mControls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
+        xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+        xmlns:mAssist="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
+        WindowStartupLocation="CenterOwner"
+        Width="400"
+        Height="250"
+        CanResize="False"
+        x:Name="root"
+        x:Class="StreamerBotSkin.Dialogs.AddEditActionDialog">
+  <mControls:Card>
+    <StackPanel>
+      <Grid ColumnDefinitions="*,Auto">
+        <StackPanel Grid.Column="0">
+          <sbControls:TextField Title="Name"
+                                Text="Action 1"/>
+          <AutoCompleteBox Classes="dense"
+                           FilterMode="Contains"
+                           ItemsSource="{Binding #root.Text}"/>
+          <!--<StackPanel Orientation="Horizontal">-->
+          <AutoCompleteBox Classes="dense"
+                           x:Name="QueueACB"
+                           FilterMode="Contains"
+                           ItemsSource="{Binding #root.Text}">
+            <AutoCompleteBox.Styles>
+              <Style Selector="ContentControl#PART_RightContentControl">
+                <Setter Property="Background" Value="Red"/>
+                <Setter Property="Content">
+                  <Template>
+                    <Button Classes="Flat">
+                      <mIcons:MaterialIcon Kind="ChevronDown" />
+                    </Button>
+                  </Template>
+                </Setter>
+              </Style>
+            </AutoCompleteBox.Styles>
+          </AutoCompleteBox>
+
+          <!--</StackPanel>-->
+        </StackPanel>
+        <StackPanel Grid.Column="1"
+                    Margin="5,0,0,0"
+                    VerticalAlignment="Center">
+          <StackPanel Orientation="Horizontal"
+                      HorizontalAlignment="Center">
+            <TextBlock Text="Mode">
+              <ToolTip.Tip>
+                <StackPanel>
+                  <TextBlock Text="Normal: Execute all sub-actions in order from within this action"/>
+                  <TextBlock Text="Random: Randomly execute a single sub-action from within this action"/>
+                  <TextBlock Text="Concurrent: Execute all sub-actions in this action simultaneously"/>
+                </StackPanel>
+              </ToolTip.Tip>
+            </TextBlock>
+          </StackPanel>
+          <RadioButton Content="Normal" />
+          <RadioButton Content="Random" />
+          <RadioButton Content="Concurrent" />
+          <Separator />
+          <CheckBox Content="Always run" ToolTip.Tip="Force this action to execute even if the queue is in a Paused state"/>
+          <CheckBox Content="Exclude from history" ToolTip.Tip="Exclude this action from being logged to the action history."/>
+        </StackPanel>
+      </Grid>
+      <Separator/>
+      <Grid ColumnDefinitions="Auto,*,Auto">
+        <CheckBox Grid.Column="0"
+                  Content="Enabled"/>
+        <StackPanel Grid.Column="2"
+                    Orientation="Horizontal">
+          <Button Content="Ok"/>
+          <Button Content="Cancel"/>
+        </StackPanel>
+      </Grid>
+    </StackPanel>
+  </mControls:Card>
+</Window>
