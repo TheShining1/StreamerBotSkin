@@ -3,14 +3,13 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              x:Class="StreamerBotSkin.Controls.FirstWordsSettings">
   <StackPanel>
     <TextBlock Text="First words" />
     <TextBox Text="Autoreset cache">
       <TextBox.InnerRightContent>
         <Button>
-          <mIcons:MaterialIcon Kind="Clear"/>
+          <!--<mIcons:MaterialIcon Kind="Clear"/>-->
         </Button>
       </TextBox.InnerRightContent>    
   </TextBox>

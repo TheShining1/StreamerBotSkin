@@ -3,7 +3,6 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              x:Class="StreamerBotSkin.Controls.ActionRow">
   <StackPanel Orientation="Horizontal">
     <CheckBox/>
@@ -14,15 +13,15 @@
     <StackPanel Orientation="Horizontal">
       <Button Classes="Flat"
               Padding="5 0">
-        <mIcons:MaterialIcon Kind="Play"/>
+        <!--<mIcons:MaterialIcon Kind="Play"/>-->
       </Button>
       <Button Classes="Flat"
               Padding="5 0">
-        <mIcons:MaterialIcon Kind="PencilOutline"/>
+        <!--<mIcons:MaterialIcon Kind="PencilOutline"/>-->
       </Button>
       <Button Classes="Flat"
               Padding="5 0">
-        <mIcons:MaterialIcon Kind="DeleteForeverOutline"/>
+        <!--<mIcons:MaterialIcon Kind="DeleteForeverOutline"/>-->
       </Button>
     </StackPanel>
   </StackPanel>

@@ -3,13 +3,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             xmlns:mAssist="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
-             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              x:Name="root"
              x:Class="StreamerBotControls.TextField">
   <TextBox Classes="dense clearButton"
-           mAssist:TextFieldAssist.Label="{Binding #root.Title}"
-           mAssist:TextFieldAssist.Hints="{Binding #root.Counter}"
            MaxLength="{Binding #root.Length}"
            Text="{Binding #root.Text, Mode=TwoWay}"/>
 </UserControl>

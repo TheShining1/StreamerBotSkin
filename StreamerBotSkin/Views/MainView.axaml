@@ -3,42 +3,41 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             xmlns:sbControls="clr-namespace:StreamerBotControls;assembly=StreamerBotControls"
-             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              xmlns:vm="using:StreamerBotSkin.ViewModels"
              x:DataType="vm:MainViewModel"
              x:Class="StreamerBotSkin.Views.MainView">
   <StackPanel Margin="50">
     <!--<TextBox Text="{Binding FilterText}"/>
-    <sbControls:FilterTextField Text="{Binding FilterText}"/>-->
+    <sbControls:FilterTextField Text="{Binding FilterText}"/>--><!--
 
-    <!--<TextBox Text="{Binding NumberText}"/>
+    --><!--<TextBox Text="{Binding NumberText}"/>
     <sbControls:NumberField Text="Minimum width"
                             Minimum="0"
                             Maximum="100"
-                            Value="{Binding NumberText}"/>-->
+                            Value="{Binding NumberText}"/>--><!--
 
     <TextBox Text="{Binding FilePathText}"/>
     <sbControls:FilePathField Title="Output file"
                               FilePath="{Binding FilePathText}"/>
 
-    <!--<TextBox Text="{Binding FileText}"/>
+    --><!--<TextBox Text="{Binding FileText}"/>
     <sbControls:MultilineTextField Title="Output text"
-                                   Text="{Binding FileText}"/>-->
+                                   Text="{Binding FileText}"/>--><!--
 
-    <!--<TextBox Text="{Binding Text}"/>
+    --><!--<TextBox Text="{Binding Text}"/>
     <sbControls:TextField Title="Title"
                           Text="{Binding Text, Mode=TwoWay}"
-                          Length="100"/>-->
+                          Length="100"/>--><!--
 
-    <!--<TextBox Text="{Binding FileText}"/>
+    --><!--<TextBox Text="{Binding FileText}"/>
     <sbControls:MultilineTextField Title="Output text"
                                    Text="{Binding FileText}"
-                                   Length="5000"/>-->
+                                   Length="5000"/>--><!--
 
-    <!--<TextBox Text="{Binding Text}"/>
+    --><!--<TextBox Text="{Binding Text}"/>
     <sbControls:SensitiveTextField Title="Token"
                                    Text="{Binding Text}"/>-->
+		  <!--
 
     <TextBox Text="{Binding ColorText}"/>
     <sbControls:ColoredTextField Color="{Binding ColorText}"/>
@@ -59,7 +58,7 @@
       <TabItem Header="ColorView">
         <ColorView/>
       </TabItem>
-    </TabControl>
+    </TabControl>-->
 
   </StackPanel>
 </UserControl>

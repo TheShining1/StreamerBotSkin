@@ -3,7 +3,6 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="400"
-             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              xmlns:vm="using:StreamerBotSkin.ViewModels"
              x:DataType="vm:MainWindowViewModel"
              x:Class="StreamerBotSkin.Controls.MainBarMenu">
@@ -11,19 +10,19 @@
 		<MenuItem VerticalAlignment="Center"
               Height="24">
 			<MenuItem.Header>
-				<mIcons:MaterialIcon Kind="DotsVertical"/>
+				<!--<mIcons:MaterialIcon Kind="DotsVertical"/>-->
 			</MenuItem.Header>
 			<MenuItem Header="Settings"
                 Command="{Binding NavigateCommand}"
                 CommandParameter="settings">
 				<MenuItem.Icon>
-					<mIcons:MaterialIcon Kind="Cog" />
+					<!--<mIcons:MaterialIcon Kind="Cog" />-->
 				</MenuItem.Icon>
 			</MenuItem>
 			<MenuItem Header="About"
                 Command="{Binding OpenAboutCommand}">
 				<MenuItem.Icon>
-					<mIcons:MaterialIcon Kind="AlertCircle" />
+					<!--<mIcons:MaterialIcon Kind="AlertCircle" />-->
 				</MenuItem.Icon>
 			</MenuItem>
 		</MenuItem>

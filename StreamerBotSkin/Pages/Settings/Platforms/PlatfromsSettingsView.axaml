@@ -3,8 +3,6 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             xmlns:mControls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
-             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              xmlns:sbControls="clr-namespace:StreamerBotSkin.Controls"
              xmlns:sbAuthControls="clr-namespace:StreamerBotSkin.Controls.Auth"
 			       xmlns:sbModels="clr-namespace:StreamerBotSkin.Models"
@@ -153,28 +151,28 @@
           <Grid Grid.Row="0"
                 ColumnDefinitions="*,*"
                 VerticalAlignment="Center">
-            <mControls:Card Grid.Column="0"
-                            VerticalAlignment="Center">
+            <!--<mControls:Card Grid.Column="0"
+                            VerticalAlignment="Center">-->
               <Grid RowDefinitions="Auto, *, *">
                 <Grid Grid.Row="0"
                       ColumnDefinitions="*, Auto">
                   <TextBlock Grid.Column="0"
                              Classes="Headline6"
                              Text="Broadcaster" />
-                  <mIcons:MaterialIcon Grid.Column="1"
+                  <!--<mIcons:MaterialIcon Grid.Column="1"
                                        Kind="Information"
                                        ToolTip.Placement="Left">
                     <ToolTip.Tip>
                       <TextBox MaxWidth="300"
                                TextWrapping="Wrap">Connecting your broadcaster account is a must in order to receive specific events and query certain API endpoints.</TextBox>
                     </ToolTip.Tip>
-                  </mIcons:MaterialIcon>
+                  </mIcons:MaterialIcon>-->
                 </Grid>
                 <StackPanel Grid.Row="1"
                             Orientation="Horizontal">
-                  <mIcons:MaterialIcon Kind="Alert"
+                  <!--<mIcons:MaterialIcon Kind="Alert"
                                        Height="48"
-                                       Width="48"/>
+                                       Width="48"/>-->
                   <TextBlock Text="ShiningOne"
                              VerticalAlignment="Center"/>
                 </StackPanel>
@@ -183,7 +181,7 @@
                   <Button Grid.Column="0">
                     <Button.Content>
                       <StackPanel Orientation="Horizontal">
-                        <mIcons:MaterialIcon Kind="Google"/>
+                        <!--<mIcons:MaterialIcon Kind="Google"/>-->
                         <TextBlock Text="Sign in with Google"/>
                       </StackPanel>
                     </Button.Content>
@@ -192,29 +190,29 @@
                           Content="Forget"/>
                 </Grid>
               </Grid>
-            </mControls:Card>
-            <mControls:Card Grid.Column="1"
-                            VerticalAlignment="Center">
+            <!--</mControls:Card>-->
+            <!--<mControls:Card Grid.Column="1"
+                            VerticalAlignment="Center">-->
               <Grid RowDefinitions="Auto, *, *">
                 <Grid Grid.Row="0"
                       ColumnDefinitions="*, Auto">
                   <TextBlock Grid.Column="0"
                              Classes="Headline6"
                              Text="Bot" />
-                  <mIcons:MaterialIcon Grid.Column="1"
+                  <!--<mIcons:MaterialIcon Grid.Column="1"
                                        Kind="Information"
                                        ToolTip.Placement="Left">
                     <ToolTip.Tip>
                       <TextBox MaxWidth="300"
                                TextWrapping="Wrap">Connecting your broadcaster account is a must in order to receive specific events and query certain API endpoints.</TextBox>
                     </ToolTip.Tip>
-                  </mIcons:MaterialIcon>
+                  </mIcons:MaterialIcon>-->
                 </Grid>
                 <StackPanel Grid.Row="1"
                             Orientation="Horizontal">
-                  <mIcons:MaterialIcon Kind="Alert"
+                  <!--<mIcons:MaterialIcon Kind="Alert"
                                        Height="48"
-                                       Width="48"/>
+                                       Width="48"/>-->
                   <TextBlock Text="ShiningOne"
                              VerticalAlignment="Center"/>
                 </StackPanel>
@@ -223,7 +221,7 @@
                   <Button Grid.Column="0">
                     <Button.Content>
                       <StackPanel Orientation="Horizontal">
-                        <mIcons:MaterialIcon Kind="Google"/>
+                        <!--<mIcons:MaterialIcon Kind="Google"/>-->
                         <TextBlock Text="Sign in with Google"/>
                       </StackPanel>
                     </Button.Content>
@@ -232,7 +230,7 @@
                           Content="Forget"/>
                 </Grid>
               </Grid>
-            </mControls:Card>
+            <!--</mControls:Card>-->
           </Grid>
           <StackPanel Grid.Row="1">
             <sbControls:PresentViewersSettings/>
@@ -244,7 +242,7 @@
             <Button Classes="Flat">
               <Button.Content>
                 <StackPanel Orientation="Horizontal">
-                  <mIcons:MaterialIcon Kind="Youtube"/>
+                  <!--<mIcons:MaterialIcon Kind="Youtube"/>-->
                   <TextBlock Text="Terms of Service"/>
                 </StackPanel>
               </Button.Content>
@@ -252,7 +250,7 @@
             <Button Classes="Flat">
               <Button.Content>
                 <StackPanel Orientation="Horizontal">
-                  <mIcons:MaterialIcon Kind="Google"/>
+                  <!--<mIcons:MaterialIcon Kind="Google"/>-->
                   <TextBlock Text="Privacy Policy"/>
                 </StackPanel>
               </Button.Content>
@@ -260,7 +258,7 @@
             <Button Classes="Flat">
               <Button.Content>
                 <StackPanel Orientation="Horizontal">
-                  <mIcons:MaterialIcon Kind="Web"/>
+                  <!--<mIcons:MaterialIcon Kind="Web"/>-->
                   <TextBlock Text="Terms of Service"/>
                 </StackPanel>
               </Button.Content>
@@ -268,7 +266,7 @@
             <Button Classes="Flat">
               <Button.Content>
                 <StackPanel Orientation="Horizontal">
-                  <mIcons:MaterialIcon Kind="Web"/>
+                  <!--<mIcons:MaterialIcon Kind="Web"/>-->
                   <TextBlock Text="Privacy Policy"/>
                 </StackPanel>
               </Button.Content>

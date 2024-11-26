@@ -3,13 +3,12 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-			       xmlns:sbModels="clr-namespace:StreamerBotSkin.Models"
-			       xmlns:sbControls="clr-namespace:StreamerBotSkin.Controls"
-			       xmlns:sbContextMenus="clr-namespace:StreamerBotSkin.ContextMenus"
-			       xmlns:sbbControls="clr-namespace:StreamerBotControls;assembly=StreamerBotControls"
-             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
-			       xmlns:vm="using:StreamerBotSkin.ViewModels"
-			       x:DataType="vm:ActionsViewModel"
+			 xmlns:sbModels="clr-namespace:StreamerBotSkin.Models"
+			 xmlns:sbControls="clr-namespace:StreamerBotSkin.Controls"
+			 xmlns:sbContextMenus="clr-namespace:StreamerBotSkin.ContextMenus"
+			 xmlns:sbbControls="clr-namespace:StreamerBotControls;assembly=StreamerBotControls"
+			 xmlns:vm="using:StreamerBotSkin.ViewModels"
+			 x:DataType="vm:ActionsViewModel"
              x:Class="StreamerBotSkin.Panels.ActionsPanel">
   <UserControl.Styles>
     <!--<Style Selector="DataGridRow">
@@ -85,7 +84,7 @@
           <Setter Property="Content">
             <Setter.Value>
               <Template>
-                <mIcons:MaterialIcon Kind="ChevronDown"/>
+                <!--<mIcons:MaterialIcon Kind="ChevronDown"/>-->
               </Template>
             </Setter.Value>
           </Setter>
@@ -94,7 +93,7 @@
           <Setter Property="Content">
             <Setter.Value>
               <Template>
-                <mIcons:MaterialIcon Kind="ChevronUp"/>
+                <!--<mIcons:MaterialIcon Kind="ChevronUp"/>-->
               </Template>
             </Setter.Value>
           </Setter>
@@ -103,7 +102,7 @@
           <Setter Property="Content">
             <Setter.Value>
               <Template>
-                <mIcons:MaterialIcon Kind="ChevronDownCircle"/>
+                <!--<mIcons:MaterialIcon Kind="ChevronDownCircle"/>-->
               </Template>
             </Setter.Value>
           </Setter>
@@ -112,7 +111,7 @@
           <Setter Property="Content">
             <Setter.Value>
               <Template>
-                <mIcons:MaterialIcon Kind="ChevronUpCircle"/>
+                <!--<mIcons:MaterialIcon Kind="ChevronUpCircle"/>-->
               </Template>
             </Setter.Value>
           </Setter>

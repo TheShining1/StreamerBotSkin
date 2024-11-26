@@ -4,9 +4,6 @@ using Avalonia.Controls.Primitives;
 using Avalonia.Data;
 using Avalonia.Interactivity;
 
-using Material.Styles.Themes;
-using Material.Styles.Themes.Base;
-
 using System;
 
 namespace StreamerBotControls

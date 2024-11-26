@@ -2,7 +2,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
         x:Class="StreamerBotSkin.Dialogs.AboutDialog"
         MinHeight="400"
@@ -38,7 +37,7 @@
 				   Margin="0 24 0 5">With thanks to, in no particular order:</TextBlock>
     <TextBlock HorizontalAlignment="Center"
 				   TextWrapping="Wrap">Lyfesaver74, Whipstickgostop, Krayn_, Geocym, Njna_Grimsdottir, TinkerGlitch, Quin69, MeepsKitten, Exiled, Vigor, GaiusPanda, Kimakeru, SuperiorBuds, BeauwithaBang, ChefBrent, PioneerTulip, silvermonkey, Troyhammaren, greifer, VRFlad, TheLegendTubaGuy, WaldoAndFriends, Speedy, Anonymously42,, LOOPYFIST, CrazyLittle, Jesus_Pals, Pikacools, Harry Plotter, MadCapthulhu, Corben78, Andilippi, FreakVR, Ravendarq, XypherOrion, MrLiveProducer, Crindash, unknownorchid, TiddyVRLive, EggFriedCheese, SUDO</TextBlock>
-    <StackPanel Orientation="Horizontal"
+    <!--<StackPanel Orientation="Horizontal"
 					VerticalAlignment="Center"
 					HorizontalAlignment="Center"
 					Margin="0 30 0 0">
@@ -70,6 +69,6 @@
 					Foreground="Black">
         <mIcons:MaterialIcon Kind="Twitch" />
       </Button>
-    </StackPanel>
+    </StackPanel>-->
   </StackPanel>
 </Window>

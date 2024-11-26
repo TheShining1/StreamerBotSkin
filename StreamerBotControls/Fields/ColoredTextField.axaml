@@ -3,8 +3,6 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"             
-             xmlns:mControls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
              xmlns:local="clr-namespace:StreamerBotControls;assembly=StreamerBotControls"
              x:Name="root"
              x:Class="StreamerBotControls.ColoredTextField">
@@ -15,14 +13,14 @@
            Background="{Binding #root.Color}">
     <TextBox.InnerRightContent>
       <Button Classes="flat">
-        <mIcons:MaterialIcon HorizontalAlignment="Center"
+        <!--<mIcons:MaterialIcon HorizontalAlignment="Center"
                              VerticalAlignment="Center"
                              Width="20"
                              Height="20"
-                             Kind="Palette"/>
+                             Kind="Palette"/>-->
         <Button.Flyout>
           <Flyout Placement="RightEdgeAlignedBottom">
-            <mControls:Card>
+            <!--<mControls:Card>
               <StackPanel>                
               <ColorView Color="{Binding #root.NewColor}"/>
                 <Grid ColumnDefinitions="*,*">
@@ -35,7 +33,7 @@
                           Content="Cancel"/>
                 </Grid>
               </StackPanel>
-            </mControls:Card>          
+            </mControls:Card>-->          
         </Flyout>
         </Button.Flyout>
       </Button>

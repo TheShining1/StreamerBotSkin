@@ -3,7 +3,6 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              x:Class="StreamerBotSkin.Views.CustomServersView">
   <TabControl TabStripPlacement="Left">
     <TabItem Header="Servers">
@@ -20,7 +19,7 @@
             <DataGridTemplateColumn.CellTemplate>
               <DataTemplate>
                 <Button>
-                  <mIcons:MaterialIcon Kind="Play"/>
+                  <!--<mIcons:MaterialIcon Kind="Play"/>-->
                 </Button>
               </DataTemplate>
             </DataGridTemplateColumn.CellTemplate>
@@ -29,7 +28,7 @@
             <DataGridTemplateColumn.CellTemplate>
               <DataTemplate>
                 <Button>
-                  <mIcons:MaterialIcon Kind="PowerOff"/>
+                  <!--<mIcons:MaterialIcon Kind="PowerOff"/>-->
                 </Button>
               </DataTemplate>
             </DataGridTemplateColumn.CellTemplate>
@@ -53,7 +52,7 @@
             <DataGridTemplateColumn.CellTemplate>
               <DataTemplate>
                 <Button>
-                  <mIcons:MaterialIcon Kind="Bolt"/>
+                  <!--<mIcons:MaterialIcon Kind="Bolt"/>-->
                 </Button>
               </DataTemplate>
             </DataGridTemplateColumn.CellTemplate>

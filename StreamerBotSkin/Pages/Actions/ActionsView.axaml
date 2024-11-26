@@ -4,8 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="1200" d:DesignHeight="600"
              xmlns:sbPanels="clr-namespace:StreamerBotSkin.Panels"
-						 xmlns:vm="using:StreamerBotSkin.ViewModels"
-						 x:DataType="vm:ActionsViewModel"
+			 xmlns:vm="using:StreamerBotSkin.ViewModels"
+			 x:DataType="vm:ActionsViewModel"
              x:Class="StreamerBotSkin.Views.ActionsView">
   <Design.DataContext>
     <vm:ActionsViewModel/>

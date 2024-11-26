@@ -3,7 +3,6 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="450"
-             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              xmlns:models="clr-namespace:StreamerBotSkin.Models"
              x:Name="root"
              x:Class="StreamerBotSkin.Controls.MainDrawer">
@@ -15,15 +14,15 @@
                 HorizontalAlignment="Center">
       <Button Classes="Flat">
         <StackPanel Orientation="Horizontal">
-          <mIcons:MaterialIcon Kind="Import"
-                               Margin="0,5,5,5"/>
+          <!--<mIcons:MaterialIcon Kind="Import"
+                               Margin="0,5,5,5"/-->>
           <TextBlock VerticalAlignment="Center">Import</TextBlock>
         </StackPanel>
       </Button>
       <Button Classes="Flat">
         <StackPanel Orientation="Horizontal">
-          <mIcons:MaterialIcon Kind="Export"
-                               Margin="0,5,5,5"/>
+          <!--<mIcons:MaterialIcon Kind="Export"
+                               Margin="0,5,5,5"/>-->
           <TextBlock VerticalAlignment="Center">Export</TextBlock>
         </StackPanel>
       </Button>
@@ -50,10 +49,10 @@
                   CommandParameter="{Binding CommandParameter}">
             <StackPanel Orientation="Horizontal"
                         Margin="5,0,0,0">
-              <mIcons:MaterialIcon Width="24"
+              <!--<mIcons:MaterialIcon Width="24"
                                    Height="24"
                                    Margin="0,0,5,0"
-                                   Kind="{Binding Icon}"/>
+                                   Kind="{Binding Icon}"/>-->
               <TextBlock Classes="Body1"
                          VerticalAlignment="Center"
                          Text="{Binding Label}"/>
@@ -131,8 +130,8 @@
                 HorizontalAlignment="Center">
       <Button Classes="Flat">
         <StackPanel Orientation="Horizontal">
-          <mIcons:MaterialIcon Margin="0,0,5,0"
-                               Kind="DownloadOutline"/>
+          <!--<mIcons:MaterialIcon Margin="0,0,5,0"
+                               Kind="DownloadOutline"/>-->
           <TextBlock VerticalAlignment="Center">Check for updates</TextBlock>
         </StackPanel>
       </Button>
@@ -140,10 +139,10 @@
                   HorizontalAlignment="Center"
                   Margin="10">
         <Button Classes="Flat">
-          <mIcons:MaterialIcon Kind="Patreon" />
+          <!--<mIcons:MaterialIcon Kind="Patreon" />-->
         </Button>
         <Button Classes="Flat">
-          <mIcons:MaterialIcon Kind="Coffee" />
+          <!--<mIcons:MaterialIcon Kind="Coffee" />-->
         </Button>
       </StackPanel>
     </StackPanel>
