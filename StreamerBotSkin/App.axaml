@@ -15,7 +15,7 @@
 
   <Application.Styles>
     <!--<mThemes:MaterialTheme/>-->
-    <mThemes:MaterialTheme PrimaryColor="Purple" SecondaryColor="Green"/>
+    <mThemes:MaterialTheme BaseTheme="Dark" PrimaryColor="Purple" SecondaryColor="Green"/>
 
     <!--<themes:MaterialTheme BaseTheme="Dark" />-->
     <!--<mThemes:MaterialTheme />-->
