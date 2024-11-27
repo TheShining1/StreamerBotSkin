@@ -21,11 +21,11 @@ namespace StreamerBotSkin.Controls
             o => o.IsDrawerOpen,
             (o, v) => o.IsDrawerOpen = v);
 
-    private bool _isDrawerOpen = false;
+    private bool isDrawerOpen = false;
     public bool IsDrawerOpen
     {
-      get { return _isDrawerOpen; }
-      set { SetAndRaise(IsDrawerOpenProperty, ref _isDrawerOpen, value); }
+      get { return isDrawerOpen; }
+      set { SetAndRaise(IsDrawerOpenProperty, ref isDrawerOpen, value); }
     }
   }
 }

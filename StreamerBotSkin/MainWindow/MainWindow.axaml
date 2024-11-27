@@ -21,13 +21,13 @@
 							   Height="28"
 							   Margin="5"/>
 		<SplitView Grid.Row="1"
-				   IsPaneOpen="{Binding IsMainDrawerOpen}">
+				   IsPaneOpen="{Binding IsMainDrawerOpen, Mode=TwoWay}">
 			<SplitView.Pane>
 				<Button Content="Test"/>
 			</SplitView.Pane>
 			<Grid RowDefinitions="Auto, *, Auto">
-				<ToggleButton Grid.Row="0"
-							  IsChecked="{Binding IsMainDrawerOpen}"/>
+				<sbControls:MainBar Grid.Row="0"
+									IsDrawerOpen="{Binding IsMainDrawerOpen, Mode=TwoWay}"/>
 			</Grid>
 		</SplitView>
 		<!--<mControls:NavigationDrawer Grid.Row="1"

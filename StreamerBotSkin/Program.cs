@@ -2,6 +2,8 @@
 using Avalonia.ReactiveUI;
 using StreamerBotSkin.Views;
 using System;
+using Projektanker.Icons.Avalonia;
+using Projektanker.Icons.Avalonia.FontAwesome;
 
 namespace StreamerBotSkin
 {
@@ -17,10 +19,15 @@ namespace StreamerBotSkin
 
         // Avalonia configuration, don't remove; also used by visual designer.
         public static AppBuilder BuildAvaloniaApp()
-            => AppBuilder.Configure<App>()
+        {
+            IconProvider.Current
+           .Register<FontAwesomeIconProvider>();
+
+            return AppBuilder.Configure<App>()
                 .UsePlatformDetect()
                 .WithInterFont()
                 .LogToTrace()
                 .UseReactiveUI();
+        }
     }
 }
