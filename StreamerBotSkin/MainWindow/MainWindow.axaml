@@ -2,7 +2,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="500"
+        mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="600"
         xmlns:sbControls="clr-namespace:StreamerBotSkin.Controls"
         x:CompileBindings="True"
         xmlns:vm="using:StreamerBotSkin.ViewModels"
@@ -21,14 +21,17 @@
 							   Height="28"
 							   Margin="5"/>
 		<SplitView Grid.Row="1"
-				   IsPaneOpen="{Binding IsMainDrawerOpen, Mode=TwoWay}">
+               DisplayMode="CompactOverlay"
+               CompactPaneLength="50"
+               UseLightDismissOverlayMode="True"
+               IsPaneOpen="{Binding IsMainDrawerOpen, Mode=TwoWay}">
 			<SplitView.Pane>
 				<sbControls:MainDrawer MenuItems="{Binding MainDrawerMenuItems}"
-									   NavigateCommand="{Binding NavigateCommand}"/>
+                               SelectedMenuItem="{Binding SelectedMenuItem, Mode=TwoWay}"
+                               IsDrawerOpen="{Binding IsMainDrawerOpen, Mode=TwoWay}"/>
 			</SplitView.Pane>
 			<Grid RowDefinitions="Auto, *, Auto">
-				<sbControls:MainBar Grid.Row="0"
-									IsDrawerOpen="{Binding IsMainDrawerOpen, Mode=TwoWay}"/>
+				<sbControls:MainBar Grid.Row="0"/>
 				<TransitioningContentControl Grid.Row="1"
 											 Margin="10,0"
 											 Content="{Binding CurrentViewModel}"/>

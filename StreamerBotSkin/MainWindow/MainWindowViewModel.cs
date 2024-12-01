@@ -97,6 +97,17 @@ namespace StreamerBotSkin.ViewModels
       }
     };
 
+    private MainDrawerMenuItem selectedMenuItem;
+    public MainDrawerMenuItem SelectedMenuItem
+    {
+      get => selectedMenuItem;
+      set 
+      {
+        this.RaiseAndSetIfChanged(ref selectedMenuItem, value);
+        CurrentViewModel = value.ViewModel;
+      }
+    }
+
     private Dictionary<string, ViewModelBase> ViewModelsAvailable = new();
     //{
     //  //{"main", new MainViewModel() },

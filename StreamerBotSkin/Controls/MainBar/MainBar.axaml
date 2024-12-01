@@ -9,10 +9,7 @@
              x:Class="StreamerBotSkin.Controls.MainBar"
              x:Name="root">
 	<Grid ColumnDefinitions="Auto, *, Auto">
-		<ToggleButton Grid.Column="0"
-					  i:Attached.Icon="mdi-menu"
-					  IsChecked="{Binding #root.IsDrawerOpen}" />
-		<StackPanel Grid.Column="1"
+		<StackPanel Grid.Column="0"
 					Orientation="Horizontal"
 					VerticalAlignment="Center">
 			<Button Classes="Flat">
@@ -28,7 +25,7 @@
 				<i:Icon Value="mdi-application-variable"/>
 			</Button>
 		</StackPanel>
-		<StackPanel Grid.Column="3"
+		<StackPanel Grid.Column="2"
 					Orientation="Horizontal">
 			<!--<ToggleButton>
 				<i:Icon Value="mdi-theme-light-dark"/>

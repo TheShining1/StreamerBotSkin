@@ -18,18 +18,5 @@ namespace StreamerBotSkin.Controls
     {
       InitializeComponent();
     }
-
-    public static readonly DirectProperty<MainBar, bool> IsDrawerOpenProperty =
-        AvaloniaProperty.RegisterDirect<MainBar, bool>(
-            nameof(IsDrawerOpen),
-            o => o.IsDrawerOpen,
-            (o, v) => o.IsDrawerOpen = v);
-
-    private bool isDrawerOpen = false;
-    public bool IsDrawerOpen
-    {
-      get { return isDrawerOpen; }
-      set { SetAndRaise(IsDrawerOpenProperty, ref isDrawerOpen, value); }
-    }
   }
 }

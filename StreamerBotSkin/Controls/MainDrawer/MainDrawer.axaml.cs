@@ -20,12 +20,23 @@ namespace StreamerBotSkin.Controls
     public MainDrawer()
     {
       InitializeComponent();
+    }
 
-      GlobalCommands.mainDrawer = this;
+    public static readonly DirectProperty<MainDrawer, bool> IsDrawerOpenProperty =
+        AvaloniaProperty.RegisterDirect<MainDrawer, bool>(
+            nameof(IsDrawerOpen),
+            o => o.IsDrawerOpen,
+            (o, v) => o.IsDrawerOpen = v);
+
+    private bool isDrawerOpen = false;
+    public bool IsDrawerOpen
+    {
+      get { return isDrawerOpen; }
+      set { SetAndRaise(IsDrawerOpenProperty, ref isDrawerOpen, value); }
     }
 
     public static readonly StyledProperty<List<MainDrawerMenuItem>> MenuItemsProperty =
-      AvaloniaProperty.Register<AuthServer, List<MainDrawerMenuItem>>(
+      AvaloniaProperty.Register<MainDrawer, List<MainDrawerMenuItem>>(
         nameof(MenuItems),
         new()
         );
@@ -36,20 +47,16 @@ namespace StreamerBotSkin.Controls
       set { SetValue(MenuItemsProperty, value); }
     }
 
-    public static readonly StyledProperty<ICommand> NavigateCommandProperty =
-      AvaloniaProperty.Register<AuthServer, ICommand>(
-        nameof(NavigateCommand)
-        );
+    public static readonly StyledProperty<MainDrawerMenuItem> SelectedMenuItemProperty =
+      AvaloniaProperty.Register<MainDrawer, MainDrawerMenuItem>(
+        nameof(SelectedMenuItem),
+        new()
+       );
 
-    public ICommand NavigateCommand
+    public MainDrawerMenuItem SelectedMenuItem
     {
-      get { return GetValue(NavigateCommandProperty); }
-      set { SetValue(NavigateCommandProperty, value); }
-    }
-
-    private void OnPointerPressed(object? sender, RoutedEventArgs e)
-    {
-
+      get { return GetValue(SelectedMenuItemProperty); }
+      set { SetValue(SelectedMenuItemProperty, value); }
     }
   }
 }

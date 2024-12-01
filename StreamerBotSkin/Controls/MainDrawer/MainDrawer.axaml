@@ -3,86 +3,83 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="450"
-			 xmlns:i="https://github.com/projektanker/icons.avalonia"
+             xmlns:i="https://github.com/projektanker/icons.avalonia"
              xmlns:models="clr-namespace:StreamerBotSkin.Models"
              x:Name="root"
              x:Class="StreamerBotSkin.Controls.MainDrawer">
-	<Grid RowDefinitions="Auto, Auto, *, Auto, Auto"
-		  Width="{Binding #root.Width}"
-		  Margin="10">
-		<StackPanel Grid.Row="0"
-					Orientation="Horizontal"
-					HorizontalAlignment="Center">
-			<Button Classes="Flat">
-				<StackPanel Orientation="Horizontal">
-					<i:Icon Value="mdi-import"
-							Margin="0,5,5,5"/>
-					<TextBlock VerticalAlignment="Center">Import</TextBlock>
-				</StackPanel>
-			</Button>
-			<Button Classes="Flat">
-				<StackPanel Orientation="Horizontal">
-					<i:Icon Value="mdi-export"
-							Margin="0,5,5,5"/>
-					<TextBlock VerticalAlignment="Center">Export</TextBlock>
-				</StackPanel>
-			</Button>
-		</StackPanel>
-		<Separator Grid.Row="1"/>
-		<ListBox Grid.Row="2"
-				 Classes="Drawer"
-				 ItemsSource="{Binding MenuItems, ElementName=root}"
-				 PointerPressed="OnPointerPressed">
-			<ListBox.ItemTemplate>
-				<DataTemplate x:DataType="models:MainDrawerMenuItem">
-					<StackPanel Orientation="Horizontal"
-								Margin="5,0,0,0">
-						<i:Icon Width="24"
-								Height="24"
-								Margin="0,0,5,0"
-								Value="{Binding Icon}"/>
-						<TextBlock Classes="Body1"
-								   VerticalAlignment="Center"
-								   Text="{Binding Label}"/>
-					</StackPanel>
-					<!--<Button Classes="Flat"
-                  HorizontalContentAlignment="Left"
-                  Command="{Binding NavigateCommand, ElementName=root}"
-                  CommandParameter="{Binding CommandParameter}">
-            <StackPanel Orientation="Horizontal"
-                        Margin="5,0,0,0">
-				<i:Icon Width="24"
-						Height="24"
-						Margin="0,0,5,0"
-						Value="{Binding Icon}"/>
-              <TextBlock Classes="Body1"
-                         VerticalAlignment="Center"
-                         Text="{Binding Label}"/>
-            </StackPanel>
-          </Button>-->
-				</DataTemplate>
-			</ListBox.ItemTemplate>
-		</ListBox>
-		<Separator Grid.Row="3"/>
-		<StackPanel Grid.Row="4"
-					HorizontalAlignment="Center">
-			<Button Classes="Flat">
-				<StackPanel Orientation="Horizontal">
-					<i:Icon Margin="0,0,5,0"
-							Value="mdi-download-outline"/>
-					<TextBlock VerticalAlignment="Center">Check for updates</TextBlock>
-				</StackPanel>
-			</Button>
-			<StackPanel Orientation="Horizontal"
-						HorizontalAlignment="Center"
-						Margin="10">
-				<Button Classes="Flat">
-					<i:Icon Value="mdi-patreon" />
-				</Button>
-				<Button Classes="Flat">
-					<i:Icon Value="mdi-coffee" />
-				</Button>
-			</StackPanel>
-		</StackPanel>
-	</Grid>
+  <UserControl.Styles>
+    <Style Selector="i|Icon">
+      <Setter Property="FontSize" Value="24"/>
+    </Style>
+    <Style Selector="SplitView StackPanel.rotatable">
+      <Setter Property="Orientation" Value="Horizontal"/>
+    </Style>
+    <Style Selector="SplitView:closed StackPanel.rotatable">
+      <Setter Property="Orientation" Value="Vertical"/>
+    </Style>
+  </UserControl.Styles>
+  <Grid RowDefinitions="Auto, *, Auto"
+        Width="{Binding #root.Width}">
+    <StackPanel Grid.Row="0">
+      <ToggleButton i:Attached.Icon="mdi-menu"
+                    Margin="3,0,3,0"
+                    Classes="Accent"
+                    IsChecked="{Binding #root.IsDrawerOpen}"/>
+      <Button Content="Danger Button" Classes="Danger" />
+      <Separator/>
+      <StackPanel Classes="rotatable"
+                  HorizontalAlignment="Center">
+        <Button Classes="Flat">
+          <StackPanel Orientation="Horizontal">
+            <i:Icon Value="mdi-import"
+                Margin="0,5,5,5"/>
+            <TextBlock VerticalAlignment="Center">Import</TextBlock>
+          </StackPanel>
+        </Button>
+        <Button Classes="Flat">
+          <StackPanel Orientation="Horizontal">
+            <i:Icon Value="mdi-export"
+                Margin="0,5,5,5"/>
+            <TextBlock VerticalAlignment="Center">Export</TextBlock>
+          </StackPanel>
+        </Button>
+      </StackPanel>
+      <Separator/>
+    </StackPanel>
+    <ListBox Grid.Row="1"
+             Classes="Drawer"
+             ItemsSource="{Binding #root.MenuItems}"
+             SelectedItem="{Binding #root.SelectedMenuItem}"
+             SelectionMode="AlwaysSelected">
+      <ListBox.ItemTemplate>
+        <DataTemplate x:DataType="models:MainDrawerMenuItem">
+          <StackPanel Orientation="Horizontal">
+            <i:Icon Value="{Binding Icon}"/>
+            <TextBlock Margin="15,0,0,0"
+                       VerticalAlignment="Center"
+                       Text="{Binding Label}"/>
+          </StackPanel>
+        </DataTemplate>
+      </ListBox.ItemTemplate>
+    </ListBox>
+    <StackPanel Grid.Row="2"
+                HorizontalAlignment="Center">
+      <Separator/>
+      <Button Classes="Flat">
+        <StackPanel Orientation="Horizontal">
+          <i:Icon Value="mdi-download-outline"/>
+          <TextBlock VerticalAlignment="Center">Check for updates</TextBlock>
+        </StackPanel>
+      </Button>
+      <StackPanel Classes="rotatable"
+                  HorizontalAlignment="Center">
+        <Button Classes="Flat">
+          <i:Icon Value="mdi-patreon" />
+        </Button>
+        <Button Classes="Flat">
+          <i:Icon Value="mdi-coffee" />
+        </Button>
+      </StackPanel>
+    </StackPanel>
+  </Grid>
 </UserControl>
