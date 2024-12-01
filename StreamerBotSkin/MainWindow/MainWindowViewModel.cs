@@ -26,7 +26,7 @@ namespace StreamerBotSkin.ViewModels
         ViewModelsAvailable[item.CommandParameter] = item.ViewModel;
       }
 
-      currentViewModel = ViewModelsAvailable["actions"];
+      currentViewModel = ViewModelsAvailable["main"];
 
       NavigateCommand = ReactiveCommand.Create<string>(NavigateTo);
       OpenAboutCommand = ReactiveCommand.Create(OpenAboutDialog);
@@ -119,6 +119,17 @@ namespace StreamerBotSkin.ViewModels
     {
       get => currentViewModel;
       private set => this.RaiseAndSetIfChanged(ref currentViewModel, value);
+    }
+
+    private MainDrawerMenuItem selectedMenuItem;
+    public MainDrawerMenuItem SelectedMenuItem
+    {
+      get => selectedMenuItem;
+      set
+      {
+        this.RaiseAndSetIfChanged(ref selectedMenuItem, value);
+        CurrentViewModel = value.ViewModel;
+      }
     }
 
     public ICommand NavigateCommand { get; }

@@ -22,7 +22,25 @@
     <sbControls:ControlBar  Grid.Row="0"
                             Height="28"
                             Margin="5"/>
-    <mControls:NavigationDrawer Grid.Row="1"
+    <SplitView Grid.Row="1"
+               DisplayMode="CompactOverlay"
+               CompactPaneLength="50"
+               UseLightDismissOverlayMode="True"
+               IsPaneOpen="{Binding IsMainDrawerOpen, Mode=TwoWay}">
+      <SplitView.Pane>
+        <sbControls:MainDrawer MenuItems="{Binding MainDrawerMenuItems}"
+                               SelectedMenuItem="{Binding SelectedMenuItem, Mode=TwoWay}"
+                               IsDrawerOpen="{Binding IsMainDrawerOpen, Mode=TwoWay}"/>
+      </SplitView.Pane>
+      <Grid RowDefinitions="Auto, *, Auto">
+        <sbControls:MainBar Grid.Row="0"/>
+        <TransitioningContentControl Grid.Row="1"
+											 Margin="10,0"
+											 Content="{Binding CurrentViewModel}"/>
+        <sbControls:Footer Grid.Row="2"/>
+      </Grid>
+    </SplitView>
+    <!--<mControls:NavigationDrawer Grid.Row="1"
                                 x:Name="LeftDrawer"
                                 LeftDrawerExpandThresholdWidth="100000"
                                 LeftDrawerOpened="{Binding IsMainDrawerOpen, Mode=TwoWay}"
@@ -40,6 +58,6 @@
                                      Content="{Binding CurrentViewModel}"/>
         <sbControls:Footer Grid.Row="2"/>
       </Grid>
-    </mControls:NavigationDrawer>
+    </mControls:NavigationDrawer>-->
   </Grid>
 </Window>
