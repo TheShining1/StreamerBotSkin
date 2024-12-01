@@ -23,11 +23,16 @@
 		<SplitView Grid.Row="1"
 				   IsPaneOpen="{Binding IsMainDrawerOpen, Mode=TwoWay}">
 			<SplitView.Pane>
-				<Button Content="Test"/>
+				<sbControls:MainDrawer MenuItems="{Binding MainDrawerMenuItems}"
+									   NavigateCommand="{Binding NavigateCommand}"/>
 			</SplitView.Pane>
 			<Grid RowDefinitions="Auto, *, Auto">
 				<sbControls:MainBar Grid.Row="0"
 									IsDrawerOpen="{Binding IsMainDrawerOpen, Mode=TwoWay}"/>
+				<TransitioningContentControl Grid.Row="1"
+											 Margin="10,0"
+											 Content="{Binding CurrentViewModel}"/>
+				<sbControls:Footer Grid.Row="2"/>
 			</Grid>
 		</SplitView>
 		<!--<mControls:NavigationDrawer Grid.Row="1"

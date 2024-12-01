@@ -3,148 +3,86 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="450"
+			 xmlns:i="https://github.com/projektanker/icons.avalonia"
              xmlns:models="clr-namespace:StreamerBotSkin.Models"
              x:Name="root"
              x:Class="StreamerBotSkin.Controls.MainDrawer">
-  <Grid RowDefinitions="Auto, Auto, *, Auto, Auto"
-        Width="{Binding #root.Width}"
-        Margin="10">
-    <StackPanel Grid.Row="0"
-                Orientation="Horizontal"
-                HorizontalAlignment="Center">
-      <Button Classes="Flat">
-        <StackPanel Orientation="Horizontal">
-          <!--<mIcons:MaterialIcon Kind="Import"
-                               Margin="0,5,5,5"/-->>
-          <TextBlock VerticalAlignment="Center">Import</TextBlock>
-        </StackPanel>
-      </Button>
-      <Button Classes="Flat">
-        <StackPanel Orientation="Horizontal">
-          <!--<mIcons:MaterialIcon Kind="Export"
-                               Margin="0,5,5,5"/>-->
-          <TextBlock VerticalAlignment="Center">Export</TextBlock>
-        </StackPanel>
-      </Button>
-    </StackPanel>
-    <Separator Grid.Row="1"/>
-    <ListBox Grid.Row="2"
-             Classes="Drawer"
-             ItemsSource="{Binding MenuItems, ElementName=root}">
-      <ListBox.ItemTemplate>
-        <DataTemplate x:DataType="models:MainDrawerMenuItem">
-          <!--<StackPanel Orientation="Horizontal"
-                      Margin="5,0,0,0">
-            <mIcons:MaterialIcon Width="24"
-                                 Height="24"
-                                 Margin="0,0,5,0"
-                                 Kind="{Binding Icon}"/>
-          <TextBlock Classes="Body1"
-                     VerticalAlignment="Center"
-                     Text="{Binding Label}"/>
-          </StackPanel>-->
-          <Button Classes="Flat"
+	<Grid RowDefinitions="Auto, Auto, *, Auto, Auto"
+		  Width="{Binding #root.Width}"
+		  Margin="10">
+		<StackPanel Grid.Row="0"
+					Orientation="Horizontal"
+					HorizontalAlignment="Center">
+			<Button Classes="Flat">
+				<StackPanel Orientation="Horizontal">
+					<i:Icon Value="mdi-import"
+							Margin="0,5,5,5"/>
+					<TextBlock VerticalAlignment="Center">Import</TextBlock>
+				</StackPanel>
+			</Button>
+			<Button Classes="Flat">
+				<StackPanel Orientation="Horizontal">
+					<i:Icon Value="mdi-export"
+							Margin="0,5,5,5"/>
+					<TextBlock VerticalAlignment="Center">Export</TextBlock>
+				</StackPanel>
+			</Button>
+		</StackPanel>
+		<Separator Grid.Row="1"/>
+		<ListBox Grid.Row="2"
+				 Classes="Drawer"
+				 ItemsSource="{Binding MenuItems, ElementName=root}"
+				 PointerPressed="OnPointerPressed">
+			<ListBox.ItemTemplate>
+				<DataTemplate x:DataType="models:MainDrawerMenuItem">
+					<StackPanel Orientation="Horizontal"
+								Margin="5,0,0,0">
+						<i:Icon Width="24"
+								Height="24"
+								Margin="0,0,5,0"
+								Value="{Binding Icon}"/>
+						<TextBlock Classes="Body1"
+								   VerticalAlignment="Center"
+								   Text="{Binding Label}"/>
+					</StackPanel>
+					<!--<Button Classes="Flat"
                   HorizontalContentAlignment="Left"
                   Command="{Binding NavigateCommand, ElementName=root}"
                   CommandParameter="{Binding CommandParameter}">
             <StackPanel Orientation="Horizontal"
                         Margin="5,0,0,0">
-              <!--<mIcons:MaterialIcon Width="24"
-                                   Height="24"
-                                   Margin="0,0,5,0"
-                                   Kind="{Binding Icon}"/>-->
+				<i:Icon Width="24"
+						Height="24"
+						Margin="0,0,5,0"
+						Value="{Binding Icon}"/>
               <TextBlock Classes="Body1"
                          VerticalAlignment="Center"
                          Text="{Binding Label}"/>
             </StackPanel>
-          </Button>
-        </DataTemplate>
-      </ListBox.ItemTemplate>
-    </ListBox>
-    <!--<ListBox Classes="Drawer">
-          <Button Classes="Flat"
-                  Content="Main"
-                  Command="{Binding NavigateCommand}"
-                  CommandParameter="main"/>
-          <Button Classes="Flat"
-                  Content="Viewers"
-                  Command="{Binding NavigateCommand}"
-                  CommandParameter="viewers"/>
-          <Button Classes="Flat"
-                  Content="Actions"
-                  Command="{Binding NavigateCommand}"
-                  CommandParameter="actions"/>
-          <Button Classes="Flat"
-                  Content="Commands"
-                  Command="{Binding NavigateCommand}"
-                  CommandParameter="commands"/>
-          <Button Classes="Flat"
-                  Content="MIDI"
-                  Command="{Binding NavigateCommand}"
-                  CommandParameter="midi"/>
-          <Button Classes="Flat"
-                  Content="Queues"
-                  Command="{Binding NavigateCommand}"
-                  CommandParameter="queues"/>
-          <Button Classes="Flat"
-                  Content="Hotkeys"
-                  Command="{Binding NavigateCommand}"
-                  CommandParameter="hotkeys"/>
-          <Button Classes="Flat"
-                  Content="Voice control"
-                  Command="{Binding NavigateCommand}"
-                  CommandParameter="voicecontrol"/>
-          <Button Classes="Flat"
-                  Content="Servers"
-                  Command="{Binding NavigateCommand}"
-                  CommandParameter="servers"/>
-          <Expander>
-            <Expander.Header>
-              Platforms
-            </Expander.Header>
-            <Expander>
-              <Expander.Header>
-                Twitch
-              </Expander.Header>
-              <ListBox>
-                <ListBox.Items>
-                  <Button Classes="Flat"
-                          Content="Channel point rewards"
-                          Command="{Binding NavigateCommand}"
-                          CommandParameter="cpr"/>
-                  <Button Classes="Flat"
-                          Content="Polls"
-                          Command="{Binding NavigateCommand}"
-                          CommandParameter="polls"/>
-                  <Button Classes="Flat"
-                          Content="Predictions"
-                          Command="{Binding NavigateCommand}"
-                          CommandParameter="predictions"/>
-                </ListBox.Items>
-              </ListBox>
-            </Expander>
-          </Expander>
-        </ListBox>-->
-    <Separator Grid.Row="3"/>
-    <StackPanel Grid.Row="4"
-                HorizontalAlignment="Center">
-      <Button Classes="Flat">
-        <StackPanel Orientation="Horizontal">
-          <!--<mIcons:MaterialIcon Margin="0,0,5,0"
-                               Kind="DownloadOutline"/>-->
-          <TextBlock VerticalAlignment="Center">Check for updates</TextBlock>
-        </StackPanel>
-      </Button>
-      <StackPanel Orientation="Horizontal"
-                  HorizontalAlignment="Center"
-                  Margin="10">
-        <Button Classes="Flat">
-          <!--<mIcons:MaterialIcon Kind="Patreon" />-->
-        </Button>
-        <Button Classes="Flat">
-          <!--<mIcons:MaterialIcon Kind="Coffee" />-->
-        </Button>
-      </StackPanel>
-    </StackPanel>
-  </Grid>
+          </Button>-->
+				</DataTemplate>
+			</ListBox.ItemTemplate>
+		</ListBox>
+		<Separator Grid.Row="3"/>
+		<StackPanel Grid.Row="4"
+					HorizontalAlignment="Center">
+			<Button Classes="Flat">
+				<StackPanel Orientation="Horizontal">
+					<i:Icon Margin="0,0,5,0"
+							Value="mdi-download-outline"/>
+					<TextBlock VerticalAlignment="Center">Check for updates</TextBlock>
+				</StackPanel>
+			</Button>
+			<StackPanel Orientation="Horizontal"
+						HorizontalAlignment="Center"
+						Margin="10">
+				<Button Classes="Flat">
+					<i:Icon Value="mdi-patreon" />
+				</Button>
+				<Button Classes="Flat">
+					<i:Icon Value="mdi-coffee" />
+				</Button>
+			</StackPanel>
+		</StackPanel>
+	</Grid>
 </UserControl>

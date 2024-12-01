@@ -46,5 +46,10 @@ namespace StreamerBotSkin.Controls
       get { return GetValue(NavigateCommandProperty); }
       set { SetValue(NavigateCommandProperty, value); }
     }
+
+    private void OnPointerPressed(object? sender, RoutedEventArgs e)
+    {
+
+    }
   }
 }

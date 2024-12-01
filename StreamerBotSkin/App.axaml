@@ -2,6 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:conv="clr-namespace:StreamerBotSkin.Converters"
              xmlns:local="clr-namespace:StreamerBotSkin"
+			 RequestedThemeVariant="Dark"
              x:Class="StreamerBotSkin.App">
 	<!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
@@ -10,7 +11,7 @@
 	</Application.DataTemplates>
 
 	<Application.Styles>
-		<FluentTheme />
+		<FluentTheme/>
 	</Application.Styles>
 
 	<Application.Resources>

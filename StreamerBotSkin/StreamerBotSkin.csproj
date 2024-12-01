@@ -58,6 +58,7 @@
     <PackageReference Include="Avalonia.ReactiveUI" Version="11.2.2" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Projektanker.Icons.Avalonia.FontAwesome" Version="9.5.0" />
+    <PackageReference Include="Projektanker.Icons.Avalonia.MaterialDesign" Version="9.5.0" />
   </ItemGroup>
 
 

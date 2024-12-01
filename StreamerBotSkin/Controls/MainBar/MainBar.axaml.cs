@@ -5,6 +5,10 @@ using Avalonia.Data;
 using Avalonia.Interactivity;
 
 using System;
+using ReactiveUI;
+using System.Windows.Input;
+using Avalonia.Themes.Fluent;
+using Avalonia.Styling;
 
 namespace StreamerBotSkin.Controls
 {

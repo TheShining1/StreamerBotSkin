@@ -31,6 +31,8 @@
   <ItemGroup>
     <PackageReference Include="Avalonia" Version="11.2.2" />
     <PackageReference Include="Avalonia.Controls.ColorPicker" Version="11.2.2" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.2" />
+    <PackageReference Include="Projektanker.Icons.Avalonia.MaterialDesign" Version="9.5.0" />
   </ItemGroup>
 
   <ItemGroup>
