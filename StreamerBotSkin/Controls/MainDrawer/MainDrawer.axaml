@@ -3,8 +3,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="450"
+             xmlns:u="https://irihi.tech/ursa"
              xmlns:i="https://github.com/projektanker/icons.avalonia"
-             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              xmlns:models="clr-namespace:StreamerBotSkin.Models"
              x:Name="root"
              x:Class="StreamerBotSkin.Controls.MainDrawer">
@@ -19,53 +19,32 @@
       <Setter Property="Orientation" Value="Vertical"/>
     </Style>
   </UserControl.Styles>
-  <Grid RowDefinitions="Auto, *, Auto"
-        Width="{Binding #root.Width}">
+  <Grid RowDefinitions="Auto, Auto, *, Auto, Auto">
     <StackPanel Grid.Row="0">
       <ToggleButton i:Attached.Icon="mdi-menu"
-                    Margin="3,0,3,0"
-                    Classes="Accent"
                     IsChecked="{Binding #root.IsDrawerOpen}"/>
-      <Button Content="Danger Button" Classes="Danger" />
-      <Separator/>
-      <StackPanel Classes="rotatable"
-                  HorizontalAlignment="Center">
-        <Button Classes="Flat">
-          <StackPanel Orientation="Horizontal">
-            <i:Icon Value="mdi-import"
-                Margin="0,5,5,5"/>
-            <TextBlock VerticalAlignment="Center">Import</TextBlock>
-          </StackPanel>
-        </Button>
-        <Button Classes="Flat">
-          <StackPanel Orientation="Horizontal">
-            <i:Icon Value="mdi-export"
-                Margin="0,5,5,5"/>
-            <TextBlock VerticalAlignment="Center">Export</TextBlock>
-          </StackPanel>
-        </Button>
-      </StackPanel>
-      <Separator/>
     </StackPanel>
-    <ListBox Grid.Row="1"
-             Classes="Drawer"
-             ItemsSource="{Binding #root.MenuItems}"
-             SelectedItem="{Binding #root.SelectedMenuItem}"
-             SelectionMode="AlwaysSelected">
-      <ListBox.ItemTemplate>
-        <DataTemplate x:DataType="models:MainDrawerMenuItem">
-          <StackPanel Orientation="Horizontal">
-            <i:Icon Value="{Binding Icon}"/>
-            <TextBlock Margin="15,0,0,0"
-                       VerticalAlignment="Center"
-                       Text="{Binding Label}"/>
-          </StackPanel>
+    <Separator Grid.Row="1"/>
+    <u:NavMenu Grid.Row="2"
+               x:DataType="models:MainDrawerMenuItem"
+               IconBinding="{Binding Icon}"
+               ItemsSource="{Binding #root.MenuItems}"
+               SelectedItem="{Binding #root.SelectedMenuItem}">
+      <u:NavMenu.IconTemplate>
+        <DataTemplate x:DataType="{x:Type x:String}">
+          <i:Icon Value="{Binding }"/>
         </DataTemplate>
-      </ListBox.ItemTemplate>
-    </ListBox>
-    <StackPanel Grid.Row="2"
+      </u:NavMenu.IconTemplate>
+      <u:NavMenu.HeaderTemplate>
+        <DataTemplate x:DataType="models:MainDrawerMenuItem">
+          <TextBlock VerticalAlignment="Center"
+                     Text="{Binding Label}"/>
+        </DataTemplate>
+      </u:NavMenu.HeaderTemplate>
+    </u:NavMenu>
+    <Separator Grid.Row="3"/>
+    <StackPanel Grid.Row="4"
                 HorizontalAlignment="Center">
-      <Separator/>
       <Button Classes="Flat">
         <StackPanel Orientation="Horizontal">
           <i:Icon Value="mdi-download-outline"/>

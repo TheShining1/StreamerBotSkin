@@ -3,19 +3,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="500"
+             xmlns:u="https://irihi.tech/ursa"
              xmlns:mControls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
              xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              xmlns:sbControls="clr-namespace:StreamerBotSkin.Controls"
              x:Class="StreamerBotSkin.Controls.MainBar"
              x:Name="root">
 	<mControls:ColorZone Grid.Row="0">
-		<Grid ColumnDefinitions="Auto, Auto, *, Auto"
-          Height="24">
-      <ToggleButton Grid.Column="0"
-                    x:Name="NavDrawerSwitch"
-                    IsChecked="{Binding IsDrawerOpen, ElementName=root}">
-        <mIcons:MaterialIcon Kind="Menu"/>
-      </ToggleButton>
+		<Grid ColumnDefinitions="Auto, Auto, *, Auto">
 			<StackPanel Grid.Column="1"
                   Orientation="Horizontal"
                   VerticalAlignment="Center">
@@ -37,10 +32,7 @@
 			</StackPanel>
 			<StackPanel Grid.Column="3"
                   Orientation="Horizontal">
-				<ToggleButton x:Name="ThemeToggle"
-                      Click="ThemeChange">
-					<mIcons:MaterialIcon Kind="ThemeLightDark"/>
-				</ToggleButton>
+        <u:ThemeToggleButton></u:ThemeToggleButton>
         <sbControls:MainBarMenu/>
 			</StackPanel>
 		</Grid>

@@ -24,7 +24,7 @@
                             Margin="5"/>
     <SplitView Grid.Row="1"
                DisplayMode="CompactOverlay"
-               CompactPaneLength="50"
+               CompactPaneLength="40"
                UseLightDismissOverlayMode="True"
                IsPaneOpen="{Binding IsMainDrawerOpen, Mode=TwoWay}">
       <SplitView.Pane>

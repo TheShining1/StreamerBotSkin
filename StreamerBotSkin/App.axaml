@@ -7,6 +7,7 @@
              xmlns:conv="clr-namespace:StreamerBotSkin.Converters"
              xmlns:grammars="clr-namespace:TextMateSharp.Grammars;assembly=TextMateSharp.Grammars"
              xmlns:local="clr-namespace:StreamerBotSkin"
+             RequestedThemeVariant="Dark"
              x:Class="StreamerBotSkin.App">
   <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 

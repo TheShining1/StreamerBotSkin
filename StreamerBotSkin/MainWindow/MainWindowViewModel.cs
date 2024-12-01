@@ -48,49 +48,49 @@ namespace StreamerBotSkin.ViewModels
         ViewModel=new MainViewModel()
       },
       new(){
-        Icon="BadgeAccountHorizontalOutline",
+        Icon="mdi-badge-account-horizontal-outline",
         Label="Viewers",
         CommandParameter="viewers",
         ViewModel=new ViewersViewModel()
       },
       new(){
-        Icon="LightningBoltOutline",
+        Icon="mdi-lightning-bolt-outline",
         Label="Actions",
         CommandParameter="actions",
         ViewModel=new ActionsViewModel()
       },
       new(){
-        Icon="ListBoxOutline",
+        Icon="mdi-list-box-outline",
         Label="Queues",
         CommandParameter="queues",
         ViewModel=new ActionQueuesViewModel()
       },
       new(){
-        Icon="MessageFlashOutline",
+        Icon="mdi-message-flash-outline",
         Label="Commands",
         CommandParameter="commands",
         ViewModel=new CommandsViewModel()
       },
       new(){
-        Icon="MidiPort",
+        Icon="mdi-midi-port",
         Label="Midi",
         CommandParameter="midi",
         ViewModel=new MidiViewModel()
       },
       new(){
-        Icon="AccountVoice",
+        Icon="mdi-account-voice",
         Label="Voice Control",
         CommandParameter="voicecontrol",
         ViewModel=new VoiceControlViewModel()
       },
       new(){
-        Icon="KeyboardOutline",
+        Icon="mdi-keyboard-outline",
         Label="Hotkeys",
         CommandParameter="hotkeys",
         ViewModel=new HotKeysViewModel()
       },
       new(){
-        Icon="ServerNetworkOutline",
+        Icon="mdi-server-network-outline",
         Label="Servers",
         CommandParameter="servers",
         ViewModel=new ServersViewModel()
