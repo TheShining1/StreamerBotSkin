@@ -3,11 +3,11 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:i="https://github.com/projektanker/icons.avalonia"
 			       xmlns:sbModels="clr-namespace:StreamerBotSkin.Models"
 			       xmlns:sbControls="clr-namespace:StreamerBotSkin.Controls"
 			       xmlns:sbContextMenus="clr-namespace:StreamerBotSkin.ContextMenus"
 			       xmlns:sbbControls="clr-namespace:StreamerBotControls;assembly=StreamerBotControls"
-             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
 			       xmlns:vm="using:StreamerBotSkin.ViewModels"
 			       x:DataType="vm:ActionsViewModel"
              x:Class="StreamerBotSkin.Panels.ActionsPanel">
@@ -85,7 +85,7 @@
           <Setter Property="Content">
             <Setter.Value>
               <Template>
-                <mIcons:MaterialIcon Kind="ChevronDown"/>
+                <i:Icon Value="mdi-ChevronDown"/>
               </Template>
             </Setter.Value>
           </Setter>
@@ -94,7 +94,7 @@
           <Setter Property="Content">
             <Setter.Value>
               <Template>
-                <mIcons:MaterialIcon Kind="ChevronUp"/>
+                <i:Icon Value="mdi-ChevronUp"/>
               </Template>
             </Setter.Value>
           </Setter>
@@ -103,7 +103,7 @@
           <Setter Property="Content">
             <Setter.Value>
               <Template>
-                <mIcons:MaterialIcon Kind="ChevronDownCircle"/>
+                <i:Icon Value="mdi-ChevronDownCircle"/>
               </Template>
             </Setter.Value>
           </Setter>
@@ -112,7 +112,7 @@
           <Setter Property="Content">
             <Setter.Value>
               <Template>
-                <mIcons:MaterialIcon Kind="ChevronUpCircle"/>
+                <i:Icon Value="mdi-ChevronUpCircle"/>
               </Template>
             </Setter.Value>
           </Setter>

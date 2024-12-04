@@ -13,7 +13,7 @@
       <Setter Property="Template">
         <Setter.Value>
           <ControlTemplate>
-            <mIcons:MaterialIcon Kind="ChevronDown"/>
+            <i:Icon Value="ChevronDown"/>
           </ControlTemplate>
         </Setter.Value>
       </Setter>
@@ -22,7 +22,7 @@
       <Setter Property="Template">
         <Setter.Value>
           <ControlTemplate>
-            <mIcons:MaterialIcon Kind="ChevronUp"/>
+            <i:Icon Value="ChevronUp"/>
           </ControlTemplate>
         </Setter.Value>
       </Setter>

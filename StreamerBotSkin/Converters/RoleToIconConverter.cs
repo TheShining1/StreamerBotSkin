@@ -12,7 +12,8 @@ namespace StreamerBotSkin.Converters
     {
       if (value is RoleType)
       {
-        return (string?)Enum.GetName(typeof(RoleTypeIcon), value);
+        var role = (string?)Enum.GetName(typeof(RoleTypeIcon), value ?? "help");
+        return $"mdi-{role?.ToLower()}";
       }
 
       return null;

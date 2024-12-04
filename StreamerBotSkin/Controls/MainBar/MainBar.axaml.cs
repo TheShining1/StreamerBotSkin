@@ -29,19 +29,6 @@ namespace StreamerBotSkin.Controls
     {
       get { return _isDrawerOpen; }
       set { SetAndRaise(IsDrawerOpenProperty, ref _isDrawerOpen, value); }
-    }
-
-    private static readonly MaterialTheme MaterialThemeStyles =
-            Application.Current!.LocateMaterialTheme<MaterialTheme>();
-
-    void ThemeChange(object? sender, RoutedEventArgs e)
-    {
-      var toggleButton = sender as ToggleButton;
-      if (toggleButton == null) return;
-
-      bool isChecked = toggleButton.IsChecked ?? false;
-
-      MaterialThemeStyles.BaseTheme = MaterialThemeStyles.BaseTheme == BaseThemeMode.Light ? BaseThemeMode.Dark : BaseThemeMode.Light;
-    }
+    }    
   }
 }

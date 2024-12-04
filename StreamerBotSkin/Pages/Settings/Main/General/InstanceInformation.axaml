@@ -3,16 +3,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="200"
-             xmlns:mControls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
-             xmlns:mAssist="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
-             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+			 xmlns:i="https://github.com/projektanker/icons.avalonia"
              x:Class="StreamerBotSkin.Controls.InstanceInformation">
-    <mControls:Card Padding="10">
+    <!--<mControls:Card Padding="10">-->
       <StackPanel>        
         <TextBlock
                    Text="Instance Information"/>
         <Grid RowDefinitions="*,*">
-          <TextBox Grid.Row="0"
+          <!--<TextBox Grid.Row="0"
                    IsEnabled="False"
                    UseFloatingWatermark="True"
                    mAssist:TextFieldAssist.Label="ID">
@@ -21,11 +19,11 @@
             </TextBox.Text>
             <TextBox.InnerRightContent>
               <Button Classes="Icon">
-                <mIcons:MaterialIcon Kind="Refresh"/>
+                <i:Icon Value="Refresh"/>
               </Button>
             </TextBox.InnerRightContent>
-          </TextBox>
-          <TextBox Grid.Row="1"
+          </TextBox>-->
+          <!--<TextBox Grid.Row="1"
                    UseFloatingWatermark="True"
                    mAssist:TextFieldAssist.Label="Name">
             <TextBox.Text>
@@ -33,11 +31,11 @@
             </TextBox.Text>
             <TextBox.InnerRightContent>
               <Button Classes="Icon">
-                <mIcons:MaterialIcon Kind="ContentSave"/>
+                <i:Icon Value="mdi-content-save"/>
               </Button>
             </TextBox.InnerRightContent>
-          </TextBox>
+          </TextBox>-->
         </Grid>
       </StackPanel>
-    </mControls:Card>
+    <!--</mControls:Card>-->
 </UserControl>

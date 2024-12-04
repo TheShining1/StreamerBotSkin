@@ -3,8 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             xmlns:mAssist="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
-             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             xmlns:i="https://github.com/projektanker/icons.avalonia"
              x:Class="StreamerBotSkin.Views.VoiceControlView">
   <TabControl>
     <TabItem Header="Commands">
@@ -25,7 +24,7 @@
           <ComboBoxItem Content="ru-RU"/>
           <ComboBoxItem Content="fr-FR"/>
         </ComboBox>
-        <TextBox mAssist:TextFieldAssist.Label="Confidence treshold"/>
+        <!--<TextBox mAssist:TextFieldAssist.Label="Confidence treshold"/>-->
         <CheckBox Content="Log speech to text dictation"/>
         <StackPanel Orientation="Horizontal">
           <ComboBox>
@@ -34,7 +33,7 @@
             <ComboBoxItem Content="Device 2"/>
           </ComboBox>
           <Button>
-            <mIcons:MaterialIcon Kind="Refresh"/>
+            <i:Icon Value="mdi-refresh"/>
           </Button>
         </StackPanel>
       <StackPanel Orientation="Horizontal">

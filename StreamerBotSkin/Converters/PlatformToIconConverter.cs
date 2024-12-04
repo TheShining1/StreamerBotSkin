@@ -10,7 +10,8 @@ namespace StreamerBotSkin.Converters
   {    
     public object? Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
-      return (string?)Enum.GetName(typeof(PlatformIcon), value);
+      var platform = (string?)Enum.GetName(typeof(PlatformIcon), value ?? "help");
+      return $"mdi-{platform?.ToLower()}";
     }
 
     public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)

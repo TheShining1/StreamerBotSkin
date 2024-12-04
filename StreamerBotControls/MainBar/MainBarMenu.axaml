@@ -3,21 +3,21 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="400"
-             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             xmlns:i="https://github.com/projektanker/icons.avalonia"
              x:Class="StreamerBotControls.MainBarMenu">
 	<Menu>
 		<MenuItem VerticalAlignment="Center">
 			<MenuItem.Header>
-				<mIcons:MaterialIcon Kind="DotsVertical"/>
+				<i:Icon Value="mdi-dotsVertical"/>
 			</MenuItem.Header>
 			<MenuItem Header="Settings">
 				<MenuItem.Icon>
-					<mIcons:MaterialIcon Kind="Cog" />
+					<i:Icon Value="mdi-Cog" />
 				</MenuItem.Icon>
 			</MenuItem>
 			<MenuItem Header="About">
 				<MenuItem.Icon>
-					<mIcons:MaterialIcon Kind="AlertCircle" />
+					<i:Icon Value="mdi-AlertCircle" />
 				</MenuItem.Icon>
 			</MenuItem>
 		</MenuItem>

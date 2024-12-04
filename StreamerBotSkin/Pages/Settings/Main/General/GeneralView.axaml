@@ -2,7 +2,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:mAssist="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
              xmlns:sbControls="clr-namespace:StreamerBotSkin.Controls"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              xmlns:vm="using:StreamerBotSkin.ViewModels"
@@ -38,9 +37,9 @@
           345w3g45g5gw-4tw43t-e4tbe4vt-e4te4vct
           <TextBox.InnerRightContent>
             -->
-  <!-- <Button Classes="Flat" Content="{mIcons:MaterialIconExt Refresh}" /> --><!--
+  <!-- <Button Classes="Flat" Content="{i:IconExt Refresh}" /> --><!--
             --><!-- <Button Classes="Icon">
-										<mIcons:MaterialIcon Kind="Refresh"/>
+										<i:Icon Value="Refresh"/>
 									</Button> --><!--
           </TextBox.InnerRightContent>
         </TextBox>
@@ -51,9 +50,9 @@
             mAssist:TextFieldAssist.Label="Name">
           345w3g45g5gw-4tw43t-e4tbe4vt-e4te4vct
           <TextBox.InnerRightContent>
-            --><!-- <Button Classes="Flat" Content="{mIcons:MaterialIconExt Save}" /> --><!--
+            --><!-- <Button Classes="Flat" Content="{i:IconExt Save}" /> --><!--
             --><!-- <Button Classes="Icon">
-										<mIcons:MaterialIcon Kind="Save"/>
+										<i:Icon Value="Save"/>
 									</Button> --><!--
           </TextBox.InnerRightContent>
         </TextBox>

@@ -4,9 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              xmlns:sbControls="clr-namespace:StreamerBotSkin.Controls.Auth"
-             xmlns:mControls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
-             xmlns:mAssist="clr-namespace:Material.Styles.Assists;assembly=Material.Styles"
-             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             xmlns:i="https://github.com/projektanker/icons.avalonia"
              x:Class="StreamerBotSkin.Views.StreamappsSettingsView"
              xmlns:vm="using:StreamerBotSkin.ViewModels"
              x:DataType="vm:StreamappsSettingsViewModel">
@@ -47,7 +45,7 @@
               Height="36"
               HorizontalAlignment="Right"
               VerticalAlignment="Top"
-              Content="{mIcons:MaterialIconExt MenuOpen, Size=20}"/>
+              Content="{i:IconExt MenuOpen, Size=20}"/>
     </Panel>
   </mControls:SideSheet>-->
 </UserControl>

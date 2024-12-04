@@ -3,27 +3,26 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="400"
-             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             xmlns:i="https://github.com/projektanker/icons.avalonia"
              xmlns:vm="using:StreamerBotSkin.ViewModels"
              x:DataType="vm:MainWindowViewModel"
              x:Class="StreamerBotSkin.Controls.MainBarMenu">
 	<Menu>
-		<MenuItem VerticalAlignment="Center"
-              Height="24">
+		<MenuItem VerticalAlignment="Center">
 			<MenuItem.Header>
-				<mIcons:MaterialIcon Kind="DotsVertical"/>
+				<i:Icon Value="mdi-dots-vertical"/>
 			</MenuItem.Header>
 			<MenuItem Header="Settings"
-                Command="{Binding NavigateCommand}"
-                CommandParameter="settings">
+					  Command="{Binding NavigateCommand}"
+					  CommandParameter="settings">
 				<MenuItem.Icon>
-					<mIcons:MaterialIcon Kind="Cog" />
+					<i:Icon Value="mdi-cog" />
 				</MenuItem.Icon>
 			</MenuItem>
 			<MenuItem Header="About"
                 Command="{Binding OpenAboutCommand}">
 				<MenuItem.Icon>
-					<mIcons:MaterialIcon Kind="AlertCircle" />
+					<i:Icon Value="mdi-alert-circle" />
 				</MenuItem.Icon>
 			</MenuItem>
 		</MenuItem>

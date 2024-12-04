@@ -3,8 +3,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="500"
-        xmlns:mControls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
-        xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
         xmlns:sbControls="clr-namespace:StreamerBotSkin.Controls"
         x:CompileBindings="True"
         xmlns:vm="using:StreamerBotSkin.ViewModels"

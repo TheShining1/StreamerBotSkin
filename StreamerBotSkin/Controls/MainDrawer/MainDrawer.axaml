@@ -8,58 +8,55 @@
              xmlns:models="clr-namespace:StreamerBotSkin.Models"
              x:Name="root"
              x:Class="StreamerBotSkin.Controls.MainDrawer">
-  <UserControl.Styles>
-    <Style Selector="i|Icon">
-      <Setter Property="FontSize" Value="24"/>
-    </Style>
-    <Style Selector="SplitView StackPanel.rotatable">
-      <Setter Property="Orientation" Value="Horizontal"/>
-    </Style>
-    <Style Selector="SplitView:closed StackPanel.rotatable">
-      <Setter Property="Orientation" Value="Vertical"/>
-    </Style>
-  </UserControl.Styles>
-  <Grid RowDefinitions="Auto, Auto, *, Auto, Auto">
-    <StackPanel Grid.Row="0">
-      <ToggleButton i:Attached.Icon="mdi-menu"
-                    IsChecked="{Binding #root.IsDrawerOpen}"/>
-    </StackPanel>
-    <Separator Grid.Row="1"/>
-    <u:NavMenu Grid.Row="2"
-               x:DataType="models:MainDrawerMenuItem"
-               IconBinding="{Binding Icon}"
-               ItemsSource="{Binding #root.MenuItems}"
-               SelectedItem="{Binding #root.SelectedMenuItem}">
-      <u:NavMenu.IconTemplate>
-        <DataTemplate x:DataType="{x:Type x:String}">
-          <i:Icon Value="{Binding }"/>
-        </DataTemplate>
-      </u:NavMenu.IconTemplate>
-      <u:NavMenu.HeaderTemplate>
-        <DataTemplate x:DataType="models:MainDrawerMenuItem">
-          <TextBlock VerticalAlignment="Center"
-                     Text="{Binding Label}"/>
-        </DataTemplate>
-      </u:NavMenu.HeaderTemplate>
-    </u:NavMenu>
-    <Separator Grid.Row="3"/>
-    <StackPanel Grid.Row="4"
-                HorizontalAlignment="Center">
-      <Button Classes="Flat">
-        <StackPanel Orientation="Horizontal">
-          <i:Icon Value="mdi-download-outline"/>
-          <TextBlock VerticalAlignment="Center">Check for updates</TextBlock>
-        </StackPanel>
-      </Button>
-      <StackPanel Classes="rotatable"
-                  HorizontalAlignment="Center">
-        <Button Classes="Flat">
-          <i:Icon Value="mdi-patreon" />
-        </Button>
-        <Button Classes="Flat">
-          <i:Icon Value="mdi-coffee" />
-        </Button>
-      </StackPanel>
-    </StackPanel>
-  </Grid>
+	<UserControl.Styles>
+		<Style Selector="SplitView StackPanel.rotatable">
+			<Setter Property="Orientation" Value="Horizontal"/>
+		</Style>
+		<Style Selector="SplitView:closed StackPanel.rotatable">
+			<Setter Property="Orientation" Value="Vertical"/>
+		</Style>
+	</UserControl.Styles>
+	<Grid RowDefinitions="Auto, Auto, *, Auto, Auto">
+		<ToggleButton Grid.Row="0"
+					  HorizontalAlignment="Left"
+					  i:Attached.Icon="mdi-menu"
+					  IsChecked="{Binding #root.IsDrawerOpen}"/>
+		<Separator Grid.Row="1"/>
+		<u:NavMenu Grid.Row="2"
+				   x:DataType="models:MainDrawerMenuItem"
+				   IconBinding="{Binding Icon}"
+				   ItemsSource="{Binding #root.MenuItems}"
+				   SelectedItem="{Binding #root.SelectedMenuItem}">
+			<u:NavMenu.IconTemplate>
+				<DataTemplate x:DataType="{x:Type x:String}">
+					<i:Icon Value="{Binding }"/>
+				</DataTemplate>
+			</u:NavMenu.IconTemplate>
+			<u:NavMenu.HeaderTemplate>
+				<DataTemplate x:DataType="models:MainDrawerMenuItem">
+					<TextBlock VerticalAlignment="Center"
+							   Text="{Binding Label}"/>
+				</DataTemplate>
+			</u:NavMenu.HeaderTemplate>
+		</u:NavMenu>
+		<Separator Grid.Row="3"/>
+		<StackPanel Grid.Row="4"
+					HorizontalAlignment="Center">
+			<Button Classes="Flat">
+				<StackPanel Orientation="Horizontal">
+					<i:Icon Value="mdi-download-outline"/>
+					<TextBlock VerticalAlignment="Center">Check for updates</TextBlock>
+				</StackPanel>
+			</Button>
+			<StackPanel Classes="rotatable"
+						HorizontalAlignment="Center">
+				<Button Classes="Flat">
+					<i:Icon Value="mdi-patreon" />
+				</Button>
+				<Button Classes="Flat">
+					<i:Icon Value="mdi-coffee" />
+				</Button>
+			</StackPanel>
+		</StackPanel>
+	</Grid>
 </UserControl>

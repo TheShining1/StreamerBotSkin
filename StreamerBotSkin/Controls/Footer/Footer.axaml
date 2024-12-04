@@ -2,39 +2,40 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-			 xmlns:mControls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
-             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="400"
+			 xmlns:i="https://github.com/projektanker/icons.avalonia"
              x:Class="StreamerBotSkin.Controls.Footer">
-	<mControls:ColorZone>
+	<!--<mControls:ColorZone>-->
 		<Grid HorizontalAlignment="Right"
           ColumnDefinitions="Auto"
           Height="24">
 			<Menu Grid.Column="0">
-				<MenuItem Header="{mIcons:MaterialIconExt AlertCircle}"
-                  Height="24">
+				<MenuItem>
+					<MenuItem.Icon>
+						<i:Icon Value="mdi-alert-circle"/>
+					</MenuItem.Icon>
 					<MenuItem Header="OBS">
 						<MenuItem.Icon>
-							<mIcons:MaterialIcon Kind="AlertCircle"/>
+							<i:Icon Value="mdi-alert-circle"/>
 						</MenuItem.Icon>
 					</MenuItem>
 					<MenuItem Header="Twitch">
 						<MenuItem.Icon>
-							<mIcons:MaterialIcon Kind="AlertCircle"/>
+							<i:Icon Value="mdi-alert-circle"/>
 						</MenuItem.Icon>
 					</MenuItem>
 					<MenuItem Header="YouTube">
 						<MenuItem.Icon>
-							<mIcons:MaterialIcon Kind="AlertCircle"/>
+							<i:Icon Value="mdi-alert-circle"/>
 						</MenuItem.Icon>
 					</MenuItem>
 					<MenuItem Header="Streamer.Bot">
 						<MenuItem.Icon>
-							<mIcons:MaterialIcon Kind="AlertCircle"/>
+							<i:Icon Value="mdi-alert-circle"/>
 						</MenuItem.Icon>
 					</MenuItem>
 				</MenuItem>
 			</Menu>
 		</Grid>
-	</mControls:ColorZone>
+	<!--</mControls:ColorZone>-->
 </UserControl>

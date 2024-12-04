@@ -20,7 +20,7 @@ namespace StreamerBotSkin.Models
     Video,
     Sword,
     Diamond,
-    EyeOutline,
+    Eye,
     Incognito
   }
 

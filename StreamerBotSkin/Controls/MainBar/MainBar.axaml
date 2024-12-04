@@ -4,37 +4,34 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="500"
              xmlns:u="https://irihi.tech/ursa"
-             xmlns:mControls="clr-namespace:Material.Styles.Controls;assembly=Material.Styles"
-             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             xmlns:i="https://github.com/projektanker/icons.avalonia"
              xmlns:sbControls="clr-namespace:StreamerBotSkin.Controls"
              x:Class="StreamerBotSkin.Controls.MainBar"
              x:Name="root">
-	<mControls:ColorZone Grid.Row="0">
-		<Grid ColumnDefinitions="Auto, Auto, *, Auto">
-			<StackPanel Grid.Column="1"
-                  Orientation="Horizontal"
-                  VerticalAlignment="Center">
-				<Button Classes="Flat">
-					<mIcons:MaterialIcon Kind="ContentSave"/>
-				</Button>
-        <Button Classes="Flat">
-          <mIcons:MaterialIcon Kind="Chat"/>
-        </Button>
-        <Button Classes="Flat">
-          <mIcons:MaterialIcon Kind="Timeline"/>
-        </Button>
-        <Button Classes="Flat">
-					<mIcons:MaterialIcon Kind="ApplicationVariable"/>
-				</Button>
-			</StackPanel>
-			<StackPanel Grid.Column="2"
-						Orientation="Horizontal">
-			</StackPanel>
-			<StackPanel Grid.Column="3"
-                  Orientation="Horizontal">
-        <u:ThemeToggleButton></u:ThemeToggleButton>
-        <sbControls:MainBarMenu/>
-			</StackPanel>
-		</Grid>
-	</mControls:ColorZone>
+	<Grid ColumnDefinitions="Auto, Auto, *, Auto">
+		<StackPanel Grid.Column="1"
+			  Orientation="Horizontal"
+			  VerticalAlignment="Center">
+			<Button Classes="Flat">
+				<i:Icon Value="mdi-content-save"/>
+			</Button>
+			<Button Classes="Flat">
+				<i:Icon Value="mdi-chat"/>
+			</Button>
+			<Button Classes="Flat">
+				<i:Icon Value="mdi-timeline"/>
+			</Button>
+			<Button Classes="Flat">
+				<i:Icon Value="mdi-application-variable"/>
+			</Button>
+		</StackPanel>
+		<StackPanel Grid.Column="2"
+					Orientation="Horizontal">
+		</StackPanel>
+		<StackPanel Grid.Column="3"
+			  Orientation="Horizontal">
+			<u:ThemeToggleButton></u:ThemeToggleButton>
+			<sbControls:MainBarMenu/>
+		</StackPanel>
+	</Grid>
 </UserControl>

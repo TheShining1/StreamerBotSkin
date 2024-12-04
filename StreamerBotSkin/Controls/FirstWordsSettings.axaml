@@ -2,15 +2,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"             
+             xmlns:i="https://github.com/projektanker/icons.avalonia"
              x:Class="StreamerBotSkin.Controls.FirstWordsSettings">
   <StackPanel>
     <TextBlock Text="First words" />
     <TextBox Text="Autoreset cache">
       <TextBox.InnerRightContent>
         <Button>
-          <mIcons:MaterialIcon Kind="Clear"/>
+          <i:Icon Value="Clear"/>
         </Button>
       </TextBox.InnerRightContent>    
   </TextBox>

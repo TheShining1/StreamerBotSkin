@@ -3,9 +3,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:i="https://github.com/projektanker/icons.avalonia"
              xmlns:uControls="https://irihi.tech/ursa"
              xmlns:sbControls="clr-namespace:StreamerBotControls;assembly=StreamerBotControls"
-             xmlns:mIcons="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
              xmlns:vm="using:StreamerBotSkin.ViewModels"
              x:DataType="vm:MainViewModel"
              x:Class="StreamerBotSkin.Views.MainView">
@@ -19,9 +19,9 @@
                             Maximum="100"
                             Value="{Binding NumberText}"/>-->
 
-    <TextBox Text="{Binding FilePathText}"/>
+    <!--<TextBox Text="{Binding FilePathText}"/>
     <sbControls:FilePathField Title="Output file"
-                              FilePath="{Binding FilePathText}"/>
+                              FilePath="{Binding FilePathText}"/>-->
 
     <!--<TextBox Text="{Binding FileText}"/>
     <sbControls:MultilineTextField Title="Output text"
@@ -41,10 +41,10 @@
     <sbControls:SensitiveTextField Title="Token"
                                    Text="{Binding Text}"/>-->
 
-    <TextBox Text="{Binding ColorText}"/>
-    <sbControls:ColoredTextField Color="{Binding ColorText}"/>
+    <!--<TextBox Text="{Binding ColorText}"/>
+    <sbControls:ColoredTextField Color="{Binding ColorText}"/>-->
 
-    <TabControl>
+    <!--<TabControl>
       <TabItem Header="ColorSpectrum">
         <ColorSpectrum/>
       </TabItem>
@@ -60,7 +60,7 @@
       <TabItem Header="ColorView">
         <ColorView/>
       </TabItem>
-    </TabControl>
+    </TabControl>-->
     <StackPanel>
       <uControls:ButtonGroup Classes="Solid Warning">
         <Button Content="Hello" />
