@@ -63,61 +63,22 @@
       </DataGrid.DataTemplates>
     </DataGrid>-->
     <DataGrid Grid.Row="1"
-              x:Name="ActionsGrid"
               AutoGenerateColumns="False"
               ColumnWidth="*"
               ItemsSource="{Binding ActionsItemsFiltered}"
               SelectedItem="{Binding CurrentAction}"
               CanUserResizeColumns="True"
-              ColumnHeaderHeight="36"
-              MinColumnWidth="50"
-              VerticalScrollBarVisibility="Visible">
-      <DataGrid.ContextMenu>
+              MinColumnWidth="50">
+      <!--<DataGrid.ContextMenu>
         <ContextMenu>
           <MenuItem Header="Add" Command="{Binding OpenAddEditActionDialogCommand}"/>
           <Separator />
           <MenuItem Header="Collapse All" />
           <MenuItem Header="Expand All" />
         </ContextMenu>
-      </DataGrid.ContextMenu>
-      <DataGrid.Styles>
-        <Style Selector="ToggleButton:unchecked">
-          <Setter Property="Content">
-            <Setter.Value>
-              <Template>
-                <i:Icon Value="mdi-ChevronDown"/>
-              </Template>
-            </Setter.Value>
-          </Setter>
-        </Style>
-        <Style Selector="ToggleButton:checked">
-          <Setter Property="Content">
-            <Setter.Value>
-              <Template>
-                <i:Icon Value="mdi-ChevronUp"/>
-              </Template>
-            </Setter.Value>
-          </Setter>
-        </Style>
-        <Style Selector="ToggleButton:unchecked:pointerover">
-          <Setter Property="Content">
-            <Setter.Value>
-              <Template>
-                <i:Icon Value="mdi-ChevronDownCircle"/>
-              </Template>
-            </Setter.Value>
-          </Setter>
-        </Style>
-        <Style Selector="ToggleButton:checked:pointerover">
-          <Setter Property="Content">
-            <Setter.Value>
-              <Template>
-                <i:Icon Value="mdi-ChevronUpCircle"/>
-              </Template>
-            </Setter.Value>
-          </Setter>
-        </Style>
-        <Style Selector="DataGridRowGroupHeader">
+      </DataGrid.ContextMenu>-->
+      <!--<DataGrid.Styles>-->               
+        <!--<Style Selector="DataGridRowGroupHeader">
           <Setter Property="IsItemCountVisible" Value="True" />
           <Setter Property="ItemCountFormat" Value="({0} actions)" />
           <Setter Property="ContextMenu">
@@ -131,11 +92,11 @@
               <MenuItem Header="Expand All" />
             </ContextMenu>
           </Setter>
-        </Style>
-        <Style Selector="DataGridRow">
-          <Setter Property="Height" Value="38" />
+        </Style>-->
+        <!--<Style Selector="DataGridRow">-->
+          <!--<Setter Property="Height" Value="38" />-->
           <!--<Setter Property="ContextMenu" Value="{Binding ActionRowContextMenu}"/>-->
-          <Setter Property="ContextMenu">
+          <!--<Setter Property="ContextMenu">
             <ContextMenu>
               <MenuItem Header="Add" Command="{Binding OpenAddEditActionDialogCommand}"/>
               <MenuItem Header="Edit" />
@@ -157,15 +118,15 @@
               <MenuItem Header="Collapse All" />
               <MenuItem Header="Expand All" />
             </ContextMenu>
-          </Setter>
-        </Style>
-        <Style Selector="ContextMenu">
+          </Setter>-->
+        <!--</Style>-->
+        <!--<Style Selector="ContextMenu">
           <Setter Property="Padding" Value="0"/>
-        </Style>
-        <Style Selector="MenuItem">
+        </Style>-->
+        <!--<Style Selector="MenuItem">
           <Setter Property="Height" Value="24"/>
-        </Style>
-      </DataGrid.Styles>
+        </Style>-->
+      <!--</DataGrid.Styles>-->
       <DataGrid.Columns>
         <!--<DataGridCheckBoxColumn Header=""
                                 x:DataType="sbModels:SBAction"
@@ -185,11 +146,10 @@
                             x:DataType="sbModels:SBAction"
                             Binding="{Binding Name}"/>-->
         <DataGridTemplateColumn Header="Name"
-                            x:DataType="sbModels:SBAction">
+								x:DataType="sbModels:SBAction">
           <DataGridTemplateColumn.CellTemplate>
             <DataTemplate x:DataType="sbModels:SBAction">
-              <TextBlock Classes="dense"
-                         Text="{Binding Name}"/>
+              <TextBlock Text="{Binding Name}"/>
             </DataTemplate>
           </DataGridTemplateColumn.CellTemplate>
         </DataGridTemplateColumn>

@@ -21,7 +21,7 @@ namespace StreamerBotSkin.Controls
     {
       InitializeComponent();
 
-      GlobalCommands.mainDrawer = this;
+      //GlobalCommands.mainDrawer = this;
     }
 
     public static readonly DirectProperty<MainDrawer, bool> IsDrawerOpenProperty =

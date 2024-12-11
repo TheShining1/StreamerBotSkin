@@ -2,7 +2,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="100" d:DesignHeight="450"
              xmlns:u="https://irihi.tech/ursa"
              xmlns:i="https://github.com/projektanker/icons.avalonia"
              xmlns:models="clr-namespace:StreamerBotSkin.Models"
@@ -17,10 +17,17 @@
 		</Style>
 	</UserControl.Styles>
 	<Grid RowDefinitions="Auto, Auto, *, Auto, Auto">
-		<ToggleButton Grid.Row="0"
-					  HorizontalAlignment="Left"
-					  i:Attached.Icon="mdi-menu"
-					  IsChecked="{Binding #root.IsDrawerOpen}"/>
+		<ToggleSwitch Grid.Row="0"
+					  Padding="0,8"
+					  Theme="{DynamicResource ButtonToggleSwitch}"
+					  IsChecked="{Binding #root.IsDrawerOpen}">
+		<ToggleSwitch.OnContent>
+			<i:Icon Value="mdi-menu-open"/>
+		</ToggleSwitch.OnContent>
+		<ToggleSwitch.OffContent>
+			<i:Icon Value="mdi-menu-close"/>
+		</ToggleSwitch.OffContent>
+		</ToggleSwitch>
 		<Separator Grid.Row="1"/>
 		<u:NavMenu Grid.Row="2"
 				   x:DataType="models:MainDrawerMenuItem"
@@ -42,18 +49,22 @@
 		<Separator Grid.Row="3"/>
 		<StackPanel Grid.Row="4"
 					HorizontalAlignment="Center">
-			<Button Classes="Flat">
-				<StackPanel Orientation="Horizontal">
-					<i:Icon Value="mdi-download-outline"/>
-					<TextBlock VerticalAlignment="Center">Check for updates</TextBlock>
-				</StackPanel>
-			</Button>
+			<u:IconButton Content="Check for updates"
+						  Padding="0,6"
+						  Theme="{DynamicResource BorderlessIconButton}">
+				<u:IconButton.Icon>
+					<i:Icon Margin="6,0"
+							Value="mdi-download-outline"/>
+				</u:IconButton.Icon>
+			</u:IconButton>
 			<StackPanel Classes="rotatable"
 						HorizontalAlignment="Center">
-				<Button Classes="Flat">
+				<Button Padding="0,6"
+						Theme="{DynamicResource BorderlessButton}">					
 					<i:Icon Value="mdi-patreon" />
 				</Button>
-				<Button Classes="Flat">
+				<Button Padding="0,6"
+						Theme="{DynamicResource BorderlessButton}">
 					<i:Icon Value="mdi-coffee" />
 				</Button>
 			</StackPanel>

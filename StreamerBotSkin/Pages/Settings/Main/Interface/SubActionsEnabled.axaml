@@ -9,12 +9,14 @@
              x:Class="StreamerBotSkin.Controls.SubActionsEnabled">
   <StackPanel>
     <TextBlock Text="{Binding Title, ElementName=root}"/>
-    <TreeView ItemsSource="{Binding SubActions}">
-      <TreeView.ItemTemplate>
-        <TreeDataTemplate ItemsSource="{Binding Items}">
-          <CheckBox Content="{Binding Name} "/>
-        </TreeDataTemplate>
-      </TreeView.ItemTemplate>
-    </TreeView>
+	  <ScrollViewer>
+        <TreeView ItemsSource="{Binding SubActions}">
+          <TreeView.ItemTemplate>
+            <TreeDataTemplate ItemsSource="{Binding Items}">
+              <CheckBox Content="{Binding Name} "/>
+            </TreeDataTemplate>
+          </TreeView.ItemTemplate>
+	    </TreeView>
+	  </ScrollViewer>
   </StackPanel>
 </UserControl>

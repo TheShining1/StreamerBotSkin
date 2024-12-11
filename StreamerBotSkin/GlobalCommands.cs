@@ -11,6 +11,6 @@ namespace StreamerBotSkin
 {
     public static class GlobalCommands
     {
-        public static MainDrawer mainDrawer = new MainDrawer();
+        //public static MainDrawer mainDrawer = new MainDrawer();
     }
 }

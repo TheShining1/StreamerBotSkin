@@ -10,7 +10,7 @@
     <TextBox Text="Autoreset cache">
       <TextBox.InnerRightContent>
         <Button>
-          <i:Icon Value="Clear"/>
+          <i:Icon Value="mdi-clear"/>
         </Button>
       </TextBox.InnerRightContent>    
   </TextBox>

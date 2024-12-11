@@ -15,9 +15,7 @@
   </Design.DataContext>
   <DataGrid ItemsSource="{Binding Queues}"
             CanUserResizeColumns="True"
-            CanUserReorderColumns="True"
-            HorizontalScrollBarVisibility="Visible"
-            VerticalScrollBarVisibility="Visible">
+            CanUserReorderColumns="True">
     <DataGrid.Columns>
       <DataGridTextColumn Header="Name"
                           Binding="{Binding Name}"

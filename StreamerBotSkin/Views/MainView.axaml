@@ -68,6 +68,7 @@
       </uControls:ButtonGroup>
       <uControls:TagInput />
     </StackPanel>
+	  <ColorView/>
 
   </StackPanel>
 </UserControl>

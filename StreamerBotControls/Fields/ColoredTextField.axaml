@@ -7,18 +7,13 @@
              xmlns:local="clr-namespace:StreamerBotControls;assembly=StreamerBotControls"
              x:Name="root"
              x:Class="StreamerBotControls.ColoredTextField">
-  <TextBox Classes="solo"
-           BorderBrush="{Binding $self.Foreground}"
+  <TextBox BorderBrush="{Binding $self.Foreground}"
            BorderThickness="1"
            Text="{Binding #root.Color}"
            Background="{Binding #root.Color}">
     <TextBox.InnerRightContent>
       <Button Classes="flat">
-        <i:Icon HorizontalAlignment="Center"
-                             VerticalAlignment="Center"
-                             Width="20"
-                             Height="20"
-                             Value="mdi-palette"/>
+        <i:Icon Value="mdi-palette"/>
         <Button.Flyout>
           <Flyout Placement="RightEdgeAlignedBottom">
             <!--<mControls:Card>-->

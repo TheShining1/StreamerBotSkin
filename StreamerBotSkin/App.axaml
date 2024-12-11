@@ -4,9 +4,8 @@
              xmlns:u-semi="https://irihi.tech/ursa/themes/semi"			 
              xmlns:i="https://github.com/projektanker/icons.avalonia"
              xmlns:conv="clr-namespace:StreamerBotSkin.Converters"
-             xmlns:grammars="clr-namespace:TextMateSharp.Grammars;assembly=TextMateSharp.Grammars"
              xmlns:local="clr-namespace:StreamerBotSkin"
-             RequestedThemeVariant="Dark"
+             RequestedThemeVariant="Default"
              x:Class="StreamerBotSkin.App">
 	<!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
@@ -18,6 +17,9 @@
 	<Application.Styles>
 		<semi:SemiTheme/>
 		<u-semi:SemiTheme/>
+		
+		<StyleInclude Source="avares://Semi.Avalonia.ColorPicker/Index.axaml" />
+		<StyleInclude Source="avares://Semi.Avalonia.DataGrid/Index.axaml" />
 		
 		<Style Selector="i|Icon">
 			<Setter Property="FontSize" Value="24"/>

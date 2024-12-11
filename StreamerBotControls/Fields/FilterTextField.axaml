@@ -6,18 +6,13 @@
              xmlns:i="https://github.com/projektanker/icons.avalonia"
              x:Name="root"
              x:Class="StreamerBotControls.FilterTextField">
-  <TextBox Watermark="Filter"
-           Classes="solo clearButton"
-           BorderBrush="{Binding $self.Foreground}"
-           BorderThickness="1"
+  <TextBox Classes="ClearButton Bordered"
+		   Watermark="Filter"
            Text="{Binding #root.Text}">
     <TextBox.InnerLeftContent>
       <i:Icon HorizontalAlignment="Center"
-                           VerticalAlignment="Center"
-                           Width="20"
-                           Height="20"
-                           Value="mdi-magnify"
-                           Margin="5,0,0,0"/>
+			  VerticalAlignment="Center"
+			  Value="mdi-magnify"/>
     </TextBox.InnerLeftContent>
   </TextBox>
 </UserControl>

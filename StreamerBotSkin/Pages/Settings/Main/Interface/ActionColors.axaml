@@ -4,27 +4,30 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:i="https://github.com/projektanker/icons.avalonia"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+			 xmlns:sbbControls="clr-namespace:StreamerBotControls;assembly=StreamerBotControls"			 
              x:Class="StreamerBotSkin.Controls.ActionColors">
   <StackPanel>
     <TextBlock>Action Colors</TextBlock>
     <StackPanel>
-        <!--<TextBox mAssist:TextFieldAssist.Label="Comment color"
+		<sbbControls:ColoredTextField Color="#229977"/>
+		<sbbControls:ColoredTextField Color="#DB7093"/>
+        <!--<TextBox Watermark="Comment color"
                  UseFloatingWatermark="True"
                  Background="{Binding $self.Text}"
                  Text="#229977">
           <TextBox.InnerRightContent>
             <Button Classes="Icon">
-              <i:Icon Value="mdi-DotsHorizontal"/>
+              <i:Icon Value="mdi-dots-horizontal"/>
             </Button>
           </TextBox.InnerRightContent>
         </TextBox>-->
-        <!--<TextBox mAssist:TextFieldAssist.Label="Sub-action disabled color"
+        <!--<TextBox Watermark="Sub-action disabled color"
                  UseFloatingWatermark="True"
                  Background="{Binding $self.Text}"
                  Text="#DB7093">
           <TextBox.InnerRightContent>
             <Button Classes="Icon">
-              <i:Icon Value="mdi-DotsHorizontal"/>
+              <i:Icon Value="mdi-dots-horizontal"/>
             </Button>
           </TextBox.InnerRightContent>
         </TextBox>-->
