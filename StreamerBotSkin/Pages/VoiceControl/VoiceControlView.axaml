@@ -4,6 +4,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              xmlns:i="https://github.com/projektanker/icons.avalonia"
+             xmlns:u="https://irihi.tech/ursa"
+             xmlns:sbControls="clr-namespace:StreamerBotSkin.Controls;assembly=StreamerBotSkin"
+             xmlns:sbbControls="clr-namespace:StreamerBotControls;assembly=StreamerBotControls"
+             xmlns:vm="using:StreamerBotSkin.ViewModels"
+             x:DataType="vm:VoiceControlViewModel"
              x:Class="StreamerBotSkin.Views.VoiceControlView">
   <TabControl>
     <TabItem Header="Commands">
@@ -18,29 +23,45 @@
       </DataGrid>
     </TabItem>
     <TabItem Header="Settings">
-      <StackPanel>
-        <ComboBox>
-          <ComboBoxItem Content="en-US"/>
-          <ComboBoxItem Content="ru-RU"/>
-          <ComboBoxItem Content="fr-FR"/>
-        </ComboBox>
-        <!--<TextBox mAssist:TextFieldAssist.Label="Confidence treshold"/>-->
-        <CheckBox Content="Log speech to text dictation"/>
-        <StackPanel Orientation="Horizontal">
-          <ComboBox>
-            <ComboBoxItem Content="Device 0"/>
-            <ComboBoxItem Content="Device 1"/>
-            <ComboBoxItem Content="Device 2"/>
+      <Grid RowDefinitions="*,Auto">
+        <Grid Grid.Row="0"
+              ColumnDefinitions="*,Auto">
+          <StackPanel Grid.IsSharedSizeScope="True"
+                      Grid.Column="0">
+            <sbControls:LabelledGenericControl Group="Labels"
+                                                 Label="Locale:">
+                <sbControls:LabelledGenericControl.GenericControl>
+                  <ComboBox SelectedItem="{Binding Locale}"
+                            SelectedIndex="0"
+                            MinWidth="200"
+                            ItemsSource="{Binding Locales}"/>
+                </sbControls:LabelledGenericControl.GenericControl>
+              </sbControls:LabelledGenericControl>
+            <sbControls:LabelledGenericControl Group="Labels"
+                                               Label="Confidence treshold:">
+              <sbControls:LabelledGenericControl.GenericControl>
+                <NumericUpDown Increment="1"
+                               Minimum="0"
+                               Maximum="100"
+                               Width="65"/>
+              </sbControls:LabelledGenericControl.GenericControl>
+            </sbControls:LabelledGenericControl>
+            <CheckBox Content="Log speech to text dictation"/>
+          </StackPanel>
+          <sbbControls:StartStopToggleButton Grid.Column="1"/>
+        </Grid>
+        <StackPanel Grid.Row="1"
+                    Orientation="Horizontal">
+          <ComboBox SelectedItem="{Binding Device}"
+                    SelectedIndex="0"
+                    MinWidth="500"
+                    ItemsSource="{Binding Devices}">
           </ComboBox>
-          <Button>
-            <i:Icon Value="mdi-refresh"/>
-          </Button>
+            <Button>
+              <i:Icon Value="mdi-refresh"/>
+            </Button>
         </StackPanel>
-      <StackPanel Orientation="Horizontal">
-        <CheckBox Content="Autostart"/>
-        <Button Content="Start"/>
-      </StackPanel>
-      </StackPanel>
+      </Grid>
     </TabItem>
     <TabItem Header="Logs">
       <ListBox>

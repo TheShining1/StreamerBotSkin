@@ -1,0 +1,42 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:i="https://github.com/projektanker/icons.avalonia"
+             x:Name="root"
+             x:Class="StreamerBotControls.StartStopToggleButton">
+  <UserControl.Styles>
+    <Style Selector="#start TextBlock">
+      <Setter Property="Text" Value="Start"/>
+    </Style>
+    <!--<Style Selector="#start PathIcon">
+      <Setter Property="Value" Value="mdi-menu-right"/>
+    </Style>-->
+    <Style Selector="#start:checked TextBlock">
+      <Setter Property="Text" Value="Stop"/>
+    </Style>
+    <!--<Style Selector="#start:checked PathIcon">
+      <Setter Property="Value" Value="mdi-stop"/>
+    </Style>-->
+  </UserControl.Styles>
+  <StackPanel>
+    <ToggleButton x:Name="start"
+                  Classes="Success"
+                  HorizontalAlignment="Stretch">
+      <StackPanel Orientation="Horizontal">
+        <i:Icon Value="mdi-menu-right"/>
+        <TextBlock VerticalAlignment="Center"/>
+      </StackPanel>
+    </ToggleButton>
+    <ToggleButton Classes="Secondary"
+                  HorizontalAlignment="Stretch"
+                  IsVisible="{Binding #root.AutoStart}">
+      <StackPanel Orientation="Horizontal">
+        <i:Icon Value="mdi-restart"/>
+        <TextBlock Text="auto start"
+                   VerticalAlignment="Center"/>
+      </StackPanel>
+    </ToggleButton>
+  </StackPanel>
+</UserControl>

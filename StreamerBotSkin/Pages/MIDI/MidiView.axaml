@@ -16,7 +16,7 @@
             <DataGridTextColumn Header="Status"/>
           </DataGrid.Columns>
         </DataGrid>
-        <GridSplitter/>
+        <GridSplitter Grid.Row="1"/>
         <DataGrid Grid.Row="2">
           <DataGrid.Columns>
             <DataGridTextColumn Header="Name"/>

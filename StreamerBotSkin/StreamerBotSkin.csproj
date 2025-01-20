@@ -73,6 +73,9 @@
 
 
   <ItemGroup>
+    <Compile Update="Controls\LabelledGenericControl.axaml.cs">
+      <DependentUpon>LabelledGenericControl.axaml</DependentUpon>
+    </Compile>
     <Compile Update="Pages\ActionQueues\ActionsHistory\ActionsHistoryView.axaml.cs">
       <DependentUpon>ActionsHistoryView.axaml</DependentUpon>
     </Compile>

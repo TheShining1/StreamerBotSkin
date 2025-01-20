@@ -12,16 +12,21 @@
 		<StackPanel Grid.Column="1"
 			  Orientation="Horizontal"
 			  VerticalAlignment="Center">
-			<Button Classes="Flat">
+      <StackPanel.Styles>
+        <Style Selector="Button">
+          <Setter Property="Foreground" Value="#FFFFFF"/>
+        </Style>
+      </StackPanel.Styles>
+			<Button Theme="{DynamicResource BorderlessButton}">
 				<i:Icon Value="mdi-content-save"/>
 			</Button>
-			<Button Classes="Flat">
+			<Button Theme="{DynamicResource BorderlessButton}">
 				<i:Icon Value="mdi-chat"/>
 			</Button>
-			<Button Classes="Flat">
+			<Button Theme="{DynamicResource BorderlessButton}">
 				<i:Icon Value="mdi-timeline"/>
 			</Button>
-			<Button Classes="Flat">
+			<Button Theme="{DynamicResource BorderlessButton}">
 				<i:Icon Value="mdi-application-variable"/>
 			</Button>
 		</StackPanel>
