@@ -36,6 +36,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <AvaloniaXaml Remove="Pages\Settings\Main\General\ProcessWatcher.axaml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Pages\Settings\Main\General\ProcessWatcher.axaml.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="Assets\actions.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
