@@ -2,11 +2,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:sbbControls="clr-namespace:StreamerBotControls;assembly=StreamerBotControls"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              xmlns:i="https://github.com/projektanker/icons.avalonia"
              x:Class="StreamerBotSkin.Views.ProcessWatcherView">
-  <StackPanel>
-    <CheckBox Content="Auto start" />
-    <Button Content="mIcons:start" />
-  </StackPanel>
+  <Grid ColumnDefinitions="Auto">
+    <sbbControls:StartStopToggleButton/>
+  </Grid>
 </UserControl>

@@ -15,7 +15,6 @@
           Grid.Row="0"
           Grid.Column="1">      
       <sbControls:Performance Grid.Column="0"/>
-      <sbControls:ProcessWatcher Grid.Column="1"/>
     </Grid>
     <sbControls:LogLevel Grid.Row="1"
                          Grid.Column="1"
