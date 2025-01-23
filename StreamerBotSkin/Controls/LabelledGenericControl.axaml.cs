@@ -67,4 +67,15 @@ public partial class LabelledGenericControl : UserControl
     get => GetValue(GenericControlProperty);
     set => SetValue(GenericControlProperty, value);
   }
+
+  public static readonly StyledProperty<Control> GenericActionControlProperty =
+    AvaloniaProperty.Register<LabelledGenericControl, Control>(
+      nameof(GenericActionControl)
+    );
+
+  public Control GenericActionControl
+  {
+    get => GetValue(GenericActionControlProperty);
+    set => SetValue(GenericActionControlProperty, value);
+  }
 }

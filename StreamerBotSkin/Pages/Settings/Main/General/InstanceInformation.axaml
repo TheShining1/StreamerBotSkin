@@ -3,13 +3,38 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="200"
-			 xmlns:i="https://github.com/projektanker/icons.avalonia"
+             xmlns:sbControls="clr-namespace:StreamerBotSkin.Controls"
+             xmlns:i="https://github.com/projektanker/icons.avalonia"
              x:Class="StreamerBotSkin.Controls.InstanceInformation">
     <!--<mControls:Card Padding="10">-->
       <StackPanel>        
-        <TextBlock
-                   Text="Instance Information"/>
-        <Grid RowDefinitions="*,*">
+        <TextBlock Text="Instance Information"/>
+        <Grid RowDefinitions="*,*"
+              Grid.IsSharedSizeScope="True">
+          <sbControls:LabelledGenericControl Grid.Row="0"
+                                             Label="ID"
+                                             Group="Labels">
+            <sbControls:LabelledGenericControl.GenericControl>
+              <TextBox Text="345w3g45g5gw-4tw43t-e4tbe4vt-e4te4vct"/>
+            </sbControls:LabelledGenericControl.GenericControl>
+            <sbControls:LabelledGenericControl.GenericActionControl>
+              <Button Theme="{DynamicResource BorderlessButton}">
+                <i:Icon Value="mdi-restore"/>
+              </Button>
+            </sbControls:LabelledGenericControl.GenericActionControl>
+          </sbControls:LabelledGenericControl>
+          <sbControls:LabelledGenericControl Grid.Row="1"
+                                             Label="Name"
+                                             Group="Labels">
+            <sbControls:LabelledGenericControl.GenericControl>
+              <TextBox Text="Streamer.bot"/>
+            </sbControls:LabelledGenericControl.GenericControl>
+            <sbControls:LabelledGenericControl.GenericActionControl>
+              <Button Theme="{DynamicResource BorderlessButton}">
+                <i:Icon Value="mdi-content-save"/>
+              </Button>
+            </sbControls:LabelledGenericControl.GenericActionControl>
+          </sbControls:LabelledGenericControl>
           <!--<TextBox Grid.Row="0"
                    IsEnabled="False"
                    UseFloatingWatermark="True"
