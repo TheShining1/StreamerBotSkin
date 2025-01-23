@@ -19,7 +19,7 @@
 						Orientation="Horizontal"
 						VerticalAlignment="Center">
 				<Button Classes="Flat">
-					<i:Icon Value="mdi-ContentSave"/>
+					<i:Icon Value="mdi-content-save"/>
 				</Button>
 				<Button Classes="Flat">
 					<i:Icon Value="mdi-chat"/>

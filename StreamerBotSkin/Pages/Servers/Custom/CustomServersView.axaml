@@ -21,7 +21,7 @@
             <DataGridTemplateColumn.CellTemplate>
               <DataTemplate>
                 <Button>
-                  <i:Icon Value="Play"/>
+                  <i:Icon Value="mdi-play"/>
                 </Button>
               </DataTemplate>
             </DataGridTemplateColumn.CellTemplate>
@@ -30,7 +30,7 @@
             <DataGridTemplateColumn.CellTemplate>
               <DataTemplate>
                 <Button>
-                  <i:Icon Value="PowerOff"/>
+                  <i:Icon Value="mdi-power-off"/>
                 </Button>
               </DataTemplate>
             </DataGridTemplateColumn.CellTemplate>

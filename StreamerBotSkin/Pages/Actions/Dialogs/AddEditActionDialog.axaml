@@ -31,7 +31,7 @@
                 <Setter Property="Content">
                   <Template>
                     <Button Classes="Flat">
-                      <i:Icon Value="ChevronDown" />
+                      <i:Icon Value="mdi-chevron-down" />
                     </Button>
                   </Template>
                 </Setter>

@@ -161,7 +161,7 @@
                              Classes="Headline6"
                              Text="Broadcaster" />
                   <i:Icon Grid.Column="1"
-                                       Value="mdi-Information"
+                                       Value="mdi-information"
                                        ToolTip.Placement="Left">
                     <ToolTip.Tip>
                       <TextBox MaxWidth="300"
@@ -171,7 +171,7 @@
                 </Grid>
                 <StackPanel Grid.Row="1"
                             Orientation="Horizontal">
-                  <i:Icon Value="mdi-Alert"
+                  <i:Icon Value="mdi-alert"
                                        Height="48"
                                        Width="48"/>
                   <TextBlock Text="ShiningOne"
@@ -182,7 +182,7 @@
                   <Button Grid.Column="0">
                     <Button.Content>
                       <StackPanel Orientation="Horizontal">
-                        <i:Icon Value="mdi-Google"/>
+                        <i:Icon Value="mdi-google"/>
                         <TextBlock Text="Sign in with Google"/>
                       </StackPanel>
                     </Button.Content>
@@ -201,7 +201,7 @@
                              Classes="Headline6"
                              Text="Bot" />
                   <i:Icon Grid.Column="1"
-                                       Value="mdi-Information"
+                                       Value="mdi-information"
                                        ToolTip.Placement="Left">
                     <ToolTip.Tip>
                       <TextBox MaxWidth="300"
@@ -211,7 +211,7 @@
                 </Grid>
                 <StackPanel Grid.Row="1"
                             Orientation="Horizontal">
-                  <i:Icon Value="mdi-Alert"
+                  <i:Icon Value="mdi-alert"
                                        Height="48"
                                        Width="48"/>
                   <TextBlock Text="ShiningOne"
@@ -222,7 +222,7 @@
                   <Button Grid.Column="0">
                     <Button.Content>
                       <StackPanel Orientation="Horizontal">
-                        <i:Icon Value="mdi-Google"/>
+                        <i:Icon Value="mdi-google"/>
                         <TextBlock Text="Sign in with Google"/>
                       </StackPanel>
                     </Button.Content>
@@ -243,7 +243,7 @@
             <Button Classes="Flat">
               <Button.Content>
                 <StackPanel Orientation="Horizontal">
-                  <i:Icon Value="mdi-Youtube"/>
+                  <i:Icon Value="mdi-youtube"/>
                   <TextBlock Text="Terms of Service"/>
                 </StackPanel>
               </Button.Content>
@@ -251,7 +251,7 @@
             <Button Classes="Flat">
               <Button.Content>
                 <StackPanel Orientation="Horizontal">
-                  <i:Icon Value="mdi-Google"/>
+                  <i:Icon Value="mdi-google"/>
                   <TextBlock Text="Privacy Policy"/>
                 </StackPanel>
               </Button.Content>
@@ -259,7 +259,7 @@
             <Button Classes="Flat">
               <Button.Content>
                 <StackPanel Orientation="Horizontal">
-                  <i:Icon Value="mdi-Web"/>
+                  <i:Icon Value="mdi-web"/>
                   <TextBlock Text="Terms of Service"/>
                 </StackPanel>
               </Button.Content>
@@ -267,7 +267,7 @@
             <Button Classes="Flat">
               <Button.Content>
                 <StackPanel Orientation="Horizontal">
-                  <i:Icon Value="mdi-Web"/>
+                  <i:Icon Value="mdi-web"/>
                   <TextBlock Text="Privacy Policy"/>
                 </StackPanel>
               </Button.Content>
