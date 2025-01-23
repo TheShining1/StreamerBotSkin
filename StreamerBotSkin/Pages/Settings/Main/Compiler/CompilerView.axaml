@@ -2,28 +2,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-			 xmlns:i="https://github.com/projektanker/icons.avalonia"
+             xmlns:i="https://github.com/projektanker/icons.avalonia"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="StreamerBotSkin.Views.CompilerView">
-  <ScrollViewer>
-    <Grid Margin="10"
-        RowDefinitions="Auto, *, Auto">
-      <Grid Grid.Row="0"
-            ColumnDefinitions="Auto, *, Auto">
-        <TextBlock Grid.Column="0">Common references</TextBlock>
-        <i:Icon Grid.Column="2"
-                             Value="mdi-information"
-                             ToolTip.Placement="Left">
+  <Grid RowDefinitions="Auto, *">
+    <Grid Grid.Row="0"
+          ColumnDefinitions="Auto, *, Auto">
+      <StackPanel Orientation="Horizontal">
+        <TextBlock>Common references</TextBlock>
+        <i:Icon Value="mdi-information">
           <ToolTip.Tip>
             <TextBox MaxWidth="300"
                      TextWrapping="Wrap">Any references added to this list will be automatically added to every Execute C# code when its compiled. Making changes to this list will not invalidate any currently compiled Execute C# code sud-actions.</TextBox>
           </ToolTip.Tip>
         </i:Icon>
-      </Grid>
-      <TextBox Grid.Row="1"
-           x:Name="refBox">
-      </TextBox>
-      <CheckBox Grid.Row="2">Auto complete braces and quotes</CheckBox>
+      </StackPanel>
+      <CheckBox Grid.Column="2">Auto complete braces and quotes</CheckBox>
     </Grid>
-  </ScrollViewer>
+    <TextBox Grid.Row="1"
+             Classes="TextArea"
+             x:Name="refBox">
+    </TextBox>
+  </Grid>
 </UserControl>

@@ -3,29 +3,41 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             xmlns:sbControls="clr-namespace:StreamerBotSkin.Controls"             
+             xmlns:i="https://github.com/projektanker/icons.avalonia"
              x:Class="StreamerBotSkin.Views.AudioView">
-  <ScrollViewer>
-    <Grid RowDefinitions="Auto, Auto, Auto, Auto">
-      <TextBlock Grid.Row="0">Audio output device</TextBlock>
-      <ComboBox Grid.Row="1"
-            Padding="10"
-            x:Name="audioDevices"></ComboBox>
-      <Grid  Grid.Row="2"
-           ColumnDefinitions="Auto, *, Auto">
-        <CheckBox Grid.Column="0">Use system default when selected device not found</CheckBox>
-        <Button Grid.Column="2">Refresh</Button>
-      </Grid>
-      <StackPanel Grid.Row="3">
-        <StackPanel Orientation="Horizontal">
-          <TextBlock>Application volume: </TextBlock>
-          <TextBlock Text="{Binding #volume.Value}"/>
-        </StackPanel>
-        <Slider x:Name="volume"
-            IsSnapToTickEnabled="True"
-            TickFrequency="1"
-            Classes="Modern Ticks"
-            Margin="10"/>
-      </StackPanel>
+  <Grid RowDefinitions="Auto, Auto, Auto, Auto">
+    <sbControls:LabelledGenericControl Label="Output device">
+      <sbControls:LabelledGenericControl.GenericControl>
+        <ComboBox Grid.Row="1"
+                  SelectedIndex="0">
+          <TextBlock Text="Default"/>
+          <TextBlock Text="Line 1"/>
+          <TextBlock Text="Line 2"/>
+          <TextBlock Text="Line 3"/>
+          <TextBlock Text="Line 4"/>
+        </ComboBox>
+      </sbControls:LabelledGenericControl.GenericControl>
+      <sbControls:LabelledGenericControl.GenericActionControl>
+        <Button Theme="{DynamicResource BorderlessButton}">
+          <i:Icon Value="mdi-restore"/>
+        </Button>
+      </sbControls:LabelledGenericControl.GenericActionControl>
+    </sbControls:LabelledGenericControl>
+    <Grid  Grid.Row="2"
+         ColumnDefinitions="Auto, *, Auto">
+      <CheckBox Grid.Column="0">Use system default when selected device not found</CheckBox>      
     </Grid>
-  </ScrollViewer>
+    <StackPanel Grid.Row="3">
+      <StackPanel Orientation="Horizontal">
+        <TextBlock>Application volume: </TextBlock>
+        <TextBlock Text="{Binding #volume.Value}"/>
+      </StackPanel>
+      <Slider x:Name="volume"
+          IsSnapToTickEnabled="True"
+          TickFrequency="1"
+          Classes="Modern Ticks"
+          Margin="10"/>
+    </StackPanel>
+  </Grid>
 </UserControl>
